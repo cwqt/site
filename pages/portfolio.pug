@@ -1,0 +1,49 @@
+---
+layout: page
+permalink: portfolio
+title: portfolio
+---
+
+p
+  | New 
+  a(href="https://portfolio.cass.si") portfolio
+  |  page served via 
+  i Now.
+
+br
+
+
+| {% for paper in site.data.whitepapers %}
+a.post-line(href="{{ paper.url }}")
+  code {{ paper.date | date: "%b %d, %y"}}
+  | &nbsp;&nbsp;&nbsp;
+  h4 {{ paper.paper }}
+| {% endfor %}
+
+hr
+
+| {% for paper in site.data.projects %}
+a.post-line#has_desc(href="{{ paper.url }}")
+  code {{ paper.date | date: "%b %d, %y"}}
+  | &nbsp;&nbsp;&nbsp;
+  h4 {{ paper.project }}
+  span {{ paper.desc }}
+| {% endfor %}
+
+.project-section
+//-   | {% for project in site.data.projects %}
+//-   | {% if project.image %}
+//-   .project-block(onclick="window.location='{{project.link}}'")
+//-     | {% if project.video %}
+//-     video(src="https://ftp.{{site.title}}/www/projects/{{project.image}}" autoplay loop)
+//-     | {% else %}
+//-     img(src="https://ftp.{{site.title}}/www/projects/{{project.image}}")
+//-     | {% endif %}
+
+//-     .abs
+//-       h4 {{ project.project }}
+//-       p {{ project.desc }}
+//-   | {% endif %}
+//-   | {% endfor %}
+
+a(href="https://gitlab.com/{{site.gitlab.username}}") View more on GitLab 

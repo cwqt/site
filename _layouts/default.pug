@@ -1,0 +1,58 @@
+doctype
+<!--  Last updated: {{ "now" | date: "%Y-%m-%d %H:%M" }}. -->
+html(lang="en-GB")
+  head
+    | {% include head.html %}
+  body
+    | {% if page.index %}
+    img.bg._1(src="/media/bg.webp")
+    img.bg._2(src="/media/bg.webp")
+    | {% endif %}
+
+    .bar
+      .left
+        h1 캐스
+      .center
+        h5
+          | {% if page.index %}
+          | {{ "now" | date: "%Y-%m-%d %H:%M" | formatted_time }} - @
+          a(href="https://gitlab.com/cxss/site/commit/GITCOMMIT") GITCOMMIT
+          | {% else %}
+          #url
+          | {% endif %}
+      .right
+        a(href="https://creativecommons.org/licenses/by-nc-sa/4.0/")
+          img(src="/media/cc.png")
+        a(href="https://gitlab.com/cxss")
+          img(src="/media/git.png")
+        a(href="https://webring.xxiivv.com/#random" target="blank_")
+          img(src="/media/webring.png")
+        a(href="https://{{site.title}}/feed.xml")
+          img(src="/media/rss.png")
+
+    hr.bline
+
+    .index
+      | {{ content }}
+
+    script(async="" src="https://www.googletagmanager.com/gtag/js?id=UA-76192160-1")
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-76192160-1');
+
+    | {% if page.index == nil %}
+    script.
+      var pathArray = window.location.pathname.split('/');
+      var s = "";
+      var u = "";
+      pathArray.shift()
+      for (i = 0; i < pathArray.length; i++) {
+        u += "/"+pathArray[i]
+        s += "<span> / </span>";
+        s += '<a href="'+u+'">'+pathArray[i]+'</a>';
+      }
+      console.log(s)
+      document.getElementById("url").innerHTML = s;
+    | {% endif %}

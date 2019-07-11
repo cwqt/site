@@ -6,7 +6,7 @@ node media/js/week.js
 echo "================================"
 bliss b
 echo "Pulling data from api..."
-COMMIT=$(curl --silent --header "PRIVATE-TOKEN: y1GEzJyHzsdzc7nj23Zb" "https://gitlab.com/api/v4/projects/11127131/repository/commits/master" | jq '.short_id' | tr -d \")
+COMMIT=$(curl --silent --header "PRIVATE-TOKEN: y1GEzJyHzsdzc7nj23Zb" "https://gitlab.com/api/v4/projects/13261952/repository/commits/master" | jq '.short_id' | tr -d \")
 echo $COMMIT
 sed -i -e "s/GITCOMMIT/$COMMIT/g" ./_site/index.html
 LOG_COUNT=$(curl --silent -X GET "https://api.cass.si/days/total")

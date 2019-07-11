@@ -85,7 +85,7 @@ body, html {
   &._1 {
     left: 33vw;
     clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
-    filter: brightness(0.5) blur(5px);
+    filter: brightness(0.5);
   }
   &._2 {
     filter: brightness(0.7);

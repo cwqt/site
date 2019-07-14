@@ -35,6 +35,12 @@ body, html {
 
 //=================================
 
+.week .d { display: none; }
+.week .d:nth-last-child(-n+31) {
+  display: flex !important
+}
+
+
 .week {
   display: flex;
   flex-flow: row;

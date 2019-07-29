@@ -724,3 +724,21 @@ body {
   animation-name: fadein;
   animation-fill-mode: forwards;  
 }
+
+
+.section-nav {
+  width: 40%;
+  margin: 0 !important;
+  float: right;
+  margin-left: 30px;
+  padding: 20px;
+  background-color: rgba(255,255,255, 0.05);
+  border-radius: 4px;
+  border-color: rgba(255,255,255, 0.1);
+  ul,li {
+    list-style-type: none !important;
+  }
+  a {
+    font-weight: normal !important
+  }
+}

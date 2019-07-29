@@ -99,7 +99,7 @@ export default function(state=initialState, action) {
 }
 ```
 
-Reducers are pure functions, they make no API calls and their return values should depend solely on its parameters.
+Reducers are pure functions, they make no API calls and their return values should depend solely on its parameters. 
 
 #### Store
 

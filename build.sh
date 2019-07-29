@@ -5,7 +5,7 @@ node media/js/week.js
 bliss b
 
 echo "Pulling data from api..."
-COMMIT=$(curl --silent --header "PRIVATE-TOKEN: GITLAB_API_KEY" "https://gitlab.com/api/v4/projects/13261952/repository/commits/master" | jq '.short_id' | tr -d \")
+COMMIT=$(curl --silent --header "PRIVATE-TOKEN: $GITLAB_API_KEY" "https://gitlab.com/api/v4/projects/13261952/repository/commits/master" | jq '.short_id' | tr -d \")
 echo $COMMIT
 sed -i -e "s/GITCOMMIT/$COMMIT/g" ./_site/index.html
 

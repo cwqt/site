@@ -37,7 +37,11 @@ img {
     margin-right: auto;
     max-width: 100%;
     &.fr {
+      float: right;
       padding-left: 30px !important;
+      @media #{$breakpoint-mobile} {
+        float: none;
+      }
     }
 }
 

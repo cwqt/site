@@ -4,7 +4,7 @@ title: moisture.track
 date: 2019-07-29 11:47am
 ---
 
-<img src="https://ftp.cass.si/2QjNxADMwA.jpeg" class="fr" style="float: right;" />
+<img src="https://ftp.cass.si/2QjNxADMwA.jpeg" class="fr"/>
 
 _My plants keep dying_ - this is an issue.
 
@@ -286,14 +286,13 @@ Deletes the plant with UUID `<uuid>`.
 
 ## React+Redux front-end
 
-![](https://ftp.cass.si/1YjM4kTO5k.png)
+<img src="https://ftp.cass.si/1YjM4kTO5k.png" class="fr"/>
 
 A fairly """simple""" application in terms of Redux, data is presented via [chart.js](https://www.chartjs.org/) and I used the [chart.js React wrapper](https://www.npmjs.com/package/react-chartjs-2<Paste>).
 
 The application uses Redux to send actions which request part of the API, initially to get a list of plants, and then later to maybe delete/add new plants.
 
 Site is live at: <https://moisture-track-fe.herokuapp.com/>
-
 
 ## Deployment
 

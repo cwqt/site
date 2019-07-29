@@ -79,6 +79,8 @@ body, html {
 
 
 
+
+
 .bg {
   @media #{$breakpoint-mobile} {
     opacity: 0.5;
@@ -470,6 +472,9 @@ input:-webkit-autofill {
       float: right;
       margin-left: auto;
       opacity: 0.2;
+      @media #{$breakpoint-mobile} {
+        display: none;
+      }
     }
   
     article, .page {
@@ -492,6 +497,9 @@ input:-webkit-autofill {
         margin-bottom: 5px;
         margin-top: 30px;
         letter-spacing: -1px;
+        @media #{$breakpoint} {
+          text-align: center;
+        }
       }
       h1:first-child {
         margin-top: 0;

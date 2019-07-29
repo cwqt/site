@@ -503,10 +503,11 @@ input:-webkit-autofill {
         }
       }
       img {
-        margin-bottom: 10px;
+        margin: 20px auto;
         border-radius: 2px;
         // box-shadow: 0 9px 30px 0 rgba(35,39,42,.1);
-        max-height: 50vh;
+        max-height: 40vh;
+        max-width: 80%;
       }
       p {
         color: #f4f4f4 !important;

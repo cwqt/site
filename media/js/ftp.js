@@ -1,3 +1,4 @@
+const PROJECT_ID = "1326195"
 var canCheck = true;
 $("#token").on('keyup', function (e) {
     if (e.keyCode == 13 && canCheck == true) {
@@ -83,8 +84,7 @@ function onFileSelected(event) {
 
         setTimeout(function(){
           console.log(File.name);
-          //https://gitlab.com/cxss/site id = 11127131
-          var API_NEW_POST = 'https://gitlab.com/api/v4/projects/11127131/repository/files/';
+          var API_NEW_POST = 'https://gitlab.com/api/v4/projects/'+PROJECT_ID+'/repository/files/';
           var file_uri = encodeURIComponent(File.name + ".b64")
           $.ajax({
             dataType: "json",

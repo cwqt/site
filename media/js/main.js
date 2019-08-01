@@ -39,7 +39,7 @@ document.addEventListener('click', function (event) {
 		selectedWeekItem = document.getElementById("w"+event.target.id);
 
 		const Http = new XMLHttpRequest();
-		const url = 'https://api.cass.si/days/' + event.target.id;
+		const url = 'https://cs-d-api.herokuapp.com/days/' + event.target.id;
 		Http.open("GET", url);
 		Http.send();
 

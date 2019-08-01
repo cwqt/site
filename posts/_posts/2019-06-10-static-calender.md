@@ -12,4 +12,4 @@ https://github.com/merveilles/Time-Travelers
 
 # Heroku
 
-http://api.cass.si/days
+https://cs-d-api.herokuapp.com/

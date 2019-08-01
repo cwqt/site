@@ -23,7 +23,7 @@ try {
 }
 
 //request all days
-https.get('https://api.cass.si/days', (resp) => {
+https.get('https://cs-d-api.herokuapp.com/days', (resp) => {
   let data = '';
   // A chunk of data has been recieved.
   resp.on('data', (chunk) => {
@@ -32,9 +32,8 @@ https.get('https://api.cass.si/days', (resp) => {
 
   //got whole response, generate html for calender
   resp.on('end', () => {
-  	console.log("Got days.")
+  	console.log("Got days." + console.log(days.length))
     days = JSON.parse(data)
-    console.log(days)
 		for (i=0; i<days.length; i++) {
 			x = "";
 			x += `<div class="item" id="${days[i].date}" `

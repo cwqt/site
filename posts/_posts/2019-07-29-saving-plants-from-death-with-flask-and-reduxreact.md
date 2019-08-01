@@ -1,6 +1,6 @@
 ---
 layout: post
-title: moisture.track
+title: Saving plants from death with Flask and React+Redux
 date: 2019-07-29 11:47am
 ---
 
@@ -129,7 +129,7 @@ const MapStateToProps = state => ({
 })
 ```
 
-Now this all doesn't seem very useful on its own, but add in more actions like `CREATE_PLANT`, `DELETE_PLANT` and others and it scales up quite nicely.
+Now this all doesn't seem very useful on its own, but add in more actions like `CREATE_PLANT`, `DELETE_PLANT` and others and it scales up quite nicely, s-so they say...
 
 ## Hardware + code
 
@@ -163,40 +163,87 @@ pi@raspberrypi:~/$ i2cdetect -y 1
 
 Nice., onto the code.
 
-The sensor has an I2C address of `0x36`. I wrote a little code to talk to our API every 30 minutes and send the moisture level. `PLANT_UUID` is used to let the API know which plant is being updated.
+When a plant is created using the API it will return a UUID for the plant, this UUID is stored in a `secrets.json` file, which also has the auth token for making `PUT` requests to the API:
 
-When a plant is created using the API it will return a UUID for the plant, which is hard-coded into the python file as `PLANT_UUID`.
+The sensor has an I2C address of `0x36`. I wrote a little bit of code to talk to our API every 30 minutes and send the moisture/temperature level. `UUID` is used to let the API know which plant is being updated.
+
+```json
+{
+  "TOKEN": "API token",
+  "UUID": "Plant UUID"
+}
+
+```
 
 ```python
+#!/usr/bin/env python3
+import os
 import time
+import json
 import busio
-import requests 
+import requests
 from board import SCL, SDA
 from adafruit_seesaw.seesaw import Seesaw
 
-PLANT_UUID = ""
-URL = "https://moisture-track.herokuapp.com/plants/"+PLANT_UUID
+with open("secrets.json", "r") as f:
+  SECRETS = json.load(f)
+
+HEADERS = {
+  "AUTH_TOKEN": SECRETS["TOKEN"],
+  'Content-Type': 'application/json'
+}
+URL = "https://moisture-track.herokuapp.com/plants/"+SECRETS["UUID"]
+
+print(SECRETS)
 
 i2c_bus = busio.I2C(SCL, SDA)
 ss = Seesaw(i2c_bus, addr=0x36)
 
 while True:
   # read moisture level through capacitive touch pad
-  touch = ss.moisture_read()
+  moist = ss.moisture_read()
+  temp = ss.get_temp()
 
   # send moisture update to the api
   payload = {
-    "moisture_level": str(touch)
+    "moisture_level": str(moist),
+    "temperature": str(round(temp, 1))
   }
-  requests.put(URL, data=payload)
+  print(json.dumps(payload))
+  r = requests.put(URL, data=json.dumps(payload), headers=HEADERS)
+  print(r.content)
 
   #repeat once every 30 minutes
-  timer.sleep(1800)
+  time.sleep(1800)
+```
+
+In order to get this to work on the RPi upon boot, we can use the `/etc/rc.local` file to designate scripts that should be stated on boot. Since all scripts in `rc.local` are executed as root, we need to install the python packages for the root user.
+
+```
+sudo su
+apt-get install python3 python3-pip 
+pip3 install adafruit-blinka adafruit adafruit-circuitpython-seesaw
+
+cd /home/pi
+vi start.sh
+  #!/bin/bash
+  cd /home/pi
+  echo "Starting moisture.track"
+  cd moisture.track...
+  git pull origin master
+  cd hardware
+  python3 main.py &
+  exit 0
+
+chmod +x start.sh
+vi /etc/rc.local
+./home/pi/start.sh
+sudo reboot
 ```
 
 And finally to wire it all up:
 
-**INSERT FINISHED IMAGE**
+![](https://ftp.cass.si/==QN2ATO5k.jpeg)
 
 ## Flask API
 
@@ -320,7 +367,7 @@ production:
   - dpl --provider=heroku --app=moisture-track-fe --api-key=$HEROKU_API_KEY
 ```
 
-### Heroku, Flask and React
+### Heroku, Flask
 
 I always seem to have trouble with Heroku, maybe I'm just an idiot but there are a few things and gotchas that you need that aren't really explained in once place, you always have to spend an hour jumping around different docs for what to do.
 
@@ -346,6 +393,56 @@ And can be called in the same fashion of `os.environ.get(MONGO_URI)`.
 #### Local testing
 
 To test the API works with Heroku locally you need to first run it in a python virtual enviroment (so all the dependencies are available), then run `pipenv run heroku local`.
+
+### Deploying React
+
+Fortunately there's a nice buildpack that someone created to deploy react apps using Nginx on Heroku, <https://github.com/mars/create-react-app-buildpack>.
+
+There's a tiny bit of configuration to setup to get the url proxying to work correctly however. So for example, in React when I request `/plants/` it gets proxied to the Flask backend: `https://moisture-track.herokuapp.com/plants/`.
+
+Unfortunately the documentation for this buildpack is a bit out of date, as of React 2 you cannot supply an object to the `proxy` key in `package.json`, only strings are allowed. Instead we must use a `setupProxy.js` file, which essentially does the same thing.
+
+* `package.json`
+  - Remove `proxy` key + value
+
+* `src/setupProxy.js`
+  - For **local development** proxying to work, add this file to proxy all `/api/` routes to the local Flask address.
+
+```js
+const proxy = require('http-proxy-middleware')
+
+var options = {
+  target: 'http://localhost:5000/',
+  pathRewrite: {
+    '^/api': '/', // rewrite path
+  }
+};
+
+module.exports = function(app) {
+  app.use('/api', proxy(options))
+}
+```
+
+* `static.json`
+  - For **production**, add the following to `static.json` in the file root, keeping `API_URL`, we'll use that later in the Heroku config vars to reference the API address..
+
+```json
+{
+  "root": "build/",
+  "routes": {
+    "/**": "index.html"
+  },
+  "proxies": {
+    "/api/": {
+      "origin": "${API_URL}"
+    }
+  }
+}
+```
+
+All routes requested in the React app must be changed from e.g. `fetch("/plants/")` to `fetch("/api/plants/")`.
+
+Finally in the React Heroku app add a config var with key `API_URL` and a value of the live Flask API address.
 
 ---
 

@@ -15,7 +15,7 @@ try {
   console.error(err)
 }
 
-https.get("https://api.cass.si/days/longest", (resp) => {
+https.get("https://cs-d-api.herokuapp.com/longest", (resp) => {
 	let longest = "";
 	resp.on('data', (chunk) => {
 		longest	+= chunk;
@@ -29,7 +29,7 @@ https.get("https://api.cass.si/days/longest", (resp) => {
 
 function buildWeeks(longestDay) {
 	//request all days
-	https.get('https://api.cass.si/days', (resp) => {
+	https.get('https://cs-d-api.herokuapp.com/days', (resp) => {
 	  let data = '';
 	  // A chunk of data has been recieved.
 	  resp.on('data', (chunk) => {
@@ -46,7 +46,7 @@ function buildWeeks(longestDay) {
 	        sum += t[index]
 				}
 
-				console.log(sum, longestDay)
+				// console.log(sum, longestDay)
 				ratio = (sum/longestDay)*100
 				ratio = parseFloat(ratio).toFixed(2)
 				x = "";
@@ -64,7 +64,7 @@ function buildWeeks(longestDay) {
 				x += '</div>\n'
 				s = s + x
 			}
-			console.log(s);
+			// console.log(s);
 			// for (i=0; i<(182-days.length); i++) {
 			// 	s += '<div class="item"></div>\n'
 			// }

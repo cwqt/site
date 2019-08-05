@@ -32,8 +32,8 @@ https.get('https://cs-d-api.herokuapp.com/days', (resp) => {
 
   //got whole response, generate html for calender
   resp.on('end', () => {
-  	console.log("Got days." + console.log(days.length))
     days = JSON.parse(data)
+  	console.log("Got days." + console.log(days.length))
 		for (i=0; i<days.length; i++) {
 			x = "";
 			x += `<div class="item" id="${days[i].date}" `

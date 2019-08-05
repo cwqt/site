@@ -52,13 +52,13 @@ function buildWeeks(longestDay) {
 				x = "";
 				x += `<div class="d" id="w${days[i].date}" style="height: ${ratio}%">\n`
 
-				for(var i in t) {
-					var height = ((t[i]/sum)*100).toFixed(2)
+				for(var index in t) {
+					var height = ((t[index]/sum)*100).toFixed(2)
 					if (isNaN(height)) { height = 0 }
 					if (height < 1) { height += 1}
 					if (height >= 98 ) { height -= 2}
 					height = parseFloat(height).toFixed(2)
-	        x += `\t<div class="${i}" style="height: ${height}% "></div>\n`
+	        x += `\t<div class="${index}" style="height: ${height}% "></div>\n`
 				}
 
 				x += '</div>\n'

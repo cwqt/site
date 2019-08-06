@@ -1,4 +1,4 @@
-# npm install jekyll-bliss -g
+npm install jekyll-bliss -g
 node media/js/calender.js
 node media/js/week.js
 

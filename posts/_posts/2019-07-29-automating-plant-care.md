@@ -1,18 +1,17 @@
 ---
 layout: post
-title: Saving plants from death with Flask and React+Redux
+title: Automating plant care with React and Flask
 date: 2019-07-29 11:47am
 ---
 
 <img src="https://ftp.cass.si/2QjNxADMwA.jpeg" class="fr"/>
 
-_My plants keep dying_ - this is an issue.
+_My plants keep dying_, I don't water them as much as I should.
 
-I will solve it... with code!
+So instead of being a normal human being and keeping to a schedule of watering my plants (or literally just looking at the plant to see if it needs watering), I'll spend an inordinate amount of time creating a system to remind me to water my plants, as well as keeping me posted on telemetry that I don't especially care about. […](https://xkcd.com/1319/)
 
-I'm writing this because it covers a faiiiirly large breadth of topics, hardware, software, devops etc.
 
-I've been wanting to learn Redux for a while now but never really had a oppurtunity to do so, simply because the applications I make are often small and I never seem to come across the whole "state bubbling" problem that a lot of people quote as their reason to integrate Redux.
+Moving on... I've been wanting to learn [Redux](https://redux.js.org) for a while now but never really had a oppurtunity to do so, simply because the applications I make are often small and I never seem to come across the whole "state bubbling" problem that a lot of people quote as their reason to integrate Redux.
 
 I'm well aware this project could've been done without Redux, but I figure starting small is a way better to learn the concepts that can be used for bigger things later on.
 
@@ -189,7 +188,7 @@ with open("secrets.json", "r") as f:
   SECRETS = json.load(f)
 
 HEADERS = {
-  "AUTH_TOKEN": SECRETS["TOKEN"],
+  "Auth-Token": SECRETS["TOKEN"],
   'Content-Type': 'application/json'
 }
 URL = "https://moisture-track.herokuapp.com/plants/"+SECRETS["UUID"]

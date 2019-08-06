@@ -1,7 +1,7 @@
 const fs = require('fs');
 const https = require('https');
 
-console.log("Running week...")
+console.log("\nRunning week...")
 
 //html string for file
 var s = ""
@@ -15,7 +15,8 @@ try {
   console.error(err)
 }
 
-https.get("https://cs-d-api.herokuapp.com/longest", (resp) => {
+https.get("https://cs-d-api.herokuapp.com/days/longest", (resp) => {
+	console.log("Getting the longest day...")
 	let longest = "";
 	resp.on('data', (chunk) => {
 		longest	+= chunk;
@@ -23,6 +24,7 @@ https.get("https://cs-d-api.herokuapp.com/longest", (resp) => {
 
 	resp.on('end', () => {
 		longest = parseFloat(longest);
+		console.log("Longest day: " + longest)
 		buildWeeks(longest);
 	})
 })
@@ -39,6 +41,7 @@ function buildWeeks(longestDay) {
 	  //got whole response, generate html for week
 	  resp.on('end', () => {
 	    days = JSON.parse(data)
+	    console.log("Got days: " + days.length)
 			for (i=0; i<days.length; i++) {
 				sum = 0
 	      t = days[i].info
@@ -71,7 +74,7 @@ function buildWeeks(longestDay) {
 			// write fresh file
 			fs.writeFile('_includes/week.html', s, function (err) {
 			  if (err) throw err;
-			  console.log('File is created successfully.');
+			  console.log('WEEK is created successfully.\n');
 			}); 
 	  });
 	}).on("error", (err) => {

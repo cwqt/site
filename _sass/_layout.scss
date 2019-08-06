@@ -1,3 +1,7 @@
+$writing-c: #7b6f9d;
+$visual-c: #635881;
+$audio-c: #4b4363;
+
 * { box-sizing: border-box !important; }
 body {
   background-color: #111;
@@ -66,42 +70,14 @@ body, html {
       min-height: 20% !important;
     }
     .writing {
-      background-color: #7b6f9d;
-    }
-    .audio {
-      background-color: darken(#7b6f9d, 10%);
+      background-color: $writing-c;
     }
     .visual {
-      background-color: darken(#7b6f9d, 20%);
+      background-color: $visual-c;
     }
-  }
-}
-
-
-
-
-
-.bg {
-  @media #{$breakpoint-mobile} {
-    opacity: 0.5;
-  }
-  position: fixed;
-  height: 100vh;
-  width: auto;
-  max-width: none;
-  left: 34vw;
-  &._1 {
-    left: 33vw;
-    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
-    filter: brightness(0.5);
-  }
-  &._2 {
-    filter: brightness(0.7);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 13% 100%);
-  }
-  &.shift {
-    filter: brightness(0.4);
-    left: 80vw;
+    .audio {
+      background-color: $audio-c;
+    }
   }
 }
 
@@ -208,10 +184,8 @@ body, html {
     position: relative;
     max-width: 572px;
     box-sizing: border-box;
-    @media #{$breakpoint} {
-      max-width: 100%;
-    }
     @media #{$breakpoint-mobile} {
+      // max-width: 100%;
       display: flex;
       flex-flow: column;
       // align-items: flex-start;
@@ -250,6 +224,19 @@ body, html {
       flex-flow: row;
       align-items: center;
       margin-top: 20px;
+      #date {
+        margin: 0;
+        margin-left: auto;
+        font-size: 22px;
+        font-family: "Source Code Pro";
+        color: #666;
+        b {
+          color: white;
+          &:not(:first-child) {
+            margin-left: 5px;
+          }
+        }
+      }
       span {
         margin-right: 20px;
       }
@@ -257,27 +244,21 @@ body, html {
         display: inline !important;
         margin-right: 5px;
         &:nth-child(1) {
-          background-color: #7b6f9d;
-        }
-        &:nth-child(2) {
-          background-color: darken(#7b6f9d, 10%);
+          background-color: $writing-c;
         }
         &:nth-child(3) {
-          background-color: darken(#7b6f9d, 15%);
+          background-color: $visual-c;
+        }
+        &:nth-child(5) {
+          background-color: $audio-c;
         }
       }
     }
     #hider {
       visibility: hidden;
-      h5#date {
-        display: none;
-        font-size: 150%;
-        color: #666;
-        margin-top: -5px;
-        margin-left: 3px;
-        font-family: "Source Code Pro";
-      }
       .day_info {
+        position: relative;
+        z-index: 2;
         margin-top: -15px;
         display: flex;
         flex-flow: row;

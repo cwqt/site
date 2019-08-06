@@ -28,18 +28,10 @@ license: MIT
 author: cxss
 e-mail: m (at) cxss (dot) si
 
-# In-browser posting (cms)
-github:
-  username: ttxi
-  repo: cxss/site
-  branch: master
-
 gitlab:
   username: cxss
   repo: cxss/site
   branch: master
-
-# staticman moved to staticman.yml
 
 plugins:
   - jekyll-youtube

@@ -2,6 +2,7 @@
 layout: post
 title: Automating plant care with React and Flask
 date: 2019-07-29 11:47am
+comments: true
 ---
 
 <img src="https://ftp.cass.si/2QjNxADMwA.jpeg" class="fr"/>

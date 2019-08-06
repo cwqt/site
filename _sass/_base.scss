@@ -177,12 +177,12 @@ input, textarea, button {
   background-color: transparent;
   margin: 5px;
   margin-left: 0;
-  padding: 4px;
+  padding: 8px;
   border: none;
   color: white;
   transition: 0.2s;
   font-family: inherit;
-  font-size: 14px;
+  font-size: 18px;
   border-bottom: 2px solid lighten(black, 40%);
   &:focus, &:hover {
     border-bottom-color: white;

@@ -3,7 +3,7 @@ section.page__reactions
 
   | {% unless page.comments_locked == true %}
   div.create_comment#form_move(style="flex-basis: 100%;")
-    form(method="POST", action="https://staticman-cass.herokuapp.com/v2/entry/{{site.gitlab.repo}}/{{site.gitlab.branch}}/comments")
+    form(method="POST", action="https://staticman-cass.herokuapp.com/v3/entry/gitlab/{{site.gitlab.repo}}/{{site.gitlab.branch}}/comments")
       //- input(name="fields[replying_to]", id="form_index", type="hidden", value="")
       input(name="options[redirect]", type="hidden", value="{{post.url}}")
       input(name="options[slug]", type="hidden", value="{{page.slug}}")

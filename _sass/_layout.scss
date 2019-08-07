@@ -38,7 +38,7 @@ body, html {
 }
 
 //=================================
-
+//only show last 2 months of bar data
 .week .d { display: none; }
 .week .d:nth-last-child(-n+62) {
   display: flex !important
@@ -478,9 +478,6 @@ input:-webkit-autofill {
         margin-bottom: 5px;
         margin-top: 30px;
         letter-spacing: -1px;
-        @media #{$breakpoint} {
-          text-align: center;
-        }
       }
       h1:first-child {
         margin-top: 0;

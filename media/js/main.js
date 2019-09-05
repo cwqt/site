@@ -58,7 +58,7 @@ document.addEventListener('click', function (event) {
 
 
 			d = new Date(event.target.id)
-			date.innerHTML = `<b>${d.getFullYear()}</b>년<b>${d.getMonth()}</b>달<b>${d.getDay()}</b>일`
+			date.innerHTML = `<b>${d.getFullYear()}</b>년<b>${d.getMonth()}</b>달<b>${d.getDate()}</b>일`
 			// date.innerHTML = d.getFullYear() + "년" + d.getMonth() + "달" + d.getDay() + "일";
 
 			var info = document.getElementById("info");

@@ -4,34 +4,51 @@ html(lang="en-GB")
   head
     | {% include head.html %}
   body
-    | {% if page.index %}
+    | {% if page.isIndex %}
+    .banner-wrapper
+      .banner-bar
+        .bar
+          .left
+            .hamburger.hamburger--collapse
+              .hamburger-box
+                .hamburger-inner
+          .center
+              .box
+                p 캐
+                p c
+                p 스
+                p x
+          .right
+
+    .banner-offset
     | {% endif %}
 
-    .bar
-      .left
-        h1 캐스
-      .center
-        h5
-          | {% if page.index %}
-          | {{ "now" | date: "%Y-%m-%d %H:%M" | formatted_time }} - @
-          a(href="https://gitlab.com/cxss/site/commit/GITCOMMIT") GITCOMMIT
-          | {% else %}
-          #url
-          | {% endif %}
-      .right
-        a(href="https://creativecommons.org/licenses/by-nc-sa/4.0/")
-          img(src="/media/cc.png")
-        a(href="https://gitlab.com/cxss")
-          img(src="/media/git.png")
-        a(href="https://webring.xxiivv.com/#random" target="blank_")
-          img(src="https://ftp.cass.si/www/webring.png")
-        a(href="https://{{site.title}}/feed.xml")
-          img(src="/media/rss.png")
-
-    hr.bline
-
-    .index
+    .content-wrapper
+      //- | {% include nav.html %}
       | {{ content }}
+
+    | {% if page.isIndex %}
+    script(src="https://code.jquery.com/jquery-3.4.1.min.js")
+    script.
+      var scrollTop = 0;
+      $(window).scroll(function(){
+        scrollTop = $(window).scrollTop();
+        //- $('.counter').html(scrollTop);
+        if (scrollTop >= 100) {
+          $('.banner-wrapper').addClass('scrolled');
+          $('.content-wrapper').addClass('scrolled');
+        } else if (scrollTop < 100) {
+          $('.banner-wrapper').removeClass('scrolled');
+          $('.content-wrapper').removeClass('scrolled');
+        } 
+      });
+    script.
+      var $hamburger = $(".hamburger");
+      $hamburger.on("click", function(e) {
+        $hamburger.toggleClass("is-active");
+        // Do something else, like open/close menu
+      });
+    | {% endif %}
 
     script(async="" src="https://www.googletagmanager.com/gtag/js?id=UA-76192160-1")
     script.
@@ -40,17 +57,17 @@ html(lang="en-GB")
       gtag('js', new Date());
       gtag('config', 'UA-76192160-1');
 
-    | {% if page.index == nil %}
-    script.
-      var pathArray = window.location.pathname.split('/');
-      var s = "";
-      var u = "";
-      pathArray.shift()
-      for (i = 0; i < pathArray.length; i++) {
-        u += "/"+pathArray[i]
-        s += "<span> / </span>";
-        s += '<a href="'+u+'">'+pathArray[i]+'</a>';
-      }
-      console.log(s)
-      document.getElementById("url").innerHTML = s;
-    | {% endif %}
+    //- | {% if page.isIndex == nil %}
+    //- script.
+    //-   var pathArray = window.location.pathname.split('/');
+    //-   var s = "";
+    //-   var u = "";
+    //-   pathArray.shift()
+    //-   for (i = 0; i < pathArray.length; i++) {
+    //-     u += "/"+pathArray[i]
+    //-     s += "<span> / </span>";
+    //-     s += '<a href="'+u+'">'+pathArray[i]+'</a>';
+    //-   }
+    //-   console.log(s)
+    //-   document.getElementById("url").innerHTML = s;
+    //- | {% endif %}

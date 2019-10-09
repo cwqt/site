@@ -153,6 +153,13 @@ ADMIRABLE
 
 ## Saphire Calypso
 
+tl;dr
+
+* Round 1 pass: 7169:8193(1024)
+* Round 2 pass: 97803453238809780877283348
+* Round 3 pass:
+* Round 4 pass:
+
 Researching Saphire Calypso revealed an absolute goldmine of informationa and similar 'rounds' of ARG.
 
 Apparently this kind of thing has happened 3 times before, each similar in style, cryptography/programming related.
@@ -198,7 +205,7 @@ The string of characters appears to be base64 because of the padding characters 
 There are 4 other files in this repository, POTATOES, MEAT, CARROTS and VITAMIX.
 
 **POTATOES** is a private key for something called `EC`, ellptical curve cryptography. I'm not sure what these keys are for though.  
-Here's a mirror: <https://ftp.cass.si/==QNwADO5k.txt>
+Here's a mirror: <https://ftp.cass.si/==QNwADO5k.plain>
 
 **MEAT** is equally as confusing:
 
@@ -225,7 +232,11 @@ The `0.048234 (0.0017) 12` corresponds to a line in the TCP diagram, `FIN,PSH 71
 
 `FIN;PSH = nextpass = 7169:8193(1024)`
 
-Not sure where to go from this. A day later the README was updated with a link to <https://www.youtube.com/embed/0tEaiyv5Ow0> and some hidden text.
+I think this is the end of round 1 since the README states that we are given a head start, yet others will have to wait until the 1st of August.
+
+## Round 2
+
+A day later the README was updated with a link to <https://www.youtube.com/embed/0tEaiyv5Ow0> and some hidden text.
 
 ```html
   <!-- #### -->
@@ -325,9 +336,28 @@ And for M, <https://www.abebooks.co.uk/servlet/BookDetailsPL?bi=30081796655&sear
 
 Concatenating M and N gives: 97803453238809780877283348 which is our next pass!
 
+Going to <https://purplewaterbottle.com/saphirecalypso> shows another link to a phpBB, <https://purplewaterbottle.com/F2D64AD97033074E/saphirecalypso/>, I tried to sign up but I think I'm too late for it :(
 
-Going to <https://purplewaterbottle.com/saphirecalypso> shows another link to a phpBB, <https://purplewaterbottle.com/F2D64AD97033074E/saphirecalypso/>
+The root of that domain is a site for some water distribution thingy, but all the links go to redcross, I noticed in the bottom left of the page there's an upside down question mark that links to: <http://purplewaterbottle.com/rainbowkitten/lander.php>
 
+Chat contains nothing but a few `<br>`s.
+
+Crypto is quite something, it lists and EC key and RSA private key, linked: <https://ftp.cass.si/==wMyAjMwA.plain>
+
+Files is interesting, it gives us an AES KEY;
+
+```
+enoovgUbyr_2016
+jaqiqkLqlp_2016
+```
+
+and a Virgenereire (sic) key: `Virgenereire`
+
+It also says: `Density has no impact on skillset. Working together is important.`
+
+---
+
+In july the following was posted by saphirecalypso.
 
 ```
 This forum is fruitful, useful, and fine.
@@ -373,7 +403,6 @@ August 1st
 ```
 
 ---
-
 
 On the 24th of June <https://ftp.cass.si/0gDMyADMwA.png> was posted in imgur by SC. Clearly some ROT text, the transcription:
 
@@ -435,11 +464,10 @@ The third one isn't at a ditch related place, but there is a building called 'Di
 
 ![](https://ftp.cass.si/==gM3MTO5k.png)
 
-
-
-### Round 2
-
 ### Round 3
+
+![](https://ftp.cass.si/4ADOyADMwA.png)
 
 ### Round 4
 
+![](https://ftp.cass.si/==AN3YTMwA.png)

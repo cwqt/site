@@ -1,9 +1,8 @@
 ---
 layout: post
-title: "Multiplayer and LOVE"
+title: "Multiplayer and LÖVE"
 date: 2019-02-25 4:35AM
 comments: true
-draft: true
 ---
 
 This is my second (technically 3rd) attempt at re-implementing that old flash game: [1066](https://www.kongregate.com/games/channelfour/1066). My first attempt, `1026` failed because of the way I went about attempting to write it - UI had been my focus, not the game logic, and so both became deeply intertwined, resulting in a totally monstrous pile of shit.
@@ -23,7 +22,7 @@ The way to go about this turns out to _waaay_ more complicated than I had initia
 
 # The network
 
-<img src="https://ftp.cass.si/=IDNxYDO5k.png" width="70%">
+![](https://ftp.cass.si/=IDNxYDO5k.png)
 
 In this diagram you'll see two Peers, Peer_1 and Peer_2, now communication between them would be fantastically easy if not for that box named 'NAT' sat between them and the internet. P2P networking in of itself can be quite easily accomplished without them, after all, all you're doing is telling a server to send x data to y destination.
 
@@ -35,7 +34,7 @@ Back in the day when ARPANET was being developed for implementation of TCP/IP th
 
 NAT or Network Address Translation, is pretty simple, you have a local network consisting of many devices that connects to a single NAT, which has a public IPv4 address, if you imagine 20 devices each with their own IP, IPv4 address space would get used up incredibly quickly. NAT solves this in that we no longer have to give out 20 IP addresses, but only one to the NAT.
 
-<img src="https://ftp.cass.si/=UDM5gzM5k.jpeg" widgth="60%">
+![](https://ftp.cass.si/=UDM5gzM5k.jpeg)
 
 Each device behind a NAT has a _local address_ of something like: 192.168.0.2 or 192.168.0.12 etc. When data is being sent from a device behind a NAT, each packet has a source address, that being it's local address. The NAT operates what's known as a _mapping table_ which simply re-writes that local address to it's own public IPv4 address. e.g.
 
@@ -83,13 +82,8 @@ There are a few ways to deal with this, the most popular being Relaying, i.e. yo
 
 Another, but more complex method of opening ports is via TCP Holepunching.
 
-## TCP holepunching
 
-*
-*
-*
-*
-*
 
+__to be continued__
 
 

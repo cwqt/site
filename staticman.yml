@@ -1,0 +1,17 @@
+comments:
+  allowedFields: ['name', 'email', 'message', 'replying_to']
+  requiredFields: ['name', 'message']
+  branch: 'master'
+  pullRequestBody: "New comment by {fields.name}"
+  commitMessage: "New comment by {fields.name}"
+  filename: "comment-{@timestamp}"
+  format: 'yaml'
+  moderation: true
+  path: "_data/comments/{options.slug}"
+  transforms:
+    email: 'md5'
+  generatedFields:
+    date: # Extended field (date)
+      type: date
+      options:
+        format: "iso8601"

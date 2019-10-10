@@ -1,0 +1,77 @@
+---
+
+- project: "PiSP 2.0"
+  date: "2018-02-15"
+  url: "https://gitlab.com/cxss/PiSP"
+  image: "pisp2.png"
+  desc: "Turning breadboard prototype into printed circuit board."
+
+- project: "1026" 
+  date: "2018-06-23" 
+  url: "https://gitlab.com/cxss/tentwosix" 
+  image: "1026.png" 
+  desc: "Turn-based strategy game inspired by 1066 - in progress." 
+
+- project: "DbSvr power controller" 
+  date: "2018-06-01" 
+  url: "" 
+  image: "pcpsu.png" 
+  desc: "Relay based controller, interfaced via APL. Distributes power to RAID array, switchbox and several RPi 3B's." 
+
+- project: "Möan.lua"
+  date: "2017-11-01"
+  url: "https://gitlab.com/cxss/Moan.lua"
+  image: "Moan.png"
+  desc: "A messagebox library for LÖVE."
+
+- project: "lssx & zephyr"
+  date: "2018-02-17"
+  url: "https://gitlab.com/cxss/zephyr"
+  image: "lssx.png"
+  desc: "LÖVE Space Shooter X. Written in MoonScript. Extended Project Qualification, scored 94%."
+
+- project: "BCDMP"
+  date: "2017-04-20"
+  url: "https://youtu.be/6ktINN6F7D4"
+  image: "elec6bcd.png"
+  desc: "A Cruel Angel's Thesis on BCD. Second year Electronics final project, scored 98%."
+
+- project: "elkCSS"
+  date: "2017-05-30"
+  url: "https://elkCSS.netlify.com/"
+  image: "elk.png"
+  desc: "A sickeningly simple and responsive CSS boilerplate."
+
+- project: "PiSP"
+  date: "2017-09-26"
+  url: "https://gitlab.com/cxss/PiSP"
+  image: "PiSP.jpg"
+  desc: "Experimenting with integrating hardware and software by making a handheld console, OS written in LOVE with imgui."
+
+- project: "miki.ai"
+  date: "2017-10-17"
+  url: "http://miki.ai"
+  image: "mikiai.png"
+  desc: "Popular (1 million+ user) Discord bot site."
+
+- project: "startpages.cf"
+  date: "2016-11-19"
+  url: ""
+  image: "stpgcf.png"
+  desc: "A lovely place to share & submit startpages."
+
+- project: "40x2 dev. board"
+  date: "2016-11-20"
+  url: ""
+  image: "40x2.jpg"
+  desc: "PICAXE 40x2 development board, complete with short-circuit protection, decoupling caps, high power relay output and LED I/O indicators."
+
+- project: "notify"
+  date: "2017-08-25"
+  url: "https://gitlab.com/cxss/notify"
+  desc: "Reminder notifications over dbus via naughty"
+
+- project: "shortbread"
+  date: "2017-11-19"
+  url: "https://gitlab.com/cxss/shortbread"
+  desc: "MoonScript Discord bot via Discordia"

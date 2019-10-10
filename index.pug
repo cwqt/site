@@ -1,0 +1,58 @@
+---
+layout: default
+index: true
+---
+
+style {}
+
+.calbox
+  | {% include nav.html %}
+  .stats
+    b LOG_COUNT
+    |  logs, 
+    b HOUR_COUNT
+    |  hours, updated 
+    b DAYS_AGO
+    |  day(s) ago.
+  .week#week
+    | {% include week.html %}   
+  br 
+  .calender#calender
+    | {% include calender.html %}
+  .caldesc
+    .item
+    span &nbsp;Writing
+    .item
+    span &nbsp;Visual
+    .item
+    span &nbsp;Audio
+
+    p#date 0000-00-00
+
+  hr
+  #click 
+    p Click a 
+      b day 
+      | to see info.
+  #hider
+
+
+    .day_info#day
+      div
+        h1#commits 0
+        p commits
+      div
+        h1#hours 0
+        p hours
+
+    .commits#info
+
+
+script(src="/media/js/main.js")
+
+script.
+  var compile_date = new Date('{{ site.time }}');
+  var today = new Date();
+  var timeDiff = Math.abs(today.getTime() - compile_date.getTime());
+  dayDifference = Math.ceil(timeDiff / (1000 * 3600 * 24));
+  document.body.innerHTML = document.body.innerHTML.replace('DAYS_AGO', dayDifference);

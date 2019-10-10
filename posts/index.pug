@@ -1,0 +1,14 @@
+---
+layout: page
+---
+
+| {% for post in site.categories.posts %}
+| {% if post.url %}
+| {% if post.draft == false %}
+a.post-line(href="{{ post.url }}")
+  code {{ post.date | date: "%Y-%m-%d %H:%M" | formatted_time }}
+  | &nbsp;&nbsp;&nbsp;
+  h4 {{ post.title }}
+| {% endif %}
+| {% endif %}
+| {% endfor %}

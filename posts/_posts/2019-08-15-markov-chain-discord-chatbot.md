@@ -89,9 +89,11 @@ So the probability of the word 'sit' being chosen after the word 'cat' is 2/4, .
 
 ![markov working](https://ftp.cass.si/=kTM5cTMwA.png)
 
-From a real world example, you can see the words 'mad' and 'man' grouped together, so I would've said for example "what a mad man".
+From a real world example, you can see the words 'mad' and 'man' grouped together, so I would've said for example "what a mad man". Here's an image that explains the process a little easier.
 
-Here's the resulting script I wrote for my MoonScript discord bot, Shortbread.
+![http://awalsh128.blogspot.com/2013/01/text-generation-using-markov-chains.html](https://ftp.cass.si/0MDMwADMwA.png)
+
+Here's the resulting script I wrote for my MoonScript discord bot, [Shortbread](https://gitlab.com/cxss/shortbread).
 
 ```moonscript
 json = require("rxi-json-lua")

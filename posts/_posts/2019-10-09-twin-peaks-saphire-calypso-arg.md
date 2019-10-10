@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Twin Peaks, Saphire Calypso and ARG
-date: 2019-10-19 5:07pm
+title: Twin Peaks ARG, SAPHIRECALYPSO & Jianting
+date: 2019-10-09 5:07pm
 comments: true
 ---
 
@@ -122,9 +122,9 @@ He links the following screenshots which show a person going by the same of SAPH
 ![](https://ftp.cass.si/==gN0QzN5k.png)
 ![](https://ftp.cass.si/==wNwQDO5k.png)
 
-I've seen a few of these things before, and like many before this guy absolutely reeks of someone trying to feed a story to the people solving this ARG. There's just something about his typing style, trying waaay too hard to act like they want no part of this, yet simulatanously giving us all screenshots and commentary on what's been happening.
+I've seen a few of these things before, but this guy especially reeks of someone trying to feed a narrative, OP is part of the ARG. There's just something about his typing style, trying way too hard to act like he wants no part, yet simulatanously giving us all screenshots and commentary on what's been happening.
 
-Personally I feel like if some guy whose gone out of his way to create an elaborate ARG and has all your personal details, address, name and phone number you wouldn't be making reddit posts telling them to "suck it".
+All of that infomation about him being blackmailed with his name/address/etc isn't verifiable by anyone but OP, so why should we trust that he isn't part of it? Personally I feel like a legitimate group whose gone out of their way to create an elaborate ARG/something more and has your doxx, you wouldn't be making reddit posts telling them to "suck it".
 
 SC (Saphire Calypso) reveals that we are welcome to join the final round (implying there were earlier ones) called LORECOCO which starts on the 13OCT19 and ends on 31OCT19.
 
@@ -150,6 +150,8 @@ HOUSEWIFE
 ADMIRABLE
 --KEYMAT ENDS--
 ```
+
+A few days after seeing this reddit, the `joudy-and-bob.network` was updated with a piece of obfuscated javascript, I haven't gotten around to analysing it yet, but it prints `You are searching. You have found. rc4. A natural curve to a longest extent.` 666 times. rc4 a reference to the rc4 cipher maybe?
 
 ## Saphire Calypso
 
@@ -194,7 +196,7 @@ The image speaks of '7 steps', so I guess this means there are 7 rounds of chall
 
 * 1st: Ciphers
 * 2nd: Much of the same
-* 3rd: Time around and a ketab khune brings your fame
+* 3rd: This time around and a ketab khune brings your fame
 * 4th: Taken from the third
 * 5th: An audiovisual treat
 * 6th: You meet the l33t
@@ -326,7 +328,7 @@ CONCAT(M,N) = next pass
 
 Both `M` and `N` are 13 digit codes, considering ISBNs have been used before and are 13 digits it would be wise to say those are the probable values.
 
-This leads me on to the comments next to `M` and `N`, initially I was very confused by these, I thought they  were just more keymats, but I think they're actually placed there such that we get the correct ISBNs.
+This leads me on to the comments next to `M` and `N`, I thought they were just more keymats, but I think they're actually placed there such that we get the correct ISBNs.
 
 By pure chance I found this amazon page: <https://www.amazon.com/Book-Law-Aleister-Crowley/dp/0877283346> and to my surprise the publisher is Weiser books! Published in 1987 also.
 
@@ -464,6 +466,30 @@ The third one isn't at a ditch related place, but there is a building called 'Di
 
 ![](https://ftp.cass.si/==gM3MTO5k.png)
 
+```
+All things are sinusoidal
+Continued endeavors
+round 2 ends
+拉斯维加斯：黄金 FADE STAY GREY 剩下
+Paths varried and wide, an execution of observation.
+Basic puzzles, obfuscation, no intel inside.
+Stangers and watchers, no one found the egg.
+Rabbit holes filled, a smile in mind.
+
+19 ascend globally, 478 attempted.
+Few succeeded, all were welcome.
+
+Jianting: 第3轮指示在论坛上
+Jianting: Round 3 instructions to follow on your regions forum.
+Jianting: دستورالعمل های 3 دور در سایت خانواده شما قرار دارد.
+```
+
+Prime number of people passed.
+
+> Stangers and watchers, no one found the egg.
+
+Sounds like no-one found their geocache.
+
 ### Round 3
 
 ![](https://ftp.cass.si/4ADOyADMwA.png)
@@ -471,3 +497,103 @@ The third one isn't at a ditch related place, but there is a building called 'Di
 ### Round 4
 
 ![](https://ftp.cass.si/==AN3YTMwA.png)
+
+### Messaged
+
+Earlier today (10/10/19) I was messaged on reddit by saphirecalypso, I can't reveal all because that "may result in your preclusion from future activities related to “SAPHIRE CALYPSO”, “LORE COCO”, and Jianting", so I guess I have to be somewhat hush hush.
+
+tl;dr: They liked this page, warned me of "enumerating other members" & they said they were interested in my [markov bot](https://gitlab.com/cxss/shortbread/blob/master/commands/markov.moon), that I'll be contact in 24 hours to be involved in LORE COCO and that researching some stuff would be useful to me in the future... they also said I should learn an entire language (lol) either Persian/Mandarin.
+
+Also, I found out that LMR stands for 'labour-management relations'.
+
+I've been thinking that CARROTS and MEAT are possibly PGP/EC encrypted messages, we're given the EC/RSA private keys on that purplebottle.com but the passphrase is unknown.
+
+### ECC & README.md string
+
+I've been doing some research on elliptical curve cryptography and how it's used, ECC doesn't have any specific tools for directly encrypting/decrypting data, instead users use a Diffie-Hellman key change to create a shared secret and then communicate using that, this is known as ECDH.
+
+When <https://github.com/saphirecalypso/F2D64AD97033074E> was created, a string (`V7LlqwnpEHM0ydD0MGfhv1sXc5UgG2p1kcz5iljuU0Q=`) was added to the README, alongside two EC private keys in __POTATOES__, I believe this string to be the shared secret between these and the other files, **MEAT** and **CARROTS** are potentially encrypted messages using these keys.
+
+Apparently openssl is quite particular about how the keys are ordered, a straight copy paste from the file results in:
+
+```
+read EC key
+unable to load Key
+4482551276:error:09FFF064:PEM routines:CRYPTO_internal:bad base64 decode:/BuildRoot/Library/Caches/com.apple.xbs/Sources/libressl/libressl-47.11.1/libressl-2.8/crypto/pem/pem_lib.c:801:
+```
+
+Instead I had to format it to strictly 64 characters per line, with the `---- BEGIN EC KEY etc..` on a new line, and the file ending on a new line.
+
+We can extract the public keys from both private keys with OpenSSL. <http://purplewaterbottle.com/rainbowkitten/Crypto/crypto.php> mentions `EC-Prime256v1` as the curve.
+
+```shell
+# extract public key from private key
+$ openssl ec -in k1_priv_key.pem -pubout -out k1_pub_key.pem
+$ openssl ec -in k2_priv_key.pem -pubout -out k2_pub_key.pem
+
+$ cat k1_pub_key.pem
+-----BEGIN PUBLIC KEY-----
+MIICODCCAa8GByqGSM49AgEwggGiAgEBMEwGByqGSM49AQECQQCq3Z242+nEiz/U
+5q4zyfwHyzCNs7PJ0g7WY5zKcDMIcX1NmwCbxmhCrs2hKuajgOYogf8vLYLGhSiq
+YFZYOkjzMIGEBECq3Z242+nEiz/U5q4zyfwHyzCNs7PJ0g7WY5zKcDMIcX1NmwCb
+xmhCrs2hKuajgOYogf8vLYLGhSiqYFZYOkjwBEB8u7z5RBz6t24YkORohOrjIfcM
+C8tJgVJ4l1BL7D42pivN+iMEl2VA9kUAhfLa4UXCJVO0ZXY2iRgOolcYZ0I+BIGB
+BGQOzlwSeIcXucG6BsvCpv66hYQkWMVt3p2xdY05wDE9grpRc1zbPqSZqnen1pQ6
+ZPej8l/ibwa1G6omlvqQNdpbU0vVlfWvD6LIkjdshKzhu04wGbcWNMARMRWcrgPO
+6dmTIYS+7yFr1x3y2t+Gpicwbs/5bbuLrOGYth4A+LMyAkEAqt2duNvpxIs/1Oau
+M8n8B8swjbOzydIO1mOcynAzCHBVPlxBTKkmGUGGYRl/rBBHHbHTgQhd2t21h5aC
+nKkAaQIBAQOBggAEACBgX3sJ7CZ3ZQDdzTMb3pT1sYtrcYlZ0QSLmIUEsLg8Ry0f
+9AplsfKnx1qvzPJuB/X/J0Yvfeb8KgvV0MyeeQySjn45jkkyTZn5iFqMjTPRaa+U
+rtsGsMTtnRO1449ka/QKvJXRiLNtGT7GejpBa+ISHbR9kA8u61f/8UUrk9c=
+-----END PUBLIC KEY-----
+$ cat k2_pub_key.pem
+-----BEGIN PUBLIC KEY-----
+MIICODCCAa8GByqGSM49AgEwggGiAgEBMEwGByqGSM49AQECQQCq3Z242+nEiz/U
+5q4zyfwHyzCNs7PJ0g7WY5zKcDMIcX1NmwCbxmhCrs2hKuajgOYogf8vLYLGhSiq
+YFZYOkjzMIGEBECq3Z242+nEiz/U5q4zyfwHyzCNs7PJ0g7WY5zKcDMIcX1NmwCb
+xmhCrs2hKuajgOYogf8vLYLGhSiqYFZYOkjwBEB8u7z5RBz6t24YkORohOrjIfcM
+C8tJgVJ4l1BL7D42pivN+iMEl2VA9kUAhfLa4UXCJVO0ZXY2iRgOolcYZ0I+BIGB
+BGQOzlwSeIcXucG6BsvCpv66hYQkWMVt3p2xdY05wDE9grpRc1zbPqSZqnen1pQ6
+ZPej8l/ibwa1G6omlvqQNdpbU0vVlfWvD6LIkjdshKzhu04wGbcWNMARMRWcrgPO
+6dmTIYS+7yFr1x3y2t+Gpicwbs/5bbuLrOGYth4A+LMyAkEAqt2duNvpxIs/1Oau
+M8n8B8swjbOzydIO1mOcynAzCHBVPlxBTKkmGUGGYRl/rBBHHbHTgQhd2t21h5aC
+nKkAaQIBAQOBggAEoI9gVsml+GNLxmilqvFxroMcAwEqk4ZFEtw0b1qGFJeyETgB
+CYsBUiFMubH15AIoWVDrSsBWXUOmJHRVbD1XDWa+OuEmFKLoZuyRczjRDhALkrst
+MgWvGD/iV8tPwTPTJLg78aD7lbAHvu3JbCICljBrj0t4CeQOHvfrIkIPQUc=
+-----END PUBLIC KEY-----
+                          
+$ openssl pkeyutl -derive -inkey k1_priv_key.pem -peerkey k2_pub_key.pem -out k1_shared_secret.bin
+$ openssl pkeyutl -derive -inkey k2_priv_key.pem -peerkey k1_pub_key.pem -out k2_shared_secret.bin
+
+# secrets are the same
+$ base64 k1_shared_secret.bin
+k3J6+adIZ/wuPlQosrA0vbdmF8P9XOKNrPMzRLFlnzmmuGYVFU9k8pODx5s8mQlQRLCOhS985drlgvOdKHBXhw==
+$ base64 k2_shared_secret.bin
+k3J6+adIZ/wuPlQosrA0vbdmF8P9XOKNrPMzRLFlnzmmuGYVFU9k8pODx5s8mQlQRLCOhS985drlgvOdKHBXhw==
+
+# encrypt & decrypt
+$ openssl enc -aes256 -base64 -k $(base64 k2_shared_secret.bin) -d -in cipher.txt -out plain_again.txt
+```
+
+Maybe the shared secret is what's meant as the 'combined key' that unlocks the gate on 13/10/19? Pure speculation at this point.
+
+While I was at it I thought'd I'd generate the public key for the EC key on purplewaterbottle/crypto
+
+```shell
+# ec
+$ cat krabbit_priv_key.pem
+-----BEGIN EC PRIVATE KEY-----
+MHcCAQEEIHuF5HHcI0ZwKHiAgOBO2yd/pG0gm5J4iU+KXjzgYZEBoAoGCCqGSM4
+9 AwEHoUQDQgAE+ofJXavdb/6dl8Rm8TRwkI/aVkzlK2hn0w05XL4wfo9Ivd8HP
+k6w zvCyNChq+fjExyCeP+q+OOx7GOkfvNCf2g==
+-----END EC PRIVATE KEY-----
+# ec
+$ cat krabbit_pub_key.pem
+-----BEGIN PUBLIC KEY-----
+MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE+ofJXavdb/6dl8Rm8TRwkI/aVkzl
+K2hn0w05XL4wfo9Ivd8HPk6wzvCyNChq+fjExyCeP+q+OOx7GOkfvNCf2g==
+-----END PUBLIC KEY-----
+```
+
+At this point I'm unsure of what to do, there's no real hints, just a collection of random characters that don't really have any meaning or connection that isn't simply created out of my own desperation to potentially fit some pieces together. Suffering from an extreme lack of information, not aided by the fact there there's 22 threads on that phpBB forum that I still don't have access to.
+

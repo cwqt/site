@@ -9,17 +9,17 @@ Since all that GDPR stuff came out a few months back I've been requesting my dat
 
 ![request discord data](https://ftp.cass.si/==ANygjMwA.png)
 
-Discord recently release their "Request all your data" button, intruigued as with other sites I requested it, a few days later a zip file dropped into my inbox.
+Discord recently release their "Request all your data" button, intrigued as with other sites I requested it, a few days later a zip file dropped into my inbox.
 
 ![discord sidebar](https://ftp.cass.si/==gNykTMwA.png)
 
 As with other services the data isn't structured very logically, nor are you given much help in understanding just what it is you're looking at, but CSVs are easy enough to understand. Discord obviously keeps every message you've ever posted on every guild (joined or not) and DMs for their indexing and history.
 
-In my case this resulted in 268,814 messages over a period of about 3 years, about 250 messages a day. A _lot_ of data. Scary to think that with enough sophistication someone could accuratately piece together your entire personality - alongside all the other metadata that's spread across different services someone with complete access could effectively track and monitor your entire life, "they" most likely do.
+In my case this resulted in 268,814 messages over a period of about 3 years, about 250 messages a day. A _lot_ of data. Scary to think that with enough sophistication someone could accurately piece together your entire personality - alongside all the other metadata that's spread across different services someone with complete access could effectively track and monitor your entire life, "they" most likely do.
 
-Someone suggested to me that I use all my messages to make a silly chatbot, Markov chains are often used for this with surprising intelligence at time.
+Someone suggested to me that I use all my messages to make a silly chatbot, Markov chains are often used for this (and other things like state machines/game AI) with surprising intelligence at times.
 
-Firstly I needed to extract all the data from the discord dump into something more manageable, removing all the garbage data like timestamps, attachements etc. I wrote this small python script that would collate the information into one big json file.
+Firstly I needed to extract all the data from the discord dump into something more manageable, removing all the garbage data like timestamps, attachments etc. I wrote this small python script that would collate the information into one big json file.
 
 ```python
 import os
@@ -49,7 +49,7 @@ The resulting json file was 7.7mb(!) in size.
 
 Markov chains are quite simple, at least in this case, essentially all that needs to be done is collect each word from each sentence, remove duplicates and order them into a list.
 
-After this we run over every word again, and find the probability that a word succeeds this word and place those words in a dict with a key:value pair of word:number_of_times_occured.
+After this we run over every word again, and find the probability that a word succeeds this word and place those words in a dict with a key:value pair of word:number_of_times_occurred.
 
 For example, take these short sentences.
 
@@ -67,7 +67,7 @@ cat:  []
 sits: []
 ```
 
-And then gather the occurances of words after these words,
+And then gather the occurrences of words after these words,
 
 ```
 the:  [cat, .]
@@ -103,7 +103,7 @@ isTrained = false
 
 return (...) ->
   if select(2, ...)[1] == nil
-  	--no specificed useage flag
+  	--no specified usage flag
     select(1,...).channel\send("train/post")    
     return
   switch select(2, ...)[1]
@@ -204,4 +204,4 @@ The result:
 
 Often times it just spews out complete gibberish because of the low depth of the markov chain, sometimes it is quite eerie when it says something coherent as it imitates my style of speech and typing. 
 
-The bot only considers the immediate word infront, so the 'gibberishness' of sentences can be be reduced by considering not only the word infront, but the word infront of that word, and so forth.
+The bot only considers the immediate word in-front, so the 'gibberishness' of sentences can be be reduced by considering not only the word in-front, but the word in-front of that word, and so forth.

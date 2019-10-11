@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "How my static file uploader works"
+title:  "JAMstack & file hosting"
 date:   2017-12-17 11:36AM
 comments: true
 ---

@@ -57,7 +57,8 @@ script.
       },
       error: function(res) {
         var status = document.getElementById("commentStatus");
-        status.innerHTML = "<i>"+res.status+" </i> " + res.responseJSON.errorCode + " : " + res.responseJSON.data.toString();
+        console.table(res);
+        status.innerHTML = "<i>"+res.status+": </i> " + res.responseJSON.message;
         button.innerHTML = "Error";
         setTimeout(function() {
           button.innerHTML = "Try again?"

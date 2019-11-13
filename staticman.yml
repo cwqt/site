@@ -2,8 +2,8 @@ comments:
   reCaptcha:
     enabled: true
     siteKey: "6LeDesIUAAAAAOfHUjsQDuvvRMirO0f_zmXUk0Vj"
-  #locally rsa encrypted secret key :)
-  secret: "bLYjLmU9FmpcHaSIfecyc5yBWwMCurrd2pOxxLqi2S/1dUrIUQNuu916cPpP+TWXfn+Q9OlP3RdukO5IHYJSsX0cWc8LBgK9m6wqUPocz5t8SjkQV36Z7K221LLKIzCweIOlcLcXb+VBOigbQCd36LQJn6PcJXJ2zV0U8hR39P2cgP7Wn7BPNOfUqRb1VoTtSPQlQlM0kXKqTEkG+2dfHgCRCR3YXyZ8puCx6ivCSVHxDc4clsJJUXse3SsntqLDf2/9e7XguvZq3MSCJGnLqT5mGftxvKLH7n4SAUQPu4RZ94iBwCsIMtdVgQsQmfKfQd9mb0INu8/ZhOFWQdtetw=="
+    #locally rsa encrypted secret key :)
+    secret: "bLYjLmU9FmpcHaSIfecyc5yBWwMCurrd2pOxxLqi2S/1dUrIUQNuu916cPpP+TWXfn+Q9OlP3RdukO5IHYJSsX0cWc8LBgK9m6wqUPocz5t8SjkQV36Z7K221LLKIzCweIOlcLcXb+VBOigbQCd36LQJn6PcJXJ2zV0U8hR39P2cgP7Wn7BPNOfUqRb1VoTtSPQlQlM0kXKqTEkG+2dfHgCRCR3YXyZ8puCx6ivCSVHxDc4clsJJUXse3SsntqLDf2/9e7XguvZq3MSCJGnLqT5mGftxvKLH7n4SAUQPu4RZ94iBwCsIMtdVgQsQmfKfQd9mb0INu8/ZhOFWQdtetw=="
   allowedFields: ['name', 'email', 'message', 'replying_to']
   requiredFields: ['name', 'message']
   branch: 'master'

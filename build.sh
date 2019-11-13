@@ -1,7 +1,9 @@
 #local set private variables
-set -a
-. ./.env
-set +a
+if test -f ".env"; then
+	set -a
+	. ./.env
+	set +a
+fi
 
 #check if compiler is installed
 if ! [ -x "$(command -v bliss)" ]; then

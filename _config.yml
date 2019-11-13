@@ -8,7 +8,7 @@ timezone: UTC+0
 safe: false
 future: true
 
-permalink: /:categories/:short_year/:y_day/:title
+permalink: /:categories/:title
 
 ftp:
   root: "https://ftp.cass.si/www"
@@ -27,6 +27,12 @@ show_drafts: false
 license: MIT
 author: cxss
 e-mail: m (at) cxss (dot) si
+
+#sed script replaces with true values from netlify
+#build variables
+recaptcha:
+  sitekey: CAPTCHA_SITE_KEY
+  secretkey: CAPTCHA_SECRET_KEY
 
 gitlab:
   username: cxss

@@ -6,3 +6,4 @@ secrets
 _site/
 .pug-cache/
 .sass-cache/
+.env

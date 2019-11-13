@@ -728,3 +728,30 @@ body {
     font-weight: normal !important
   }
 }
+
+
+._4picrow {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  
+  img {
+    width: 24% !important;
+  }
+}
+
+.commentFormInputBar {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  .g-recaptcha {
+    margin-left: auto;
+  }
+  @media #{$breakpoint-mobile} {
+    // flex-flow: column;
+    // align-items: flex-start;
+  }
+}
+

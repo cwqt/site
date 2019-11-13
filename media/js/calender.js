@@ -34,6 +34,8 @@ https.get('https://cs-d-api.herokuapp.com/days', (resp) => {
   resp.on('end', () => {
     days = JSON.parse(data)
     console.log("Got days: " + days.length)
+    console.log(days.length-182 + " too many, splicing.")
+    days = days.splice(days.length-182, days.length)
 
     for (i=0; i<days.length; i++) {
       x = "";

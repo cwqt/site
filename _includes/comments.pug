@@ -3,16 +3,22 @@ section.page__reactions
 
   | {% unless page.comments_locked == true %}
   div.create_comment#form_move(style="flex-basis: 100%;")
-    form(method="POST", action="https://staticman-cass.herokuapp.com/v3/entry/gitlab/{{site.gitlab.repo}}/{{site.gitlab.branch}}/comments")
+    p#commentStatus 
+    form#commentForm(method="POST", action="https://staticman-cass.herokuapp.com/v3/entry/gitlab/{{site.gitlab.repo}}/{{site.gitlab.branch}}/comments")
       //- input(name="fields[replying_to]", id="form_index", type="hidden", value="")
+      textarea(name="fields[message]", rows="3", placeholder="Add a public comment... (markdown supported)")
+
+      div.commentFormInputBar
+        input(name="fields[name]", type="text", placeholder="Display name")
+        input(name="fields[email]", type="email", placeholder="E-mail address (optional)", size="30")
+        button(type="submit" id="submit-button") Submit
+        div.g-recaptcha(data-sitekey="{{site.recaptcha.sitekey}}")
+
+      input(type="checkbox", style="display: none;", name="fields[honey]")
+      input(type="hidden", name="options[reCaptcha][siteKey]", value="{{ site.recaptcha.sitekey }}")
+      input(type="hidden", name="options[reCaptcha][secret]", value="{{ site.recaptcha.secretkey }}")
       input(name="options[redirect]", type="hidden", value="{{post.url}}")
       input(name="options[slug]", type="hidden", value="{{page.slug}}")
-      input(name="fields[name]", type="text", placeholder="Display name")
-      //- spam honey pot, hopefully minimises russian shitposting
-      input(name="fields[honey]", type="checkbox" style="display: none;")
-      input(name="fields[email]", type="email", placeholder="E-mail address (optional)", size="30")
-      button(type="submit") Submit
-      textarea(name="fields[message]", rows="3", placeholder="Add a public comment...")
   | {% endunless %}
 
   br
@@ -31,6 +37,35 @@ section.page__reactions
     | {% endfor %}
   | {% endif %}
   
+script(src='https://www.google.com/recaptcha/api.js')
+script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+script.
+  $('#commentForm').submit(function(e) {
+    var form = this;
+    var button = document.getElementById("submit-button");
+    button.innerHTML = "Sending..."
+    e.preventDefault();
+    $.ajax({
+      type: $(this).attr('method'),
+      url: $(this).attr('action'),
+      data: $(this).serialize(),
+      contentType: 'application/x-www-form-urlencoded',
+      success: function() {
+        var status = document.getElementById("commentStatus");
+        status.innerHTML = "<i>Success!</i> Your comment has been sent for <a href='https://gitlab.com/{{ site.gitlab.repo }}/merge_requests'>moderation.</a>"      
+        button.innerHTML = "Sent!";
+      },
+      error: function(res) {
+        var status = document.getElementById("commentStatus");
+        status.innerHTML = "<i>"+res.status+" </i> " + res.responseJSON.errorCode + " : " + res.responseJSON.data.toString();
+        button.innerHTML = "Error";
+        setTimeout(function() {
+          button.innerHTML = "Try again?"
+        }, 3000);
+      }
+    });
+  });
+
 script.
   //shitty glue code
   function setReplyable() {

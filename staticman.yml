@@ -8,6 +8,8 @@ comments:
   format: 'yaml'
   moderation: true
   path: "_data/comments/{options.slug}"
+  akismet:
+    enabled: true
   reCaptcha:
     enabled: true
     siteKey: "6Lf3fMIUAAAAAEAq75FlMdQXQ-LC2i0iCeoCcGrr"

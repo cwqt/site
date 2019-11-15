@@ -10,7 +10,7 @@ section.page__reactions
 
       div.commentFormInputBar
         input(name="fields[name]", type="text", placeholder="Display name")
-        input(name="fields[email]", type="email", placeholder="E-mail address (optional)", size="30")
+        input(name="fields[email]", type="email", placeholder="E-mail address (optional)", size="20")
         button(type="submit" id="submit-button") Submit
         div.g-recaptcha(data-sitekey="{{site.recaptcha.sitekey}}")
 
@@ -58,7 +58,7 @@ script.
       error: function(res) {
         var status = document.getElementById("commentStatus");
         console.table(res);
-        status.innerHTML = "<i>"+res.status+": </i> " + res.responseJSON.message;
+        status.innerHTML = "<i>"+res.status+": </i> " + res.responseJSON.message || res.responseJSON.errorCode;
         button.innerHTML = "Error";
         setTimeout(function() {
           button.innerHTML = "Try again?"

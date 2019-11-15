@@ -755,3 +755,31 @@ body {
   }
 }
 
+#search-bar {
+  background-color: white;
+  color: #333;
+  border-bottom: 0px;
+  border-radius: 3px;
+  text-align: right; 
+  background-size: 30px;
+  padding-left: 40px;
+  background-repeat: no-repeat;
+  background-position: 0px 3px;
+  background-image: url("data:image/svg+xml,%3Csvg class='vector' width='300px' height='300px' xmlns='http://www.w3.org/2000/svg' baseProfile='full' version='1.1'%3E%3Cpath id='layer_1' d='M185,95 L245,155 L185,215' style='stroke: rgb(0, 0, 0); stroke-width: 17.5; stroke-linecap: round; stroke-linejoin: round; fill: none; '%3E%3C/path%3E%3C/svg%3E");
+}
+
+
+#search-results {
+  list-style: none;
+  margin-top: 20px;
+  margin-left: 0;
+  .search-item {
+    margin-bottom: 15px;
+  }
+}
+
+
+
+
+
+

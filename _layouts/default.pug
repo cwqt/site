@@ -19,6 +19,7 @@ html(lang="en-GB")
           #url
           | {% endif %}
       .right
+        input#search-bar(placeholder="Search")
         a(href="https://creativecommons.org/licenses/by-nc-sa/4.0/")
           img(src="/media/cc.png")
         a(href="https://gitlab.com/cxss")
@@ -54,3 +55,10 @@ html(lang="en-GB")
       console.log(s)
       document.getElementById("url").innerHTML = s;
     | {% endif %}
+    script.
+      var search = document.getElementById("search-bar");
+      search.addEventListener("keyup", function(event) {
+        if (event.key === "Enter") {
+          window.location.href = window.location.origin + "/search?query=" + search.value;
+        }
+      });

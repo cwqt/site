@@ -12,9 +12,9 @@ comments:
     enabled: true
   reCaptcha:
     enabled: true
-    siteKey: "6LcwHsMUAAAAANqj7CBp6xkfKiC-CGrM2EK82WFH"
+    siteKey: "6Lf3fMIUAAAAAEAq75FlMdQXQ-LC2i0iCeoCcGrr"
     #locally rsa encrypted secret key
-    secret: "mGU92/QaU3MFDzBVpSAn2lyE6b+mcdZH6S0lGjwYYmHujYwxgHXcdC2+8yWEXjZeTpvdyzYTvPv5TyAr71mMt9iWi4WJa4+Bg2PeGF58m0Ww/8yZkWlbQIwHZqiKl7o+Ierq0/MebQUm7Wh7USB9JtXgGPwLe88o3tQQEK99TKYJLExj2fxpwm/8Be7DCJpv1UVLB91g2L/m8rZYAGEZhHqaloDmYIVp+oWQNntM3Mph9niCyJWL5AW0EL37vfdUBhaxyv2ESJJVnN9teMtiQKA/Ud91J0NuwiwMr5N7LWD+AoKBlvrzPva90wCCqZE8ylUQhfwA1zdzy8BiqJPHbA=="
+    secret: "mPRGatatb2r3OcN+c4knPlNvJbs94bO97+2B+B8MKO82rHg1BDgvhO+qNGlYipe6fheSzaPekiHlowlTW00YYmvukLrbZFDH9vbJEEerAezZWfJjPYa/nK50aG+iaJ7Yzzdg7MMAadr0jTO1GbPSYEZBuNV5paW49jjmncbK5ikkmqLQZ7KUxp6w1keZvfDKlF0MpMDUPGGtIip6H44F3Zw5dlt61eV2RoAWdrvhS9ksRSl7r5+ZuS2P1stjfcXqj7SiqhycO2XDyh+6i5NwRih5SkurpmBSiQH6MxzUEqWviE7/z6Or/9HneVmVdvT1+f9izGwy++3wJpxdbFL1hQ=="
   transforms:
     email: 'md5'
   generatedFields:

@@ -20,11 +20,11 @@ https.get('https://cs-d-api.herokuapp.com/days', (resp) => {
   resp.on('data', (chunk) => { data += chunk; });
   resp.on('end', () => {
     days = JSON.parse(data);
-    longestDay = getLongestDay(days.length-183, days);//should really async await
+    getLongestDay(days.length-183, days);//should really async await
   });
 });
 
-function getLongestDay(duration) {
+function getLongestDay(duration, days) {
 	let longest = "";
 	https.get("https://cs-d-api.herokuapp.com/days/longest?duration="+duration, (resp) => {
 		console.log("Getting the longest day...")

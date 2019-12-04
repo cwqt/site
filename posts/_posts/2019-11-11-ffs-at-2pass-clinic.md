@@ -6,7 +6,7 @@ comments: true
 ---
 
 It's hard to believe that only 8 months ago I was making my plans to drop out of uni to pursue FFS - not exactly something I considered lightly - but the thought of spending 4 years doing a degree looking like this was reason enough..., here I am now though, mostly out of the woods in regards to swelling and with a new face 😌  
-Just to get it out of the way the surgery was just short of £16,000, and I spent another \~£1,000 on flights, taxis, x-rays & passports + other misc. stuff... like yogurts.
+Just to get it out of the way the surgery was just short of £16,000, and I spent another \~£1,000 on flights, taxis, x-rays & passports + other misc. stuff... like yogurts. For that amount I got: rhinoplasty, chin recontouring with advancement & liposuction, type 1 forehead reconstruction (orbital rim shave), browlift and a hairline advancement.
 
 I've been at 2pass clinic since the 4th of November, but in Belgium since the third. Overall my experience was pretty good, apart from feeling like total garbage and being mostly drugged up it wasn't as bad or nearly as painful as I was expecting. I would definitely recommend 2pass to anyone looking into FFS.
 

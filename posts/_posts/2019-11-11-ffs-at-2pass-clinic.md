@@ -166,6 +166,12 @@ I read online you're not supposed to wear glasses for 4-8 weeks after rhinoplast
 
 Going to try and take it easy over the next few weeks, I was thinking I might try my hand at making some of these little things on the left for people as gifts since I still have a bunch of 1206 leds and brass rod hanging about from making my bf's christmas present.
 
-Anyway, sort of an anti-climatic end to this post - but that's how this surgery is, it isn't the peak of my life, it's just a stepping stone/thing that needs to be done so I can begin to live it in an authentic way, for so long I've felt the need to hide from people and opportunities, at least now maybe I will have the confidence to be more outgoing which is as much as I could've ever asked for from this surgery.
+Anyway, sort of an anti-climatic end to this post - but that's how this surgery is, it isn't the peak of my life, it's just a stepping stone/thing that needs to be done so I can begin to live it in an authentic way - hell, just to go outside even, for so long I've felt the need to hide from people and opportunities, at least now maybe I will have the confidence to be more outgoing which is as much as I could've ever asked for from this surgery.
 
 So my closing thoughts - if you want FFS should you go to 2pass? Definitely, 100% recommend, super amazing staff, super amazing surgeons and generally just a pleasant (as can possibly be) experience. Maybe in a few months when I'm looking better I'll post an update, until then 👋
+
+### update 30/11/19
+
+sea cow arrived home safely... 🤗
+
+![](https://ftp.cass.si/=gjMzIDMwA.jpeg)

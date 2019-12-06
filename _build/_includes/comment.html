@@ -1,0 +1,24 @@
+
+<article class="js-comment comment {% unless include.replying_to == 0 %}child{% endunless %}" id="comment{% unless include.r %}{{ index | prepend: '-' }}{% else %}{{ include.index | prepend: '-' }}{% endunless %}">
+  <div class="comment__header">
+    <p class="comment__author-name">{{ include.name }}</p>
+    <p>- </p>
+    <div class="comment__timestamp"><a href="#comment{% if r %}{{ index | prepend: '-' }}{% else %}{{ include.index | prepend: '-' }}{% endif %}" title="Permalink to this comment">
+        <time datetime="{{ include.date | date_to_xmlschema }}">{{ include.date }}</time></a></div>
+    <p class="comment__email">#{{ include.email }}</p>
+  </div>
+  <div class="comment__content">{{ include.message | markdownify }}</div>{% unless include.replying_to != 0 or page.comments_locked == true %}
+  <div class="comment__reply"><a class="btn" rel="nofollow" href="#comment-{{ include.index }}" onclick="return moveForm('comment-{{ include.index }}', '{{ include.index }}', 'respond', '{{ page.slug }}')">Reply to {{ include.name }}</a></div>{% endunless %}
+</article>{% capture i %}{{ include.index }}{% endcapture %}
+{% assign replies = site.data.comments[page.slug] | sort | where_exp: 'comment', 'comment[1].replying_to == i' %}
+{% for reply in replies %}
+{% assign index       = forloop.index | prepend: '-' | prepend: include.index %}
+{% assign replying_to = reply[1].replying_to | to_integer %}
+{% assign avatar      = reply[1].avatar %}
+{% assign email       = reply[1].email %}
+{% assign name        = reply[1].name %}
+{% assign url         = reply[1].url %}
+{% assign date        = reply[1].date %}
+{% assign message     = reply[1].message %}
+{% include comment.html index=index replying_to=replying_to avatar=avatar email=email name=name url=url date=date message=message %}
+{% endfor %}

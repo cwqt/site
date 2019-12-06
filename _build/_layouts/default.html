@@ -1,0 +1,52 @@
+<!DOCTYPE html><!--  Last updated: {{ "now" | date: "%Y-%m-%d %H:%M" }}. -->
+<html lang="en-GB">
+  <head>{% include head.html %}</head>
+  <body>
+    {% if page.index %}
+    {% endif %}
+    <div class="bar">
+      <div class="left">
+        <h1>캐스</h1>
+      </div>
+      <div class="center">
+        <h5>
+          {% if page.index %}
+          {{ "now" | date: "%Y-%m-%d %H:%M" | formatted_time }} - @<a href="https://gitlab.com/cxss/site/commit/GITCOMMIT">GITCOMMIT</a>{% else %}
+          <div id="url"></div>{% endif %}
+        </h5>
+      </div>
+      <div class="right"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="/media/cc.png"></a><a href="https://gitlab.com/cxss"><img src="/media/git.png"></a><a href="https://webring.xxiivv.com/#random" target="blank_"><img src="https://ftp.cass.si/www/webring.png"></a><a href="https://{{site.title}}/feed.xml"><img src="/media/rss.png"></a></div>
+    </div>
+    <hr class="bline">
+    <div class="index">{{ content }}</div>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-76192160-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-76192160-1');
+      
+    </script>{% if page.index == nil %}
+    <script>
+      var pathArray = window.location.pathname.split('/');
+      var s = "";
+      var u = "";
+      pathArray.shift()
+      for (i = 0; i < pathArray.length; i++) {
+        u += "/"+pathArray[i]
+        s += "<span> / </span>";
+        s += '<a href="'+u+'">'+pathArray[i]+'</a>';
+      }
+      console.log(s)
+      document.getElementById("url").innerHTML = s;
+    </script>{% endif %}
+    <script>
+      var search = document.getElementById("search-bar");
+      search.addEventListener("keyup", function(event) {
+        if (event.key === "Enter") {
+          window.location.href = window.location.origin + "/search?query=" + search.value;
+        }
+      });
+    </script>
+  </body>
+</html>

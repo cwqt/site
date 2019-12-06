@@ -1,0 +1,43 @@
+---
+---
+
+/*=== font settings ===*/
+$base-title-family: 'Gotham', Gotham, Arial, san-serif;
+$base-font-family:  'Helvetica', serif;
+$base-font-size:    16px;
+$base-font-weight:  400;
+$small-font-size:   $base-font-size * 0.75;
+$medium-font-size:  $base-font-size * 1.333;
+$big-font-size:     $base-font-size * 4;
+$base-line-height:  1.5;
+
+/*== sizes, spacing ===*/
+$spacing-unit:      40px;
+$container-width:   60vw;
+$content-width:     60%;
+
+/*=== colours ===*/
+$text-color:        #333;
+$background-color:  #000; /*#a4c4d3*/
+
+$transition-time:   0.2s;
+
+$highlight-normal:  #e8e8ee;
+$highlight-focus:   #333;
+
+$spacing-unit: 10px;
+
+@charset "utf-8";
+
+// if screen width LESS than $breakpoint then ...
+// @media #{$breakpoint}
+$breakpoint-mobile: "only screen and (max-width : 720px)";
+$breakpoint: "only screen and (max-width : 1200px)";
+$breakpoint-desktop: "only screen and (min-width : 1200px)";
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+        "base",
+        "layout",
+        "syntax-highlighting"
+;

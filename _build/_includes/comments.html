@@ -1,0 +1,87 @@
+
+<section class="page__reactions">
+  <h3>Comments</h3>{% unless page.comments_locked == true %}
+  <div class="create_comment" id="form_move" style="flex-basis: 100%;">
+    <p id="commentStatus"> </p>
+    <form id="commentForm" method="POST" action="https://staticman-cass.herokuapp.com/v3/entry/gitlab/{{site.gitlab.repo}}/{{site.gitlab.branch}}/comments">
+      <textarea name="fields[message]" rows="3" placeholder="Add a public comment... (markdown supported)"></textarea>
+      <div class="commentFormInputBar">
+        <input name="fields[name]" type="text" placeholder="Display name"/>
+        <input name="fields[email]" type="email" placeholder="E-mail address (optional)" size="20"/>
+        <button type="submit" id="submit-button">Submit</button>
+        <div class="g-recaptcha" data-sitekey="{{site.recaptcha.sitekey}}"></div>
+      </div>
+      <input type="checkbox" style="display: none;" name="fields[honey]"/>
+      <input type="hidden" name="options[reCaptcha][siteKey]" value="{{ site.recaptcha.sitekey }}"/>
+      <input type="hidden" name="options[reCaptcha][secret]" value="{{ site.recaptcha.secretkey }}"/>
+      <input name="options[redirect]" type="hidden" value="{{post.url}}"/>
+      <input name="options[slug]" type="hidden" value="{{page.slug}}"/>
+    </form>
+  </div>{% endunless %}<br/>{% if site.data.comments[page.slug] %}
+  <div class="js-comments" id="comments">
+    {% assign comments = site.data.comments[page.slug] | sort | where_exp: 'comment', 'comment[1].replying_to == nil' %}
+    {% for comment in comments %}
+    {% assign index       = forloop.index %}
+    {% assign replying_to = comment[1].replying_to | to_integer %}
+    {% assign email       = comment[1].email %}
+    {% assign name        = comment[1].name %}
+    {% assign date        = comment[1].date %}
+    {% assign message     = comment[1].message %}
+    {% include comment.html index=index date=date replying_to=replying_to email=email name=name message=message %}
+    {% endfor %}
+  </div>{% endif %}
+</section>
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+  $('#commentForm').submit(function(e) {
+    var form = this;
+    var button = document.getElementById("submit-button");
+    button.innerHTML = "Sending..."
+    e.preventDefault();
+    $.ajax({
+      type: $(this).attr('method'),
+      url: $(this).attr('action'),
+      data: $(this).serialize(),
+      contentType: 'application/x-www-form-urlencoded',
+      success: function() {
+        var status = document.getElementById("commentStatus");
+        status.innerHTML = "<i>Success!</i> Your comment has been sent for <a href='https://gitlab.com/{{ site.gitlab.repo }}/merge_requests'>moderation.</a>"      
+        button.innerHTML = "Sent!";
+      },
+      error: function(res) {
+        var status = document.getElementById("commentStatus");
+        console.table(res);
+        status.innerHTML = "<i>"+res.status+": </i> " + res.responseJSON.message || res.responseJSON.errorCode;
+        button.innerHTML = "Error";
+        setTimeout(function() {
+          button.innerHTML = "Try again?"
+        }, 3000);
+      }
+    });
+  });
+  
+</script>
+<script>
+  //shitty glue code
+  function setReplyable() {
+    var input = document.createElement("input");
+    input.type = "hidden";
+    input.name = "fields[replying_to]";
+    input.id = "form_index";
+    form = document.getElementsByTagName("FORM")[0];
+    form.appendChild(input);
+  }
+  
+  function moveForm(commId, parentId, respondId, postId) {
+    document.getElementById(commId).appendChild(document.getElementById("form_move"));
+    if (document.getElementById("form_index")) {
+      // remove old replying_to
+      var input = document.getElementById("form_index");
+      input.parentNode.removeChild(input);
+      setReplyable();
+    } else { setReplyable(); }
+    document.getElementById("form_index").value = parentId;
+    console.log(document.getElementById("form_index").value);
+  }
+</script>

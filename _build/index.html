@@ -1,0 +1,44 @@
+---
+layout: default
+index: true
+isIndex: true
+---
+
+
+<style>{}</style>
+<div class="calbox">{% include nav.html %}
+  <div class="stats"><b>LOG_COUNT</b> logs, <b>HOUR_COUNT</b> hours, updated <b>DAYS_AGO</b> day(s) ago.</div>
+  <div class="week" id="week">{% include week.html %}   </div><br/>
+  <div class="calender" id="calender">{% include calender.html %}</div>
+  <div class="caldesc">
+    <div class="item"></div><span>&nbsp;Writing</span>
+    <div class="item"></div><span>&nbsp;Visual</span>
+    <div class="item"></div><span>&nbsp;Audio</span>
+    <p id="date">0000-00-00</p>
+  </div>
+  <hr/>
+  <div id="click"> 
+    <p>Click a <b>day </b>to see info.</p>
+  </div>
+  <div id="hider">
+    <div class="day_info" id="day">
+      <div>
+        <h1 id="commits">0</h1>
+        <p>commits</p>
+      </div>
+      <div>
+        <h1 id="hours">0</h1>
+        <p>hours</p>
+      </div>
+    </div>
+    <div class="commits" id="info"></div>
+  </div>
+</div>
+<script src="/media/js/main.js"></script>
+<script>
+  var compile_date = new Date('{{ site.time }}');
+  var today = new Date();
+  var timeDiff = Math.abs(today.getTime() - compile_date.getTime());
+  dayDifference = Math.ceil(timeDiff / (1000 * 3600 * 24));
+  document.body.innerHTML = document.body.innerHTML.replace('DAYS_AGO', dayDifference);
+</script>

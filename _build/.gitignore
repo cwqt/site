@@ -1,9 +1,0 @@
-node_modules/
-data/**/hash.*
-static/
-public/
-secrets
-_site/
-.pug-cache/
-.sass-cache/
-.env

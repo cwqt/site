@@ -36,11 +36,11 @@ After spending all of an hour thinking about possible improvements, I came up wi
 
 The result:
 
-{% youtube "https://www.youtube.com/watch?v=UWbdnzA8E5I" %}
+{% youtube "https://www.youtube.com/watch?v=kdhSb6QyI5Y" %}
 
 <br>
 
-Pretty slick eh?
+Pretty cool hey?
 
 ## What even is JAMstack?
 

@@ -9,7 +9,6 @@ fi
 if ! [ -x "$(command -v bliss)" ]; then
   echo 'Error: jekyll-bliss is not installed.' >&2
   npm install jekyll-bliss -g
-  exit 1
 fi
 
 node media/js/calender.js

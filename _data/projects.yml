@@ -1,26 +1,71 @@
 ---
 
+- project: ftp.cass.si
+  date: 2019-12-01
+  url: https://ftp.cass.si/
+  desc: pomf-like JAMstack file uploader with image compression
+
+- project: qrp
+  date: 2019-04-26
+  url: https://gitlab.com/cxss/qrp
+  desc: Quick Rotonde Poster, a cli utility for posting to Rotonde
+
+- project: utf8garden
+  date: 2019-08-19
+  url: https://twitter.com/utf8garden
+  desc: Twitter bot that randomly generates gardens made of emojis
+
+- project: heart
+  date: 2019-11-18
+  url: https://gitlab.com/cxss/heart
+  desc: Nano driven ambient light-thingy using addressable WS2812B LED's.
+
+- project: moisture.track
+  date: 2019-06-27
+  url: https://gitlab.com/cxss/moisture.track
+  desc: Plant telemetry monitor and visualiser, React+Redux, deployed on Heroku
+
+- project: days
+  date: 2019-04-21
+  url: https://gitlab.com/cxss/days
+  desc: Activity tracker for macOS with front-end visualisation
+
+- project: daughter.systems
+  date: 2019-12-03
+  url: https://daughter.systems/
+  desc: open-source hardware development
+
+- project: cui
+  date: 2019-10-11
+  url: https://gitlab.com/cxss/cui
+  desc: ecs löve ui library for my game; <b>g</b>
+
+- project: hazumu
+  date: 2019-10-17
+  url: https://gitlab.com/cxss/hazumu
+  desc: re-make of a löve game I made years ago, for mobile
+
 - project: "PiSP 2.0"
   date: "2018-02-15"
   url: "https://gitlab.com/cxss/PiSP"
   image: "pisp2.png"
-  desc: "Turning breadboard prototype into printed circuit board."
+  desc: "PSP-like handheld console using the Pi Zero with an ImGui OS"
 
-- project: "1026" 
-  date: "2018-06-23" 
-  url: "https://gitlab.com/cxss/tentwosix" 
+- project: "g" 
+  date: "2019-06-23" 
+  url: "https://gitlab.com/cxss/g" 
   image: "1026.png" 
-  desc: "Turn-based strategy game inspired by 1066 - in progress." 
+  desc: "Turn-based strategy game inspired by 1066 - MoonScript client & P2P matchmaking server, Express.js & MongoDB user server" 
 
 - project: "DbSvr power controller" 
   date: "2018-06-01" 
-  url: "" 
+  url: "https://www.youtube.com/watch?v=xRp6x2r2-fs" 
   image: "pcpsu.png" 
-  desc: "Relay based controller, interfaced via APL. Distributes power to RAID array, switchbox and several RPi 3B's." 
+  desc: "Relay power controller, interfaced via APL. Distributes power to RAID array, switchbox and several RPi 3B's." 
 
 - project: "Möan.lua"
   date: "2017-11-01"
-  url: "https://gitlab.com/cxss/Moan.lua"
+  url: "https://love2d.org/forums/viewtopic.php?t=84110"
   image: "Moan.png"
   desc: "A messagebox library for LÖVE."
 
@@ -40,13 +85,7 @@
   date: "2017-05-30"
   url: "https://elkCSS.netlify.com/"
   image: "elk.png"
-  desc: "A sickeningly simple and responsive CSS boilerplate."
-
-- project: "PiSP"
-  date: "2017-09-26"
-  url: "https://gitlab.com/cxss/PiSP"
-  image: "PiSP.jpg"
-  desc: "Experimenting with integrating hardware and software by making a handheld console, OS written in LOVE with imgui."
+  desc: "A simple and responsive CSS boilerplate"
 
 - project: "miki.ai"
   date: "2017-10-17"
@@ -64,7 +103,7 @@
   date: "2016-11-20"
   url: ""
   image: "40x2.jpg"
-  desc: "PICAXE 40x2 development board, complete with short-circuit protection, decoupling caps, high power relay output and LED I/O indicators."
+  desc: "PICAXE 40x2 development board, serial programming interface, short-circuit protection & LED io indicators"
 
 - project: "notify"
   date: "2017-08-25"
@@ -74,4 +113,4 @@
 - project: "shortbread"
   date: "2017-11-19"
   url: "https://gitlab.com/cxss/shortbread"
-  desc: "MoonScript Discord bot via Discordia"
+  desc: "MoonScript Discord bot using Discordia"

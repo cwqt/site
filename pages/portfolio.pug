@@ -21,12 +21,13 @@ a.post-line(href="{{ paper.url }}")
 
 hr
 
-| {% for paper in site.data.projects %}
-a.post-line#has_desc(href="{{ paper.url }}")
-  code {{ paper.date | date: "%b %d, %y"}}
+| {% assign sorted = site.data.projects | sort: 'date' | reverse %}
+| {% for project in sorted  %}
+a.post-line#has_desc(href="{{ project.url }}")
+  code {{ project.date | date: "%b %d, %y"}}
   | &nbsp;&nbsp;&nbsp;
-  h4 {{ paper.project }}
-  span {{ paper.desc }}
+  h4 {{ project.project }}
+  span {{ project.desc }}
 | {% endfor %}
 
 .project-section

@@ -19,8 +19,8 @@ the services.
 So to not waste £20 on filters I 3d-modelled my own adapter.  
 The model is composed of two parts, the thread and a bit that sits on top of the filter.
 
-<https://ftp.cass.si/009~24g=5.stl>
-<https://ftp.cass.si/f8579=izI.stl>
+* <https://ftp.cass.si/009~24g=5.stl>
+* <https://ftp.cass.si/f8579=izI.stl>
 
 Firstly, print the two pieces, I used an Ender3 3d-printer with 1.75mm PLA grey filament.
 

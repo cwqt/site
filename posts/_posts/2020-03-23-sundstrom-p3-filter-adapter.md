@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Sundström P3 Filter to 40mm NATO adapter
+title: Sundström P3 filter to 40mm NATO adapter
 date: 2020-03-23 8:01pm
 comments: true
 ---

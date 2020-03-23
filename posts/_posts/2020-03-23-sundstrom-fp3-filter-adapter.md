@@ -39,4 +39,5 @@ pushed on the adapter to create a seal.
 ![](https://ftp.cass.si/14806e0e0.jpeg)
 ![](https://ftp.cass.si/ew4wgm526.jpeg)
 
-And tada...!, hopefully this helps someone out in the same situation :)
+And tada...!, hopefully this helps someone out in the same situation :)  
+I'm working on the pre-filter part since you can't exactly glue that bit on, I'll update this post when it's done.

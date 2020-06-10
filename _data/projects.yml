@@ -1,5 +1,10 @@
 ---
 
+- project: shrubs.io
+  date: 2020-03-14
+  url: https://gitlab.com/cxss/hydroponics
+  desc: IoT plant & garden management w/ social networking features
+
 - project: ftp.cass.si
   date: 2019-12-01
   url: https://ftp.cass.si/

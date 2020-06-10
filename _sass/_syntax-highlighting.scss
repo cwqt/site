@@ -1,5 +1,5 @@
 pre, code { font-size: 16px; }
-code { color: white; }
+code { color: #333; }
 pre {
   margin-bottom: 2*10px !important;
   // overflow: hidden;
@@ -20,6 +20,10 @@ code.highlighter-rouge {
 
 .highlight code, .highlight pre {
   color:#fdce93;
+  margin-left: -40px;
+  width: calc(100% + 81px);
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 /* Dracula Theme v1.2.5

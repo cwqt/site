@@ -6,7 +6,7 @@ layout: page
 | {% if post.url %}
 | {% if post.draft == false %}
 a.post-line(href="{{ post.url }}")
-  code {{ post.date | date: "%Y-%m-%d %H:%M" | formatted_time }}
+  code {{ post.date | date: "%d%m%y" }}
   | &nbsp;&nbsp;&nbsp;
   h4 {{ post.title }}
 | {% endif %}

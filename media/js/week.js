@@ -49,7 +49,7 @@ function buildWeeks(days, longestDay) {
 
 		//TOFIX: something to do with app.py date list direction & longest day
 		//lst[-direction:] from top or bottom?
-		ratio = (sum/longestDay)*60//100
+		ratio = (sum/longestDay)*100
 
 		ratio = parseFloat(ratio).toFixed(2)
 		x = "";

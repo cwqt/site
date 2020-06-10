@@ -3,13 +3,6 @@ const https = require('https');
 
 console.log("\nRunning calender...")
 
-colors = {
-  "writing": "#7b6f9d",
-  "visual": "#4b4363",
-  "audio": "#222222",
-  "none": "#333"
-}
-
 //html string for file
 var s = ""
 
@@ -38,9 +31,6 @@ https.get('https://cs-d-api.herokuapp.com/days', (resp) => {
     days = days.splice(days.length-182, days.length)
 
     for (i=0; i<days.length; i++) {
-      x = "";
-      x += `<div class="item" id="${days[i].date}" `
-
       var sum = 0.00
       t = days[i].info
       var max = "writing"
@@ -51,11 +41,9 @@ https.get('https://cs-d-api.herokuapp.com/days', (resp) => {
         }
       }
       //tiny hours shoud be ignored
-      if (sum < 1) {
-        max = "none";
-      }
+      if (sum < 1 && max == "writing") { max = "none" }
 
-      x += `style="background-color: ${colors[max]}; cursor:pointer;">`
+      let x = `<div class="item ${max}" id="${days[i].date}">`
       if (days[i].commits.length > 0) {
         x += '●';
       }

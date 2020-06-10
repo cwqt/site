@@ -1,7 +1,0 @@
----
-
-- name: "LiPo Charge Controller"
-  price: "£6.50"
-  image: "https://media.discordapp.net/attachments/264522461943562244/552222348757958656/unknown.png"
-  desc: "Similar to the Adafruit PowerBoost 1000. 3.7V LiPo charge controller with 5V boost converter, 2 pin JST plug output, micro-USB/5.5x2.1mm DC jack input.<br>All components soldered."
-  links: {EasyEDA: "https://easyeda.com/ttxi/li-po-power-controller"}

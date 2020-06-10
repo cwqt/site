@@ -47,12 +47,12 @@ img {
 
 /*=== Text ===*/
 p, li {
-    font-weight: 300;
+    // font-weight: 300;
     letter-spacing: 0.2px;
 }
 
 .MathJax_SVG_Display {
-  // color: darken(white,5%) !important;
+  color: darken(white,5%) !important;
 }
 
 p {
@@ -141,6 +141,7 @@ td {
     background-color: #909090;
 }
 
+
 .icon {
     > svg {
         display: inline-block;
@@ -166,7 +167,7 @@ ul {
 /*===== Horizontals =====*/
 hr {
     margin: 30px 0;
-    background: #f4f4f4;
+    background: #333;
     opacity: .2;
     height: 1.5px;
     border: none;
@@ -179,13 +180,13 @@ input, textarea, button {
   margin-left: 0;
   padding: 8px;
   border: none;
-  color: white;
+  color: #333;
   transition: 0.2s;
   font-family: inherit;
   font-size: 18px;
   border-bottom: 2px solid lighten(black, 40%);
   &:focus, &:hover {
-    border-bottom-color: white;
+    border-bottom-color: #333;
   }
 }
 

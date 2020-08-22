@@ -8,20 +8,17 @@ html(lang="en-GB")
     | {% endif %}
 
     .default-wrapper
-      .top
-        img.blur(src="https://i.pinimg.com/originals/39/f9/fa/39f9fa13c71c0fa9d9ccab000572d7df.jpg")
-        .abs
-          img(src="https://i.pinimg.com/originals/39/f9/fa/39f9fa13c71c0fa9d9ccab000572d7df.jpg")
-        .bar
+        .index
+          h1.header cass.si
+          br
+          | {{ content }}
+
+        .footer
           .left
-            h1 cass.si
-          .center
             h5
               | {% if page.index %}
               | {{ "now" | date: "%Y-%m-%d %H:%M" | formatted_time }} - @
               a(href="https://gitlab.com/cxss/site/commit/GITCOMMIT") GITCOMMIT
-              | {% else %}
-              #url
               | {% endif %}
           .right
             //- input#search-bar(placeholder="Search")
@@ -34,10 +31,6 @@ html(lang="en-GB")
             a(href="https://{{site.title}}/feed.xml")
               img(src="/media/rss.png")
 
-      .bottom
-        .index
-          | {{ content }}
-
     script(async="" src="https://www.googletagmanager.com/gtag/js?id=UA-76192160-1")
     script.
       window.dataLayer = window.dataLayer || [];
@@ -45,20 +38,6 @@ html(lang="en-GB")
       gtag('js', new Date());
       gtag('config', 'UA-76192160-1');
 
-    | {% if page.index == nil %}
-    script.
-      var pathArray = window.location.pathname.split('/');
-      var s = "";
-      var u = "";
-      pathArray.shift()
-      for (i = 0; i < pathArray.length; i++) {
-        u += "/"+pathArray[i]
-        s += "<span> / </span>";
-        s += '<a href="'+u+'">'+pathArray[i]+'</a>';
-      }
-      console.log(s)
-      document.getElementById("url").innerHTML = s;
-    | {% endif %}
     script.
       var search = document.getElementById("search-bar");
       search.addEventListener("keyup", function(event) {

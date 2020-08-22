@@ -26,7 +26,7 @@ bliss b
 echo "Pulling data from api..."
 COMMIT=$(curl --silent --header "PRIVATE-TOKEN: $GITLAB_API_KEY" "https://gitlab.com/api/v4/projects/13261952/repository/commits/master" | jq '.short_id' | tr -d \")
 echo "Current commit: $COMMIT"
-sed -i -e "s/GITCOMMIT/$COMMIT/g" ./_site/index.html
+sed -i -e "s/GITCOMMIT/$COMMIT/g" $(find ./_site/ -type f)
 
 LOG_COUNT=$(curl --silent -X GET "https://cs-d-api.herokuapp.com/days/total")
 echo "Day log count: $LOG_COUNT"

@@ -9,27 +9,16 @@ html(lang="en-GB")
 
     .default-wrapper
         .index
-          h1.header cass.si
+          .header
+              h1 cass.si
+                a(href="https://gitlab.com/cxss/site/commit/GITCOMMIT") GITCOMMIT
           br
           | {{ content }}
-
-        .footer
-          .left
-            h5
-              | {% if page.index %}
-              | {{ "now" | date: "%Y-%m-%d %H:%M" | formatted_time }} - @
-              a(href="https://gitlab.com/cxss/site/commit/GITCOMMIT") GITCOMMIT
-              | {% endif %}
-          .right
-            //- input#search-bar(placeholder="Search")
-            a(href="https://creativecommons.org/licenses/by-nc-sa/4.0/")
-              img(src="/media/cc.png")
-            a(href="https://gitlab.com/cxss")
-              img(src="/media/git.png")
-            a(href="https://webring.xxiivv.com/#random" target="blank_")
+          p.footer
+            a.rotonde(href="https://webring.xxiivv.com/#random" target="blank_")
               img(src="https://ftp.cass.si/www/webring.png")
-            a(href="https://{{site.title}}/feed.xml")
-              img(src="/media/rss.png")
+            | 2020 · articles & written content available under cc by 4.0
+
 
     script(async="" src="https://www.googletagmanager.com/gtag/js?id=UA-76192160-1")
     script.
@@ -37,11 +26,3 @@ html(lang="en-GB")
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'UA-76192160-1');
-
-    script.
-      var search = document.getElementById("search-bar");
-      search.addEventListener("keyup", function(event) {
-        if (event.key === "Enter") {
-          window.location.href = window.location.origin + "/search?query=" + search.value;
-        }
-      });

@@ -30,6 +30,13 @@ body {
 
 //=================================
 
+.default-wrapper {
+  margin: 40px;
+  @media #{$breakpoint-mobile} {
+    margin: 10px;
+  }
+}
+
 @mixin linkStyle {
   color: $text-color;
   font-weight: bold;
@@ -90,71 +97,6 @@ body {
   }
 }
 
-.footer {
-  position: relative;
-  z-index: 5;
-  display: flex;
-  flex-flow: row;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 20px 40px;
-  @media #{$breakpoint-mobile} {
-    padding: 10px;
-  }
-  justify-content: space-between;
-  align-items: center;
-  color: $text-color;
-  @media #{$breakpoint-mobile} {
-    .center {
-      display: none;
-    }
-  }
-  .left h1 {
-    font-weight: normal;
-  }
-  .center {
-    h5 {
-      font-family: "Source Code Pro", monospace;
-      font-size: 16px;
-      font-weight: normal;
-      a {
-        @include linkStyle;
-        color: white !important;
-      }
-    }
-    #url {
-      span {
-        color: lighten($text-color, 50%);
-      }
-      a {
-        &::after {
-          content: "";
-        }
-      }
-    }
-  }
-  .right {
-    display: inline-flex;
-    flex-flow: row;
-    align-items: center;
-    height: 100%;
-    img {
-      height: 20px;
-    }
-    a {
-      padding-left: 20px;
-      &:first-child {
-        padding-left: 0;
-      }
-      margin: 0;
-      filter: invert(100%);
-      &:hover {
-        filter: invert(80%);
-      }
-    }
-  }
-}
-
 .links {
   margin-bottom: 35px;
   display: flex;
@@ -175,10 +117,12 @@ body {
 }
 
 .index {
-  margin: 40px;
-  // width: 100%;
-  @media #{$breakpoint-mobile} {
-    margin: 10px;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-flow: column;
+  width: 60vw;
+  @media #{$breakpoint} {
+    width: 100%;
   }
   position: relative;
   z-index: 5;
@@ -187,17 +131,25 @@ body {
   flex: 1 1 auto;
   margin-bottom: 30px;
   .header {
-    &::after {
-      content: "\2009\00AC";
-      display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    a {
       color: black;
       opacity: 0.25;
+      font-size: 16px !important;
+      margin: -5px 0 0 10px;
+    }
+    img {
+      max-height: 20px;
     }
   }
   .calbox {
     display: block;
     position: relative;
     max-width: 572px;
+    min-height: 100%;
     box-sizing: border-box;
     @media #{$breakpoint-mobile} {
       // max-width: 100%;
@@ -421,11 +373,7 @@ input:-webkit-autofill {
 }
 //=======================================
 .nav {
-  @media #{$breakpoint-mobile} {
-    // text-align: center;
-    margin-top: 30px;
-  }
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   h1 {
     color: $text-color;
     margin-bottom: 5px;
@@ -436,7 +384,6 @@ input:-webkit-autofill {
     @media #{$breakpoint-mobile} {
       width: 100%;
       min-width: initial;
-      text-align: center;
       a {
         // &:last-child {
         //   display: none;
@@ -471,19 +418,14 @@ input:-webkit-autofill {
   // justify-content: center;
 
   .body {
-    width: 60vw;
     box-sizing: border-box;
     margin-top: 0;
     margin-bottom: 80px;
     // padding-top: 30px;
     height: 100%;
-    @media #{$breakpoint} {
-      width: 100%;
-    }
 
     article #md5 {
       display: inline-block;
-      float: right;
       margin-left: auto;
       opacity: 0.2;
       @media #{$breakpoint-mobile} {
@@ -501,6 +443,14 @@ input:-webkit-autofill {
         margin-bottom: 10px;
         li a {
           @include linkStyle;
+        }
+      }
+      h1 {
+        &::after {
+          content: "\2009\00AC";
+          display: inline-block;
+          color: black;
+          opacity: 0.25;
         }
       }
       h1,
@@ -809,7 +759,7 @@ p.caption {
 .about-image {
   position: relative;
   width: 100%;
-  overflow: hidden;
+  // overflow: hidden;
   max-height: 30vh;
   margin-bottom: 10px;
   img.no-blur {
@@ -827,6 +777,8 @@ p.caption {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    margin-left: -20px;
+    width: calc(100% + 40px);
     img {
       height: 30vh;
       width: 100%;
@@ -844,5 +796,24 @@ p.small {
   font-size: 14px !important;
   a {
     font-size: 14px !important;
+  }
+}
+
+.footer {
+  display: flex;
+  margin: 0;
+  align-items: center;
+  margin-top: auto;
+  opacity: 0.25;
+  a {
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    margin-top: -2px;
+  }
+  .rotonde img {
+    max-height: 15px;
+    margin: 0;
+    position: absolute;
   }
 }

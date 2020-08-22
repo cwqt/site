@@ -427,6 +427,7 @@ input:-webkit-autofill {
     article #md5 {
       display: inline-block;
       margin-left: auto;
+      float: right;
       opacity: 0.2;
       @media #{$breakpoint-mobile} {
         display: none;
@@ -707,6 +708,16 @@ img[src*="#fit"] {
 
   img {
     width: 24% !important;
+  }
+}
+._3picrow {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+
+  img {
+    width: 33% !important;
   }
 }
 

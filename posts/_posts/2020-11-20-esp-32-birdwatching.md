@@ -7,7 +7,7 @@ title: ESP-32 Birdwatching
 ---
 There's something nice about feeding birds, that they learn where your feeder is and come back every so often for breakfast and dinner - a bit like a pet.
 
-So far with my feeder I've seen Collared Doves, Wood Pigeons & Great Tits' 👀 
+So far with my feeder I've seen Collared Doves, Wood Pigeons & Great Tits' 👀   
 I bought an ESP-32 Camera module a month or so ago & last weekend as a break from the agritech thing I've been tinkering with, figured it might be fun to set it up to stream the bird feeder to my website. After a few days of tinkering (90% with the 3d model) I have this;
 
 ![camera box thingy](https://ftp.cass.si/y98Zd8451.jpeg)

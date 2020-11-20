@@ -25,5 +25,4 @@ fields:
   label: draft
   default: true
 pages:
-- posts/_posts/esp-32-birdwatching.md
 - posts/mcn-update.md

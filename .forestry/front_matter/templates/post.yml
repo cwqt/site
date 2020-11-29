@@ -1,0 +1,28 @@
+---
+label: post
+hide_body: false
+fields:
+- type: text
+  name: layout
+  label: layout
+  config:
+    required: true
+  default: post
+  hidden: true
+- type: text
+  name: title
+  label: title
+- type: datetime
+  name: date
+  label: date
+  default: now
+- type: boolean
+  name: comments
+  label: comments
+  default: true
+- name: draft
+  type: boolean
+  label: draft
+  default: true
+pages:
+- posts/mcn-update.md

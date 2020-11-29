@@ -25,4 +25,5 @@ fields:
   label: draft
   default: true
 pages:
+- posts/_posts/snakker-pa-norsk.md
 - posts/mcn-update.md

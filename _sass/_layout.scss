@@ -768,39 +768,15 @@ p.caption {
 }
 
 .about-image {
-  position: relative;
-  width: 100%;
-  // overflow: hidden;
-  max-height: 30vh;
-  margin-bottom: 10px;
-  img.no-blur {
-    height: 30vh;
-    width: 100%;
-    z-index: 9;
-    position: relative;
-    margin: auto !important;
-    object-fit: contain;
-    object-position: center;
-  }
-  .relative {
-    top: 0;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    margin-left: -20px;
-    width: calc(100% + 40px);
-    img {
-      height: 30vh;
-      width: 100%;
-      object-fit: cover;
-      object-position: center;
-      margin: auto !important;
-      max-height: 100%;
-      filter: blur(5px);
-      transform: scale(1.5);
-    }
-  }
+  width: 30vw;
+  height: 30vw;
+  max-height: none !important;
+  border-radius: 50% !important;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: bottom;
+  padding: 0 !important;
+  filter: blur(.1px);
 }
 
 p.small {

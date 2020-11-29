@@ -764,19 +764,34 @@ span#small {
 
 p.caption {
   text-align: center;
+  @media #{$breakpoint-desktop} {
+    text-align: left;
+  }
   font-style: italic;
 }
 
 .about-image {
-  width: 30vw;
-  height: 30vw;
+  width: 20vw;
+  height: 20vw;
+  @media #{$breakpoint-desktop} {
+    margin-left: 0 !important;
+    margin: 0 !important;
+  }
+  @media #{$breakpoint} {
+    width: 35vw;
+    height: 35vw;
+  }
+  @media #{$breakpoint-mobile} {
+    width: 80vw;
+    height: 80vw;
+  }
   max-height: none !important;
   border-radius: 50% !important;
   overflow: hidden;
   object-fit: cover;
   object-position: bottom;
   padding: 0 !important;
-  filter: blur(.1px);
+  filter: blur(.2px);
 }
 
 p.small {

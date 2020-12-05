@@ -25,5 +25,5 @@ fields:
   label: draft
   default: true
 pages:
-- posts/_posts/snakker-pa-norsk.md
+- posts/_posts/y-combinator-izing-curried-angular-router.md
 - posts/mcn-update.md

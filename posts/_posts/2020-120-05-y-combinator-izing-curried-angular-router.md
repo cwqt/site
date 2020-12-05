@@ -30,7 +30,7 @@ const APP_ROUTES:Routes = new AppRouter()
   .popRouter()
   .apply();
 ```
-yes thats right, all the fp goodness man could ever wish for, look at that supple tree structure...and the y-combinator itself you may ask?
+yes thats right, all the fp goodness man could ever wish for, i mean look at that supple tree...and the y-combinator itself you may ask?
 
 ```ts
 export default class AppRouter {

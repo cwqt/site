@@ -5,7 +5,7 @@ comments: true
 title: better validation with higher-order functions
 ---
 
-i've recently been faced with an issue of needing to validate a lot of different types of data-structures, including nested & arrays of things in express - which is a total pain in the ass, not in terms of any kind of techincal complexity but simply sheer amount of duplication.
+i've recently been faced with an issue of needing to validate a lot of different types of data-structures, including nested & arrays of things in express - which is a totally not nice - not in terms of any kind of techincal complexity but simply sheer amount of duplication.
 
 as an ardent proponent of the DRY principle i wielded my FP power and spent a couple of days creating a new way of concisely expressing validation in a way that no longer makes me want to die :)
 

@@ -3,7 +3,6 @@ layout: post
 date: 2020-12-05 16:03:55 +0000
 comments: true
 title: y-combinator-izing curried angular router
-
 ---
 
 i've recently gone a bit mad with wanting to turn everything i touch into functional code & this being my latest foray, a thing that creates a flat routing structure from nested functions and stuff:

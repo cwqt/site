@@ -1,9 +1,9 @@
 ---
 
-- project: shrubs.io
+- project: mcn
   date: 2020-03-14
-  url: https://gitlab.com/cxss/hydroponics
-  desc: IoT plant & garden management w/ social networking features
+  url: https://gitlab.com/cxss/mcn
+  desc: An IoT platform for vertical farming
 
 - project: ftp.cass.si
   date: 2019-12-01

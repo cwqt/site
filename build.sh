@@ -11,6 +11,8 @@ if ! [ -x "$(command -v bliss)" ]; then
   npm install jekyll-bliss -g
 fi
 
+apt-get install imagemagic
+
 node media/js/calender.js
 node media/js/week.js
 

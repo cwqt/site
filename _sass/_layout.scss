@@ -477,7 +477,7 @@ input:-webkit-autofill {
           }
         }
       }
-      img {
+      img:not(.fotorama__img) {
         margin: 20px auto;
         border-radius: 2px;
         // box-shadow: 0 9px 30px 0 rgba(35,39,42,.1);
@@ -817,4 +817,10 @@ p.small {
     margin: 0;
     position: absolute;
   }
+}
+
+
+.fotorama {
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
 }

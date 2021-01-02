@@ -1,5 +1,10 @@
 ---
 
+- project: awgit
+  date: 20201-01-01
+  url: https://gitlab.com/cxss/awgit
+  desc: Parse data from ActivityWatch & commits from GitLab/GitHub APIs for cass.si
+
 - project: mcn
   date: 2020-03-14
   url: https://gitlab.com/cxss/mcn

@@ -6,9 +6,7 @@ if test -f ".env"; then
 fi
 
 node src/_transpiled/generateGraphs.js
-# rm -rf src/_transpiled
-
-exit 0
+rm -rf src/_transpiled
 
 #escape secret key slashes
 CAPTCHA_SECRET_KEY=$(echo "$CAPTCHA_SECRET_KEY" | sed 's/\//\\\//g')

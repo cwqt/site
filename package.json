@@ -1,0 +1,32 @@
+{
+  "name": "cass.si",
+  "version": "1.0.0",
+  "description": "[![Netlify Status](https://api.netlify.com/api/v1/badges/04d9616c-b6a6-42a3-9c63-4ecdd6a3a1dd/deploy-status)](https://app.netlify.com/sites/cxss/deploys)",
+  "main": "index.js",
+  "dependencies": {
+    "timeago.js": "^4.0.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "chokidar": "^3.4.3",
+    "jekyll-bliss": "^2.0.0",
+    "micromatch": "^4.0.2"
+  },
+  "scripts": {
+    "build": "babel build -d build/transpiled",
+    "start": "cd src && bliss s"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/cxss/site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/cxss/site/issues"
+  },
+  "homepage": "https://gitlab.com/cxss/site#readme"
+}

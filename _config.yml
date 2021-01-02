@@ -31,8 +31,8 @@ e-mail: m (at) cxss (dot) si
 #sed script replaces with true values from netlify
 #build variables
 recaptcha:
-  sitekey: CAPTCHA_SITE_KEY
-  secretkey: CAPTCHA_SECRET_KEY
+  sitekey: 
+  secretkey: 
 
 gitlab:
   username: cxss
@@ -48,7 +48,7 @@ plugins:
   - jekyll-sitemap
   - liquid-md5
 
-source: ''
+source: 'src'
 destination: _site
 jekyll-bliss:
   build-folder: _build
@@ -56,4 +56,3 @@ jekyll-bliss:
   quiet: false
   delete-build-folder: true
   livereload: true
-

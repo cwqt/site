@@ -5,16 +5,9 @@ if test -f ".env"; then
 	set +a
 fi
 
-#check if compiler is installed
-if ! [ -x "$(command -v bliss)" ]; then
-  echo 'Error: jekyll-bliss is not installed.' >&2
-  npm install jekyll-bliss -g
-fi
+node media/js/generateGraphs.js
 
-apt-get install imagemagic
-
-node media/js/calender.js
-node media/js/week.js
+exit 0
 
 #escape secret key slashes
 CAPTCHA_SECRET_KEY=$(echo "$CAPTCHA_SECRET_KEY" | sed 's/\//\\\//g')
@@ -30,11 +23,13 @@ COMMIT=$(curl --silent --header "PRIVATE-TOKEN: $GITLAB_API_KEY" "https://gitlab
 echo "Current commit: $COMMIT"
 sed -i -e "s/GITCOMMIT/$COMMIT/g" $(find ./_site/ -type f)
 
-LOG_COUNT=$(curl --silent -X GET "https://cs-d-api.herokuapp.com/days/total")
+DAYS_CONFIG=$(curl --silent -X GET "https://awgit.cass.si/days/config")
+LOG_COUNT=$(echo $DAYS_CONFIG | jq -r ".total_days")
+HOUR_COUNT=$(echo $DAYS_CONFIG | jq -r ".total_hours")
+
 echo "Day log count: $LOG_COUNT"
 sed -i -e "s/LOG_COUNT/$LOG_COUNT/g" ./_site/index.html
 
-HOUR_COUNT=$(curl --silent -X GET "https://cs-d-api.herokuapp.com/days/hours")
 echo "Total hours count: $HOUR_COUNT"
 sed -i -e "s/HOUR_COUNT/$HOUR_COUNT/g" ./_site/index.html
 
@@ -42,6 +37,6 @@ sed -i -e "s/HOUR_COUNT/$HOUR_COUNT/g" ./_site/index.html
 echo "Reverting _config.yml back to placeholders..."
 sed -i -e "s/sitekey:.*/sitekey: CAPTCHA_SITE_KEY/g" ./_config.yml
 sed -i -e "s/secretkey:.*/secretkey: CAPTCHA_SECRET_KEY/g" ./_config.yml
-rm _config.yml-e
+rm _config.yml.bak
 
 exit 0

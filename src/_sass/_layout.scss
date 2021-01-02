@@ -184,15 +184,17 @@ body {
       justify-content: center;
       color: white !important;
 
-      &.writing {
-        background: #9d9488;
-      }
-      &.visual {
-        background: #746e65;
-      }
-      &.audio {
-        background: #897964;
-      }
+
+      
+      // &.writing {
+      //   background: #9d9488;
+      // }
+      // &.visual {
+      //   background: #746e65;
+      // }
+      // &.audio {
+      //   background: #897964;
+      // }
 
       &:hover {
         background-color: #555 !important;

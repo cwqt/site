@@ -25,7 +25,7 @@ Anyway, I decided to do what's known as an _artefact_ (as opposed to a typical e
 
 The result is _lssx_.\\
 
-{% youtube "https://www.youtube.com/watch?v=t9O3deN-wH0" %}
+<iframe width="1891" height="764" src="https://www.youtube.com/embed/t9O3deN-wH0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### What is lssx?
 It's **L**OVE **S**pace **S**hooter **X** of course!

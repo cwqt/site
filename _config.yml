@@ -48,7 +48,7 @@ plugins:
   - jekyll-sitemap
   - liquid-md5
 
-source: 'src'
+source: src
 destination: _site
 jekyll-bliss:
   build-folder: _build

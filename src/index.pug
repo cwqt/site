@@ -14,27 +14,24 @@ isIndex: true
     b DAYS_AGO
     |  day(s) ago.
   .week#week
-    | {% include week.html %}   
-  br 
+    | {% include activitygraph.html %}   
+
   .calender#calender
-    | {% include calender.html %}
+    | {% include commitgraph.html %}
   .caldesc
-    .item
-    span &nbsp;Writing
-    .item
-    span &nbsp;Visual
-    .item
-    span &nbsp;Audio
+    | {% include commitcount.html %}
 
     p#date 0000-00-00
 
   hr
+  p#loading Loading data...
+  
   #click 
     p Click a 
       b day 
       | to see info.
-  #hider
 
+  #hider
     .day_info#day
       div
         h1#commits 0
@@ -42,6 +39,17 @@ isIndex: true
       div
         h1#hours 0
         p hours
+      div.breakdown
+        b Productive
+          span#stats-productive
+        b Non-prod.
+          span#stats-nonproductive
+        b Languages
+          span#stats-language
+        b Comms.
+          span#stats-communications
+        b Other
+          span#stats-other
 
     .commits#info
 
@@ -50,13 +58,11 @@ p.footer
     img(src="https://ftp.cass.si/www/webring.png")
   | 2020 · articles & written content available under cc by 4.0
 
-
-
 script(src="/media/js/main.js")
 
 script.
-  var compile_date = new Date('{{ site.time }}');
-  var today = new Date();
-  var timeDiff = Math.abs(today.getTime() - compile_date.getTime());
+  const compile_date = new Date('{{ site.time }}');
+  const today = new Date();
+  const timeDiff = Math.abs(today.getTime() - compile_date.getTime());
   dayDifference = Math.ceil(timeDiff / (1000 * 3600 * 24));
   document.body.innerHTML = document.body.innerHTML.replace('DAYS_AGO', dayDifference);

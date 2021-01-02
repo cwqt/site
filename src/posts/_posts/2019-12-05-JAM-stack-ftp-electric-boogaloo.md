@@ -36,7 +36,7 @@ After spending all of an hour thinking about possible improvements, I came up wi
 
 The result:
 
-{% youtube "https://www.youtube.com/watch?v=kdhSb6QyI5Y" %}
+<iframe width="1891" height="764" src="https://www.youtube.com/embed/kdhSb6QyI5Y" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <br>
 

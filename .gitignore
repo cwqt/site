@@ -10,4 +10,6 @@ _site/
 _build
 activitygraph.html
 commitgraph.html
+commitcount.html
 _config.yml.bak
+_transpiled

@@ -1,6 +1,15 @@
-$writing-c: #9d9488;
-$visual-c: #746e65;
-$audio-c: #897964;
+// stats
+// productive: number;
+// nonproductive: number;
+// language: number;
+// communications: number;
+// other: number;
+
+$stat-productive: #746e65;
+$stat-nonproductive: #928c83;
+$stat-language: #b0aaa1;
+$stat-communications: #cec8bf;
+$stat-other: #d5d1ce;
 
 * {
   box-sizing: border-box !important;
@@ -54,10 +63,10 @@ body {
 
 //=================================
 //only show last 2 months of bar data
-.week .d {
+.week .day {
   display: none;
 }
-.week .d:nth-last-child(-n + 62) {
+.week .day:nth-last-child(-n + 62) {
   display: flex !important;
 }
 
@@ -66,16 +75,17 @@ body {
   flex-flow: row;
   align-items: flex-end;
   height: 100px;
-  .d {
+  .day {
     margin-right: 2px;
     //display: flex;
     flex-flow: column-reverse;
     width: 20px;
     border-radius: 3px;
     min-height: 5px;
-    &:not(.selected) {
-      opacity: 0.4;
-    }
+    max-width: 7px;
+    // &:not(.selected) {
+    //   opacity: 0.4;
+    // }
     &.selected {
       opacity: 1;
     }
@@ -83,17 +93,16 @@ body {
       margin-bottom: 2px;
       background-color: #333;
       border-radius: 2px;
+      overflow: hidden;
       min-height: 20% !important;
     }
-    .writing {
-      background-color: $writing-c;
-    }
-    .visual {
-      background-color: $visual-c;
-    }
-    .audio {
-      background-color: $audio-c;
-    }
+
+    background: rgba(0,0,0,.12);
+    // &.dominant-productive { background-color: $stat-productive }
+    // &.dominant-nonproductive { background-color: $stat-nonproductive }
+    // &.dominant-language { background-color: $stat-language }
+    // &.dominant-communications { background-color: $stat-communications }
+    // &.dominant-other { background-color: $stat-other }
   }
 }
 
@@ -161,6 +170,7 @@ body {
       margin-bottom: 20px;
     }
     .calender {
+      margin-top: 10px;
       display: grid;
       grid-template-rows: repeat(7, 0fr);
       grid-template-columns: repeat(999, 0fr);
@@ -171,7 +181,7 @@ body {
         grid-auto-flow: row;
       }
     }
-    .item {
+    .commit {
       width: 20px;
       height: 20px;
       margin: 1px;
@@ -206,6 +216,9 @@ body {
       flex-flow: row;
       align-items: center;
       margin-top: 20px;
+      p {
+        margin: 0;
+      }
       #date {
         margin: 0;
         margin-left: auto;
@@ -222,19 +235,6 @@ body {
       span {
         margin-right: 20px;
       }
-      .item {
-        display: inline !important;
-        margin-right: 5px;
-        &:nth-child(1) {
-          background-color: $writing-c;
-        }
-        &:nth-child(3) {
-          background-color: $visual-c;
-        }
-        &:nth-child(5) {
-          background-color: $audio-c;
-        }
-      }
     }
     #hider {
       visibility: hidden;
@@ -246,6 +246,25 @@ body {
         flex-flow: row;
         font-size: 200%;
         justify-content: space-between;
+        .breakdown {
+          margin-left: 20px;
+          font-size: 16px;
+          display: flex;
+          flex-flow: column;
+          justify-content: space-between;
+          b {
+            display: flex;
+            width: 100%;
+          }
+          span {
+            margin-left: auto;
+            font-weight: normal;
+            &::after {
+              content: " hrs";
+              opacity: 0.4
+            }
+          }
+        }
         div {
           flex: 1;
         }
@@ -262,11 +281,13 @@ body {
       .commits {
         max-height: 100%;
         margin-top: 20px;
-        .commit {
+        margin-bottom: 20px;
+        
+        .commit-body {
           display: flex;
-          flex-flow: row;
+          flex-flow: column;
           width: 100%;
-          padding: 10px;
+          padding: 15px;
           border-radius: 3px;
           margin-bottom: 5px;
           border: 1px solid rgba(51, 51, 51, 0.2);
@@ -285,25 +306,39 @@ body {
           .header {
             display: inline-flex;
             flex-flow: row;
-            width: 40%;
+            align-items: baseline;
+            width: 100%;
+            margin-bottom: 10px;
+            position: relative;
+
+            .signed {
+              position: absolute;
+              right: -5px;
+              top: -5px;
+              margin-left: auto;
+              display: flex;
+              align-items: center;
+              p {
+                display: none;
+                margin-right: 5px;
+              }
+            }
+
             margin-right: 5px;
             color: #666;
+            svg {
+              color: #1e7e35;
+              path {
+                fill: currentColor;
+              }
+            }
+            b {
+              margin-right: 10px;
+            }
             p {
               font-family: "Source Code Pro";
-              margin: 0 5px;
-            }
-            a {
-              flex: 1;
-              white-space: nowrap;
-              overflow: hidden;
-              text-overflow: ellipsis;
-              &:hover {
-                text-decoration: none !important;
-              }
-              &::after {
-                content: "" !important;
-              }
-              @include linkStyle;
+              font-size: 16px;
+              margin-right: auto;
             }
           }
         }

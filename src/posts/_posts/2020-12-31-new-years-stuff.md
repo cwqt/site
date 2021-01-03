@@ -78,7 +78,8 @@ This year I have actual life events though 🎉 in order from start to end of th
 
 # Things I'd _like_ to do next year:
 
-* __Learn some new tools__: AWS EKS + K8s more in general, Helm, DevOps stuff, 
+* __Learn some new tools__: AWS EKS + K8s more in general, Helm, DevOps stuff
+* __Re-write a bunch of stuff__: I have a fair bit of basically shit code hanging about on servers that I should clean up - speaking of which maybe I'll make a thing to monitor the uptime of all of these applications - https://status.cass.si - pog?
 * __Add i18n to this site__: Norwegian translations, maybe even a dark mode too
 * __Go outside more__: Been pretty hard what with COVID / anxiety
 * __Read more books__: Only thing I've read this year is Ted K's manifesto :/

@@ -93,7 +93,7 @@ This year I have actual life events though 🎉 in order from start to end of th
 * __Falling for propoganda__: E.g. Plastics industry inventing propagating recycling to ease consumer guilt about purchasing said plastics - or even "mental health awareness" days, things designed to manipulate our behaviour for the sake of being a more efficient machine in the system / spending money 
   - > The concept of "mental health" in our society is defined largely by the extent to which an individual behaves in accord with the needs of the system and does so without showing signs of stress.
   - — Industrial Society and Its Future
-* __Go on things that affect my mental health__: Avoiding twitter, 4ch (and related communities/people) / hivemind thought / crab mentality
+* __Go on things that negatively affect my mood__: Avoiding twitter, 4ch (and related communities/people) / hivemind thought / crab mentality
 * __Not double-checking stuff__: Ordering PCBs with a missed/wrong trace, leaving an AWS EKS server up for a whole month 😬
 * __Buying stuff I'll never use__: Clothes, domains etc.
 * __Feeding into sadges__: Listening to sad stuff when sad == bad

@@ -5,7 +5,7 @@ comments: true
 title: new years stuff
 ---
 
-I wrote a "year in review" thing every year since I started having a website up in 2016, but back then being a depressed teenager with not much going on in their life apart from study & cry they were all kind of boring, now they're all gone I'm starting over :)
+I wrote a "year in review" thing every year since I started having a website up in 2016, but back then being a depressed teenager with not much going on in their life apart from study & cry they were all kind of boring, now they're all gone & I'm starting over :)
 
 <div class="fotorama" data-width="100%" data-height="600" data-nav="thumbs" data-allowfullscreen="true" data-loop="true" data-shuffle="true">
   <a href="https://ftp.cass.si/02wnwk007.jpeg" data-caption="me and the bf"></a>
@@ -68,26 +68,37 @@ This year I have actual life events though 🎉 in order from start to end of th
 
 * __Finish the Duolingo tree__
 * __Get to B2 CEFR level__ Bergentest kanksje?
-* __Improve fitness__: Get back into running again, lose some weight yada yada
+* __Improve fitness__: Get back into running again, lose some weight yada yada / weight cycling
 * __Release the MVP__: Q2 2021...? + funding pls
 * __Sell some microgreens at the local farmers market__
 * __Go on holiday to either Norway/Japan__: Test out my language skillz or my boyfriends' japanese - maybe both?
-* __Stop trying to achieve perfection__
+* __Re-write my activity tracker__: Already started on this one: <https://gitlab.com/cxss/awgit>
+* __Relax my perfectionism a bit__
 * __~~<small>voice training</small>~~__
 
 # Things I'd _like_ to do next year:
 
+* __Learn some new tools__: AWS EKS + K8s more in general, Helm, DevOps stuff, 
 * __Add i18n to this site__: Norwegian translations, maybe even a dark mode too
+* __Go outside more__: Been pretty hard what with COVID / anxiety
+* __Read more books__: Only thing I've read this year is Ted K's manifesto :/
+* __Make some more hardware__: Would really like to continue my growing operation, albeit a bit more casually, cut out a bunch of stuff I built so I can actually finish it and let people use it
 * __Dress more fashionably__: Currently I just wear oversized hoodies and yeah, maybe try some makeup other than concealer too while I'm at it?
-* __Soft skills__: Be a better communicator & time management, agile schtuff
-* __Make mistakes__
+* __Soft skills__: Be more supportive, a better communicator & time management, agile schtuff
 * __Maybe climb [Snowdon](https://en.wikipedia.org/wiki/Snowdon)__:
+
+# What _not_ to do next year:
+
+* __Go on things that affect my mental health__: Avoiding twitter, 4ch (and related communities/people) / hivemind thought / crab mentality
+* __Not double-checking stuff__: Ordering PCBs with a missed/wrong trace, leaving an AWS EKS server up for a whole month 😬
+* __Buying stuff I'll never use__: Clothes, domains etc.
+* __Feeding into sadges__: Listening to sad stuff when sad == bad
+* __Drinking so much__: impulsivity in general
 
 ja, det er alt - her er til 2021 🥰 vær ikke forferdelig
 
 <!-- jQuery 1.8 or later, 33 KB -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
 <!-- Fotorama from CDNJS, 19 KB -->
 <link  href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>

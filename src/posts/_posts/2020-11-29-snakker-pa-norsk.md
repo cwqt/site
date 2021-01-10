@@ -18,4 +18,4 @@ went something like this:
     m: mfw jeg vet hva du sier
 
 not a lot, but still, way more fun than just reading and doing flash cards on anki.  
-end goal being to take a stab at the bergentest around end of next year or so
+end goal being to take a stab at the kompetanse norge around end of next year or so

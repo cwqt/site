@@ -68,12 +68,6 @@ This year I have actual life events though 🎉 in order from start to end of th
 
 * __Finish the Norwegian Duolingo tree__
 * __Get to B1-2 CEFR level__ Kompetanse Norge kanksje?
-* Technology-wise, not a whole lot but more into the deployment/monitoring side of things:
-  - TailwindCSS
-  - Kubernetes & Helm
-  - Datadog / LogRocket
-  - GitOps
-  - SSO / 2FA
 * __Improve fitness__: Get back into running again, lose some weight yada yada / weight cycling
 * __Release the MVP__: Q2 2021...? + funding pls
 * __Sell some microgreens at the local farmers market__
@@ -84,7 +78,13 @@ This year I have actual life events though 🎉 in order from start to end of th
 
 # Things I'd _like_ to do next year:
 
-* __Learn some new tools__: AWS EKS + K8s more in general, Helm, DevOps stuff
+* __Learn some new tools__: Not a whole lot but more into the deployment/monitoring side of things:
+  - TerraForm
+  - Kubernetes & Helm / AWS EKS
+  - Datadog / LogRocket
+  - GitOps
+  - SSO / 2FA
+  - TailwindCSS
 * __Re-write a bunch of stuff__: I have a fair bit of basically shit code hanging about on servers that I should clean up - speaking of which maybe I'll make a thing to monitor the uptime of all of these applications - https://status.cass.si - pog?
 * __Add i18n to this site__: Norwegian translations, maybe even a dark mode too
 * __Go outside more__: Been pretty hard what with COVID / anxiety

@@ -45,7 +45,7 @@ This year I have actual life events though 🎉 in order from start to end of th
 * __Learned TypeScript + tonnes of other technologies__: Related to the previous, in no particular order I've learned:
   - TypeScript (+ Express a lot more)
   - Angular, RxJS, Pub-Sub pattern
-  - Docker + Kubernetes
+  - Docker / Containerization
   - Redis, InfluxDB, Chronograf
   - PostgreSQL + TypeORM, MongoDB + mongoose
   - Vercel Serverless, AWS Textract, SNS & SQS
@@ -66,13 +66,19 @@ This year I have actual life events though 🎉 in order from start to end of th
 
 # Things I _want_ to do next year:
 
-* __Finish the Duolingo tree__
-* __Get to B2 CEFR level__ Bergentest kanksje?
+* __Finish the Norwegian Duolingo tree__
+* __Get to B1-2 CEFR level__ Kompetanse Norge kanksje?
+* Technology-wise, not a whole lot but more into the deployment/monitoring side of things:
+  - TailwindCSS
+  - Kubernetes & Helm
+  - Datadog / LogRocket
+  - GitOps
+  - SSO / 2FA
 * __Improve fitness__: Get back into running again, lose some weight yada yada / weight cycling
 * __Release the MVP__: Q2 2021...? + funding pls
 * __Sell some microgreens at the local farmers market__
 * __Go on holiday to either Norway/Japan__: Test out my language skillz or my boyfriends' japanese - maybe both?
-* __Re-write my activity tracker__: Already started on this one: <https://gitlab.com/cxss/awgit>
+* __Re-write my activity tracker__: Alread y started on this one: <https://gitlab.com/cxss/awgit>
 * __Relax my perfectionism a bit__
 * __~~<small>voice training</small>~~__
 

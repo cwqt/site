@@ -1,0 +1,24 @@
+comments:
+  allowedFields: ['name', 'email', 'message', 'replying_to']
+  requiredFields: ['name', 'message']
+  branch: 'master'
+  pullRequestBody: "```"
+  commitMessage: "New comment by {fields.name}"
+  filename: "comment-{@timestamp}"
+  format: 'yaml'
+  moderation: true
+  path: "_data/comments/{options.slug}"
+  akismet:
+    enabled: true
+  reCaptcha:
+    enabled: true
+    siteKey: "6Lf3fMIUAAAAAEAq75FlMdQXQ-LC2i0iCeoCcGrr"
+    #locally rsa encrypted secret key
+    secret: "mPRGatatb2r3OcN+c4knPlNvJbs94bO97+2B+B8MKO82rHg1BDgvhO+qNGlYipe6fheSzaPekiHlowlTW00YYmvukLrbZFDH9vbJEEerAezZWfJjPYa/nK50aG+iaJ7Yzzdg7MMAadr0jTO1GbPSYEZBuNV5paW49jjmncbK5ikkmqLQZ7KUxp6w1keZvfDKlF0MpMDUPGGtIip6H44F3Zw5dlt61eV2RoAWdrvhS9ksRSl7r5+ZuS2P1stjfcXqj7SiqhycO2XDyh+6i5NwRih5SkurpmBSiQH6MxzUEqWviE7/z6Or/9HneVmVdvT1+f9izGwy++3wJpxdbFL1hQ=="
+  transforms:
+    email: 'md5'
+  generatedFields:
+    date: # Extended field (date)
+      type: date
+      options:
+        format: "iso8601"

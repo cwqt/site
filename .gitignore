@@ -1,3 +1,16 @@
 node_modules
 dist
-
+data/**/hash.*
+static/
+public/
+secrets
+_site/
+.pug-cache/
+.sass-cache/
+.env
+_build
+activitygraph.html
+commitgraph.html
+commitcount.html
+_config.yml-e
+_transpiled

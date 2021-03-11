@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "old:build": "babel build -d src/_transpiled && sh build/build.sh",
     "serve": "hgfy serve --port 4000",
     "build": "hgfy build",
     "test": "echo \"Error: no test specified\" && exit 1"

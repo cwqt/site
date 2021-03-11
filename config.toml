@@ -1,0 +1,23 @@
+title = "cass.si"
+url = "https://cass.si"
+primary_locale = "en"
+ftp_assets = "https://ftp.cass.si"
+author = "cxss"
+description = "Code, plants & norsk"
+
+[languages]
+  [languages.en]
+    home = "home"
+    about = "about"
+    contact = "contact"
+    posts = "posts"
+    files = "files"
+    footer = "articles & written content available under cc by 4.0"
+
+  [languages.no]
+    home = "hjem"
+    about = "om meg"
+    contact = "kontakt"
+    posts = "poster"
+    files = "filer"
+    footer = "artikler og skriftlig innhold tilgjengelig under cc by 4.0"

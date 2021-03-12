@@ -14,5 +14,9 @@
   "license": "ISC",
   "dependencies": {
     "@cxss/hgfy": "1.0.0"
+  },
+  "devDependencies": {
+    "tslib": "^2.1.0",
+    "node-fetch": "^2.6.1"
   }
 }

@@ -18,12 +18,13 @@ fi
 # sed -i -e "s/CAPTCHA_SITE_KEY/$CAPTCHA_SITE_KEY/g" ./_config.yml
 # sed -i -e 's/CAPTCHA_SECRET_KEY/'"$CAPTCHA_SECRET_KEY"'/g' ./_config.yml
 
-npm run build
+hgfy build
 
 echo "Pulling data from api..."
 COMMIT=$(curl --silent --header "PRIVATE-TOKEN: $GITLAB_API_KEY" "https://gitlab.com/api/v4/projects/13261952/repository/commits/master" | jq '.short_id' | tr -d \")
 echo "Current commit: $COMMIT"
-sed -i -e "s/GITCOMMIT/$COMMIT/g" $(find ./dist/ -type f)
+sed -i -e "s/GITCOMMIT/$COMMIT/g" ./dist/index.html
+sed -i -e "s/GITCOMMIT/$COMMIT/g" ./dist/no/index.html
 
 DAYS_CONFIG=$(curl --silent -X GET "https://awgit.cass.si/days/config")
 LOG_COUNT=$(echo $DAYS_CONFIG | jq -r ".total_days")
@@ -41,5 +42,8 @@ sed -i -e "s/HOUR_COUNT/$HOUR_COUNT/g" ./dist/no/index.html
 # sed -i -e "s/sitekey:.*/sitekey: CAPTCHA_SITE_KEY/g" ./_config.yml
 # sed -i -e "s/secretkey:.*/secretkey: CAPTCHA_SECRET_KEY/g" ./_config.yml
 # rm _config.yml-e
+
+# delete all -e files?
+find . -name "*-e" -type f -delete
 
 exit 0

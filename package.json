@@ -4,19 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "old:build": "babel build -d src/_transpiled && sh build/build.sh",
+    "build": "babel build -d _transpiled && sh build/build.sh",
     "serve": "hgfy serve --port 4000",
-    "build": "sh build/build.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@cxss/hgfy": "1.0.0"
+    "@cxss/hgfy": "../../Software/hgfy-base/hgfy"
   },
   "devDependencies": {
-    "tslib": "^2.1.0",
     "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",
     "@babel/plugin-transform-runtime": "^7.12.10",
@@ -27,6 +25,7 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.1",
+    "tslib": "^2.1.0"
   }
 }

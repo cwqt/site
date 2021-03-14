@@ -3,5 +3,129 @@ parent="root.html"
 +++
 
 <section>
-  Now built with <b>hgfy!</b>
+  {{ i18n::welcome | markdown }}
+
+  <p>
+    {{ i18n::(
+    "no":"<b>$LOG_COUNT</b> logger, <b>$HOUR_COUNT</b> timer, oppdatert <b>$TIME_AGO</b> dager(s) siden",
+    "en":"<b>$LOG_COUNT</b> logs, <b>$HOUR_COUNT</b> hours, updated <b>$TIME_AGO</b> day(s) ago")
+    }}
+  </p>
+
+  <div class="activity-graph">
+    {{ include::activity-graph.html }}
+  </div>
+
+  <div class="commit-graph">
+    {{ include::commit-graph.html }}
+  </div>
+
+  <hr>
+  <p id="date" style="display: none"></p>
+
+  <p id="loading">{{ i18n::("en":"loading","no":"lasting") }}...</p>
+  <div id="click">
+    <p>
+      {{ i18n::(
+      "en":"Click a <b>day</b> to see info",
+      "no":"Klikk en <b> dag </b> for å se informasjon")
+      }}
+    </p>
+  </div>
+
+  <div id="hider">
+    <div class="day-info" id="day">
+      <div class="metrics">
+        <p><b id="commits">0</b> {{ i18n::("en":"commits","no":"tillegg") }}</p>
+        <p><b id="hours">0</b> {{ i18n::("en":"hours","no":"timer") }}</p>
+      </div>
+      <div class="breakdown">
+        <b>{{ i18n::("en":"productive","no":"produktivt") }}<span id="stats-productive"></span></b>
+        <b>{{ i18n::("en":"non-productive","no":"ikke-produktiv") }}<span id="stats-nonproductive"></span></b>
+        <b>{{ i18n::("en":"languages","no":"språk") }}<span id="stats-language"></span></b>
+        <b>{{ i18n::("en":"communication","no":"kommunikasjon") }}<span id="stats-communications"></span></b>
+        <b>{{ i18n::("en":"other","no":"annen") }}<span id="stats-other"></span></b>
+      </div>
+    </div>
+    <div class="commits" id="info"></div>
+  </div>
+
 </section>
+
+<script>
+  let selectedCommit;
+  let selectedWeekDay;
+  let previousSelectedCommit;
+  let isLoading = false;
+
+  document.getElementById("loading").style.display = "none";
+
+  document.addEventListener("click", (event) => {
+    // Clicked a commit item
+    if ([...event.target.classList].includes("commit")) {
+      // Clicked a different commit
+      if (selectedCommit && event.target.id != selectedCommit.id) {
+        selectedCommit.style.filter = "none";
+      }
+
+      const dayId = event.target.getAttribute("data-id");
+      if (!dayId) return; // just a filler commit
+
+      selectedItem = document.getElementById(event.target.id);
+
+      isLoading = true;
+      document.getElementById("loading").style.display = "block";
+      document.getElementById("click").style.display = "none";//hide the 'Click to show...' msg;
+      document.getElementById("hider").style.visibility = "hidden";// show days stats
+      const date = new Date(event.target.id).toISOString().split("T")[0];
+      document.getElementById('date').innerHTML = date.toString();
+
+      fetch(`https://awgit.cass.si/days/${dayId}`)
+        .then((res) => res.json())
+        .then((day) => {
+          document.getElementById("click").style.display = "none";
+
+          // Info about selected day
+          const commit_count = document.getElementById('commits');
+          const hours_count = document.getElementById('hours');
+          commit_count.innerHTML = day.commit_count;
+          hours_count.innerHTML = Object.values(day.stats).reduce((acc, curr) => acc += curr, 0).toFixed(2);
+          document.getElementById("hider").style.visibility = "visible";// show days stats
+
+          // Stats
+          document.getElementById("stats-productive").innerHTML = day.stats.productive;
+          document.getElementById("stats-nonproductive").innerHTML = day.stats.nonproductive;
+          document.getElementById("stats-language").innerHTML = day.stats.language;
+          document.getElementById("stats-communications").innerHTML = day.stats.communications;
+          document.getElementById("stats-other").innerHTML = day.stats.other;
+
+          const info = document.getElementById("info");
+          // Create elements for each commit
+          let html = "";
+          for (let commit of day.commits) {
+            html += `
+            <div class="header commit-line ${commit.url == '#' ? 'commit-line--disabled' : 'commit-line--enabled'}" onclick="window.location='${commit.url}'">
+                <h1>${commit.slug}</h1>
+                <p class="message">${commit.message}</p>
+                <a class="commit">&nbsp;(${commit.sha.slice(-8)})</a>
+                <a class="signed commit">${commit.signing_key}</a>
+            </div>
+          `
+          }
+
+          info.innerHTML = html;
+        })
+        .catch(e => {
+          document.getElementById("click").innerHTML = e.message;
+          document.getElementById("click").style.display = "block";
+        })
+        .finally(() => {
+          document.getElementById("loading").style.display = "none";
+          isLoading = false;
+        });
+    } else {
+      //deselect
+    }
+  });
+
+</script>

@@ -1,5 +1,14 @@
 @charset "utf-8";
 
+$accent-clr: #bdadd1;
+
+$lt-grey-clr: #fafafa;
+$grey-clr: #edeff1;
+$drk-grey-clr: #afbec5;
+
+$fnt-clr: #959da2;
+$lt-fnt-clr: #d7dee2;
+
 //  MEDIA QUERIES
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 $breakpoints: (
@@ -20,7 +29,6 @@ $breakpoints: (
     @media (min-width: $breakpoint-value) {
       @content;
     }
-
   } @else {
     @warn 'Invalid breakpoint: #{$breakpoint}.';
   }
@@ -51,7 +59,6 @@ $breakpoints: (
     @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) {
       @content;
     }
-
   } @else {
     @if (map-has-key($breakpoints, $lower) == false) {
       @warn 'Your lower breakpoint was invalid: #{$lower}.';
@@ -88,7 +95,25 @@ body {
   flex-flow: column;
   min-height: 100vh;
   @include respond-below(sm) {
-    padding: 10px;    
+    padding: 0px;
+    .header {
+      flex-flow: column;
+      h1 {
+        width: 100%;
+        margin: 0;
+        text-align: center;
+      }
+      .navigation {
+        padding: 8px 16px;
+      }
+    }
+    .locale {
+      display: none !important;
+    }
+    .content,
+    .footer {
+      padding: 10px;
+    }
   }
 }
 
@@ -97,21 +122,63 @@ a {
 }
 
 .header {
+  display: flex;
   margin-bottom: 10px;
-  a {
+  background-color: $grey-clr;
+  align-items: center;
+  * {
+    font-size: 18px !important;
+  }
+
+  h1 {
+    font-family: "Source Code Pro", monospace !important;
+    background-color: $accent-clr;
+    padding: 8px 16px;
+    color: white;
+    font-weight: normal;
+    margin-right: 16px;
+  }
+
+  a.commit {
+    margin: 0px 16px;
     color: black;
     opacity: 0.25;
-    font-size: 16px !important;
-    margin: -5px 0 0 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
-}
+  @include respond-below(sm) {
+    a.commit {
+      display: none;
+    }
+  }
 
-.navigation {
-  font-size: 18px;
-  margin-bottom: 10px;
-  span {
-    color: grey;
-    padding: 0 5px;
+  .navigation {
+    font-size: 18px;
+    white-space: nowrap;
+    span {
+      color: grey;
+      padding: 0 5px;
+    }
+  }
+
+  .locale {
+    margin-left: auto;
+    white-space: nowrap;
+    a {
+      padding: 8px 16px;
+      font-weight: normal;
+    }
+
+    .en-en {
+      background-color: $accent-clr;
+      color: white !important;
+    }
+
+    .no-no {
+      background-color: $accent-clr;
+      color: white !important;
+    }
   }
 }
 
@@ -150,21 +217,24 @@ a {
   }
 }
 
-article, section {
+.content,
+.header {
   @include respond-above(xl) {
-    width: 30vw;
+    width: 40vw;
   }
   @include respond-between(lg, xl) {
-    width: 50vw;
+    width: 70vw;
   }
-  @include respond-between(sm, lg) {
+  @include respond-between(md, lg) {
     width: 75vw;
+  }
+  @include respond-between(sm, md) {
+    width: 85vw;
   }
   @include respond-below(sm) {
     width: 100vw;
   }
 }
-
 
 article,
 section {
@@ -246,7 +316,8 @@ section {
   margin-top: auto;
   align-items: center;
   margin-top: auto;
-  opacity: 0.25;
+  opacity: 0.3;
+  font-size: 18px !important;
   a {
     width: 15px;
     display: inline-block;
@@ -256,7 +327,8 @@ section {
   }
 
   .rotonde {
-    max-height: 15px;
+    max-width: 15px;
+    height: auto;
     margin: 0;
   }
 }
@@ -272,7 +344,7 @@ section {
   max-width: 100% !important;
   @include respond-above(xl) {
     width: 10vw;
-    height: 10vw;  
+    height: 10vw;
   }
   @include respond-above(lg) {
     margin-left: 0 !important;
@@ -293,4 +365,155 @@ section {
   object-fit: cover;
   object-position: bottom;
   padding: 0 !important;
+}
+
+.commit-graph {
+  font-size: 18px;
+  margin-top: 10px;
+  display: grid;
+  grid-template-rows: repeat(7, 0fr);
+  grid-template-columns: repeat(999, 0fr);
+  grid-auto-flow: column;
+  user-select: none;
+  margin-left: -4px;
+  .commit {
+    width: 23px;
+    text-align: center;
+    transition: 0.2s;
+    border-radius: 3px;
+    &:hover {
+      cursor: pointer;
+      background-color: $accent-clr;
+      color: white;
+    }
+  }
+  @include respond-below(sm) {
+    grid-template-rows: repeat(999, 0fr);
+    grid-template-columns: repeat(18, 0fr);
+    grid-auto-flow: row;
+  }
+}
+
+.activity-graph {
+  display: flex;
+  .day {
+    font-size: 18px;
+    margin-top: auto;
+    display: flex;
+    flex-flow: column;
+    @for $i from 1 through 11 {
+      span:nth-child(#{$i}) {
+        opacity: $i * 15%;
+      }
+    }
+    span {
+      line-height: 0.8;
+    }
+  }
+}
+
+#hider {
+  visibility: hidden;
+  .day-info {
+    position: relative;
+    z-index: 2;
+    margin-top: -15px;
+    display: flex;
+    flex-wrap: wrap;
+    @include respond-below(sm) {
+      .metrics {
+        display: flex;
+        justify-content: space-between;
+      }
+      .breakdown {
+        flex: 1 1 100%;
+        margin-left: 0 !important;
+      }
+    }
+    justify-content: space-between;
+    .metrics {
+      b {
+        font-family: "Source Code Pro", monospace !important;
+        font-size: 200% !important;
+        font-weight: normal;
+      }
+    }
+
+    .breakdown {
+      margin-left: 20px;
+      font-size: 16px;
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+      b {
+        display: flex;
+        width: 100%;
+        font-weight: normal;
+      }
+      span {
+        margin-left: auto;
+        font-weight: normal;
+        font-family: "Source Code Pro", monospace !important;
+        &::after {
+          content: " hrs";
+          opacity: 0.4;
+        }
+      }
+    }
+    div {
+      flex: 1;
+    }
+    div {
+      h1 {
+        font-family: "Source Code Pro", monospace;
+        color: black;
+        &::after {
+          content: "";
+        }
+      }
+      p {
+        color: lighten(black, 10%);
+      }
+    }
+  }
+  .commits {
+    max-height: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    .commit-line {
+      &--enabled {
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      &--disabled {
+        &:hover {
+          cursor: not-allowed;
+        }
+      }
+
+      h1::after,
+      a::after,
+      a::before {
+        content: "" !important;
+      }
+      h1 {
+        min-width: 25%;
+      }
+      a,
+      .message {
+        margin: 0;
+      }
+      .signed {
+        margin-left: auto;
+        margin-right: 16px;
+      }
+      @include respond-below(sm) {
+        .message {
+          padding: 8px 16px;
+        }
+      }
+    }
+  }
 }

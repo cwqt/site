@@ -1,9 +1,9 @@
 const fetch = require("node-fetch");
 
 export const API_ENDPOINT = "https://awgit.cass.si";
-import activityGraph from "./activityGraph";
-import commitCount from "./commitCount";
-import commitGraph from "./commitGraph";
+import activityGraph from "./activity-graph";
+import commitCount from "./commit-count";
+import commitGraph from "./commit-graph";
 
 export const formatNumber = (num) => {
   return parseFloat(num.toFixed(2));

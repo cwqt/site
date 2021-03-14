@@ -1,5 +1,5 @@
 const fs = require("fs");
-const FILE_LOCATION = __dirname + "/../_includes/commitcount.html";
+const FILE_LOCATION = __dirname + "/../~includes/commit-count.html";
 
 export default async (config, days) => {
   if (fs.existsSync(FILE_LOCATION)) fs.unlinkSync(FILE_LOCATION);

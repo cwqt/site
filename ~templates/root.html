@@ -16,15 +16,20 @@
 
 <body>
   <div class="header">
-    <h1>{{ site::title }}<a href="https://gitlab.com/cxss/site/commit/GITCOMMIT">GITCOMMIT</a></h1>
-  </div>
+    <h1>{{ site::title }}</h1>
+    <div class="navigation">
+      <a href="!locale/">{{ i18n::home }}</a><span> / </span>
+      <a href="!locale/posts">{{ i18n::posts }}</a><span> / </span>
+      <a href="!locale/about">{{ i18n::about }}</a><span> / </span>
+      <a href="!locale/contact">{{ i18n::contact }}</a><span> / </span>
+      <a href="https://ftp.cass.si/">{{ i18n::files }}</a>
+    </div>
 
-  <div class="navigation">
-    <a href="!locale/">{{ i18n::home }}</a><span> / </span>
-    <a href="!locale/posts">{{ i18n::posts }}</a><span> / </span>
-    <a href="!locale/about">{{ i18n::about }}</a><span> / </span>
-    <a href="!locale/contact">{{ i18n::contact }}</a><span> / </span>
-    <a href="https://ftp.cass.si/">{{ i18n::files }}</a>
+    <a class="commit" href="https://gitlab.com/cxss/site/commit/GITCOMMIT">$GIT_COMMIT</a>
+    <div class="locale">
+      <a class="en-$locale" href="/">en</a>
+      <a class="no-$locale" href="/no">no</a>
+    </div>
   </div>
 
   <div class="content">
@@ -40,5 +45,4 @@
     </span>
   </p>
 </body>
-
 </html>

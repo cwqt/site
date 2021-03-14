@@ -7,6 +7,7 @@ description = "Code, plants & norsk"
 
 [languages]
   [languages.en]
+    welcome = "hello & welcome to __cass.si__"
     home = "home"
     about = "about"
     contact = "contact"
@@ -15,6 +16,7 @@ description = "Code, plants & norsk"
     footer = "articles & written content available under cc by 4.0"
 
   [languages.no]
+    welcome = "hei og velkommen til __cass.si__"
     home = "hjem"
     about = "om meg"
     contact = "kontakt"

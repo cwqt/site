@@ -517,3 +517,13 @@ section {
     }
   }
 }
+
+.commit-graph-info {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  * {
+    margin: 0;
+  }
+}

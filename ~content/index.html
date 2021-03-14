@@ -3,7 +3,8 @@ parent="root.html"
 +++
 
 <section>
-  {{ i18n::welcome | markdown }}
+  <!-- {{ i18n::welcome | markdown }} -->
+  <br>
 
   <p>
     {{ i18n::(
@@ -20,6 +21,21 @@ parent="root.html"
     {{ include::commit-graph.html }}
   </div>
 
+  <div class="commit-graph-info">
+    <p>
+      {{ i18n::(
+        "en":"less ⠆  ⠾ more",
+        "no":"mindre ⠆ ⠾ mer")
+      }}
+    </p>
+    <p>{{ include::commit-count.html}}
+      {{ i18n::(
+        "en":"commits made in the last 6 months",
+        "no":"tillegg gjort de siste 6 månedene")
+      }}
+    </p>
+  </div>
+
   <hr>
   <p id="date" style="display: none"></p>
 
@@ -27,8 +43,8 @@ parent="root.html"
   <div id="click">
     <p>
       {{ i18n::(
-      "en":"Click a <b>day</b> to see info",
-      "no":"Klikk en <b> dag </b> for å se informasjon")
+      "en":"click a <b>day</b> to see info",
+      "no":"klikk en <b> dag </b> for å se informasjon")
       }}
     </p>
   </div>
@@ -127,5 +143,12 @@ parent="root.html"
       //deselect
     }
   });
+</script>
 
+<script>
+  const compile_date = new Date('{{ site::time }}');
+  const today = new Date();
+  const timeDiff = Math.abs(today.getTime() - compile_date.getTime());
+  dayDifference = Math.ceil(timeDiff / (1000 * 3600 * 24));
+  document.body.innerHTML = document.body.innerHTML.replace('$TIME_AGO', dayDifference);
 </script>

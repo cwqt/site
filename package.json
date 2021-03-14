@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@cxss/hgfy": "../../Software/hgfy-base/hgfy"
+    "@cxss/hgfy": "1.0.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.10",

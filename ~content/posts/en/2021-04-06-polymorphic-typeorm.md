@@ -1,0 +1,63 @@
++++
+parent = "post.html"
+date = 2021-04-06T18:40:00Z
+comments = true
+title = "polymorphic typeorm strats"
++++
+
+# polymorphic joins
+
+simplest but not the best in terms of data integrity because no fk constraint, uses 2 columns for an entity type & _id
+
+```ts
+@Entity()
+export class Invoice extends BaseEntity {
+  @Column() obj_type: "ticket" | "merch" | "patron";
+  @Column() obj_id: string;
+}
+```
+
+downside is needing two queries to get the items you want / search
+
+```ts
+const invoices = await Invoice.find({ type: "ticket" });
+const tickets = Ticket.find({ _id: In(invoices.map(i => i._id))})
+```
+
+# table per type
+
+```sql
+create table invoice_ticket (
+  invoice_id integer not null unique references invoice,
+  ticket_id integer not unique null references ticket
+);
+
+create table invoice_merch (
+  invoice_id integer not null unique references invoice,
+  merch_id integer not null unique references merch
+);
+
+```
+
+# column per type
+
+keeps fk but no guarantee entity doesn't have more than one relation, can do nested queries
+
+```ts
+@Entity()
+export class Invoice extends BaseEntity {
+    @ManyToOne(() => Ticket) ticket:Ticket;
+    @ManyToOne(() => Merch)  merch:Merch;
+    @ManyToOne(() => Patron) patron:Patron;
+
+    get data() {
+        return [this.ticket, this.merch, this.patron].find(e => e !== undefined)
+    }
+}
+```
+
+```ts
+const tickets = await Invoice
+  .find({ where: { ticket: { price: 10 }}, { relations: ["ticket"]}})
+  .map(i => i.ticket);
+```

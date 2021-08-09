@@ -1,5 +1,5 @@
 +++
-parent = "post.html"
+parent = "post.md"
 date = 2020-12-28T14:35:00Z
 comments = true
 title = "nvm using fish shell"

@@ -1,18 +1,19 @@
 +++
-parent = "page.html"
+parent = "page.md"
 title = "about"
+class = ".about"
 +++
 
-<img class="about-image" src="{{ site::ftp_assets }}/t~qh0603b.jpeg">
+![!⌘X]({{ site::ftp_assets }}/~090fyt34.png)
 
-<p class="caption">!⌘X </p>
+22 y/o senior full-stack with pcb design on the side<br/>
+currently working on at a tree-planting subscription startup
 
-21 y/o technical lead with pcb design on the side  
-currently working on a livestreaming & vod platform at a startup incubator
-
-jeg lærer å snakke norsk 🇳🇴   
+jeg lærer å snakke norsk 🇳🇴<br/>
 also a big fan of [sea cows](https://www.savethemanatee.org/) & sometimes i snowboard too
 
-site written in [jade](https://pugjs.org), built by [hgfy](https://gitlab.com/cxss/hgfy),  
-hosted by [netlify](https://netlify.com), metrics shown on index gathered by [awgit](http://awgit.cass.si/)  
-comments handled by a [staticman](https://staticman.net) instance served on [heroku](https://heroku.com/)  
+site written in [jade](https://pugjs.org), built by [geminoe](https://gitlab.com/cxss/hgfy),<br/>
+hosted by [netlify](https://netlify.com), metrics shown on index gathered by [awgit](http://awgit.cass.si/)<br/>
+comments handled by a [staticman](https://staticman.net) instance served on [heroku](https://heroku.com/)
+
+also available at <gemini://cass.si>

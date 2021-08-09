@@ -1,5 +1,5 @@
 +++
-parent = "post.html"
+parent = "post.md"
 date = 2020-12-31T19:39:00Z
 comments = true
 title = "new years stuff"
@@ -40,9 +40,9 @@ I wrote a "year in review" thing every year since I started having a website up 
 
 This year I have actual life events though 🎉 in order from start to end of the year:
 
-* __Moved out from home & in with my boyfriend__: Away from horrible North England and into much nicer Wales
-* __Got my first developer job__: Full-stack at a small business, was there for all of three-ish weeks before lockdown started & perma-work from home thereon after. I learned a lot from this place & it was probably the best 'first dev job' I could've hoped for; no super-intense pace, interesting greenfield project, very kind group of people, awesome manager & a stack I was already confident with
-* __Learned TypeScript + tonnes of other technologies__: Related to the previous, in no particular order I've learned:
+- **Moved out from home & in with my boyfriend**: Away from horrible North England and into much nicer Wales
+- **Got my first developer job**: Full-stack at a small business, was there for all of three-ish weeks before lockdown started & perma-work from home thereon after. I learned a lot from this place & it was probably the best 'first dev job' I could've hoped for; no super-intense pace, interesting greenfield project, very kind group of people, awesome manager & a stack I was already confident with
+- **Learned TypeScript + tonnes of other technologies**: Related to the previous, in no particular order I've learned:
   - TypeScript (+ Express a lot more)
   - Angular, RxJS, Pub-Sub pattern
   - Docker + Kubernetes
@@ -53,35 +53,35 @@ This year I have actual life events though 🎉 in order from start to end of th
   - Neo4j + cypher
   - mocha & chai (lord i loathe testing)
   - RabbitMQ / MQTT
-* __Started growing plants__: Bought a [huge shelf and stacked it with lights](https://cass.si/posts/growing-microgreens-and-mcn) & sensors and all other IoT stuff
-* __Got my first raise__
-* __Went to Belgium (again)__: 😉
-* __Left my first developer job__
-* __Joined a startup incubator__
-* __Became a bird whisperer__: Got myself a bird feeder & now I'm this apartment complexes social club for birds
-* __Incorporated a company__: Suppose now I'm a CTO of sorts in a startup with 4 other people, we're building a livestream & VOD service for performance arts, with all the experience of my last job so far a tonne of progress has been made
-* __Went out into town__: On a double date I guess? Normally I never would've done something like this being an anxious person and whatnot
-* __Started learning a second language (Norwegian)__: Got tired of learning programming languages so learning a real one now, det går bra :)
-* __First Christmas from home__: Thanks very much Mark Drakeford 😠
+- **Started growing plants**: Bought a [huge shelf and stacked it with lights](https://cass.si/posts/growing-microgreens-and-mcn) & sensors and all other IoT stuff
+- **Got my first raise**
+- **Went to Belgium (again)**: 😉
+- **Left my first developer job**
+- **Joined a startup incubator**
+- **Became a bird whisperer**: Got myself a bird feeder & now I'm this apartment complexes social club for birds
+- **Incorporated a company**: Suppose now I'm a CTO of sorts in a startup with 4 other people, we're building a livestream & VOD service for performance arts, with all the experience of my last job so far a tonne of progress has been made
+- **Went out into town**: On a double date I guess? Normally I never would've done something like this being an anxious person and whatnot
+- **Started learning a second language (Norwegian)**: Got tired of learning programming languages so learning a real one now, det går bra :)
+- **First Christmas from home**: Thanks very much Mark Drakeford 😠
 
 # Things I _want_ to do next year:
 
-* __Finish the Duolingo tree__
-* __Get to B2 CEFR level__ Bergentest kanksje?
-* __Improve fitness__: Get back into running again, lose some weight yada yada
-* __Release the MVP__: Q2 2021...? + funding pls
-* __Sell some microgreens at the local farmers market__
-* __Go on holiday to either Norway/Japan__: Test out my language skillz or my boyfriends' japanese - maybe both?
-* __Stop trying to achieve perfection__
-* __~~<small>voice training</small>~~__
+- **Finish the Duolingo tree**
+- **Get to B2 CEFR level** Bergentest kanksje?
+- **Improve fitness**: Get back into running again, lose some weight yada yada
+- **Release the MVP**: Q2 2021...? + funding pls
+- **Sell some microgreens at the local farmers market**
+- **Go on holiday to either Norway/Japan**: Test out my language skillz or my boyfriends' japanese - maybe both?
+- **Stop trying to achieve perfection**
+- **~~<small>voice training</small>~~**
 
 # Things I'd _like_ to do next year:
 
-* __Add i18n to this site__: Norwegian translations, maybe even a dark mode too
-* __Dress more fashionably__: Currently I just wear oversized hoodies and yeah, maybe try some makeup other than concealer too while I'm at it?
-* __Soft skills__: Be a better communicator & time management, agile schtuff
-* __Make mistakes__
-* __Maybe climb [Snowdon](https://en.wikipedia.org/wiki/Snowdon)__:
+- **Add i18n to this site**: Norwegian translations, maybe even a dark mode too
+- **Dress more fashionably**: Currently I just wear oversized hoodies and yeah, maybe try some makeup other than concealer too while I'm at it?
+- **Soft skills**: Be a better communicator & time management, agile schtuff
+- **Make mistakes**
+- **Maybe climb [Snowdon](https://en.wikipedia.org/wiki/Snowdon)**:
 
 ja, det er alt - her er til 2021 🥰 vær ikke forferdelig
 
@@ -91,6 +91,3 @@ ja, det er alt - her er til 2021 🥰 vær ikke forferdelig
 <!-- Fotorama from CDNJS, 19 KB -->
 <link  href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
-
-
-

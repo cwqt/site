@@ -5,14 +5,14 @@
   "main": "index.js",
   "scripts": {
     "build": "babel build -d _transpiled && sh build/build.sh",
-    "serve": "hgfy serve --port 4000",
+    "start": "geminoe serve --port 4000",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@cxss/hgfy": "1.0.3"
+    "@cxss/geminoe": "file:../../Software/geminoe"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.10",

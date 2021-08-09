@@ -1,5 +1,5 @@
 +++
-parent = "post.html"
+parent = "post.md"
 title = "MoonScript vs Lua: A speed test"
 date = 2017-11-19T20:39:00Z
 comments = true
@@ -14,6 +14,7 @@ I'll be comparing speed differences from MoonScript OO to a minimal and fast Lua
 The main 3 pillars of Object Orientation are: Objects, Methods and Inheritance. I'll be seeing how long it takes each implementation to create these in increasing sizes.
 
 ## Creating objects
+
 Simply defining a class called `X`, and creating and inserting ever-increasing amounts of `X`, from 10 to 1,000,000 instances.
 
 <div class="side-by-side" markdown="1">
@@ -28,16 +29,17 @@ Simply defining a class called `X`, and creating and inserting ever-increasing a
   print(End-Start)
   ```
 
-  ```moonscript
-  --moonscript
-  t = {}
-  class X
-    new: () =>
-  Start = os.clock()
-  for i=1, 100 do table.insert(t, X!)
-  End = os.clock()
-  print(End-Start)
+```moonscript
+--moonscript
+t = {}
+class X
+  new: () =>
+Start = os.clock()
+for i=1, 100 do table.insert(t, X!)
+End = os.clock()
+print(End-Start)
 ```
+
 </div>
 
 <div class="side-by-side" markdown="1">
@@ -56,8 +58,8 @@ Simply defining a class called `X`, and creating and inserting ever-increasing a
 </div>
 As you can see, the time taken for 30log to create objects increases massively to 16 seconds! - Although realistically most people will have less than 1,000 objects, the speed difference is still pretty large.
 
-
 ## Methods
+
 Giving `X` an method called `add` which simply increments its `self.x`.
 
 <div class="side-by-side" markdown="1">
@@ -74,35 +76,37 @@ Giving `X` an method called `add` which simply increments its `self.x`.
   print(End-Start)
   ```
 
-  ```moonscript
-  t = {}
-  class X
-    new: (@x) =>
-    add: () =>
-      @x += 1
-  for i=1, 100000 do table.insert(t, X(0))
-  Start = os.clock()
-  for x in *t do x\add()
-  End = os.clock()
-  print(End-Start)
-  ```
+```moonscript
+t = {}
+class X
+  new: (@x) =>
+  add: () =>
+    @x += 1
+for i=1, 100000 do table.insert(t, X(0))
+Start = os.clock()
+for x in *t do x\add()
+End = os.clock()
+print(End-Start)
+```
+
 </div>
 
 <div class="side-by-side" markdown="1">
   <img src="{{site::ftp_assets}}/msvslua-2.png" />
 
-  ```
-  | No. methods ran | Time taken (s)        |
-  |-----------------|------------|----------|
-  |                 | MoonScript | Lua      |
-  |-----------------|------------|----------|
-  | 10              | 1.3e-05    | 7.98e-06 |
-  | 100             | 1.9e-05    | 2.3e-05  |
-  | 1,000           | 0.000171   | 0.000248 |
-  | 10,000          | 0.001755   | 0.00275  |
-  | 100,000         | 0.017076   | 0.029891 |
-  | 1,000,000       | 0.172534   | 0.312667 |
-  ```
+```
+| No. methods ran | Time taken (s)        |
+|-----------------|------------|----------|
+|                 | MoonScript | Lua      |
+|-----------------|------------|----------|
+| 10              | 1.3e-05    | 7.98e-06 |
+| 100             | 1.9e-05    | 2.3e-05  |
+| 1,000           | 0.000171   | 0.000248 |
+| 10,000          | 0.001755   | 0.00275  |
+| 100,000         | 0.017076   | 0.029891 |
+| 1,000,000       | 0.172534   | 0.312667 |
+```
+
 </div>
 
 MoonScript is initially slower when object count is <100, but soon to lag starts to mount with 30log.
@@ -139,6 +143,7 @@ print(End-Start)
   End = os.clock()
   print(End-Start)
 ```
+
 </div>
 
 <div class="side-by-side" markdown="1">
@@ -159,4 +164,3 @@ print(End-Start)
 MoonScript is the clear victor here, 30log takes up to 17 seconds to complete the same task as MoonScript.
 
 So yeah. I guess we can say MoonScript OO is faster then 30log OO (and also nicer looking). 30log is still a good OO library though, it provides a simple and fairly fast way to do OO programming without the need for pre-compiling.
-

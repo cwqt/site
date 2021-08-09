@@ -92,6 +92,7 @@ body {
   height: 100%;
   padding: 40px;
   display: flex;
+  align-items: center;
   flex-flow: column;
   min-height: 100vh;
   @include respond-below(sm) {

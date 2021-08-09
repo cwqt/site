@@ -1,5 +1,5 @@
 +++
-parent = "post.html"
+parent = "post.md"
 date = 2020-12-26T17:59:55Z
 comments = true
 title = "better validation with higher-order functions"
@@ -22,17 +22,20 @@ as an ardent proponent of the DRY principle i wielded my FP power and spent a co
  */
 
 return await object(d, {
-    iso_country: v => v.isISO31661Alpha3(),
-    social_info: v =>
-      // chaining API
-      v.optional(true).custom(
+  iso_country: (v) => v.isISO31661Alpha3(),
+  social_info: (v) =>
+    // chaining API
+    v
+      .optional(true)
+      .custom(
         // nested objects
         single<typeof d.social_info>({
-          linkedin_url: v => v.isURL(),
-          facebook_url: v => v.isURL(),
-          instagram_url: v => v.isURL(),
+          linkedin_url: (v) => v.isURL(),
+          facebook_url: (v) => v.isURL(),
+          instagram_url: (v) => v.isURL(),
         })
-      ).withMessage("Some part of your social info is wrong!"),
+      )
+      .withMessage("Some part of your social info is wrong!"),
 })();
 ```
 
@@ -59,23 +62,23 @@ validators: [
 another feature is composing validators, say for example validating an address, one could make something like:
 
 ```ts
-type ObjectValidator<T> = {[index in keyof T]:CustomValidator};
+type ObjectValidator<T> = { [index in keyof T]: CustomValidator };
 
-const IAddress = ():ObjectValidator<Idless<IAddress>> => {
+const IAddress = (): ObjectValidator<Idless<IAddress>> => {
   return {
-    city: v => FieldValidators.isString(v, "Must provide a city"),
-    iso_country_code: v => FieldValidators.ISOCountry(v),
-    postcode: v => FieldValidators.Postcode(v),
-    street_name: v => FieldValidators.isString(v, "Must provide a street name"),
-    street_number: v => FieldValidators.isInt(v, "Must provide a street number")
-  }
-},
+    city: (v) => FieldValidators.isString(v, "Must provide a city"),
+    iso_country_code: (v) => FieldValidators.ISOCountry(v),
+    postcode: (v) => FieldValidators.Postcode(v),
+    street_name: (v) => FieldValidators.isString(v, "Must provide a street name"),
+    street_number: (v) => FieldValidators.isInt(v, "Must provide a street number"),
+  };
+};
 ```
 
 and then use them in other validators;
 
 ```ts
 await object(d, {
-    address: v => v.custom(single(IAddress()))
+  address: (v) => v.custom(single(IAddress())),
 })();
 ```

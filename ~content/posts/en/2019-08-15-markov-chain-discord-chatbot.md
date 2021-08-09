@@ -1,5 +1,5 @@
 +++
-parent = "post.html"
+parent = "post.md"
 title = "Using Markov Chains to make a chatbot"
 date = 2019-08-15T06:21:00Z
 comments = true
@@ -106,10 +106,10 @@ isTrained = false
 return (...) ->
   if select(2, ...)[1] == nil
   	--no specified usage flag
-    select(1,...).channel\send("train/post")    
+    select(1,...).channel\send("train/post")
     return
   switch select(2, ...)[1]
-  	--sort the data and train 
+  	--sort the data and train
     when "train"
       select(1,...).channel\send("Training!")
       select(1,...).channel\send("Parsing data.json")
@@ -168,7 +168,7 @@ return (...) ->
         -- the  use that probability to semi-randomly choose the next word based on the last
         -- continue until the token that's chosen is a period
         myStr = {}
-        currentWord = "START_TOKEN" 
+        currentWord = "START_TOKEN"
         mod = 15
         while currentWord != "END_TOKEN"
           map = {}
@@ -203,7 +203,6 @@ The result:
 
 ![it just works](https://ftp.cass.si/=gTOxADMwA.png)
 
-
-Often times it just spews out complete gibberish because of the low depth of the markov chain, sometimes it is quite eerie when it says something coherent as it imitates my style of speech and typing. 
+Often times it just spews out complete gibberish because of the low depth of the markov chain, sometimes it is quite eerie when it says something coherent as it imitates my style of speech and typing.
 
 The bot only considers the immediate word in-front, so the 'gibberishness' of sentences can be be reduced by considering not only the word in-front, but the word in-front of that word, and so forth.

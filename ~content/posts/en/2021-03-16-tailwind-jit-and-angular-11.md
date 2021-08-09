@@ -1,5 +1,5 @@
 +++
-parent = "post.html"
+parent = "post.md"
 date = 2021-03-16T21:15:00Z
 comments = true
 title = "Nx, tailwindcss & Angular 11"
@@ -7,13 +7,13 @@ title = "Nx, tailwindcss & Angular 11"
 
 I spent a solid 3 days going through countless medium articles, reddit posts & documentations looking for a way to get tailwind to play ball with this setup. The easy part is getting tailwind to actually be a part of the bundle, but the hard part was getting the purging, `@apply` & scss building to work correctly
 
-## __1__ installing tailwind & webpack
+## **1** installing tailwind & webpack
 
 ```sh
 npm install -D @tailwindcss/jit tailwindcss postcss webpack @angular-builders/custom-webpack --force
 ```
 
-## __2__ create a `tailwind.scss` file
+## **2** create a `tailwind.scss` file
 
 keep the tailwind styles separate from your actual `styles.scss` & add this to a file called `tailwind.scss` in the `src/` directory of your angular app
 
@@ -29,7 +29,7 @@ keep the tailwind styles separate from your actual `styles.scss` & add this to a
 }
 ```
 
-## __3__ update nx workspace.json
+## **3** update nx workspace.json
 
 set your `FRONTEND.targets.build.styles` to look like this, with `tailwind.scss` being the 1st element
 
@@ -40,64 +40,63 @@ set your `FRONTEND.targets.build.styles` to look like this, with `tailwind.scss`
 	],
 ```
 
-## __4__ create a `webpack.config.js` & `tailwind.config.js` file
+## **4** create a `webpack.config.js` & `tailwind.config.js` file
 
 ```js
-'use strict';
-const webpack = require('webpack');
+"use strict";
+const webpack = require("webpack");
 
 module.exports = {
-  module: { 
+  module: {
     rules: [
       {
         test: /tailwind\.scss$/,
-        loader: 'postcss-loader',
+        loader: "postcss-loader",
         options: {
           postcssOptions: {
-            ident: 'postcss',
-            syntax: 'postcss-scss',
+            ident: "postcss",
+            syntax: "postcss-scss",
             plugins: [
-              require('postcss-import'),
-              require('tailwindcss')(require('./tailwind.config.js')(false)),
-              require('autoprefixer')
-            ]
-          }
-        }
+              require("postcss-import"),
+              require("tailwindcss")(require("./tailwind.config.js")(false)),
+              require("autoprefixer"),
+            ],
+          },
+        },
       },
       {
         test: /\.scss$/,
-        loader: 'sass-loader'
-      }
-    ]
+        loader: "sass-loader",
+      },
+    ],
   },
-  plugins: []
+  plugins: [],
 };
 ```
 
 ```js
 // safelist array not currently supported, hack in a file with all safelisted classes
 // for the tailwind/jit compiler to keep them in https://github.com/tailwindlabs/tailwindcss-jit/issues/32
-module.exports = isProd => ({
-  prefix: '',
+module.exports = (isProd) => ({
+  prefix: "",
   purge: {
     enabled: isProd,
-    content: ['**/*.html', '**/*.ts', './apps/frontend/safelist.txt'],
+    content: ["**/*.html", "**/*.ts", "./apps/frontend/safelist.txt"],
     options: {
-      safelist: []
-    }
+      safelist: [],
+    },
   },
   darkMode: false,
   theme: {},
   variants: {},
-  plugins: []
+  plugins: [],
 });
 ```
 
-For some reason I get a tonne of errors using `module.exports` as a function so I can't get the webpack env :/  
+For some reason I get a tonne of errors using `module.exports` as a function so I can't get the webpack env :/
 but setting the `false` to be a `true` isn't too difficult on the `isProd` argument of the tailwind config require when performing a prod build so whatever
 
-## __5__ set angular to build using `custom-webpack` builder
-
+## **5** set angular to build using `custom-webpack` builder
 
 for building:
 

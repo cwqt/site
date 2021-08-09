@@ -1,5 +1,5 @@
 +++
-parent = "post.html"
+parent = "post.md"
 title = "JAMstack & file hosting"
 date = 2017-12-17T11:36:00Z
 comments = true
@@ -97,12 +97,12 @@ You can see the fruits of my labour at: <https://{{site::title}}/push>
 
 Basically all it does is,
 
-* Function to grab image data from input type file
-* Do some input checking to see if we've actually got anything to upload
-* Input checking to see if we've added Username + Password
-* If we've uploaded a file, take priority over a text paste
-* Format file data, name and extension into an object
-* Use and ajax script + GitHub API and push contents into the `ftp` directory
+- Function to grab image data from input type file
+- Do some input checking to see if we've actually got anything to upload
+- Input checking to see if we've added Username + Password
+- If we've uploaded a file, take priority over a text paste
+- Format file data, name and extension into an object
+- Use and ajax script + GitHub API and push contents into the `ftp` directory
 
 A static file uploader with about 10 seconds of propogation from file upload to being live isn't so bad when you think about it. I'm not paying for any server or hosting costs so it's all pretty neat.
 
@@ -129,38 +129,40 @@ exit 0
 ```
 
 Here's the conversion script I came up with, heavily commented for you.
-```js
-const fs = require('fs');
 
-var assetDir  = __dirname + "/"
-var resultDir = assetDir + "_site/"
+```js
+const fs = require("fs");
+
+var assetDir = __dirname + "/";
+var resultDir = assetDir + "_site/";
 
 // Get a array with all the files in the current directory
-fs.readdir(__dirname, function(err, items) {
+fs.readdir(__dirname, function (err, items) {
   // Loop through them all
-  for (var i=0; i<items.length; i++) {
+  for (var i = 0; i < items.length; i++) {
     let file = items[i];
     // Check if we're dealing with a base64 file
-    if (file.split('.').slice(1).join('.') == "b64" ){
+    if (file.split(".").slice(1).join(".") == "b64") {
       // Strip the extension, file only.
       let fileName = file.replace(/\.[^/.]+$/, "");
       // Grab the file data
-      let fileContent = fs.readFileSync(assetDir + file, 'utf8');
+      let fileContent = fs.readFileSync(assetDir + file, "utf8");
 
       // Get the true file extension (not .b64)
-      let b64Extension = fileContent.split(';')[0].split('/')[1];
+      let b64Extension = fileContent.split(";")[0].split("/")[1];
       // Strip the header from actual file
-      let b64File = fileContent.split(';base64,').pop();
+      let b64File = fileContent.split(";base64,").pop();
 
       // Convert to binary and write
       resultFilename = fileName + "." + b64Extension;
-      fs.writeFile(resultDir + resultFilename, b64File, {encoding: 'base64'}, function(err) {
-          console.log("File: " + resultFilename + " created");
+      fs.writeFile(resultDir + resultFilename, b64File, { encoding: "base64" }, function (err) {
+        console.log("File: " + resultFilename + " created");
       });
 
       // Finally, remove the b64 file
       fs.unlinkSync(assetDir + file);
-    } else { // Not a b64 file
+    } else {
+      // Not a b64 file
       if (file != "_site") {
         //Not a b64 file, move to _site/
         fs.rename(file, resultDir + file);

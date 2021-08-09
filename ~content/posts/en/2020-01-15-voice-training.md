@@ -1,5 +1,5 @@
 +++
-parent = "post.html"
+parent = "post.md"
 comments = true
 date = 2020-01-15T11:51:00Z
 title = "voice training"
@@ -37,6 +37,6 @@ don't strain the vocal chords
 
 ![](https://ftp.cass.si/015027d~6.jpeg)
 
-Close off the nasal passage by raising the soft palete & reducing nasality / increase resonance 
+Close off the nasal passage by raising the soft palete & reducing nasality / increase resonance
 
 # Oropharynx constriction

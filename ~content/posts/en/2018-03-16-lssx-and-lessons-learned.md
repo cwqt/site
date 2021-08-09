@@ -1,5 +1,5 @@
 +++
-parent = "post.html"
+parent = "post.md"
 title = "lssx, zephyr & lessons learned"
 date = 2018-03-16T23:27:00Z
 comments = true
@@ -15,7 +15,7 @@ EPQ, Extended Project Qualification, is holy grail for brainlets applying to uni
 
 Why is this? Why would any rational person take on such a thing that requires you to actually, physically give a presentation upon completion?
 
-If you somehow manage not to burn out mid-project and write your essay in a mostly coherent fashion, then hey! You're up for a solid chance of getting an A/A* AS qualification. Honestly no-one cares about the fact that it's another qualification, the _real_ reason why people take it is that universities tend to love that you're being independent, taking on your own research and setting goals - it's supposed to set you up for uni life and as such they'll decrease their entry requirements by one grade.
+If you somehow manage not to burn out mid-project and write your essay in a mostly coherent fashion, then hey! You're up for a solid chance of getting an A/A\* AS qualification. Honestly no-one cares about the fact that it's another qualification, the _real_ reason why people take it is that universities tend to love that you're being independent, taking on your own research and setting goals - it's supposed to set you up for uni life and as such they'll decrease their entry requirements by one grade.
 
 i.e. AAA --> AAB
 
@@ -28,14 +28,17 @@ The result is _lssx_.\\
 <iframe width="1891" height="764" src="https://www.youtube.com/embed/t9O3deN-wH0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### What is lssx?
+
 It's **L**OVE **S**pace **S**hooter **X** of course!
 
 ### And what exactly is LOVE Space Shooter X?
+
 It's a fast-paced, twitchy and unforgiving space-pilot simulator from a bygone era. No, but really, it's little game written in MoonScript using the LOVE game framework.
 
 ### Wowee, where can I get it?
-* here: <https://ttxi.itch.io/lssx>
-* or here: <https://github.com/twentytwoo/zephyr>
+
+- here: <https://ttxi.itch.io/lssx>
+- or here: <https://github.com/twentytwoo/zephyr>
 
 ---
 
@@ -45,7 +48,7 @@ Okay, lssx and all its components are really, really boring to talk about. Inste
 
 **zephyr** is the dumb name for my Box2d wrapper with entity management. Considering this is my second game and the fact that I've never developed anything with more than 7 objects (a la. procedural programming) this was a fairly big deal (which I'm a little proud of). In my previous games I struggled a lot with identifying objects when colliding with something, for example:
 
-~~~lua
+```lua
 function Object.beginContact(other)
   if other == "Door"
     other:open()
@@ -54,7 +57,7 @@ function Object.beginContact(other)
   elseif other == "Spikes"
     self:die()
 end
-~~~
+```
 
 The whole `other` is the tricky part, which door? Which door do I `:open()`?
 
@@ -65,11 +68,11 @@ Thankfully zephyr solves this in a fairly easily understandable approach (hopefu
 Which tells me a Bullet has collided with an Asteroid, it also tells me which Bullet collided with which Asteroid. This makes it super easy to identify object's in a table via the use of UUIDs. \\
 All physics interactable objects are placed in a single globally accessible table (which I named `lssx.objects`), and upon any two objects colliding the following Box2D callback function is ran:
 
-~~~moon
+```moon
 Physics.beginContact = (a, b) ->
   lssx.objects[a\getBody()\getUserData().hash]\beginContact(b, a)
   lssx.objects[b\getBody()\getUserData().hash]\beginContact(a, b)
-~~~
+```
 
 Let's trace through it:
 
@@ -88,25 +91,26 @@ If I were to draw all the game objects' UUIDs' next to the object, it'd look lik
 
 If you can recall from earlier, all game objects are assigned a UUID and placed in the `lssx.objects` table. This means that we can add the UUID to the bodies UserData - and it can be used as a sort of text-only pointer.
 
-~~~lua
+```lua
 self.hash = UUID()
 self.body:setUserData({["hash"] = self.hash})
-~~~
+```
 
 Each game object has a function called `beginContact` that get's ran when something collides with us.\\
 Now we get to the good part:
 
 > `lssx.objects[a\getBody()\getUserData().hash]\beginContact(b, a)`
 
-* `a`: The fixture a
-* `\getBody()`: Get a's body
-* `\getUserData().hash`: Get the bodies' UserData, get the value of key `hash` in the UserData table
-* `beginContact(b, a)`: Run the beginContact on the object with key `hash` (it's a UUID)
+- `a`: The fixture a
+- `\getBody()`: Get a's body
+- `\getUserData().hash`: Get the bodies' UserData, get the value of key `hash` in the UserData table
+- `beginContact(b, a)`: Run the beginContact on the object with key `hash` (it's a UUID)
 
 That might seem painfully complicated, but I did zero research on engine devving and entity management but it's what I came up with and works out actually quite nicely. Doing things this way also allows me to add custom hashes, for example the Player has a hash of `Player` (look at the above image) which makes it super easy to access through the rest of the program.
 
 It allows me to do things like this,
-~~~moon
+
+```moon
 -- in an object (e.g. Player.moon)
 beginContact: (other) =>
   collObj = lssx.objects[other\getBody()\getUserData().hash]
@@ -116,18 +120,18 @@ beginContact: (other) =>
       collObj\Destroy()
     when 'spikes'
       @Die()
-~~~
+```
+
 Which is just honestly the easiest thing I could possibly imagine. \\
 Unfortunately lssx itself kind of got all spaghetti-coded and zephyr was mixed all up in it. I'm going to develop and improve zephyr on it's own since I find it quite nice to work with, although it could definitely use with some improvements.
 
-
 ### Box2D world steps and removals
 
-So we have this amazing function that can easily recognise objects and fixtures and wow it's just so totally great. Buuuut, you can't edit bodies **inside** a callback function (`beginContact`) because it's running within the Box2D world step. 
+So we have this amazing function that can easily recognise objects and fixtures and wow it's just so totally great. Buuuut, you can't edit bodies **inside** a callback function (`beginContact`) because it's running within the Box2D world step.
 
 Instead you'd have to add such commands to a buffer/stack/whatever, a buffer that gets ran _after_ the world step, when it's safe. Simple enough. I came up with a fairly nice solution that did this and removed duplicates:
 
-~~~moon
+```moon
 Physics.update = (dt) ->
   lssx.world\update(dt)
   Physics.runBuffer()
@@ -147,7 +151,7 @@ Physics.runBuffer = () ->
         Physics.buffer[i][1]()
         hash[Physics.buffer[i][2]] = true
         table.remove(Physics.buffer, i)
-~~~
+```
 
 Which was nice and all for a bit, but then I started running into a looot of bugs, the following was occurring:
 
@@ -157,5 +161,5 @@ The solution, two buffers! (gee bill), one for general body manipulation and oth
 
 ![gee_bill_two_buffers?!](https://ftp.{{site::title}}/yUzNzQTOyQ.png)
 
-So yeah, that's __lssx__ and __zephyr__.\\
+So yeah, that's **lssx** and **zephyr**.\\
 Thanks for reading :3

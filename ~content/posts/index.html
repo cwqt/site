@@ -1,8 +1,6 @@
 +++
-parent = "page.html"
+parent = "page.md"
 title = "posts"
 +++
 
-<div>
-  {{ iterate::posts/$locale list-item.html }}
-</div>
+{{ iterate::posts/$locale list-item.md }}

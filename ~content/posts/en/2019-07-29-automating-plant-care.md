@@ -1,5 +1,5 @@
 +++
-parent = "post.html"
+parent = "post.md"
 title = "Automating plant care with React and Flask"
 date = 2019-07-29T11:47:00Z
 comments = true
@@ -11,7 +11,6 @@ _My plants keep dying_, I don't water them as much as I should.
 
 So instead of being a normal human being and keeping to a schedule of watering my plants (or literally just looking at the plant to see if it needs watering), I'll spend an inordinate amount of time creating a system to remind me to water my plants, as well as keeping me posted on telemetry that I don't especially care about. […](https://xkcd.com/1319/)
 
-
 Moving on... I've been wanting to learn [Redux](https://redux.js.org) for a while now but never really had a oppurtunity to do so, simply because the applications I make are often small and I never seem to come across the whole "state bubbling" problem that a lot of people quote as their reason to integrate Redux.
 
 I'm well aware this project could've been done without Redux, but I figure starting small is a way better to learn the concepts that can be used for bigger things later on.
@@ -20,13 +19,13 @@ I'm well aware this project could've been done without Redux, but I figure start
 
 The problem with component state comes along when the component tree becomes complex and state cannot be easily fetched nor passed down through the component tree.
 
-As far as I understand it Redux is simply a state manager, Redux contains a store which is like a global state - a single source of truth for all components to read from, but places specific restrictions on what and how they update the state of the store.  
+As far as I understand it Redux is simply a state manager, Redux contains a store which is like a global state - a single source of truth for all components to read from, but places specific restrictions on what and how they update the state of the store.
 
 ![](https://ftp.cass.si/1EzN0EDMwA.png)
 
 From <https://blog.logrocket.com/when-and-when-not-to-use-redux-41807f29a7fb/>:
 
->This complexity is difficult to handle as we're mixing two concepts that are very hard for the human mind to reason about: mutation and asynchronicity. I call them Mentos and Coke. Both can be great in separation, but together they create a mess.
+> This complexity is difficult to handle as we're mixing two concepts that are very hard for the human mind to reason about: mutation and asynchronicity. I call them Mentos and Coke. Both can be great in separation, but together they create a mess.
 
 Redux tries to simplify this issue by removing asynchronicity and direct DOM manipulation, but the overall state of the application is still within our control.
 
@@ -41,19 +40,20 @@ Actions are simply events that send data from the application to the store. Data
 An action example which fetches a list of plants from an API.
 
 ```js
-export const fetchPlants = () => dispatch => {
+export const fetchPlants = () => (dispatch) => {
   //=> dispatch => returns a func that takes args(dispatch)
   //dispatch makes async requests
   //think of as a resolver in promises
   fetch("/plants/")
-    .then(res => res.json())
+    .then((res) => res.json())
     //dispatch data (plants) to reducer
-    .then(data => dispatch({
-      type: FETCH_PLANTS,
-      payload: data.data
-    })
-  );
-}
+    .then((data) =>
+      dispatch({
+        type: FETCH_PLANTS,
+        payload: data.data,
+      })
+    );
+};
 ```
 
 `data.data` is firstly the response in json, and the second `data` field is the mixed type object containing the API response data.
@@ -81,25 +81,25 @@ Following from the `FETCH_PLANTS` action...
 
 ```js
 const initialState = {
-  //represents plants from action, where we put he fetch req 
+  //represents plants from action, where we put he fetch req
   items: [],
 };
 
-export default function(state=initialState, action) {
-  switch(action.type) {
+export default function (state = initialState, action) {
+  switch (action.type) {
     case FETCH_PLANTS:
       // the initial state (items = [])
       return {
         ...state,
-        items: action.payload
-      }
+        items: action.payload,
+      };
     default:
       return state;
   }
 }
 ```
 
-Reducers are pure functions, they make no API calls and their return values should depend solely on its parameters. 
+Reducers are pure functions, they make no API calls and their return values should depend solely on its parameters.
 
 #### Store
 
@@ -107,26 +107,25 @@ As mentioned before, the store is a single source of truth, in order for compone
 
 In a component that lists all the current plants in the store `items` we would typically export it like:
 
-
 ```js
-export default PlantList
+export default PlantList;
 ```
 
 But this is unconnected, and has no way of reading the store, instead we use Redux's `connect` function to allow this to happen.
 
 ```js
-export default connect(MapStateToProps, { fetchPlants })(PlantList)
+export default connect(MapStateToProps, { fetchPlants })(PlantList);
 ```
 
 When the `FETCH_PLANTS` action is called it dispatches an event to the reducer which returns a new state, upon this we map the current state to the component props via `MapStateToProps`.
 
 ```js
-const MapStateToProps = state => ({
+const MapStateToProps = (state) => ({
   //root reducer returns plants
   //PlantReducer has state with items
-  plants: state.plants.items
+  plants: state.plants.items,
   //now have this.props.plants
-})
+});
 ```
 
 Now this all doesn't seem very useful on its own, but add in more actions like `CREATE_PLANT`, `DELETE_PLANT` and others and it scales up quite nicely, s-so they say...
@@ -139,10 +138,10 @@ I choose to use a RPi Zero W since its easy to set up, has a bunch of nice proto
 
 I choose [this moisture sensor](https://thepihut.com/products/adafruit-stemma-soil-sensor-i2c-capacitive-moisture-sensor-ada4026) because:
 
-* __capacitative__, resistive sensors suffer in accuracy and have exposed metal (which will corrode)
-* on-board ATSAMD10 __uses I2C communication__, very simple to interface with as opposed to a resistive input transducer where I'd have to convert the analog signal via an ADC
-* __longer life__, no exposed metal so no corrosion
-* gives a __nice output value__ of 200 (very dry) to 2000 (very wet), makes my life easier later on :)
+- **capacitative**, resistive sensors suffer in accuracy and have exposed metal (which will corrode)
+- on-board ATSAMD10 **uses I2C communication**, very simple to interface with as opposed to a resistive input transducer where I'd have to convert the analog signal via an ADC
+- **longer life**, no exposed metal so no corrosion
+- gives a **nice output value** of 200 (very dry) to 2000 (very wet), makes my life easier later on :)
 
 To turn on I2C we can just navigate through the `raspi-config` menu an activate it.
 
@@ -172,7 +171,6 @@ The sensor has an I2C address of `0x36`. I wrote a little bit of code to talk to
   "TOKEN": "API token",
   "UUID": "Plant UUID"
 }
-
 ```
 
 ```python
@@ -221,7 +219,7 @@ In order to get this to work on the RPi upon boot, we can use the `/etc/rc.local
 
 ```
 sudo su
-apt-get install python3 python3-pip 
+apt-get install python3 python3-pip
 pip3 install adafruit-blinka adafruit adafruit-circuitpython-seesaw
 
 cd /home/pi
@@ -266,13 +264,13 @@ There are two endpoints, `/plants` and `/plants/<uuid>`.
 
 `/plants` has a `GET` and `POST` method.
 
-* `GET` 200 (OK)
+- `GET` 200 (OK)
 
 Returns a list of all plants.
 
 ---
 
-* `POST` 201 (Created)
+- `POST` 201 (Created)
 
 Creates a new plant, takes input for the `plant_name` and `image_url` (for the front-end later on) in the form of a json document.
 
@@ -283,7 +281,7 @@ Creates a new plant, takes input for the `plant_name` and `image_url` (for the f
 }
 ```
 
-Returns the plant UUID. 
+Returns the plant UUID.
 
 ```json
 {
@@ -295,15 +293,15 @@ Returns the plant UUID.
 
 ### /plants/\<uuid\>
 
-`/plants/<uuid>` has `GET`, `PUT` and `DELETE` methods. 
+`/plants/<uuid>` has `GET`, `PUT` and `DELETE` methods.
 
-* `GET` 200 (OK)
+- `GET` 200 (OK)
 
 Returns the plant object with UUID `<uuid>`.
 
 ---
 
-* `PUT` 200 (OK)
+- `PUT` 200 (OK)
 
 Updates the plant `updates` object which contains all moisture levels in the form:
 
@@ -327,7 +325,7 @@ Takes input in the form of a json document:
 
 ---
 
-* `DELETE` 200 (OK)
+- `DELETE` 200 (OK)
 
 Deletes the plant with UUID `<uuid>`.
 
@@ -359,12 +357,12 @@ I use `dpl` to send a deployment request to Heroku, send a request for the api a
 production:
   type: deploy
   script:
-  - gem install dpl
-  - cd api
-  - dpl --provider=heroku --app=moisture-track --api-key=$HEROKU_API_KEY
-  - cd ..
-  - cd frontend
-  - dpl --provider=heroku --app=moisture-track-fe --api-key=$HEROKU_API_KEY
+    - gem install dpl
+    - cd api
+    - dpl --provider=heroku --app=moisture-track --api-key=$HEROKU_API_KEY
+    - cd ..
+    - cd frontend
+    - dpl --provider=heroku --app=moisture-track-fe --api-key=$HEROKU_API_KEY
 ```
 
 ### Heroku, Flask
@@ -373,10 +371,10 @@ I always seem to have trouble with Heroku, maybe I'm just an idiot but there are
 
 For Flask, this is what you need.
 
-* Buildpack: add the `heroku/python` buildpack to your application
-* Pipfile: Make sure all your dependencies are installed via `pipenv`
-* Procfile: This is read by Heroku to know what to do to deploy your app
-* `env` variables: e.g. `MONGO_URI`, this is private of course as we don't want random people accessing it.
+- Buildpack: add the `heroku/python` buildpack to your application
+- Pipfile: Make sure all your dependencies are installed via `pipenv`
+- Procfile: This is read by Heroku to know what to do to deploy your app
+- `env` variables: e.g. `MONGO_URI`, this is private of course as we don't want random people accessing it.
 
 Since Flask doesn't have a production web server you can't just do `flask run` to deploy it online, instead you must use something else, I use `gunicorn` simply because it's the first one I found and got working.
 
@@ -384,7 +382,7 @@ Add it to your Pipfile via `pipenv --three install gunicorn`.
 
 Then in the Procfile add this one line: `web: gunicorn app:app`, `web` being the worker that Heroku spawns (which is by default `web`), `gunicorn` being the web-server and `app:app` being firstly: the name of the service (which could be anything besides `app`), and secondly the Flask `app`, e.g. `app = Flask(__name__)` in the `app.py` / whatever.py.
 
-Normally you would use `.env` to store enviroment variables, but for some reason when calling `os.environ.get()` for the value Heroku just doesn't like it. Instead you can use Heroku's __Config Vars__ which functionally work exactly the same.
+Normally you would use `.env` to store enviroment variables, but for some reason when calling `os.environ.get()` for the value Heroku just doesn't like it. Instead you can use Heroku's **Config Vars** which functionally work exactly the same.
 
 ![](https://ftp.cass.si/=YzM2EDMwA.png)
 
@@ -402,28 +400,29 @@ There's a tiny bit of configuration to setup to get the url proxying to work cor
 
 Unfortunately the documentation for this buildpack is a bit out of date, as of React 2 you cannot supply an object to the `proxy` key in `package.json`, only strings are allowed. Instead we must use a `setupProxy.js` file, which essentially does the same thing.
 
-* `package.json`
+- `package.json`
+
   - Remove `proxy` key + value
 
-* `src/setupProxy.js`
+- `src/setupProxy.js`
   - For **local development** proxying to work, add this file to proxy all `/api/` routes to the local Flask address.
 
 ```js
-const proxy = require('http-proxy-middleware')
+const proxy = require("http-proxy-middleware");
 
 var options = {
-  target: 'http://localhost:5000/',
+  target: "http://localhost:5000/",
   pathRewrite: {
-    '^/api': '/', // rewrite path
-  }
+    "^/api": "/", // rewrite path
+  },
 };
 
-module.exports = function(app) {
-  app.use('/api', proxy(options))
-}
+module.exports = function (app) {
+  app.use("/api", proxy(options));
+};
 ```
 
-* `static.json`
+- `static.json`
   - For **production**, add the following to `static.json` in the file root, keeping `API_URL`, we'll use that later in the Heroku config vars to reference the API address..
 
 ```json
@@ -458,10 +457,10 @@ For MongoDB Atlas to work from anywhere the IP blacklists should be changed, thi
 
 As you can see this was a fairly involved and full-stack project, all the way down to making the hardware :) I had fun learning Redux, I found the following resources pretty helpful:
 
-* <https://www.youtube.com/watch?v=4T5Gnrmzjak&t=357s>
-* <https://www.youtube.com/watch?v=93p3LxR9xfM&t=2107s>
-* <https://www.youtube.com/watch?v=4o7C4JMGLe4&t=409s>
-* <https://www.youtube.com/watch?v=3ZS7LEH_XBg&t=719s>
-* <https://blog.logrocket.com/when-and-when-not-to-use-redux-41807f29a7fb/>
+- <https://www.youtube.com/watch?v=4T5Gnrmzjak&t=357s>
+- <https://www.youtube.com/watch?v=93p3LxR9xfM&t=2107s>
+- <https://www.youtube.com/watch?v=4o7C4JMGLe4&t=409s>
+- <https://www.youtube.com/watch?v=3ZS7LEH_XBg&t=719s>
+- <https://blog.logrocket.com/when-and-when-not-to-use-redux-41807f29a7fb/>
 
 I guess now I have no excuse for my plants dying in the future.

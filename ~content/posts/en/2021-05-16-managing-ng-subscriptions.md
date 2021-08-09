@@ -1,5 +1,5 @@
 +++
-parent = "post.html"
+parent = "post.md"
 date = 2021-05-16T11:48:00Z
 comments = true
 draft = false

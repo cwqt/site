@@ -18,7 +18,7 @@ rm -rf _transpiled
 # sed -i -e "s/CAPTCHA_SITE_KEY/$CAPTCHA_SITE_KEY/g" ./_config.yml
 # sed -i -e 's/CAPTCHA_SECRET_KEY/'"$CAPTCHA_SECRET_KEY"'/g' ./_config.yml
 
-hgfy build
+geminoe build
 
 echo "Pulling data from api..."
 COMMIT=$(curl --silent --header "PRIVATE-TOKEN: $GITLAB_API_KEY" "https://gitlab.com/api/v4/projects/13261952/repository/commits/master" | jq '.short_id' | tr -d \")

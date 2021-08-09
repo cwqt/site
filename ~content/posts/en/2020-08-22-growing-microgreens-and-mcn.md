@@ -1,5 +1,5 @@
 +++
-parent = "post.html"
+parent = "post.md"
 title = "Microgreens diary & mcn"
 date = 2020-08-22T16:19:00Z
 comments = true

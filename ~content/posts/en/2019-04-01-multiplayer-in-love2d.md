@@ -1,5 +1,5 @@
 +++
-parent = "post.html"
+parent = "post.md"
 title = "Multiplayer and LÖVE"
 date = 2019-02-25T04:35:00Z
 comments = true
@@ -30,14 +30,13 @@ The reason why NATs exist is because of IPv4.
 
 # The problem
 
-Back in the day when ARPANET was being developed for implementation of TCP/IP there was an issue: packet size vs speed. Source/destinations are defined by IP addresses, the protocol that is mostly used today, IPv4, was created during the time of ARPANET.  IPv4 defines a IP length of 32 bits, which gives us: 4,294,967,296. 4 million IP addresses. We'll never use those all up they said... we did, and now we have NATs.
+Back in the day when ARPANET was being developed for implementation of TCP/IP there was an issue: packet size vs speed. Source/destinations are defined by IP addresses, the protocol that is mostly used today, IPv4, was created during the time of ARPANET. IPv4 defines a IP length of 32 bits, which gives us: 4,294,967,296. 4 million IP addresses. We'll never use those all up they said... we did, and now we have NATs.
 
 NAT or Network Address Translation, is pretty simple, you have a local network consisting of many devices that connects to a single NAT, which has a public IPv4 address, if you imagine 20 devices each with their own IP, IPv4 address space would get used up incredibly quickly. NAT solves this in that we no longer have to give out 20 IP addresses, but only one to the NAT.
 
 ![](https://ftp.cass.si/=UDM5gzM5k.jpeg)
 
 Each device behind a NAT has a _local address_ of something like: 192.168.0.2 or 192.168.0.12 etc. When data is being sent from a device behind a NAT, each packet has a source address, that being it's local address. The NAT operates what's known as a _mapping table_ which simply re-writes that local address to it's own public IPv4 address. e.g.
-
 
 <!--<img src="https://ftp.cass.si/=UjN3kjMwA.png" width="50%">-->
 
@@ -52,7 +51,6 @@ From NAT -> Destination
 Source: NAT ADDRESS
 Destination: 81.12.185.23
 ```
-
 
 Well that's not all, take for example another server wanted to talk to our device behind a NAT, that server knows the NAT exists at some public address, but it doesn't know _which_ device to send it's data to - enter ports.
 
@@ -82,8 +80,4 @@ There are a few ways to deal with this, the most popular being Relaying, i.e. yo
 
 Another, but more complex method of opening ports is via TCP Holepunching.
 
-
-
-__to be continued__
-
-
+**to be continued**

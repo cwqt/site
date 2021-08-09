@@ -1,11 +1,11 @@
 +++
-parent = "post.html"
+parent = "post.md"
 title = "Hosting over dat protocol"
 date = 2018-12-08T23:43:00Z
 comments = true
 +++
 
-In an attempt to fight off my sleep deprivation I'll write this post about a little something called `dat`. I recently bought a vps for $3.50pm and figured I'd have a go at some things I've been wanting to do but never had a dedicated server for. 
+In an attempt to fight off my sleep deprivation I'll write this post about a little something called `dat`. I recently bought a vps for $3.50pm and figured I'd have a go at some things I've been wanting to do but never had a dedicated server for.
 
 Hopefully this post acts as a guide to anyone else wanting to serve their site with `dat`.
 
@@ -22,7 +22,7 @@ sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install nodejs
 sudo npm install npm
-sudo install -g dat 
+sudo install -g dat
 ```
 
 Test it works via `dat -v`.

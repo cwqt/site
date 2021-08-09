@@ -1,17 +1,17 @@
 +++
-parent = "post.html"
+parent = "post.md"
 title = "FFS at 2pass Clinic"
 date = 2019-11-11T07:58:00Z
 draft = true
 comments = true
 +++
 
-It's hard to believe that only 8 months ago I was making my plans to drop out of uni to pursue FFS - not exactly something I considered lightly - but the thought of spending 4 years doing a degree looking like this was reason enough..., here I am now though, mostly out of the woods in regards to swelling and with a new face 😌  
+It's hard to believe that only 8 months ago I was making my plans to drop out of uni to pursue FFS - not exactly something I considered lightly - but the thought of spending 4 years doing a degree looking like this was reason enough..., here I am now though, mostly out of the woods in regards to swelling and with a new face 😌
 Just to get it out of the way the surgery was just short of £16,000, and I spent another \~£1,000 on flights, taxis, x-rays & passports + other misc. stuff... like yogurts. For that amount I got: rhinoplasty, chin recontouring with advancement & liposuction, type 1 forehead reconstruction (orbital rim shave), browlift and a hairline advancement.
 
 I've been at 2pass clinic since the 4th of November, but in Belgium since the third. Overall my experience was pretty good, apart from feeling like total garbage and being mostly drugged up it wasn't as bad or nearly as painful as I was expecting. I would definitely recommend 2pass to anyone looking into FFS.
 
-It's now the 11th and I'm a few hours from getting my bandages off, so I thought I'd take the time to sort of chronicle how I planned getting FFS, how much it roughly costs, the unexpected parts of it that I wasn't told and to detail the whole experience for anyone else looking into 2pass. 
+It's now the 11th and I'm a few hours from getting my bandages off, so I thought I'd take the time to sort of chronicle how I planned getting FFS, how much it roughly costs, the unexpected parts of it that I wasn't told and to detail the whole experience for anyone else looking into 2pass.
 
 # Planning
 
@@ -46,7 +46,6 @@ We arrived in Antwerp at about 6pm, we got another taxi to the Crowne Plaza Hote
 I woke up pretty early because I was nervous about the pre-op, I had a cup of tea from the hotel provided teabags, which, as to be expected, was pretty subpar - nothing compared to English tea. At around 12:30 we got the hotel to order us a taxi and I was on my way to the o2 clinic.
 
 When I arrived I checked in at the reception and waited for someone to collect me. Petra, the permanent resident who lives in the guest-house and takes care of a lot of people came down to say hello and told me that she would be showing me around.
-
 
 When we got into the guest-house she gave me a little flag pin to put on the world map to show where you had come from to 2pass. I struggled to put mine in since there were so many stuck into England. They've had so many people come from London and other places that they've started to use big white pins to represent 10 people.
 
@@ -103,10 +102,10 @@ For the first 3 days I was so high off painkillers and sleeping pills I can bare
 It was really hard to eat initially since my mouth couldn't open very far and my lips were swollen, I was also very clumsy and kept dropping the food from the fork, luckily for me I had sippy cups so I couldn't spill any drinks over myself.
 
 <div class="_4picrow">
-	<img src="https://ftp.cass.si/yETNwYTO5k.jpeg">	
-	<img src="https://ftp.cass.si/1cTO0ADM5k.jpeg">	
-	<img src="https://ftp.cass.si/=MTN5cjM5k.jpeg">	
-	<img src="https://ftp.cass.si/zQjM1YTO5k.jpeg">	
+	<img src="https://ftp.cass.si/yETNwYTO5k.jpeg">
+	<img src="https://ftp.cass.si/1cTO0ADM5k.jpeg">
+	<img src="https://ftp.cass.si/=MTN5cjM5k.jpeg">
+	<img src="https://ftp.cass.si/zQjM1YTO5k.jpeg">
 </div>
 
 Since I was one of the only people in the clinic I managed to get the cooling mask machine for about 2 or 3 days, whereas other people usually only get it for 1 or 2 days, I think this stopped my face from completely exploding into swelling like some of the other people here. You can really see how the swelling and bruising moved around my face on the above pics - looks like I have eyeshadow on in some of the pics. One girl couldn't see for 2 days because her eyes were so swollen and purple, it looked pretty horrible to be honest.
@@ -119,7 +118,7 @@ The infamous quote comes to mind:
 
 <img src="https://ftp.cass.si/=YzN2ITNwA.jpeg" alt="pink hatter" class="fr"/>
 
-By the 8th I started to feel a bit better, able to eat more, stay awake for longer and such, Petra was worried I wasn't moving much so I tried to walk outside to the supermarket to get my circulation going, Petra lended me a pink hat to cover my stitches, which was pretty cute -  I managed to walk to the super market but was so tired I needed the wheelchair on the way back, pretty embarassing 😣
+By the 8th I started to feel a bit better, able to eat more, stay awake for longer and such, Petra was worried I wasn't moving much so I tried to walk outside to the supermarket to get my circulation going, Petra lended me a pink hat to cover my stitches, which was pretty cute - I managed to walk to the super market but was so tired I needed the wheelchair on the way back, pretty embarassing 😣
 
 At night time I was having real difficulty breathing because my sinuses were so blocked, you get given nasal drops (that are absolutely horrible by the way) which do a fantastic job of clearing out nasal congestion - if only for a few hours. My breathing got so bad to the point where I had a quasi panic attack and started to hyperventilate, Petra came in with some ice cream (she's so kind) which was a nice distraction and it helped calm me down. I think most of the difficulty with breathing is that since my nose passages were so blocked I had to mouth breathe all the time, I keep finding my tongue and throat to be so dry it hurts, even drinking water doesn't help much to hydrate it - I've found that eating food helps a lot more in this regard though.
 
@@ -139,7 +138,7 @@ At around 11:30pm Dr Bart invited me into his office to take off my chin bandage
 
 <img src="https://ftp.cass.si/5IDM1ADMwA.jpeg" alt="post op profile" class="fr"/>
 
-The chin bandage was taken off first and it felt like my skin was being torn off, Dr Bart warned me it would hurt but I had taken some Codeine an hour prior and hoped it wouldn't as much as it did - my whole skin felt hot and had sharp stabbing pains that throbbed for a few minutes after it was taken off.  
+The chin bandage was taken off first and it felt like my skin was being torn off, Dr Bart warned me it would hurt but I had taken some Codeine an hour prior and hoped it wouldn't as much as it did - my whole skin felt hot and had sharp stabbing pains that throbbed for a few minutes after it was taken off.
 The nose stitches were the worst, having strands of nylon being pulled out of an incredibly sensitive area made me cry because of how much it hurt and how many there were to be taken out. The head staples wasn't painful at all, my forehead and scalp is still very numb so I'm thankful for that. The nose splint wasn't too bad either, just really uncomfortable, Dr Bart commented on how the tapes glue "gets better every year", since he had a bit of difficulty taking it off - funny joke.
 
 After all my bandages and such were taken off I was handed a mirror to look at my face, I was already teary from the pain and seeing my new face, now seeing my profile and everything I just started to sob. My mum was near and comforted me but it was just really overwhelming... I never thought I would see my face like this before - I used to feel so nauseated inside looking at my profile before, but now I felt relieved and the emotional stress just came out. I know I'm probably being overly-dramatic but at the time it's just how I felt. A lot of people probably won't understand why people do this kind of surgery but it really is sort of life-affirming to look at yourself and not feel an sense of uncomfortableness at the least or intense disgust at the most.
@@ -148,7 +147,7 @@ After I'd cried for a bit and blown my nose I went to the photo room so I could 
 
 I stayed with my mum for a bit and then decided to say goodbye and to thank Petra again for looking after me - she really is one of the nicest & caring people I've ever met, she always knew what to do and informed me about things, took care of all the patients, cooked tea every night and just generally made the experience so so much more bearable. I think she's what sets the place apart from other FFS clinics - having the experience of someone whose been through this before is really invaluable, there's a big difference between a nurse and someone with anecdotal experience of things. When I was about to leave I started crying (common occurrence of the day) again and she hugged me for a long time which made me feel a lot better, she's sort of like a second mother in a way 💜.
 
-Soon the taxi arrived and it was time to leave, after another emotional goodbye I was on my way to the airport. I mostly just listened to Spotify and tried to get rid of most the snot coming out my nose.  
+Soon the taxi arrived and it was time to leave, after another emotional goodbye I was on my way to the airport. I mostly just listened to Spotify and tried to get rid of most the snot coming out my nose.
 Airport was just the usual, the passport control people gave me surprisingly little trouble, they only asked I took off my hat and did a sort of double take at my passport, then let me through - no need for the fit-to-fly letter.
 
 <img src="https://ftp.cass.si/==wMzkTN0A.png" alt="sea cow saved" class="fr"/>
@@ -163,7 +162,7 @@ Had a really long sleep last night, super exhausted from traveling still but fee
 
 <img src="https://ftp.cass.si/==QN0ITO1k.png" alt="brass rod thing" class="fr"/>
 
-I read online you're not supposed to wear glasses for 4-8 weeks after rhinoplasty so I've resorted to taping my glasses to my forehead in order to see, I made some leek-and-potato soup and went to pick up the cats from the cattery. 
+I read online you're not supposed to wear glasses for 4-8 weeks after rhinoplasty so I've resorted to taping my glasses to my forehead in order to see, I made some leek-and-potato soup and went to pick up the cats from the cattery.
 
 Going to try and take it easy over the next few weeks, I was thinking I might try my hand at making some of these little things on the left for people as gifts since I still have a bunch of 1206 leds and brass rod hanging about from making my bf's christmas present.
 

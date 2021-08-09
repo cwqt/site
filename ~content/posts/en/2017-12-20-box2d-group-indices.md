@@ -1,5 +1,5 @@
 +++
-parent = "post.html"
+parent = "post.md"
 title = "Box2D Group Indices"
 date = 2017-12-20T02:38:28Z
 comments = true
@@ -17,10 +17,10 @@ Fixture:setGroupIndex( index )
 
 ## How they work
 
-* if either fixture has a groupIndex of **zero**, use the category/mask rules as above
-* if both groupIndex values are **non-zero** but **different**, use the category/mask rules as above
-* if both groupIndex values are the **same** and **positive**, collide
-* if both groupIndex values are the **same** and **negative**, don't collide
+- if either fixture has a groupIndex of **zero**, use the category/mask rules as above
+- if both groupIndex values are **non-zero** but **different**, use the category/mask rules as above
+- if both groupIndex values are the **same** and **positive**, collide
+- if both groupIndex values are the **same** and **negative**, don't collide
 
 What we're really interested in are the last two points. \\
 I'll give an example, say we have two rectangles, `A` and `B`.
@@ -29,6 +29,7 @@ I'll give an example, say we have two rectangles, `A` and `B`.
 A.fixture:setGroupIndex(1)
 B.fixture:setGroupIndex(1)
 ```
+
 They both have the same index, `1`, which is a positive number, therefore `A` and `B` will collide.
 
 ```lua
@@ -38,7 +39,6 @@ B.fixture:setGroupIndex(-1)
 
 Although `A` and `B` have the same absolute value, `1`, they are not the same number, thus they fit into the point of non-zero but different.
 
-
 ```lua
 A.fixture:setGroupIndex(-1)
 B.fixture:setGroupIndex(-1)
@@ -46,8 +46,7 @@ B.fixture:setGroupIndex(-1)
 
 Finally, both fixtures have the same index and are negative, therefore there is no collision between the fixtures.
 
-
 ### References
 
-<http://www.iforce2d.net/b2dtut/collision-filtering>  \\
+<http://www.iforce2d.net/b2dtut/collision-filtering> \\
 <https://love2d.org/wiki/Fixture:setGroupIndex>

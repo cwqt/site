@@ -1,5 +1,5 @@
 +++
-parent = "post.html"
+parent = "post.md"
 title = "MoonScript vs classic, middleclass and hump.class "
 date = 2017-11-20T14:14:00Z
 comments = true
@@ -17,39 +17,47 @@ I'll be doing a similar test as MS vs log30, testing object creation, methods, a
 Graphs on the left are log-log scale, where-as the right is log-linear
 
 ## Creating objects
+
 We'll create an object called `X`, and insert it into table `t`.
 <https://gist.github.com/twentytwoo/38df41452b7ab047c316b0a8cdf34252>
 
 <div class="side-by-side" markdown="1">
   ![msvsall-1]({{site::ftp_assets}}/msvsall-1.png)
 
-  ![msvsall-1-notlog]({{site::ftp_assets}}/msvsall-1-nolog.png)
+![msvsall-1-notlog]({{site::ftp_assets}}/msvsall-1-nolog.png)
+
 </div>
 
 ## Methods
+
 We'll add a method called `moveXtoY` in class `X`, that makes `self.y = self.x`.
 <https://gist.github.com/twentytwoo/7f23960802416bf175fb557fe3ee9781>
 
 <div class="side-by-side" markdown="1">
   ![msvsall-1]({{site::ftp_assets}}/msvsall-2.png)
 
-  ![msvsall-1-notlog]({{site::ftp_assets}}/msvsall-2-nolog.png)
+![msvsall-1-notlog]({{site::ftp_assets}}/msvsall-2-nolog.png)
+
 </div>
 
 ## Inheritance
+
 We create another class called `Y`, that is a child of `X` and create a bunch of them.
 <https://gist.github.com/twentytwoo/75419cc33364571cd2cfc45d506c6d71>
 
 <div class="side-by-side" markdown="1">
   ![msvsall-1]({{site::ftp_assets}}/msvsall-3.png)
 
-  ![msvsall-1-notlog]({{site::ftp_assets}}/msvsall-3-nolog.png)
+![msvsall-1-notlog]({{site::ftp_assets}}/msvsall-3-nolog.png)
+
 </div>
 
 ## Comparison
+
 I think it's pretty obvious that middleclass is the slowest one here, that's mainly because it's jam-packed full of extra features whilst the other stay minimal hence the overhead.
 
 ## And the winner is...
+
 No-one?
 In all honesty most of the lag starts to build up when you get past >1000-ish objects, there are only slight millisecond/microsecond differences between the top three libraries.
 I'd say looking from these graphs that classic and moonscript are a close tie, hump.class in second place and middleclass last, but at the end of the day it's all just preference!

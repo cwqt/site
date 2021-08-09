@@ -1,5 +1,5 @@
 +++
-parent = "post.html"
+parent = "post.md"
 title = "Twin Peaks ARG, SAPHIRECALYPSO & Jianting"
 date = 2019-10-09T17:07:00Z
 comments = true
@@ -20,10 +20,10 @@ The postcard, a few interesting things off the bat, the long number having some 
 
 <http://bluerose.network/experiment1.png> resolves to a png with this text in the corner:
 
-![](https://ftp.cass.si/==QN3YDMwA.png) 
+![](https://ftp.cass.si/==QN3YDMwA.png)
 
->JOUDY is the key
->Owhg rqs iwfnf cpyps.adpvchemiwu.qcckiui/raujcb/
+> JOUDY is the key
+> Owhg rqs iwfnf cpyps.adpvchemiwu.qcckiui/raujcb/
 
 Considering `qcckiui` is the same length as network I thought about doing some kind of plaintext attack, but given we're literally told a key is involved my mind instantly jumps to a vigenere cipher (which funnily enough is the same one my blog uses).
 
@@ -39,9 +39,9 @@ Sweet, firstly, according to the Twin Peaks wiki garmonbozia is some kind of pas
 
 ROT13 results in:
 
->http://black-lodge.network/c6943df5a29a47f4943/
->the arm knows the way.
->1010am i finally left.
+> http://black-lodge.network/c6943df5a29a47f4943/
+> the arm knows the way.
+> 1010am i finally left.
 
 The first domain was actually down for a few days when I initially tried it but it worked later. "The Arm" is some character in Twin Peaks and 1010am is another reference to some guy called Philip Jeffries, this will be useful later on.
 
@@ -84,7 +84,7 @@ My intial thoughts are base64 since it kinda has that vibe to it (I encode all m
 
 Following my instinct turned out correct:
 
->You wish to speak with joudy? You wish to know bob? These tasks are not difficult. Future tasks are difficult. joudy-and-bob.network, the directory is the number upon the postal card, appended to the last name of me. my name + number.
+> You wish to speak with joudy? You wish to know bob? These tasks are not difficult. Future tasks are difficult. joudy-and-bob.network, the directory is the number upon the postal card, appended to the last name of me. my name + number.
 
 Joudy is another person from Twin Peaks, <joudy-and-bob.network> resolves, but I seem to remember there being nothing there when I tried, it's since been updated, but I'll get to that later.
 
@@ -96,15 +96,15 @@ The last name of me? This whole time all the source code comments have been writ
 So, `jeffries3141123581314159`.
 <http://joudy-and-bob.network/jeffries3141123581314159/> resolves to a red page with black text.
 
->13OCT19
->The combined key will unlock the gate.
->31OCT19
->The gate will open for those who have ventured through the black-lodge and eaten the garmonbozia.
->The gate will become known when the time is right.
->9c e9 29 d2 bd 10 a1 93 8c 47 7f 15 51 cf fa 43 10 55 f4 78 98 3a 43 87 2c 94 63 3b e2 d9 db 98 dc 93 5d e8 42 bd fd 73 e6 a1 80 75 1e 5d f7 7a 78 7a d0 8e 2f 77 2b 89 41 9c bb 12 83 cb af d3 10 e2 26 0b a7 61 b0 11 67 94 57 1f 23 9f 00 1d cf 10 cd 8f c9 30 e2 aa d8 2e 14 51 b3 ff da 18 61 61 32 73 82 9e ce 78 b5 bf 66 ee aa 44 56 bb 21 a5 d6 bf 39 6e 19 04 80 49 f0 39 3e b5 e2 01 8d 40 74 48 3b 4c a1 1f b1 4d f7 a5 f3 8b 72 8c dd ef b7 1f 6f 56 67 3b 32 be ca 56 da 55 0e bf 43 56 6f c0 7c 86 1e 85 ac 34 e4 85 03
->1st: EvilJordan
->2nd: NoCountryForMe2112
->3rd: LilBeanBear
+> 13OCT19
+> The combined key will unlock the gate.
+> 31OCT19
+> The gate will open for those who have ventured through the black-lodge and eaten the garmonbozia.
+> The gate will become known when the time is right.
+> 9c e9 29 d2 bd 10 a1 93 8c 47 7f 15 51 cf fa 43 10 55 f4 78 98 3a 43 87 2c 94 63 3b e2 d9 db 98 dc 93 5d e8 42 bd fd 73 e6 a1 80 75 1e 5d f7 7a 78 7a d0 8e 2f 77 2b 89 41 9c bb 12 83 cb af d3 10 e2 26 0b a7 61 b0 11 67 94 57 1f 23 9f 00 1d cf 10 cd 8f c9 30 e2 aa d8 2e 14 51 b3 ff da 18 61 61 32 73 82 9e ce 78 b5 bf 66 ee aa 44 56 bb 21 a5 d6 bf 39 6e 19 04 80 49 f0 39 3e b5 e2 01 8d 40 74 48 3b 4c a1 1f b1 4d f7 a5 f3 8b 72 8c dd ef b7 1f 6f 56 67 3b 32 be ca 56 da 55 0e bf 43 56 6f c0 7c 86 1e 85 ac 34 e4 85 03
+> 1st: EvilJordan
+> 2nd: NoCountryForMe2112
+> 3rd: LilBeanBear
 
 The three people listed are reddit users who also solved this back when I was also solving it.
 
@@ -131,13 +131,14 @@ SC (Saphire Calypso) reveals that we are welcome to join the final round (implyi
 
 `joudy-and-bob.network` also notes these as the dates in which:
 
->The combined key will unlock the gate.
+> The combined key will unlock the gate.
 
 and,
 
->The gate will open for those who have ventured through the black-lodge and eaten the garmonbozia.
+> The gate will open for those who have ventured through the black-lodge and eaten the garmonbozia.
 
 There's also this piece of text which I'm unsure of.
+
 ```
 --KEYMAT BEGINS--
 LORE
@@ -158,10 +159,10 @@ A few days after seeing this reddit, the `joudy-and-bob.network` was updated wit
 
 tl;dr
 
-* Round 1 pass: 7169:8193(1024)
-* Round 2 pass: 97803453238809780877283348
-* Round 3 pass:
-* Round 4 pass:
+- Round 1 pass: 7169:8193(1024)
+- Round 2 pass: 97803453238809780877283348
+- Round 3 pass:
+- Round 4 pass:
 
 Researching Saphire Calypso revealed an absolute goldmine of informationa and similar 'rounds' of ARG.
 
@@ -176,7 +177,8 @@ I'm fairly sure Round 1 begins with the below image, which was posted on the Som
 Robin Sage is the name of a fictious entity created by two white-hat hackers, see more <https://en.wikipedia.org/wiki/Robin_Sage>.
 
 The Hangul translates to:
->Let's play....reality games
+
+> Let's play....reality games
 
 The link directs to a Github repo, I can use the commit history to see the original README when this was posted.
 
@@ -187,27 +189,27 @@ The link directs to a Github repo, I can use the commit history to see the origi
 
 <BR><BR><BR>
 A head start for some, if they consider it right. The rest will wait till the first, have a nice night.
-<BR>  
-V7LlqwnpEHM0ydD0MGfhv1sXc5UgG2p1kcz5iljuU0Q=  
+<BR>
+V7LlqwnpEHM0ydD0MGfhv1sXc5UgG2p1kcz5iljuU0Q=
 ```
 
 ![](https://ftp.cass.si/5gjM2kTO5k.png)
 
 The image speaks of '7 steps', so I guess this means there are 7 rounds of challenges.
 
-* 1st: Ciphers
-* 2nd: Much of the same
-* 3rd: This time around and a ketab khune brings your fame
-* 4th: Taken from the third
-* 5th: An audiovisual treat
-* 6th: You meet the l33t
-* 7th: Is on us
+- 1st: Ciphers
+- 2nd: Much of the same
+- 3rd: This time around and a ketab khune brings your fame
+- 4th: Taken from the third
+- 5th: An audiovisual treat
+- 6th: You meet the l33t
+- 7th: Is on us
 
-The string of characters appears to be base64 because of the padding characters at the end, but converting it results in garbage: `W	s40g[s juXSD`
+The string of characters appears to be base64 because of the padding characters at the end, but converting it results in garbage: `W s40g[s juXSD`
 
 There are 4 other files in this repository, POTATOES, MEAT, CARROTS and VITAMIX.
 
-**POTATOES** is a private key for something called `EC`, ellptical curve cryptography. I'm not sure what these keys are for though.  
+**POTATOES** is a private key for something called `EC`, ellptical curve cryptography. I'm not sure what these keys are for though.
 Here's a mirror: <https://ftp.cass.si/==QNwADO5k.plain>
 
 **MEAT** is equally as confusing:
@@ -242,14 +244,14 @@ I think this is the end of round 1 since the README states that we are given a h
 A day later the README was updated with a link to <https://www.youtube.com/embed/0tEaiyv5Ow0> and some hidden text.
 
 ```html
-  <!-- #### -->
-  <!-- ######## -->
-  <!-- ###### -->
-  <!-- ####### -->
-  <!-- ### -->
-  <!-- ## -->
-  <!-- ####### -->
-  <!-- ####@ -->
+<!-- #### -->
+<!-- ######## -->
+<!-- ###### -->
+<!-- ####### -->
+<!-- ### -->
+<!-- ## -->
+<!-- ####### -->
+<!-- ####@ -->
 ```
 
 The video has some interesting captions. <https://ftp.cass.si/==QN2czMwA.png>
@@ -274,8 +276,8 @@ Working together is encourgaged. Build your own jianting, to strengthen ours. Th
 
 Keymaterial and a general understanding of the previous round is needed to continue. If you are new to this endevour, please research F2D64AD97033074E.
 
-The Portland, OR dead drop/geocache contains information critical to successful completion of this round. 
-Consider audio visual components of SAPHIRE CALYPSO to attain this information. 
+The Portland, OR dead drop/geocache contains information critical to successful completion of this round.
+Consider audio visual components of SAPHIRE CALYPSO to attain this information.
 
 USER: The key from the AES cipher in the previous round
 PASS: https://pastebin.com/6pr5Trsd
@@ -286,7 +288,7 @@ purplewaterbottle.com/saphirecalypso
 Your progress throughout this endevour will be monitored through social media usage and analytics, CPE/WAN IP activity, site and service visits connected with SAPHIRE CALYPSO, and OSINT collection methods.
 This information will be considered for acceptance into the final round of SAPHIRE CALYPSO.
 
-Round 2 will conclude NLT 8 AUG 19. 
+Round 2 will conclude NLT 8 AUG 19.
 
 Khoda Hafez,
 SAPHIRE CALYPSO
@@ -389,6 +391,7 @@ Gao ci.
 
 D2184EFB8CE04650
 ```
+
 FVEY and APT39 are the Five Eyes and and Iranian Cyber Espionage Group, strange.
 
 The chinese translates to:
@@ -452,7 +455,7 @@ cuON8, 1
 The words in caps seem to be more keymats...
 
 ```
-WORDS 
+WORDS
 UNTRUE
 CHIMES
 ROCK
@@ -513,7 +516,7 @@ I've been thinking that CARROTS and MEAT are possibly PGP/EC encrypted messages,
 
 I've been doing some research on elliptical curve cryptography and how it's used, ECC doesn't have any specific tools for directly encrypting/decrypting data, instead users use a Diffie-Hellman key change to create a shared secret and then communicate using that, this is known as ECDH.
 
-When <https://github.com/saphirecalypso/F2D64AD97033074E> was created, a string (`V7LlqwnpEHM0ydD0MGfhv1sXc5UgG2p1kcz5iljuU0Q=`) was added to the README, alongside two EC private keys in __POTATOES__, I believe this string to be the shared secret between these and the other files, **MEAT** and **CARROTS** are potentially encrypted messages using these keys.
+When <https://github.com/saphirecalypso/F2D64AD97033074E> was created, a string (`V7LlqwnpEHM0ydD0MGfhv1sXc5UgG2p1kcz5iljuU0Q=`) was added to the README, alongside two EC private keys in **POTATOES**, I believe this string to be the shared secret between these and the other files, **MEAT** and **CARROTS** are potentially encrypted messages using these keys.
 
 Apparently openssl is quite particular about how the keys are ordered, a straight copy paste from the file results in:
 
@@ -562,7 +565,7 @@ nKkAaQIBAQOBggAEoI9gVsml+GNLxmilqvFxroMcAwEqk4ZFEtw0b1qGFJeyETgB
 CYsBUiFMubH15AIoWVDrSsBWXUOmJHRVbD1XDWa+OuEmFKLoZuyRczjRDhALkrst
 MgWvGD/iV8tPwTPTJLg78aD7lbAHvu3JbCICljBrj0t4CeQOHvfrIkIPQUc=
 -----END PUBLIC KEY-----
-                          
+
 $ openssl pkeyutl -derive -inkey k1_priv_key.pem -peerkey k2_pub_key.pem -out k1_shared_secret.bin
 $ openssl pkeyutl -derive -inkey k2_priv_key.pem -peerkey k1_pub_key.pem -out k2_shared_secret.bin
 
@@ -597,4 +600,3 @@ K2hn0w05XL4wfo9Ivd8HPk6wzvCyNChq+fjExyCeP+q+OOx7GOkfvNCf2g==
 ```
 
 At this point I'm unsure of what to do, there's no real hints, just a collection of random characters that don't really have any meaning or connection that isn't simply created out of my own desperation to potentially fit some pieces together. Suffering from an extreme lack of information, not aided by the fact there there's 22 threads on that phpBB forum that I still don't have access to.
-

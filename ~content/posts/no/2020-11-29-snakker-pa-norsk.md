@@ -1,5 +1,5 @@
 +++
-parent = "post.html"
+parent = "post.md"
 date = 2020-11-29T15:10:48Z
 title = "snakker på norsk"
 +++
@@ -16,5 +16,5 @@ went something like this:
     t: Jeg vet ikke hva vi kaller dem
     m: mfw jeg vet hva du sier
 
-not a lot, but still, way more fun than just reading and doing flash cards on anki.  
+not a lot, but still, way more fun than just reading and doing flash cards on anki.
 end goal being to take a stab at the bergentest around end of next year or so

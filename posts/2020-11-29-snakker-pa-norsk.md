@@ -2,6 +2,7 @@
 parent = "post.md"
 date = 2020-11-29T15:10:48Z
 title = "snakker på norsk"
+language = "nb"
 +++
 
 i've been learning norwegian on duolingo for about 9 days & today i had my first sort of conversation in it - which is cool i guess

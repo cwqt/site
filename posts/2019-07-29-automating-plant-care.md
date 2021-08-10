@@ -1,9 +1,7 @@
-+++
-parent = "post.md"
-title = "Automating plant care with React and Flask"
-date = 2019-07-29T11:47:00Z
-comments = true
-+++
+---
+title: "Automating plant care with React and Flask"
+date: 2019-07-29T11:47:00Z
+---
 
 <img src="https://ftp.cass.si/2QjNxADMwA.jpeg" class="fr"/>
 

@@ -1,9 +1,7 @@
-+++
-parent = "post.md"
-title = "Box2D Group Indices"
-date = 2017-12-20T02:38:28Z
-comments = true
-+++
+---
+title: "Box2D Group Indices"
+date: 2017-12-20T02:38:28Z
+---
 
 ## What are Group Indices?
 

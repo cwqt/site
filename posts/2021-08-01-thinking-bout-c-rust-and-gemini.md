@@ -1,8 +1,7 @@
-+++
-parent = "post.md"
-title = "C, Rust & gemini"
-date = 2021-08-01T19:32:00Z
-+++
+---
+title: "C, Rust & gemini"
+date: 2021-08-01T19:32:00Z
+---
 
 I've been starting to get more and more annoyed with the state of the modern
 internet / software development, seems like app is some dog-slow Electron

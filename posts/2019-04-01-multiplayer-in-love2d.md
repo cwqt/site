@@ -1,9 +1,7 @@
-+++
-parent = "post.md"
-title = "Multiplayer and LÖVE"
-date = 2019-02-25T04:35:00Z
-comments = true
-+++
+---
+title: "Multiplayer and LÖVE"
+date: 2019-02-25T04:35:00Z
+---
 
 This is my second (technically 3rd) attempt at re-implementing that old flash game: [1066](https://www.kongregate.com/games/channelfour/1066). My first attempt, `1026` failed because of the way I went about attempting to write it - UI had been my focus, not the game logic, and so both became deeply intertwined, resulting in a totally monstrous pile of shit.
 

@@ -1,8 +1,7 @@
-+++
-parent = "post.md"
-title = "On TypeScript enums"
-date = 2021-08-09T12:20:00Z
-+++
+---
+title: "On TypeScript enums"
+date: 2021-08-09T12:20:00Z
+---
 
 I'm not a huge fan of TypeScripts `enum`s - to me they're a bit of syntax sugar around unions with some added footguns, problems arise when trying to iterate over them which can throw people new to the language off plainly due to how they're transpiled into JavaScript.
 

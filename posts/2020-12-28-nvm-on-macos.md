@@ -1,9 +1,7 @@
-+++
-parent = "post.md"
-date = 2020-12-28T14:35:00Z
-comments = true
-title = "nvm using fish shell"
-+++
+---
+title: "nvm using fish shell"
+date: 2020-12-28T14:35:00Z
+---
 
 apparently now we have node version managers, gee i sure hope this doesn't go the way of pipenv / virtualenv
 

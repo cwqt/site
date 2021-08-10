@@ -1,9 +1,7 @@
-+++
-parent = "post.md"
-title = "Hosting over dat protocol"
-date = 2018-12-08T23:43:00Z
-comments = true
-+++
+---
+title: "Hosting over dat protocol"
+date: 2018-12-08T23:43:00Z
+---
 
 In an attempt to fight off my sleep deprivation I'll write this post about a little something called `dat`. I recently bought a vps for $3.50pm and figured I'd have a go at some things I've been wanting to do but never had a dedicated server for.
 

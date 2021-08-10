@@ -1,9 +1,7 @@
-+++
-parent = "post.md"
-date = 2020-12-26T17:59:55Z
-comments = true
-title = "better validation with higher-order functions"
-+++
+---
+title: "better validation with higher-order functions"
+date: 2020-12-26T17:59:55Z
+---
 
 i've recently been faced with an issue of needing to validate a lot of different types of data-structures, including nested & arrays of things in express - which is a totally not nice - not in terms of any kind of techincal complexity but simply sheer amount of duplication.
 

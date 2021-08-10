@@ -1,9 +1,7 @@
-+++
-parent = "post.md"
-date = 2021-03-16T21:15:00Z
-comments = true
-title = "Nx, tailwindcss & Angular 11"
-+++
+---
+title: "Nx, tailwindcss & Angular 11"
+date: 2021-03-16T21:15:00Z
+---
 
 I spent a solid 3 days going through countless medium articles, reddit posts & documentations looking for a way to get tailwind to play ball with this setup. The easy part is getting tailwind to actually be a part of the bundle, but the hard part was getting the purging, `@apply` & scss building to work correctly
 

@@ -1,9 +1,7 @@
-+++
-parent = "post.md"
-title = "JAMstack FTP, electric boogaloo"
-date = 2019-12-05T23:10:00Z
-comments = true
-+++
+---
+title: "JAMstack FTP, electric boogaloo"
+date: 2019-12-05T23:10:00Z
+---
 
 Its been a couple of years since I made my post on using JAMstack to make a sort of [file hosting service](https://cass.si/posts/jam-stack-ftp-file-uploader) using Netlify, since then I've made mostly small modifications - re-wrote the auth to use GitLab and had two instances of it running at ftp.cass.si & cass.si/ftp.
 
@@ -433,7 +431,7 @@ The YAML file schema looks like:
 
 ```yaml
 uploader: <string> full_name of uploader account
-creationDate: <int> milliseconds since linux epoch
+creationdate: <int> milliseconds since linux epoch
 data: >
   "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABI... ..."
 ```

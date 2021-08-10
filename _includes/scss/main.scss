@@ -1,29 +1,73 @@
-.markdown-body {
-  max-width: 800px;
+* {
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: scroll;
+  width: 800px;
   font-size: 16px;
-  margin: 0 auto;
+  margin: 20px auto;
+
+  font-family: "Helvetica", serif;
+  background-image: none;
+  color: #333;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-feature-settings: "kern" 1 !important;
+  -moz-font-feature-settings: "kern" 1 !important;
+  -o-font-feature-settings: "kern" 1 !important;
+  font-feature-settings: "kern" 1 !important;
+  font-kerning: normal;
 }
 
-.markdown-body p {
-  font-size: 16px;
-  line-height: 1.9em;
-  margin-bottom: 1.2em;
+p,
+a,
+li,
+ul,
+b,
+i,
+blockquote p {
+  line-height: 1.5;
 }
 
-.markdown-body li {
-  line-height: 1.9em;
+footer {
+  display: flex;
+  margin: 0;
+  margin-top: auto;
+  align-items: center;
+  margin-top: auto;
+  opacity: 0.3;
+  a {
+    width: 15px;
+    display: inline-block;
+    height: 15px;
+    margin-right: 10px !important;
+    margin-top: -2px !important;
+  }
+
+  .rotonde {
+    max-width: 15px;
+    height: auto;
+    margin: 0;
+  }
 }
 
-input.task-list-item-checkbox {
-  margin-right: 4px;
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-blockquote {
-  font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida,
-    "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+a:not(.no-link-style) {
+  text-decoration: none;
+  padding: 0 2px;
+  &::after {
+    content: "]]";
+    opacity: 0.5;
+  }
+  &::before {
+    content: "[[";
+    opacity: 0.5;
+  }
 }

@@ -1,10 +1,8 @@
-+++
-parent = "post.md"
-comments = true
-date = 2020-01-15T11:51:00Z
-title = "voice training"
-draft = true
-+++
+---
+date: 2020-01-15T11:51:00Z
+title: "voice training"
+draft: true
+---
 
 There's a lot of resources out there for altering ones voice, so this is an attempt at collecting it all and filtering out the extraneous data, I'll link the sources for more detailed reading so think of this as a 'learn x in y' for voice
 

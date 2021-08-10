@@ -1,9 +1,7 @@
-+++
-parent = "post.md"
-title = "Microgreens diary & mcn"
-date = 2020-08-22T16:19:00Z
-comments = true
-+++
+---
+title: "Microgreens diary & mcn"
+date: 2020-08-22T16:19:00Z
+---
 
 <img src="https://ftp.cass.si/Rp5~0411i.jpeg" class="fr" style="margin-top:0"/>
 I've been developing a system to monitor, track & orchestrate indoor farming on and off

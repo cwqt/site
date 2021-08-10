@@ -1,9 +1,7 @@
-+++
-parent = "post.md"
-title = "lssx, zephyr & lessons learned"
-date = 2018-03-16T23:27:00Z
-comments = true
-+++
+---
+title: "lssx, zephyr & lessons learned"
+date: 2018-03-16T23:27:00Z
+---
 
 Game link: <https://ttxi.itch.io/lssx>\\
 Presentation: <https://ftp.{{site::title}}/5cTO0kDM0Y.pdf>\\
@@ -132,7 +130,7 @@ So we have this amazing function that can easily recognise objects and fixtures 
 Instead you'd have to add such commands to a buffer/stack/whatever, a buffer that gets ran _after_ the world step, when it's safe. Simple enough. I came up with a fairly nice solution that did this and removed duplicates:
 
 ```moon
-Physics.update = (dt) ->
+Physics.update: (dt) ->
   lssx.world\update(dt)
   Physics.runBuffer()
   Physics.buffer = {}

@@ -1,9 +1,7 @@
-+++
-parent = "post.md"
-title = "MoonScript vs Lua: A speed test"
-date = 2017-11-19T20:39:00Z
-comments = true
-+++
+---
+title: "MoonScript vs Lua: A speed test"
+date: 2017-11-19T20:39:00Z
+---
 
 I've discovered MoonScript in the last month and so far I'm loving it (apart from a few whitespacing quirks). One of the things I like most about it is the built-in Object Orientation, something that is lacking from Lua (but can be added with libraries/metatables).
 

@@ -1,8 +1,7 @@
-+++
-parent = "post.md"
-date = 2020-11-29T15:10:48Z
-title = "én hundre dag av duolingo"
-+++
+---
+title: "én hundre dag av duolingo"
+date: 2020-11-29T15:10:48Z
+---
 
 <img src="https://ftp.cass.si/c7r5r0X2=.jpeg" style="width: 50%" class="fr"/>
 

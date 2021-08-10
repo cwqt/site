@@ -1,9 +1,7 @@
-+++
-parent = "post.md"
-date = 2020-12-05T16:03:55Z
-comments = true
-title = "y-combinator-izing curried angular router"
-+++
+---
+title: "y-combinator-izing curried angular router"
+date: 2020-12-05T16:03:55Z
+---
 
 i've recently gone a bit mad with wanting to turn everything i touch into functional code & this being my latest foray, a thing that creates a flat routing structure from nested functions and stuff:
 

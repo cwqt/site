@@ -1,9 +1,7 @@
-+++
-parent = "post.md"
-title = "Using Markov Chains to make a chatbot"
-date = 2019-08-15T06:21:00Z
-comments = true
-+++
+---
+title: "Using Markov Chains to make a chatbot"
+date: 2019-08-15T06:21:00Z
+---
 
 Since all that GDPR stuff came out a few months back I've been requesting my data from all sorts of sources, simply to see _what_ it is they collect. Some companies are okay, yet others (google) to collect pretty much every metric of information they possibly can.
 

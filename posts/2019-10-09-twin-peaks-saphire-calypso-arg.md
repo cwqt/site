@@ -1,10 +1,7 @@
-+++
-parent = "post.md"
-title = "Twin Peaks ARG, SAPHIRECALYPSO & Jianting"
-date = 2019-10-09T17:07:00Z
-comments = true
-draft = true
-+++
+---
+title: "Twin Peaks ARG, SAPHIRECALYPSO & Jianting"
+date: 2019-10-09T17:07:00Z
+---
 
 ## Twin Peaks saga
 

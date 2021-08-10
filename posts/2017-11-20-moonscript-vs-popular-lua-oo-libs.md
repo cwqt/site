@@ -1,9 +1,7 @@
-+++
-parent = "post.md"
-title = "MoonScript vs classic, middleclass and hump.class "
-date = 2017-11-20T14:14:00Z
-comments = true
-+++
+---
+title: "MoonScript vs classic, middleclass and hump.class "
+date: 2017-11-20T14:14:00Z
+---
 
 Yesterday I did a little speed-test on MoonScript OO vs 30log. People liked it, they suggested I should do the same thing but with more popular OO libraries, so here I am, writing this post. My last comparison was a bit iffy though, I don't really know 30log that much so I don't know if they way I did it was the fastest, I also used a different loop for inserting objects into a table so maybe that had some slight effect. This time I'm going to try my best to limit the varibales down to simply creating objects, their methods and inheritance.
 

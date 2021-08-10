@@ -1,10 +1,7 @@
-+++
-parent = "post.md"
-title = "Static calender front-end & Heroku API"
-date = 2019-06-10T14:12:00Z
-comments = true
-draft = true
-+++
+---
+title: "Static calender front-end & Heroku API"
+date: 2019-06-10T14:12:00Z
+---
 
 https://github.com/merveilles/Time-Travelers
 

@@ -1,9 +1,7 @@
-+++
-parent = "post.md"
-title = "Sundström P3 filter to 40mm NATO adapter"
-date = 2020-03-23T20:01:00Z
-comments = true
-+++
+---
+title: "Sundström P3 filter to 40mm NATO adapter"
+date: 2020-03-23T20:01:00Z
+---
 
 Quick COVID-19 related post, a few weeks ago when this was all kicking off I managed
 to get a nice deal on a set of five Sundström P3 filters and 25 pre-filters. The only

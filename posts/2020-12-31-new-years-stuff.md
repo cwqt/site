@@ -1,9 +1,7 @@
-+++
-parent = "post.md"
-date = 2020-12-31T19:39:00Z
-comments = true
-title = "new years stuff"
-+++
+---
+title: "new years stuff"
+date: 2020-12-31T19:39:00Z
+---
 
 I wrote a "year in review" thing every year since I started having a website up in 2016, but back then being a depressed teenager with not much going on in their life apart from study & cry they were all kind of boring, now they're all gone I'm starting over :)
 

@@ -1,10 +1,7 @@
-+++
-parent = "post.md"
-date = 2021-05-16T11:48:00Z
-comments = true
-draft = false
-title = "managing ng subscriptions"
-+++
+---
+title: "managing ng subscriptions"
+date: 2021-05-16T11:48:00Z
+---
 
 it's commonly taught to newbies that cleaning up your subscriptions is necessary to avoid memory leaks in your angular app, so here's a couple ways to do that without too much hassle:
 

@@ -1,9 +1,7 @@
-+++
-parent = "post.md"
-date = 2020-11-20T17:07:49.000Z
-comments = true
-title = "ESP-32 Birdwatching"
-+++
+---
+title: "ESP-32 Birdwatching"
+date: 2020-11-20T17:07:49.000Z
+---
 
 There's something nice about feeding birds, that they learn where your feeder is and come back every so often for breakfast and dinner - a bit like a pet.
 

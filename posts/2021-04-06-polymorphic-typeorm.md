@@ -1,9 +1,7 @@
-+++
-parent = "post.md"
-date = 2021-04-06T18:40:00Z
-comments = true
-title = "Polymorphic TypeORM strats"
-+++
+---
+title: "Polymorphic TypeORM strats"
+date: 2021-04-06T18:40:00Z
+---
 
 > To preface I no longer recommend using TypeORM, [it's pretty dead](https://github.com/typeorm/typeorm/issues/3267) & there are one [too](https://github.com/typeorm/typeorm/issues/3357) [many](https://github.com/typeorm/typeorm/issues/400) [issues](https://github.com/typeorm/typeorm/issues/4742) to deal with - though I'm using it in production if I could go back in time I'd totally use something else, [Prisma](https://www.prisma.io/) looks pretty sweet though so check that out
 

@@ -1,9 +1,7 @@
-+++
-parent = "post.md"
-title = "JAMstack & file hosting"
-date = 2017-12-17T11:36:00Z
-comments = true
-+++
+---
+title: "JAMstack & file hosting"
+date: 2017-12-17T11:36:00Z
+---
 
 **tl;dr:**
 <https://ftp.{{site::title}}/zUzM0ITN3A.png>

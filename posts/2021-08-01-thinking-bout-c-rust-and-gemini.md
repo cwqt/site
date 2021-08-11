@@ -1,6 +1,7 @@
 ---
 title: "C, Rust & gemini"
 date: 2021-08-01T19:32:00Z
+draft: true
 ---
 
 I've been starting to get more and more annoyed with the state of the modern

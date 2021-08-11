@@ -34,7 +34,7 @@ After spending all of an hour thinking about possible improvements, I came up wi
 
 The result:
 
-<iframe width="1891" height="764" src="https://www.youtube.com/embed/kdhSb6QyI5Y" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="800" height="400" src="https://www.youtube.com/embed/kdhSb6QyI5Y" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <br>
 

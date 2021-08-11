@@ -4,7 +4,7 @@ date: 2017-12-17T11:36:00Z
 ---
 
 **tl;dr:**
-<https://ftp.{{site::title}}/zUzM0ITN3A.png>
+<https://ftp.cass.si/www/blog-assets/zUzM0ITN3A.png>
 
 Storing all your site assets in one folder on the master branch means that during compilation there is _a looot_ (about 15 seconds) of slowdown when compressing assets.
 
@@ -37,7 +37,7 @@ Since I'm storing our files on a seperate branch, Netlify can compile that branc
 
 Netlify can only serve subdomains on _deployed branches_. So firstly I need to add the `ftp` branch to the Branch deploys.
 
-![Adding branch to Branch deploys]({{site::ftp_assets}}/file-uploader-1.png)
+![Adding branch to Branch deploys](https://ftp.cass.si/www/blog-assets/file-uploader-1.png)
 
 You can only have one build command however for all branches, this is a problem since I don't want to run `jekyll build` on the `ftp` branch, instead I can just use a bash script and put all the build commands in there.
 
@@ -67,13 +67,13 @@ In order to have a subdomain and the domain live, I need to use the Netlify DNS,
 
 In `Settings > Domain Management` we can see our specific site nameservers, shown below.
 
-![Netlify nameservers]({{site::ftp_assets}}/file-uploader-2.png)
+![Netlify nameservers](https://ftp.cass.si/www/blog-assets/file-uploader-2.png)
 
 Going to freenom.com, `Services > My Domains`, click `Manage Domain`, then on navbar click `Management Tools > Nameservers`
 
 Tick the `Use custom nameservers`, add in the Netlify nameservers and we're good to go.
 
-![freenom nameservers]({{site::ftp_assets}}/file-uploader-3.png)
+![freenom nameservers](https://ftp.cass.si/www/blog-assets/file-uploader-3.png)
 
 The DNS propogation can take up to 24 hours but it happen fairly quickly with me, under 10 minutes.
 
@@ -81,9 +81,9 @@ The DNS propogation can take up to 24 hours but it happen fairly quickly with me
 
 Now that my branch deploys and my DNS is handled by Netlify, I can set the ftp branch to a subdomain, this is simply done via `Settings > Domain Management > Branch subdomains`, I just add the `ftp` branch and Netlify automatically adds the DNS record to itself.
 
-Going to <https://ftp.{{site::title}}> I'm greeted by a nice 404 page. At least it works, there's just no `index.html`. I'll add a README to the ftp branch and see if it works.
+Going to <https://ftp.cass.si> I'm greeted by a nice 404 page. At least it works, there's just no `index.html`. I'll add a README to the ftp branch and see if it works.
 
-<https://ftp.{{site::title}}/README.md>
+<https://ftp.cass.si/www/blog-assets/README.md>
 
 Hey it works!
 
@@ -91,7 +91,7 @@ Hey it works!
 
 Manually uploading content to the branch is a bit crap though, I'd rather have something where I can paste/upload content and push it to `ftp`.
 
-You can see the fruits of my labour at: <https://{{site::title}}/push>
+You can see the fruits of my labour at: <https://cass.si/push>
 
 Basically all it does is,
 
@@ -174,6 +174,6 @@ fs.readdir(__dirname, function (err, items) {
 
 And now it works perfectly, with about 12 seconds from file upload to it being live, not bad considering there's no PHP or node servers involved at all - and it's 100% free!
 
-<https://ftp.{{site::title}}/=ETOxkzNwk.jpeg>
+<https://ftp.cass.si/=ETOxkzNwk.jpeg>
 
-<img src="https://ftp.{{site::title}}/=ETOxkzNwk.jpeg" width="50%">
+<img src="https://ftp.cass.si/=ETOxkzNwk.jpeg" width="50%">

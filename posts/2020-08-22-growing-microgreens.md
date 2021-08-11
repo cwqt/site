@@ -1,9 +1,8 @@
 ---
-title: "Microgreens diary & mcn"
+title: "Growing pea-shoots, a guide"
 date: 2020-08-22T16:19:00Z
 ---
 
-<img src="https://ftp.cass.si/Rp5~0411i.jpeg" class="fr" style="margin-top:0"/>
 I've been developing a system to monitor, track & orchestrate indoor farming on and off
 for the last year. It's been going pretty well & I'm almost at the point where I can
 start developing the hardware to work with it, it's open-source and anyone can create devices, but

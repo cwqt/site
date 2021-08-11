@@ -3,6 +3,10 @@ title: "better validation with higher-order functions"
 date: 2020-12-26T17:59:55Z
 ---
 
+> **update** I found this very nice library [Superstruct](https://github.com/ianstormtaylor/superstruct) which accomplishes everything & more what I describe in this blog post - it's pretty sweet :)
+
+---
+
 i've recently been faced with an issue of needing to validate a lot of different types of data-structures, including nested & arrays of things in express - which is a totally not nice - not in terms of any kind of techincal complexity but simply sheer amount of duplication.
 
 as an ardent proponent of the DRY principle i wielded my FP power and spent a couple of days creating a new way of concisely expressing validation in a way that no longer makes me want to die :)

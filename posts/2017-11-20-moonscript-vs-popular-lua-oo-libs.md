@@ -9,7 +9,7 @@ I'll be comparing three suggested libraries, [classic](https://github.com/rxi/cl
 
 **adn** made this hypothesis. We'll see if it's true.
 
-![adn-bigiftrue]({{site::ftp_assets}}/adn-bigiftrue.png)
+![adn-bigiftrue](https://ftp.cass.si/www/blog-assets/adn-bigiftrue.png)
 
 I'll be doing a similar test as MS vs log30, testing object creation, methods, and inheritance.
 Graphs on the left are log-log scale, where-as the right is log-linear
@@ -20,9 +20,9 @@ We'll create an object called `X`, and insert it into table `t`.
 <https://gist.github.com/twentytwoo/38df41452b7ab047c316b0a8cdf34252>
 
 <div class="side-by-side" markdown="1">
-  ![msvsall-1]({{site::ftp_assets}}/msvsall-1.png)
+  ![msvsall-1](https://ftp.cass.si/www/blog-assets/msvsall-1.png)
 
-![msvsall-1-notlog]({{site::ftp_assets}}/msvsall-1-nolog.png)
+![msvsall-1-notlog](https://ftp.cass.si/www/blog-assets/msvsall-1-nolog.png)
 
 </div>
 
@@ -32,9 +32,9 @@ We'll add a method called `moveXtoY` in class `X`, that makes `self.y = self.x`.
 <https://gist.github.com/twentytwoo/7f23960802416bf175fb557fe3ee9781>
 
 <div class="side-by-side" markdown="1">
-  ![msvsall-1]({{site::ftp_assets}}/msvsall-2.png)
+  ![msvsall-1](https://ftp.cass.si/www/blog-assets/msvsall-2.png)
 
-![msvsall-1-notlog]({{site::ftp_assets}}/msvsall-2-nolog.png)
+![msvsall-1-notlog](https://ftp.cass.si/www/blog-assets/msvsall-2-nolog.png)
 
 </div>
 
@@ -44,9 +44,9 @@ We create another class called `Y`, that is a child of `X` and create a bunch of
 <https://gist.github.com/twentytwoo/75419cc33364571cd2cfc45d506c6d71>
 
 <div class="side-by-side" markdown="1">
-  ![msvsall-1]({{site::ftp_assets}}/msvsall-3.png)
+  ![msvsall-1](https://ftp.cass.si/www/blog-assets/msvsall-3.png)
 
-![msvsall-1-notlog]({{site::ftp_assets}}/msvsall-3-nolog.png)
+![msvsall-1-notlog](https://ftp.cass.si/www/blog-assets/msvsall-3-nolog.png)
 
 </div>
 

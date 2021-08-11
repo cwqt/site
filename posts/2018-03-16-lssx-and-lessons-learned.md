@@ -4,8 +4,8 @@ date: 2018-03-16T23:27:00Z
 ---
 
 Game link: <https://ttxi.itch.io/lssx>\\
-Presentation: <https://ftp.{{site::title}}/5cTO0kDM0Y.pdf>\\
-Whitepaper: <https://ftp.{{site::title}}/==QMwAzN3g.pdf>
+Presentation: <https://ftp.cass.si/5cTO0kDM0Y.pdf>\\
+Whitepaper: <https://ftp.cass.si/==QMwAzN3g.pdf>
 
 ---
 
@@ -21,9 +21,9 @@ Yep, your hours of toiling over your dumb project will result in a slightly incr
 
 Anyway, I decided to do what's known as an _artefact_ (as opposed to a typical essay), in essence, something you create: art, a story, clothing. I opted to program something (since y'know, it's like the only thing I can use to create anything).
 
-The result is _lssx_.\\
+The result is _lssx_.
 
-<iframe width="1891" height="764" src="https://www.youtube.com/embed/t9O3deN-wH0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="800" height="400" src="https://www.youtube.com/embed/t9O3deN-wH0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### What is lssx?
 
@@ -61,7 +61,7 @@ The whole `other` is the tricky part, which door? Which door do I `:open()`?
 
 Thankfully zephyr solves this in a fairly easily understandable approach (hopefully) - buuuut it does have a lot of issues. Basically, it does this:
 
-![Bullet_Asteroid_UUID](https://ftp.{{site::title}}/==wNycTM4A.png)
+![Bullet_Asteroid_UUID](https://ftp.cass.si/==wNycTM4A.png)
 
 Which tells me a Bullet has collided with an Asteroid, it also tells me which Bullet collided with which Asteroid. This makes it super easy to identify object's in a table via the use of UUIDs. \\
 All physics interactable objects are placed in a single globally accessible table (which I named `lssx.objects`), and upon any two objects colliding the following Box2D callback function is ran:
@@ -85,7 +85,7 @@ Bodies have something called **UserData** which can be used to store all kinds o
 
 If I were to draw all the game objects' UUIDs' next to the object, it'd look like:
 
-![UUID](https://ftp.{{site::title}}/=MTMyIDMwM.png)
+![UUID](https://ftp.cass.si/=MTMyIDMwM.png)
 
 If you can recall from earlier, all game objects are assigned a UUID and placed in the `lssx.objects` table. This means that we can add the UUID to the bodies UserData - and it can be used as a sort of text-only pointer.
 
@@ -153,11 +153,12 @@ Physics.runBuffer = () ->
 
 Which was nice and all for a bit, but then I started running into a looot of bugs, the following was occurring:
 
-![nil_object](https://ftp.{{site::title}}/=YjN0QTM5I.png)
+![nil_object](https://ftp.cass.si/=YjN0QTM5I.png)
 
 The solution, two buffers! (gee bill), one for general body manipulation and other other solely dedicated to removing things, this one gets run at the very end of the frame.
 
-![gee_bill_two_buffers?!](https://ftp.{{site::title}}/yUzNzQTOyQ.png)
+![gee_bill_two_buffers?!](https://ftp.cass.si/yUzNzQTOyQ.png)
 
-So yeah, that's **lssx** and **zephyr**.\\
+So yeah, that's **lssx** and **zephyr**.
+
 Thanks for reading :3

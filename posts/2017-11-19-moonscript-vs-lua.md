@@ -15,17 +15,16 @@ The main 3 pillars of Object Orientation are: Objects, Methods and Inheritance. 
 
 Simply defining a class called `X`, and creating and inserting ever-increasing amounts of `X`, from 10 to 1,000,000 instances.
 
-<div class="side-by-side" markdown="1">
-  ```lua
-  --lua
-  local class = require '30log'
-  t = {}
-  X = class("X")
-  Start = os.clock()
-  for i=1, 100 do table.insert(t, X:new()) end
-  End = os.clock()
-  print(End-Start)
-  ```
+```lua
+--lua
+local class = require '30log'
+t = {}
+X = class("X")
+Start = os.clock()
+for i=1, 100 do table.insert(t, X:new()) end
+End = os.clock()
+print(End-Start)
+```
 
 ```moonscript
 --moonscript
@@ -38,41 +37,37 @@ End = os.clock()
 print(End-Start)
 ```
 
-</div>
+<img src="https://ftp.cass.si/www/blog-assets/msvslua-1.png" />
+```
+| No. of objects created | Time taken (s)         |
+|------------------------|------------|-----------|
+|                        | MoonScript | Lua       |
+| 10                     | 1.6e-05    | 0.000154  |
+| 100                    | 7.8e-05    | 0.002634  |
+| 1,000                  | 0.000711   | 0.014191  |
+| 10,000                 | 0.006792   | 0.144497  |
+| 100,000                | 0.072799   | 1.493317  |
+| 1,000,000              | 0.708374   | 16.057709 |
+```
 
-<div class="side-by-side" markdown="1">
-  <img src="{{site::ftp_assets}}/msvslua-1.png" />
-  ```
-  | No. of objects created | Time taken (s)         |
-  |------------------------|------------|-----------|
-  |                        | MoonScript | Lua       |
-  | 10                     | 1.6e-05    | 0.000154  |
-  | 100                    | 7.8e-05    | 0.002634  |
-  | 1,000                  | 0.000711   | 0.014191  |
-  | 10,000                 | 0.006792   | 0.144497  |
-  | 100,000                | 0.072799   | 1.493317  |
-  | 1,000,000              | 0.708374   | 16.057709 |
-  ```
-</div>
 As you can see, the time taken for 30log to create objects increases massively to 16 seconds! - Although realistically most people will have less than 1,000 objects, the speed difference is still pretty large.
 
 ## Methods
 
 Giving `X` an method called `add` which simply increments its `self.x`.
 
-<div class="side-by-side" markdown="1">
-  ```lua
-  t = {}
-  local class = require '30log'
-  X = class("X")
-  function X:init(x) self.x = x end
-  function X:add() self.x = self.x + 1 end
-  for i=1, 10 do table.insert(t, X(0)) end
-  Start = os.clock()
-    for i=1, #t do t[i]:add() end
-  End = os.clock()
-  print(End-Start)
-  ```
+```lua
+t = {}
+local class = require '30log'
+X = class("X")
+function X:init(x) self.x = x end
+function X:add() self.x = self.x + 1 end
+for i=1, 10 do table.insert(t, X(0)) end
+Start = os.clock()
+  for i=1, #t do t[i]:add() end
+End = os.clock()
+print(End-Start)
+```
 
 ```moonscript
 t = {}
@@ -87,10 +82,7 @@ End = os.clock()
 print(End-Start)
 ```
 
-</div>
-
-<div class="side-by-side" markdown="1">
-  <img src="{{site::ftp_assets}}/msvslua-2.png" />
+<img src="https://ftp.cass.si/www/blog-assets/msvslua-2.png" />
 
 ```
 | No. methods ran | Time taken (s)        |
@@ -113,7 +105,6 @@ MoonScript is initially slower when object count is <100, but soon to lag starts
 
 Creating another class called `Y` that is inherited from `X`, we should expect similar results to the first test.
 
-<div class="side-by-side" markdown="1">
 ```lua
 local class = require '30log'
 t = {}
@@ -142,22 +133,19 @@ print(End-Start)
   print(End-Start)
 ```
 
-</div>
+<img src="https://ftp.cass.si/www/blog-assets/msvslua-3.png" />
 
-<div class="side-by-side" markdown="1">
-  <img src="{{site::ftp_assets}}/msvslua-3.png" />
-  ```
-  | No. of objects inherited | Time taken | (s)       |
-  |--------------------------|------------|-----------|
-  |                          | MoonScript | Lua       |
-  | 10                       | 1.9e-05    | 0.000315  |
-  | 100                      | 0.000105   | 0.001692  |
-  | 1,000                    | 0.001064   | 0.017323  |
-  | 10,000                   | 0.01217    | 0.165252  |
-  | 100,000                  | 0.109585   | 1.721108  |
-  | 1,000,000                | 1.042791   | 17.100362 |
-  ```
-</div>
+```
+| No. of objects inherited | Time taken | (s)       |
+|--------------------------|------------|-----------|
+|                          | MoonScript | Lua       |
+| 10                       | 1.9e-05    | 0.000315  |
+| 100                      | 0.000105   | 0.001692  |
+| 1,000                    | 0.001064   | 0.017323  |
+| 10,000                   | 0.01217    | 0.165252  |
+| 100,000                  | 0.109585   | 1.721108  |
+| 1,000,000                | 1.042791   | 17.100362 |
+```
 
 MoonScript is the clear victor here, 30log takes up to 17 seconds to complete the same task as MoonScript.
 

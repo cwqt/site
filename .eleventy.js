@@ -34,6 +34,9 @@ module.exports = (eleventyConfig) => {
   let markdownLib = markdownIt(markdownItOptions).use(markdownItReplaceLink);
   eleventyConfig.setLibrary("md", markdownLib);
 
+  const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+  eleventyConfig.addPlugin(syntaxHighlight);
+
   return {
     dir: {
       input: ".",

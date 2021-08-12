@@ -502,7 +502,7 @@ $.ajax({
 Time to bring it all together.
 When a commit is sent to GitLab a Netlify build hook gets triggered starting a deployment, this deployement uses a `build.sh` file to carry out actions and serves all content out of the `_site` directory.
 
-```sh
+```shell
 #!/bin/sh
 rm -rf _site/
 mkdir _site/

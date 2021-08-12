@@ -7,7 +7,7 @@ I spent a solid 3 days going through countless medium articles, reddit posts & d
 
 ## **1** installing tailwind & webpack
 
-```sh
+```shell
 npm install -D @tailwindcss/jit tailwindcss postcss webpack @angular-builders/custom-webpack --force
 ```
 

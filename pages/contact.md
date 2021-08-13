@@ -1,3 +1,7 @@
+---
+permalink: contact
+---
+
 - m (at) cass (dot) si
 - [https://gitlab.com/cxss](https://gitlab.com/cxss)
 - cass#3882

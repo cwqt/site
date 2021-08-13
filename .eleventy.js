@@ -37,6 +37,12 @@ module.exports = (eleventyConfig) => {
   const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
   eleventyConfig.addPlugin(syntaxHighlight);
 
+  eleventyConfig.addFilter(
+    "relative",
+    (page, root = "/") =>
+      `${require("path").relative(page.filePathStem, root)}/`
+  );
+
   return {
     dir: {
       input: ".",

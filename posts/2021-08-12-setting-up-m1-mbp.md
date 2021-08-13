@@ -12,6 +12,8 @@ recently got my hands on the new m1 macbook, this thing is stupid fast and makes
 * node version manager, [nvm](https://github.com/nvm-sh/nvm)
 * keybindings daemon, [skhd](https://github.com/koekeishiya/skhd)
 * tiling wm, [yabai](https://github.com/koekeishiya/yabai)
+* increase key repeat & animation speed across os
+* setup ssh keys for gitlab & github
 
 open up `Terminal.app` and follow along :)
 
@@ -138,9 +140,29 @@ defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
 
 turn off dock showing recent applications
 
-go to System Preferences > Dock & Menu Bar, then uncheck the box for "Show recent applications in Dock"
+> go to System Preferences > Dock & Menu Bar, then uncheck the box for "Show recent applications in Dock"
 
 turn off virtual desktops being re-arranged
 
-go to System Preferences > Mission Control, then uncheck box for "Automatically rearrange Spaces based on most recent use"
+> go to System Preferences > Mission Control, then uncheck box for "Automatically rearrange Spaces based on most recent use"
 
+## ssh keys for gitlab & github
+
+```shell
+# github
+ssh-keygen -t rsa -C your@email.com -f ~/.ssh/id_rsa_GITHUB
+cat ~/.ssh/id_rsa_GITHUB.pub
+# add new key to github at https://github.com/settings/ssh/new
+
+# gitlab
+ssh-keygen -t rsa -C your@email.com -f ~/.ssh/id_rsa_GITLAB
+cat ~/.ssh/id_rsa_GITLAB.pub
+# add new key to gitlab at https://gitlab.com/-/profile/keys
+
+# get my ssh config which configures to use different key based on git hostname
+curl https://gitlab.com/cxss/dotfiles/-/raw/master/.ssh/config >> ~/.ssh/config
+
+# restart ssh agent
+sudo launchctl unload /System/Library/LaunchDaemons/ssh.plist
+sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist 
+```

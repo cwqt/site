@@ -146,6 +146,12 @@ turn off virtual desktops being re-arranged
 
 > go to System Preferences > Mission Control, then uncheck box for "Automatically rearrange Spaces based on most recent use"
 
+speed up window minimise by changing effect to `suck`
+
+```shell
+defaults write com.apple.dock mineffect -string suck; killall Dock
+```
+
 ## ssh keys for gitlab & github
 
 ```shell

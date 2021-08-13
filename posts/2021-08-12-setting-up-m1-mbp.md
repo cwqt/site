@@ -119,3 +119,28 @@ sudo visudo -f /private/etc/sudoers.d/yabai
 ```
 
 source for some of this part: <https://github.com/koekeishiya/yabai/issues/725#issuecomment-861753811>
+
+## overwriting some defaults
+
+increase dock show speed & reduce animation time
+
+```shell
+defaults write com.apple.dock autohide-time-modifier -float 0.3;killall Dock
+defaults write com.apple.dock autohide-delay -float 0; killall Dock
+```
+
+increase key repeat
+
+```shell
+defaults write -g InitialKeyRepeat -int 10 # normal minimum is 15 (225 ms)
+defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
+```
+
+turn off dock showing recent applications
+
+go to System Preferences > Dock & Menu Bar, then uncheck the box for "Show recent applications in Dock"
+
+turn off virtual desktops being re-arranged
+
+go to System Preferences > Mission Control, then uncheck box for "Automatically rearrange Spaces based on most recent use"
+

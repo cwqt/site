@@ -152,6 +152,10 @@ speed up window minimise by changing effect to `suck`
 defaults write com.apple.dock mineffect -string suck; killall Dock
 ```
 
+allow shift + cmd + l select all keybinding in vscode
+
+> go to System Preferences > Keyboard > Shortcuts > Services & uncheck Searching > Search With Google
+
 ## ssh keys for gitlab & github
 
 ```shell

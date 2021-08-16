@@ -1,6 +1,6 @@
 ---
 title: "Going from VSCode to Neovim"
-date: 2021-04-06T:18:40:00Z
+date: 2021-08-16T00:02:00Z
 ---
 
 i've tried a couple times in the past to make the switch from gui text editors to the cli

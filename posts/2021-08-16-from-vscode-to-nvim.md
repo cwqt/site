@@ -42,4 +42,16 @@ instead of a big ugly electron app to work in all day erry day
 * global search & replace
 * decent auto-complete with ts-server
 
+### extensions
+
+* bracket pair colourizer
+* auto rename tag
+* error lens
+* foam
+* prettier
+* tailwind intellisense
+* ts import sorter
+* todo tree
+* code time
+
 will report back when i've setup my nvim with a config that covers these bases

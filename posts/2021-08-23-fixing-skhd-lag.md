@@ -53,4 +53,5 @@ open this file in your editor of choice `vi /opt/homebrew/Cellar/skhd/0.3.5/home
 the simply add those two lines to set which shell to use, then re-install via
 `brew reinstall skhd` & restart the daemon `brew services restart skhd`
 
-there you have it :)
+cannot describe how much of a difference 500ms makes when using on a daily basis -
+goes from basically unusable to a joy to work with

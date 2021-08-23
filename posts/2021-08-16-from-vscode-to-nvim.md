@@ -1,5 +1,5 @@
 ---
-title: "Going from VSCode to Neovim"
+title: "going from vscode to neovim"
 date: 2021-08-16T00:02:00Z
 ---
 

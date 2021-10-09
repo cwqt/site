@@ -9,19 +9,30 @@ title: cass.si
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cass.si -- {{ title }}</title>
     <link rel="stylesheet" href="/assets/css/style.css">
+    {# code tag styling #}
     <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
   </head>
   <body>
-      <h1>cass.si 🪴 🇳🇴</h1>
-      <div class="markdown-body">
-        {{ content | safe }}
+    <div class="wrapper">
+      <div class="sidebar">
+        <img src="https://ftp.cass.si/77c6y3y5..png">
+
+        <div class="about">
+          {% set snippet %}{% include 'sidebar.md' %}{% endset %}
+          {{ snippet | markdown | safe }}
+        </div>
       </div>
 
-      <footer>
-        <a class="rotonde no-link-style" href="https://webring.xxiivv.com/#random" target="blank_">
-          <img src="https://ftp.cass.si/www/webring.png" />
-        </a>
-        <span> 2020 · copyright? no thanks</span>
-      </footer>
+      <div class="content">
+        {{ content | safe }}
+      </div>
+    </div>
+
+    <footer>
+      <a class="rotonde no-link-style" href="https://webring.xxiivv.com/#random" target="blank_">
+        <img src="https://ftp.cass.si/www/webring.png"/>
+      </a>
+      <span> 2020 · copyright? no thanks</span>
+    </footer>
   </body>
 </html>

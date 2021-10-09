@@ -1,6 +1,6 @@
-module.exports = (eleventyConfig) => {
-  eleventyConfig.addPassthroughCopy(".htaccess");
-  eleventyConfig.addTransform("wiki-links", function (content, outputPath) {
+module.exports = (config) => {
+  config.addPassthroughCopy(".htaccess");
+  config.addTransform("wiki-links", function (content, outputPath) {
     if (outputPath && outputPath.endsWith(".html")) {
       // We remove outer brackets from links
       let output = content.replace(/(\[+(\<a(.*?)\<\/a\>)\]+)/g, "$2");
@@ -31,13 +31,18 @@ module.exports = (eleventyConfig) => {
       return link;
     },
   };
-  let markdownLib = markdownIt(markdownItOptions).use(markdownItReplaceLink);
-  eleventyConfig.setLibrary("md", markdownLib);
+
+  const markdownLib = markdownIt(markdownItOptions).use(markdownItReplaceLink);
+  config.setLibrary("md", markdownLib);
+
+  config.addFilter("markdown", function (value) {
+    return markdownLib.render(value);
+  });
 
   const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-  eleventyConfig.addPlugin(syntaxHighlight);
+  config.addPlugin(syntaxHighlight);
 
-  eleventyConfig.addFilter(
+  config.addFilter(
     "relative",
     (page, root = "/") =>
       `${require("path").relative(page.filePathStem, root)}/`

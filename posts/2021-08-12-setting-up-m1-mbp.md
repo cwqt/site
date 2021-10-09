@@ -156,6 +156,10 @@ allow shift + cmd + l select all keybinding in vscode
 
 > go to System Preferences > Keyboard > Shortcuts > Services & uncheck Searching > Search With Google
 
+bind caps-lock to ctrl
+
+> go to System Preferences > Keyboard > Modifier Keys & change Caps Lock to Control
+
 ## ssh keys for gitlab & github
 
 ```shell

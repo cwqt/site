@@ -1,7 +1,8 @@
-{% for post in collections.posts reversed %} {% if post.data.draft == null %}
-<li>
-  <code>{{ post.data.date | date: "%d.%m.%Y" }}</code>
-  <a href="{{ post.url }}">{{ post.data.title }}</a>
-</li>
-{% endif %} {% endfor %}
-<br />
+<div class="list">
+  {% for post in collections.posts reversed %} {% if post.data.draft == null %}
+  <li>
+    <code>{{ post.data.date | date: "%d.%m.%Y" }}</code>
+    <a href="{{ post.url }}">{{ post.data.title }}</a>
+  </li>
+  {% endif %} {% endfor %}
+</div>

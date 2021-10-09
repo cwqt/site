@@ -1,5 +1,5 @@
 # posts
 
-a lot of blog shit
+very bad blogging probably written under the influence
 
 {% include ./_includes/posts.liquid %}

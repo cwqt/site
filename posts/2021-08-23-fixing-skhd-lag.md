@@ -35,7 +35,7 @@ Benchmark #1: /bin/bash -c exit
 
 0.7ms, **bussin** - and for comparison zsh was about 2ms
 
-## okay so how do I get the speed?
+## okay so how do I get the speed?
 
 open this file in your editor of choice `vi /opt/homebrew/Cellar/skhd/0.3.5/homebrew.mxcl.skhd.plist`
 (your specific version may be different)

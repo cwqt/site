@@ -21,11 +21,11 @@ as the saying goes, to make tateys you gotta buy tateys - so purchase any old on
 
 ## step 4: water
 
-simulate playing animal crossing in real life & move your flesh vessel in such a way as to pour water onto said potatoes - i have no idea how often you're meant to water them but common sense would dictate a couple times a week, or whenever you remember to really...
+simulate playing animal crossing in real life by pouring water onto said potatoes with a watering can - i have no idea how often you're meant to water them but common sense would dictate a couple times a week, or whenever you remember to really...
 
 ## step 5: watch tateys grow
 
-now for the boring part, sit and wait for them to do the thing, tateys grow fairly quickly but the tubers take a while to get big, most of the growth is done just before winter when the crop puts entire energy into the potatoes so that it can survice over the winter.  
+now for the boring part, sit and wait for them to do the thing, tateys grow fairly quickly but the tubers take a while to get big, most of the growth is done just before winter when the crop puts entire energy into the potatoes so that it can survive over the winter.  
 so in the meantime you can just watch them and eat normal frozen oven chips... growing takes a few months, apparently you're meant to harvest a few weeks after flowering?
 
 ![growing potateys](https://ftp.cass.si/0o2y8wfjs.jpeg)

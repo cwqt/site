@@ -3,6 +3,7 @@ title: "én hundre dag av duolingo"
 date: 2020-11-29T15:10:48Z
 ---
 
+<br/>
 <img src="https://ftp.cass.si/c7r5r0X2=.jpeg" style="width: 50%" class="fr"/>
 
 jeg har brukt duolingo i omtrent 124 dag, og her er noe ting jeg har læret på denne tiden.

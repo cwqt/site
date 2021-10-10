@@ -1,4 +1,4 @@
-## 🪴🇳🇴👩‍💻🌊🐄
+## [🪴🇳🇴👩‍💻🌊🐄](/)
 
 22 y/o senior full-stack norgeboo, working at a carbon-offsetting startup `(♥_♥)`  
 you can contact me via:

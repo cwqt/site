@@ -13,11 +13,9 @@ of anything in my whole life, so some experience in how it all works will aid me
 the system. My farm consists of 1 level with a 300-800nm spectrum grow light, for bigger veggies
 like lettuces and 4 levels with red&blue strip LEDs for microgreens.
 
----
-
 # Growing pea shoots
 
-**Step 1:** Soaking the seeds
+**Step 1** Soaking the seeds
 
 I bought some trays from AliExpress to do soil-less growing & filled the whole thing with pea shoot seeds -
 totally way too much as you'll see later;
@@ -26,8 +24,7 @@ totally way too much as you'll see later;
 
 All in, this was about `200g` unsoaked. These were then soaked in a bowl of water for around 15 hours.
 
-<br />
-**Step 2:** Germination
+**Step 2** Germination
 
 After allowing the seeds to soak, they had grown to be pretty much double in size,
 mine weighed `397g` post soak - I then evenly distributed the seeds in the tray and covered the
@@ -39,8 +36,7 @@ Do this for 2 days.
 Since the seeds grew so much they far exceeded the single trays capacity, so I had to split them
 over two trays - seeing as I had two sets of lights (white & red/blue) I did a little experiment to see what the difference would be in growth.
 
-<br />
-**Step 3:** Growing up
+**Step 3** Growing up
 
 After about 2 days of blackout, I uncovered the seeds and exposed them to light for ~18hrs a day.
 

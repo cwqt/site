@@ -5,8 +5,8 @@ you can contact me via:
 
 - m (at) cass (dot) si
 - cass#3882
-- [https://gitlab.com/cxss](https://gitlab.com/cxss)
-- [https://www.last.fm/user/cwqt](https://www.last.fm/user/cwqt)
+- [gitlab.com/cxss](https://gitlab.com/cxss)
+- [last.fm/user/cwqt](https://www.last.fm/user/cwqt)
 
 site written with [11ty](https://www.11ty.dev/) & [foam](https://foambubble.github.io/) - hosted by [netlify](https://netlify.com) — [source](https://gitlab.com/cxss/site)
 

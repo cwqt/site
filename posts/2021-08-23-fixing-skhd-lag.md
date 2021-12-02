@@ -5,14 +5,15 @@ date: 2021-08-23T10:03:00Z
 
 luv me tiling wm, luv me hotkey daemon, 'ate input lag - simple as.
 
-recently i've been finding using my wm to be a real fucking drag,
-often taking upwards of a second to open to open terminals, switch desktops, windows etc.
-initially I thought the terminal being slow was just down to [kitty](https://github.com/kovidgoyal/kitty)
-having a high startup time, but running some benchmarks proved otherwise so i
-decided to look elsewhere, perhaps something to do with the m1 chip & rosetta?
+recently i've been finding using my wm to be a real fucking drag, often taking
+upwards of a second to open to open terminals, switch desktops, windows etc.
+initially I thought the terminal being slow was just down to
+[kitty](https://github.com/kovidgoyal/kitty) having a high startup time, but
+running some benchmarks proved otherwise so i decided to look elsewhere, perhaps
+something to do with the m1 chip & rosetta?
 
-nope, turns out this is down to my hotkey daemon, skhd, and how it actually works; by opening a shell,
-running a command, and then immediately closing:
+nope, turns out this is down to my hotkey daemon, skhd, and how it actually
+works; by opening a shell, running a command, and then immediately closing:
 
 alright, well how fast is my shell (fish) at opening?
 
@@ -23,8 +24,8 @@ Benchmark #1: /opt/homebrew/bin/fish -c exit
   Range (min … max):   540.8 ms … 557.3 ms    10 runs
 ```
 
-damn... 546ms to actually start the shell & _then_ run the hotkey, okay let's try
-good old bash
+damn... 546ms to actually start the shell & _then_ run the hotkey, okay let's
+try good old bash
 
 ```shell
 ~  hyperfine "/bin/bash -c exit"
@@ -37,8 +38,9 @@ Benchmark #1: /bin/bash -c exit
 
 ## okay so how do I get the speed?
 
-open this file in your editor of choice `vi /opt/homebrew/Cellar/skhd/0.3.5/homebrew.mxcl.skhd.plist`
-(your specific version may be different)
+open this file in your editor of choice
+`vi /opt/homebrew/Cellar/skhd/0.3.5/homebrew.mxcl.skhd.plist` (your specific
+version may be different)
 
 ```diff
  <key>EnvironmentVariables</key>
@@ -53,5 +55,5 @@ open this file in your editor of choice `vi /opt/homebrew/Cellar/skhd/0.3.5/home
 the simply add those two lines to set which shell to use, then re-install via
 `brew reinstall skhd` & restart the daemon `brew services restart skhd`
 
-cannot describe how much of a difference 500ms makes when using on a daily basis -
-goes from basically unusable to a joy to work with
+cannot describe how much of a difference 500ms makes when using on a daily
+basis - goes from basically unusable to a joy to work with

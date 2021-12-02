@@ -3,31 +3,47 @@ title: "JAMstack FTP, electric boogaloo"
 date: 2019-12-05T23:10:00Z
 ---
 
-Its been a couple of years since I made my post on using JAMstack to make a sort of [file hosting service](https://cass.si/posts/jam-stack-ftp-file-uploader) using Netlify, since then I've made mostly small modifications - re-wrote the auth to use GitLab and had two instances of it running at ftp.cass.si & cass.si/ftp.
+Its been a couple of years since I made my post on using JAMstack to make a sort
+of [file hosting service](https://cass.si/posts/jam-stack-ftp-file-uploader)
+using Netlify, since then I've made mostly small modifications - re-wrote the
+auth to use GitLab and had two instances of it running at ftp.cass.si &
+cass.si/ftp.
 
 And after those two years I have come to a conclusion:
 
 _It kind of sucks._
 
-Standing out to me are a few major issues and just generally shoddy programming out of incompetence at the time. But hey! Years have passed and I'm an infinitely better programmer<sup>†</sup> now, and as a better programmer I shall rectify this thing into a better thing :)
+Standing out to me are a few major issues and just generally shoddy programming
+out of incompetence at the time. But hey! Years have passed and I'm an
+infinitely better programmer<sup>†</sup> now, and as a better programmer I shall
+rectify this thing into a better thing :)
 
 The main glaring issues with the current implementation:
 
-- Using GitLab Access Token as a form of authentication only allows one user to access the service
+- Using GitLab Access Token as a form of authentication only allows one user to
+  access the service
 - Site UI lacking
 - Managing files is super time consuming
 - Uploading multiple files results in mutlitple commits being made
 - Files are roughly 1/3 larger due to blob -> Data URI conversion
-- .b64 files don't contain any sort of meta-data like creation date, uploader name etc.
+- .b64 files don't contain any sort of meta-data like creation date, uploader
+  name etc.
 - Code is callback hell incarnate
 
-After spending all of an hour thinking about possible improvements, I came up with these solutions:
+After spending all of an hour thinking about possible improvements, I came up
+with these solutions:
 
-- Use Netlify Identities®™ to allow multiple users to access the service and store GitLab API tokens
-- Use [Harp.js](http://harpjs.com/) to pre-render a site skeleton into which we load API-grabbed stuff
-- Use action hashes with [this](https://docs.gitlab.com/ee/api/commits.html#create-a-commit-with-multiple-files-and-actions) route to send all files in one commit
-- Use an external image compression service to make files smaller before converting
-- Package files into yaml and include some metadata like creation time & who uploaded it
+- Use Netlify Identities®™ to allow multiple users to access the service and
+  store GitLab API tokens
+- Use [Harp.js](http://harpjs.com/) to pre-render a site skeleton into which we
+  load API-grabbed stuff
+- Use action hashes with
+  [this](https://docs.gitlab.com/ee/api/commits.html#create-a-commit-with-multiple-files-and-actions)
+  route to send all files in one commit
+- Use an external image compression service to make files smaller before
+  converting
+- Package files into yaml and include some metadata like creation time & who
+  uploaded it
 - Use async/await
 
 <br>
@@ -42,32 +58,70 @@ Pretty cool hey?
 
 ## What even is JAMstack?
 
-I never actually explained this in the previous post - that's because in 2017 I didn't even know the word existed, and the JAMstack community was in it's infancy. So let's take a little time to understand what it is.
+I never actually explained this in the previous post - that's because in 2017 I
+didn't even know the word existed, and the JAMstack community was in it's
+infancy. So let's take a little time to understand what it is.
 
-JAM means JavaScript, APIs and Markup - a bit inspecific right? Basically there's no server involved, sites are pre-compiled via a continous deployment pipeline (Netlify, ZEIT Now) into static content by a generator (Gatsby, Jekyll... Harp) and served to the end user via a CDN.
+JAM means JavaScript, APIs and Markup - a bit inspecific right? Basically
+there's no server involved, sites are pre-compiled via a continous deployment
+pipeline (Netlify, ZEIT Now) into static content by a generator (Gatsby,
+Jekyll... Harp) and served to the end user via a CDN.
 
 ![](https://ftp.cass.si/=MDM1QDO5k.jpeg)
 
-Now you might just be thinking: "Cass, what's the big deal with just spinning up some static html, we did that that 10 years ago" - and yes, that's sort of true, but misses out the **A** part of this whole thing, re-usable APIs that can be accessed over https with JS opens up a world of possibilities - you no longer require a monolithic server on some VPS to handle complex operations and dynamic content (...like authentification).
+Now you might just be thinking: "Cass, what's the big deal with just spinning up
+some static html, we did that that 10 years ago" - and yes, that's sort of true,
+but misses out the **A** part of this whole thing, re-usable APIs that can be
+accessed over https with JS opens up a world of possibilities - you no longer
+require a monolithic server on some VPS to handle complex operations and dynamic
+content (...like authentification).
 
-There are currently a tonne of applications for JAMstack sites, from blogs to , heck even things like [SnipCart](https://snipcart.com/) exist for making e-commerce sites! There's a nice book on JAMstack [here](https://www.netlify.com/pdf/oreilly-modern-web-development-on-the-jamstack.pdf).
+There are currently a tonne of applications for JAMstack sites, from blogs to ,
+heck even things like [SnipCart](https://snipcart.com/) exist for making
+e-commerce sites! There's a nice book on JAMstack
+[here](https://www.netlify.com/pdf/oreilly-modern-web-development-on-the-jamstack.pdf).
 
 ## Why JAMstack?
 
-- **Better performance**, sending static pre-made html files is fast as fuq compared to a server generating html on the fly.
-- **Higher security**, reduced attack surface, can't really do any SQL injections or XSS scripting if what you're serving is static.
-- **Cheaper, scaliability**: When your deployment is simply a stack of files, with more demand the CDN simply picks up the slack like nothing ever happened
-- **Easier development**: Loose coupling and separation of controls allow for more targeted development and debugging.
+- **Better performance**, sending static pre-made html files is fast as fuq
+  compared to a server generating html on the fly.
+- **Higher security**, reduced attack surface, can't really do any SQL
+  injections or XSS scripting if what you're serving is static.
+- **Cheaper, scaliability**: When your deployment is simply a stack of files,
+  with more demand the CDN simply picks up the slack like nothing ever happened
+- **Easier development**: Loose coupling and separation of controls allow for
+  more targeted development and debugging.
 
-Those are just some generic reasons I peeled off the interwebs([\*](https://jamstack.org/)) - but here's a small anecdote from when I was interviewing at a small web dev. firm.
+Those are just some generic reasons I peeled off the
+interwebs([\*](https://jamstack.org/)) - but here's a small anecdote from when I
+was interviewing at a small web dev. firm.
 
-They brought me in for some test day, learning their stack and whatnot. They weren't really doing anything that involved, mostly just websites for buisnesses with a CMS. And wow, let me tell you, that stack was a giant pile of shit. I wish I was joking - for the entire 3 hours I was there every second was pain, I genuinely felt like I was in a time capsule from 10 years ago the way it was all set up.
+They brought me in for some test day, learning their stack and whatnot. They
+weren't really doing anything that involved, mostly just websites for buisnesses
+with a CMS. And wow, let me tell you, that stack was a giant pile of shit. I
+wish I was joking - for the entire 3 hours I was there every second was pain, I
+genuinely felt like I was in a time capsule from 10 years ago the way it was all
+set up.
 
-Their stack consisted of some buggy in-browser text-editor/CMS all mashed into one, you couldn't edit more than one file at a time, no version control, no macros/multicursor/simple keybindings, it took 4 seconds to save a change, and then another 5 to propogate the change into a live preview.
+Their stack consisted of some buggy in-browser text-editor/CMS all mashed into
+one, you couldn't edit more than one file at a time, no version control, no
+macros/multicursor/simple keybindings, it took 4 seconds to save a change, and
+then another 5 to propogate the change into a live preview.
 
-All their templates are built using some strange templating system in a language called XSLT, which wikipedia describes as "a language for transforming XML documents into other XML documents", so that's fun. There's also no watcher for compiling SASS to CSS making the entire "SASS is required" part of the job application form pointless, I was literally copy-pasting CSS from Sassmeister into the CSS files the whole time. Interestingly the lead dev. agreed with me on a few of these issues on the code review.
+All their templates are built using some strange templating system in a language
+called XSLT, which wikipedia describes as "a language for transforming XML
+documents into other XML documents", so that's fun. There's also no watcher for
+compiling SASS to CSS making the entire "SASS is required" part of the job
+application form pointless, I was literally copy-pasting CSS from Sassmeister
+into the CSS files the whole time. Interestingly the lead dev. agreed with me on
+a few of these issues on the code review.
 
-After I'd gone home I started thinking about how their _entire_ system could be replaced with a Forestry.io & Gatsby/Jekyll/whatever set-up in under a day and be _leagues_ better than what they currently had - that just really brought home how powerful JAMstack truly is. Part of me wishes I'd brought home the point a bit more about how bad it all was - but understandably they had something that worked... and just never seemed to want to change.
+After I'd gone home I started thinking about how their _entire_ system could be
+replaced with a Forestry.io & Gatsby/Jekyll/whatever set-up in under a day and
+be _leagues_ better than what they currently had - that just really brought home
+how powerful JAMstack truly is. Part of me wishes I'd brought home the point a
+bit more about how bad it all was - but understandably they had something that
+worked... and just never seemed to want to change.
 
 Anyway, onwards with development!
 
@@ -79,10 +133,14 @@ Here's a flow-chart of what goes down when the user uploads a file.
 
 ![](https://ftp.cass.si/==AN4ATMwA.jpeg)
 
-There is a short delay of about 30 seconds between a file uploaded and it being accessible because of the compilation time on Netlify's end.
+There is a short delay of about 30 seconds between a file uploaded and it being
+accessible because of the compilation time on Netlify's end.
 
-There are a lot of strings like `CREATED_AT`, `FILE_COUNT` & `INSERT_LIST_HERE`, these are simply regexable terms used during compile time to replace with html/some value.
-For example, <https://ftp.cass.si/list> shows a list of all files in order of upload date, this is generated during compilation using the file data - imagine if this were generated every page load - a lot of overhead.
+There are a lot of strings like `CREATED_AT`, `FILE_COUNT` & `INSERT_LIST_HERE`,
+these are simply regexable terms used during compile time to replace with
+html/some value. For example, <https://ftp.cass.si/list> shows a list of all
+files in order of upload date, this is generated during compilation using the
+file data - imagine if this were generated every page load - a lot of overhead.
 
 ```js
 function getListFileMarkup(files) {
@@ -114,9 +172,13 @@ function getListFileMarkup(files) {
 
 First there were callbacks, then Promises and now... async/await 🙏
 
-Ever since ES6 dropped and async/await came with it I've gone from being somewhat distasteful of JS to pretty much loving it, over the last 2 years I've really learned a lot about the language, including stuff like React, Redux etc. Promises are pretty awesome and now I really enjoy writing async code.
+Ever since ES6 dropped and async/await came with it I've gone from being
+somewhat distasteful of JS to pretty much loving it, over the last 2 years I've
+really learned a lot about the language, including stuff like React, Redux etc.
+Promises are pretty awesome and now I really enjoy writing async code.
 
-So what is async/await? Sounds like a load of technobabble me thinks... Essentially it's syntax sugar for the new Promises object-thingy.
+So what is async/await? Sounds like a load of technobabble me thinks...
+Essentially it's syntax sugar for the new Promises object-thingy.
 
 May I present, callback hell:
 
@@ -130,7 +192,8 @@ someFunkyFunc(input, function (result) {
 });
 ```
 
-Promises were made to solve this! Instead of having a callback function, functions would return a Promise... this was okay for a bit:
+Promises were made to solve this! Instead of having a callback function,
+functions would return a Promise... this was okay for a bit:
 
 ```js
 var awsumPromise = new Promise((resolve, reject) => {
@@ -160,7 +223,9 @@ promise1.then(oh_no => {
   })
 ```
 
-The main issue here is that promise chains are composed from callback functions, and functions introduce new scopes - if we didn't have these sibling scopes we could share access to previous results.
+The main issue here is that promise chains are composed from callback functions,
+and functions introduce new scopes - if we didn't have these sibling scopes we
+could share access to previous results.
 
 The promised lands: async/await! 🎉
 
@@ -174,7 +239,10 @@ var bar = await promise2()
 var baz = await promise3()
 ```
 
-It's like writing synchronous code, but it's async, awsum. There's so much less noise, very pretty looking, totally no excuse not to write clean code with this super nice syntax in place - one must remember that await can only be in async functions, or wrapped in an AIIFE: Async Immediately Invoked Function Execution:
+It's like writing synchronous code, but it's async, awsum. There's so much less
+noise, very pretty looking, totally no excuse not to write clean code with this
+super nice syntax in place - one must remember that await can only be in async
+functions, or wrapped in an AIIFE: Async Immediately Invoked Function Execution:
 
 ```js
 var doesnt_work = await pwomise()(async () => {
@@ -186,13 +254,21 @@ var doesnt_work = await pwomise()(async () => {
 
 ## Netlify Identities
 
-Previously I had been using a straight GitLab Access Token to authenticate and upload files, but this seemed a bit hacky & I wasn't overly comfortable dishing out keys to friends so they could use my service.
+Previously I had been using a straight GitLab Access Token to authenticate and
+upload files, but this seemed a bit hacky & I wasn't overly comfortable dishing
+out keys to friends so they could use my service.
 
-Netlify Identities allows you to authenticate users for things like gated content, site administration etc, and is backed by the [GoTrue](https://github.com/netlify/gotrue-js) API. It's basically an authentication microservice with a database - the only part of interest to the developer is the user-facing API.
+Netlify Identities allows you to authenticate users for things like gated
+content, site administration etc, and is backed by the
+[GoTrue](https://github.com/netlify/gotrue-js) API. It's basically an
+authentication microservice with a database - the only part of interest to the
+developer is the user-facing API.
 
 ![](https://ftp.cass.si/=YTO1ADMwA.png)
 
-Setting it up is as simple as adding a user on Netlify, downloading the minified [gotrue.js](https://github.com/netlify/gotrue-js/blob/master/browser/gotrue.js) file from the gotrue-js repo and setting up an auth object.
+Setting it up is as simple as adding a user on Netlify, downloading the minified
+[gotrue.js](https://github.com/netlify/gotrue-js/blob/master/browser/gotrue.js)
+file from the gotrue-js repo and setting up an auth object.
 
 ```js
 var auth = new GoTrue({
@@ -201,7 +277,10 @@ var auth = new GoTrue({
 });
 ```
 
-Unfortunately the Netlify UI has much to be desired and is sort of awkward to set up a user from after this point. I had to get a recovery token and use that to get access to the user object, using that I could set a password via the `.update` function, like so:
+Unfortunately the Netlify UI has much to be desired and is sort of awkward to
+set up a user from after this point. I had to get a recovery token and use that
+to get access to the user object, using that I could set a password via the
+`.update` function, like so:
 
 ```js
 auth.recover(recoveryKey).then((user) => {
@@ -230,9 +309,14 @@ async function authUser(username, password) {
 })();
 ```
 
-This is probably the _easiest_ user login I've ever created, it has a super nice and condense API, can definitely see myself doing this more often. (also IIAAFE's are freaking noice)
+This is probably the _easiest_ user login I've ever created, it has a super nice
+and condense API, can definitely see myself doing this more often. (also
+IIAAFE's are freaking noice)
 
-This service makes use of the GitLab API and so we can leverage GoTrue to store this token in a `user_metadata` field, which [strangely uses a key](https://github.com/netlify/gotrue-js/issues/44) of `data` in the update function:
+This service makes use of the GitLab API and so we can leverage GoTrue to store
+this token in a `user_metadata` field, which
+[strangely uses a key](https://github.com/netlify/gotrue-js/issues/44) of `data`
+in the update function:
 
 ```js
 function setUserGitlabToken(user, token) {
@@ -254,11 +338,17 @@ function setUserGitlabToken(user, token) {
 
 ## Harp.js skeleton
 
-We need some content for our site! I've used Harp.js in the past and while it seems quite dead in developement now, it's nice and simple for little pages like this.
+We need some content for our site! I've used Harp.js in the past and while it
+seems quite dead in developement now, it's nice and simple for little pages like
+this.
 
-> Harp serves Jade, Markdown, EJS, CoffeeScript, Sass, LESS and Stylus as HTML, CSS & JavaScript—no configuration necessary.
+> Harp serves Jade, Markdown, EJS, CoffeeScript, Sass, LESS and Stylus as HTML,
+> CSS & JavaScript—no configuration necessary.
 
-All I need to do for this part is pass in some markup, write the styles and the JS handles DOM manipulation for adding UI elements later on. During compilation other JS files will replace placeholder strings like `INSERT_LIST_HERE` with the actual html. While I'm in dev enviroment it looks like this:
+All I need to do for this part is pass in some markup, write the styles and the
+JS handles DOM manipulation for adding UI elements later on. During compilation
+other JS files will replace placeholder strings like `INSERT_LIST_HERE` with the
+actual html. While I'm in dev enviroment it looks like this:
 
 ![](https://ftp.cass.si/=gDN3kTN5k.png)
 
@@ -268,11 +358,18 @@ The skeleton source is [here](https://gitlab.com/cxss/site/tree/ftp/skeleton).
 
 ## Client side image compression with tinypng.com
 
-Oh man, what fun I had with this, from CORS issues to ArrayBuffers, this part probably took me the longest to make. tinypng has pretty good documentation all things considered and even a few implementations for different languages... all except client-side using HTTPS.
+Oh man, what fun I had with this, from CORS issues to ArrayBuffers, this part
+probably took me the longest to make. tinypng has pretty good documentation all
+things considered and even a few implementations for different languages... all
+except client-side using HTTPS.
 
-My thoughts: get image, send image to api, get compressed image, continue as normal. Simple right?
+My thoughts: get image, send image to api, get compressed image, continue as
+normal. Simple right?
 
-Firstly, what actually is an image? When you add a file to an input field it triggers `onchange`, we can access the content of this (a [FileList](https://developer.mozilla.org/en-US/docs/Web/API/FileList)) even via an event listener:
+Firstly, what actually is an image? When you add a file to an input field it
+triggers `onchange`, we can access the content of this (a
+[FileList](https://developer.mozilla.org/en-US/docs/Web/API/FileList)) even via
+an event listener:
 
 ```js
 $("#fileUploadInput").addEventListener("change", (event) => {
@@ -291,14 +388,17 @@ This contains our data, but first it needs to be read in by a `FileReader`:
 let reader = new FileReader();
 ```
 
-Before I go any further we have to take a look at what kind of data the tinypng API takes, the docs show:
+Before I go any further we have to take a look at what kind of data the tinypng
+API takes, the docs show:
 
 ```shell
 curl --user api:YOUR_API_KEY \
       --data-binary @unoptimized.png -i https://api.tinify.com/shrink
 ```
 
-I tried this on my laptop and cURL said it was a POST request in the headers - it takes Basic HTTP authentifcation in the form `api:API_KEY` and a `data-binary`... whatever that is - and returns an object like this:
+I tried this on my laptop and cURL said it was a POST request in the headers -
+it takes Basic HTTP authentifcation in the form `api:API_KEY` and a
+`data-binary`... whatever that is - and returns an object like this:
 
 ```js
 {
@@ -317,7 +417,8 @@ I tried this on my laptop and cURL said it was a POST request in the headers - i
 }
 ```
 
-The object returns a link to the compressed file, `output.url`, so we can grab that. But first, what the hell is a `data-binary` in cURL?
+The object returns a link to the compressed file, `output.url`, so we can grab
+that. But first, what the hell is a `data-binary` in cURL?
 
 From the man page:
 
@@ -336,7 +437,10 @@ arbitrary binary data by the server > then set the content-type to
 octet-stream: -H "Content-Type: application/octet-stream".
 ```
 
-From this we know the content type is an `octet-stream` and `data-binary` is an arbitrary piece of binary data with _no extra processing_. According to MDN docs we can read files using FileReader into a _"fixed-length raw binary data buffer"_ via `readAsArrayBuffer`, which sounds like what I want.
+From this we know the content type is an `octet-stream` and `data-binary` is an
+arbitrary piece of binary data with _no extra processing_. According to MDN docs
+we can read files using FileReader into a _"fixed-length raw binary data
+buffer"_ via `readAsArrayBuffer`, which sounds like what I want.
 
 So the request to the tinypng API should look like:
 
@@ -374,11 +478,16 @@ Looks good, then.... this bullshit.
 
 ![](https://ftp.cass.si/4kjNykTO5k.png)
 
-CORS, CORS, so annoying, but has its reasons for existing - to stop requests from domains that aren't its own accessing resources _unless_ they're down in the hosts `Access-Control-Access-Origin`.
+CORS, CORS, so annoying, but has its reasons for existing - to stop requests
+from domains that aren't its own accessing resources _unless_ they're down in
+the hosts `Access-Control-Access-Origin`.
 
 ![](https://ftp.cass.si/==AN1YDMwA.png)
 
-After a bit of searching I came across this [Stack Overflow post](https://stackoverflow.com/questions/29670703/how-to-use-cors-anywhere-to-reverse-proxy-and-add-cors-headers). It states by prepending the API url with a Heroku URL it'll do some magic to the CORS headers and the request will go through?
+After a bit of searching I came across this
+[Stack Overflow post](https://stackoverflow.com/questions/29670703/how-to-use-cors-anywhere-to-reverse-proxy-and-add-cors-headers).
+It states by prepending the API url with a Heroku URL it'll do some magic to the
+CORS headers and the request will go through?
 
 ```
 CORS Anywhere helps with accessing data from other websites that is normally
@@ -398,7 +507,8 @@ I'm not entirely sure how this works... but it does,
 url: 'https://cors-anywhere.herokuapp.com/https://api.tinify.com/shrink',
 ```
 
-Now to get the compressed file, apparently AJAX doesn't support downloading files but xhr does? Weird, anyway (also again with the `cors-anywhere`):
+Now to get the compressed file, apparently AJAX doesn't support downloading
+files but xhr does? Weird, anyway (also again with the `cors-anywhere`):
 
 ```js
 //get that mfing blob
@@ -417,15 +527,21 @@ var getBlob = new Promise((resolve, reject) => {
 return await getBlob;
 ```
 
-Woo, a compressed file! Typically tinypng shaves off around 75% of the file size with no noticable change, so definitely a worthwhile addition when you consider how much file size is added when convering to data URI.
+Woo, a compressed file! Typically tinypng shaves off around 75% of the file size
+with no noticable change, so definitely a worthwhile addition when you consider
+how much file size is added when convering to data URI.
 
-Files are later read by another `FileReader` into their base64 data URIs via `reader.readAsDataURL`, this is done so to end up with a flat text file which can be sent to the GitLab repo.
+Files are later read by another `FileReader` into their base64 data URIs via
+`reader.readAsDataURL`, this is done so to end up with a flat text file which
+can be sent to the GitLab repo.
 
 ---
 
 ## Packing files into yaml
 
-As I said before, one of the main issues of the previous implementation was the lack of meta-data. Now that I can support multiple users I want to track who uploads what files - incase of abuse or something.
+As I said before, one of the main issues of the previous implementation was the
+lack of meta-data. Now that I can support multiple users I want to track who
+uploads what files - incase of abuse or something.
 
 The YAML file schema looks like:
 
@@ -436,17 +552,25 @@ data: >
   "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABI... ..."
 ```
 
-This data is used during compilation to generate the file list. I made the mistake of using `\t` to indent but apparently YAML uses 2 spaces to indent resulting in an invalid file during parsing. 😒
+This data is used during compilation to generate the file list. I made the
+mistake of using `\t` to indent but apparently YAML uses 2 spaces to indent
+resulting in an invalid file during parsing. 😒
 
 ---
 
 ## GitLab action hashmap
 
-In the previous implementation I used a naive solution of just sending an AJAX request for each file - creating a new commit for each file - this isn't exactly efficient (and it floods my commit graph).
+In the previous implementation I used a naive solution of just sending an AJAX
+request for each file - creating a new commit for each file - this isn't exactly
+efficient (and it floods my commit graph).
 
-I'm not sure why I didn't see this before but there's a [route](https://docs.gitlab.com/ee/api/commits.html#create-a-commit-with-multiple-files-and-actions) that allows multiple files to be uploaded at once: `POST /projects/:id/repository/commits`
+I'm not sure why I didn't see this before but there's a
+[route](https://docs.gitlab.com/ee/api/commits.html#create-a-commit-with-multiple-files-and-actions)
+that allows multiple files to be uploaded at once:
+`POST /projects/:id/repository/commits`
 
-It takes a list of "actions", which can be anything from deleting a file to moving it.
+It takes a list of "actions", which can be anything from deleting a file to
+moving it.
 
 ```js
 {
@@ -463,7 +587,8 @@ It takes a list of "actions", which can be anything from deleting a file to movi
   ...
 ```
 
-`fileToYaml` simply forms a string in the same form as the schema I described, thus the request to the GitLab API looks like:
+`fileToYaml` simply forms a string in the same form as the schema I described,
+thus the request to the GitLab API looks like:
 
 ```js
 var actions = [];
@@ -486,7 +611,10 @@ $.ajax({
     actions: actions,
   }),
   beforeSend: function (xhr) {
-    xhr.setRequestHeader("PRIVATE-TOKEN", auth.currentUser().user_metadata.gitlab_token);
+    xhr.setRequestHeader(
+      "PRIVATE-TOKEN",
+      auth.currentUser().user_metadata.gitlab_token
+    );
   },
   success: function (response) {
     console.log(response);
@@ -499,8 +627,9 @@ $.ajax({
 
 ## Building
 
-Time to bring it all together.
-When a commit is sent to GitLab a Netlify build hook gets triggered starting a deployment, this deployement uses a `build.sh` file to carry out actions and serves all content out of the `_site` directory.
+Time to bring it all together. When a commit is sent to GitLab a Netlify build
+hook gets triggered starting a deployment, this deployement uses a `build.sh`
+file to carry out actions and serves all content out of the `_site` directory.
 
 ```shell
 #!/bin/sh
@@ -527,17 +656,24 @@ sed -i -e "s/GITCOMMIT/$COMMIT/g" ./_site/index.html
 exit 0
 ```
 
-The only real file of interest here is `compile.js` which simply goes over all files in `f/`, parses the YAML, extracts the data URI and converts it into a blob writing it to `./_site`.
+The only real file of interest here is `compile.js` which simply goes over all
+files in `f/`, parses the YAML, extracts the data URI and converts it into a
+blob writing it to `./_site`.
 
 ```js
 function writeFileToDisk(file) {
   var dir = __dirname + "/_site";
-  fs.writeFile(`${dir}/${file.name}.${file.extension}`, file.data, "base64", function (err) {
-    if (err) {
-      console.log(err);
+  fs.writeFile(
+    `${dir}/${file.name}.${file.extension}`,
+    file.data,
+    "base64",
+    function (err) {
+      if (err) {
+        console.log(err);
+      }
+      console.log(`Wrote ${file.name} to disk.`);
     }
-    console.log(`Wrote ${file.name} to disk.`);
-  });
+  );
 }
 ```
 
@@ -545,9 +681,14 @@ function writeFileToDisk(file) {
 
 ## Conclusion
 
-That's most of it covered. I will admit it's a bit of an awkward way to do file hosting, but it's free and was fun to work on - also a bit of a way to flex my programming skills on 18 year old self.
+That's most of it covered. I will admit it's a bit of an awkward way to do file
+hosting, but it's free and was fun to work on - also a bit of a way to flex my
+programming skills on 18 year old self.
 
-I added a few other features such as a recovery page, resetting tokens/password after logging in an a method of previewing & deleting files from the file list page. You can view all that stuff in the source.
-Feel free to fork and do whatever you like :)
+I added a few other features such as a recovery page, resetting tokens/password
+after logging in an a method of previewing & deleting files from the file list
+page. You can view all that stuff in the source. Feel free to fork and do
+whatever you like :)
 
-<span id="small"><sup>†</sup> I can feel myself saying that again in another 2 years...</span>
+<span id="small"><sup>†</sup> I can feel myself saying that again in another 2
+years...</span>

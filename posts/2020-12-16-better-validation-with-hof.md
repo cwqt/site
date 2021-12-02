@@ -3,13 +3,21 @@ title: "better validation with higher-order functions"
 date: 2020-12-26T17:59:55Z
 ---
 
-> **update** I found this very nice library [Superstruct](https://github.com/ianstormtaylor/superstruct) which accomplishes everything & more what I describe in this blog post - it's pretty sweet :)
+> **update** I found this very nice library
+> [Superstruct](https://github.com/ianstormtaylor/superstruct) which
+> accomplishes everything & more what I describe in this blog post - it's pretty
+> sweet :)
 
 ---
 
-i've recently been faced with an issue of needing to validate a lot of different types of data-structures, including nested & arrays of things in express - which is a totally not nice - not in terms of any kind of techincal complexity but simply sheer amount of duplication.
+i've recently been faced with an issue of needing to validate a lot of different
+types of data-structures, including nested & arrays of things in express - which
+is a totally not nice - not in terms of any kind of techincal complexity but
+simply sheer amount of duplication.
 
-as an ardent proponent of the DRY principle i wielded my FP power and spent a couple of days creating a new way of concisely expressing validation in a way that no longer makes me want to die :)
+as an ardent proponent of the DRY principle i wielded my FP power and spent a
+couple of days creating a new way of concisely expressing validation in a way
+that no longer makes me want to die :)
 
 ```ts
 /** let d equal to:
@@ -41,9 +49,11 @@ return await object(d, {
 })();
 ```
 
-which will return all the relevant errors in a nested data-structure as-in in the object.
+which will return all the relevant errors in a nested data-structure as-in in
+the object.
 
-as well as being able to be run imperatively, one can also use it as middleware against request body, queries & params;
+as well as being able to be run imperatively, one can also use it as middleware
+against request body, queries & params;
 
 ```ts
 validators: [
@@ -61,7 +71,8 @@ validators: [
 ],
 ```
 
-another feature is composing validators, say for example validating an address, one could make something like:
+another feature is composing validators, say for example validating an address,
+one could make something like:
 
 ```ts
 type ObjectValidator<T> = { [index in keyof T]: CustomValidator };
@@ -71,8 +82,10 @@ const IAddress = (): ObjectValidator<Idless<IAddress>> => {
     city: (v) => FieldValidators.isString(v, "Must provide a city"),
     iso_country_code: (v) => FieldValidators.ISOCountry(v),
     postcode: (v) => FieldValidators.Postcode(v),
-    street_name: (v) => FieldValidators.isString(v, "Must provide a street name"),
-    street_number: (v) => FieldValidators.isInt(v, "Must provide a street number"),
+    street_name: (v) =>
+      FieldValidators.isString(v, "Must provide a street name"),
+    street_number: (v) =>
+      FieldValidators.isInt(v, "Must provide a street number"),
   };
 };
 ```

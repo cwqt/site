@@ -6,44 +6,62 @@ draft: true
 
 ## Twin Peaks saga
 
-I was browsing /lgbt/ one day around the 30th of September and came across the below image posted, kind of a strange thing to be on that board so I read into it, what follows is a what I originally thought to be a silly Netflix advertisement with a bit of cryptography that turns out to be something deeper and more complex. Since there's a fairly large amount to this I'll be brief.
+I was browsing /lgbt/ one day around the 30th of September and came across the
+below image posted, kind of a strange thing to be on that board so I read into
+it, what follows is a what I originally thought to be a silly Netflix
+advertisement with a bit of cryptography that turns out to be something deeper
+and more complex. Since there's a fairly large amount to this I'll be brief.
 
 ![](https://ftp.cass.si/5EjM5kTO5k.jpeg)
 
-(**edit**, in my research I also found another almost exact copy of this postcard, <https://ftp.cass.si/==wNwEDMwA.jpeg> & <https://ftp.cass.si/==AO5YjN5k.jpeg>)
+(**edit**, in my research I also found another almost exact copy of this
+postcard, <https://ftp.cass.si/==wNwEDMwA.jpeg> &
+<https://ftp.cass.si/==AO5YjN5k.jpeg>)
 
-The postcard, a few interesting things off the bat, the long number having some characters of Pi and the domain <bluerose.network>. This sight has all kinds of weird shit related to Twin Peaks.
+The postcard, a few interesting things off the bat, the long number having some
+characters of Pi and the domain <bluerose.network>. This sight has all kinds of
+weird shit related to Twin Peaks.
 
-<http://bluerose.network/posts/internal-note> This page stood out since it wasn't in the same sort of style of Twin Peaks related stuff; `experiment1 dot p n g` is at the top of the post.
+<http://bluerose.network/posts/internal-note> This page stood out since it
+wasn't in the same sort of style of Twin Peaks related stuff;
+`experiment1 dot p n g` is at the top of the post.
 
-<http://bluerose.network/experiment1.png> resolves to a png with this text in the corner:
+<http://bluerose.network/experiment1.png> resolves to a png with this text in
+the corner:
 
 ![](https://ftp.cass.si/==QN3YDMwA.png)
 
-> JOUDY is the key
-> Owhg rqs iwfnf cpyps.adpvchemiwu.qcckiui/raujcb/
+> JOUDY is the key Owhg rqs iwfnf cpyps.adpvchemiwu.qcckiui/raujcb/
 
-Considering `qcckiui` is the same length as network I thought about doing some kind of plaintext attack, but given we're literally told a key is involved my mind instantly jumps to a vigenere cipher (which funnily enough is the same one my blog uses).
+Considering `qcckiui` is the same length as network I thought about doing some
+kind of plaintext attack, but given we're literally told a key is involved my
+mind instantly jumps to a vigenere cipher (which funnily enough is the same one
+my blog uses).
 
 Using <https://www.dcode.fr/vigenere-cipher> and using `JOUDY` results in:
 
 > Find the other image.garmonbozia.network/images/
 
-Going to that site I'm greeted by three different cans of sweetcorn, ok... Maybe the source has something?
+Going to that site I'm greeted by three different cans of sweetcorn, ok... Maybe
+the source has something?
 
 ![](https://ftp.cass.si/zMzMxADMwA.png)
 
-Sweet, firstly, according to the Twin Peaks wiki garmonbozia is some kind of paste stuff, anyway, theres some ciphertext that's probably some ROT since the spaces are kept in place.
+Sweet, firstly, according to the Twin Peaks wiki garmonbozia is some kind of
+paste stuff, anyway, theres some ciphertext that's probably some ROT since the
+spaces are kept in place.
 
 ROT13 results in:
 
-> http://black-lodge.network/c6943df5a29a47f4943/
-> the arm knows the way.
-> 1010am i finally left.
+> http://black-lodge.network/c6943df5a29a47f4943/ the arm knows the way. 1010am
+> i finally left.
 
-The first domain was actually down for a few days when I initially tried it but it worked later. "The Arm" is some character in Twin Peaks and 1010am is another reference to some guy called Philip Jeffries, this will be useful later on.
+The first domain was actually down for a few days when I initially tried it but
+it worked later. "The Arm" is some character in Twin Peaks and 1010am is another
+reference to some guy called Philip Jeffries, this will be useful later on.
 
-Going to <http://black-lodge.network/c6943df5a29a47f4943/> results in a plain black page, again into the source:
+Going to <http://black-lodge.network/c6943df5a29a47f4943/> results in a plain
+black page, again into the source:
 
 ```html
 <!--
@@ -52,7 +70,8 @@ Once the garmonbozia is combined, include the woodsmans number.
 -->
 ```
 
-All garmonbozia combined? I thought about something to do with steganography but the next part of the sentence quells that.
+All garmonbozia combined? I thought about something to do with steganography but
+the next part of the sentence quells that.
 
 > Addition, never subtraction, nor multiplication, nor division.
 
@@ -60,9 +79,12 @@ The combination of the sweetcorn cans? addition only? Strange, not sure.
 
 > ...combined, include the woodsmans number
 
-On the postcard there's two numbers, the super long one: `3141123581314159` and the 18 after `woodsman`, since 18 is right next to the word `woodsman` I'm gonna go out on a hunch and say 18 is the woodsmans number.
+On the postcard there's two numbers, the super long one: `3141123581314159` and
+the 18 after `woodsman`, since 18 is right next to the word `woodsman` I'm gonna
+go out on a hunch and say 18 is the woodsmans number.
 
-After a bit of thinking I thought it maybe had to do something with the different sizes, different resolutions of the images? Adding up the resolutions:
+After a bit of thinking I thought it maybe had to do something with the
+different sizes, different resolutions of the images? Adding up the resolutions:
 
 ```
 1.png 560x460  = 1020
@@ -72,39 +94,55 @@ After a bit of thinking I thought it maybe had to do something with the differen
                = 4520
 ```
 
-Trying out <http://black-lodge.network/4520/> results in a page with another Twin Peaks reference, and image of some room from the show. Again more stuff behind the source.
+Trying out <http://black-lodge.network/4520/> results in a page with another
+Twin Peaks reference, and image of some room from the show. Again more stuff
+behind the source.
 
 ![](https://ftp.cass.si/==wMyADMwA.png)
 
 > WW91IHdpc2ggdG8gc3BlYWsgd2l0aCBqb3VkeT8gWW91IHdpc2ggdG8ga25vdyBib2I/IFRoZXNlIHRhc2tzIGFyZSBub3QgZGlmZmljdWx0LiBGdXR1cmUgdGFza3MgYXJlIGRpZmZpY3VsdC4gam91ZHktYW5kLWJvYi5uZXR3b3JrLCB0aGUgZGlyZWN0b3J5IGlzIHRoZSBudW1iZXIgdXBvbiB0aGUgcG9zdGFsIGNhcmQsIGFwcGVuZGVkIHRvIHRoZSBsYXN0IG5hbWUgb2YgbWUuIG15IG5hbWUgKyBudW1iZXIu
 
-My intial thoughts are base64 since it kinda has that vibe to it (I encode all my files in their base64 equivalent so I've seen it a lot).
+My intial thoughts are base64 since it kinda has that vibe to it (I encode all
+my files in their base64 equivalent so I've seen it a lot).
 
 Following my instinct turned out correct:
 
-> You wish to speak with joudy? You wish to know bob? These tasks are not difficult. Future tasks are difficult. joudy-and-bob.network, the directory is the number upon the postal card, appended to the last name of me. my name + number.
+> You wish to speak with joudy? You wish to know bob? These tasks are not
+> difficult. Future tasks are difficult. joudy-and-bob.network, the directory is
+> the number upon the postal card, appended to the last name of me. my name +
+> number.
 
-Joudy is another person from Twin Peaks, <joudy-and-bob.network> resolves, but I seem to remember there being nothing there when I tried, it's since been updated, but I'll get to that later.
+Joudy is another person from Twin Peaks, <joudy-and-bob.network> resolves, but I
+seem to remember there being nothing there when I tried, it's since been
+updated, but I'll get to that later.
 
-> the directory is the number upon the postal card, appended to the last name of me. my name + number.
+> the directory is the number upon the postal card, appended to the last name of
+> me. my name + number.
 
-The number on the postcard, I guess the big one: `3141123581314159`
-The last name of me? This whole time all the source code comments have been written from the 1st person, "I joined them in February 16th, 1989", "I have seen them use the others", and the ciphered part "1010am i finally left", we can go out and say the person writing this is [Phillip Jeffries](https://twinpeaks.fandom.com/wiki/Phillip_Jeffries).
+The number on the postcard, I guess the big one: `3141123581314159` The last
+name of me? This whole time all the source code comments have been written from
+the 1st person, "I joined them in February 16th, 1989", "I have seen them use
+the others", and the ciphered part "1010am i finally left", we can go out and
+say the person writing this is
+[Phillip Jeffries](https://twinpeaks.fandom.com/wiki/Phillip_Jeffries).
 
 So, `jeffries3141123581314159`.
-<http://joudy-and-bob.network/jeffries3141123581314159/> resolves to a red page with black text.
+<http://joudy-and-bob.network/jeffries3141123581314159/> resolves to a red page
+with black text.
 
-> 13OCT19
-> The combined key will unlock the gate.
-> 31OCT19
-> The gate will open for those who have ventured through the black-lodge and eaten the garmonbozia.
-> The gate will become known when the time is right.
-> 9c e9 29 d2 bd 10 a1 93 8c 47 7f 15 51 cf fa 43 10 55 f4 78 98 3a 43 87 2c 94 63 3b e2 d9 db 98 dc 93 5d e8 42 bd fd 73 e6 a1 80 75 1e 5d f7 7a 78 7a d0 8e 2f 77 2b 89 41 9c bb 12 83 cb af d3 10 e2 26 0b a7 61 b0 11 67 94 57 1f 23 9f 00 1d cf 10 cd 8f c9 30 e2 aa d8 2e 14 51 b3 ff da 18 61 61 32 73 82 9e ce 78 b5 bf 66 ee aa 44 56 bb 21 a5 d6 bf 39 6e 19 04 80 49 f0 39 3e b5 e2 01 8d 40 74 48 3b 4c a1 1f b1 4d f7 a5 f3 8b 72 8c dd ef b7 1f 6f 56 67 3b 32 be ca 56 da 55 0e bf 43 56 6f c0 7c 86 1e 85 ac 34 e4 85 03
-> 1st: EvilJordan
-> 2nd: NoCountryForMe2112
-> 3rd: LilBeanBear
+> 13OCT19 The combined key will unlock the gate. 31OCT19 The gate will open for
+> those who have ventured through the black-lodge and eaten the garmonbozia. The
+> gate will become known when the time is right. 9c e9 29 d2 bd 10 a1 93 8c 47
+> 7f 15 51 cf fa 43 10 55 f4 78 98 3a 43 87 2c 94 63 3b e2 d9 db 98 dc 93 5d e8
+> 42 bd fd 73 e6 a1 80 75 1e 5d f7 7a 78 7a d0 8e 2f 77 2b 89 41 9c bb 12 83 cb
+> af d3 10 e2 26 0b a7 61 b0 11 67 94 57 1f 23 9f 00 1d cf 10 cd 8f c9 30 e2 aa
+> d8 2e 14 51 b3 ff da 18 61 61 32 73 82 9e ce 78 b5 bf 66 ee aa 44 56 bb 21 a5
+> d6 bf 39 6e 19 04 80 49 f0 39 3e b5 e2 01 8d 40 74 48 3b 4c a1 1f b1 4d f7 a5
+> f3 8b 72 8c dd ef b7 1f 6f 56 67 3b 32 be ca 56 da 55 0e bf 43 56 6f c0 7c 86
+> 1e 85 ac 34 e4 85 03 1st: EvilJordan 2nd: NoCountryForMe2112 3rd: LilBeanBear
 
-The three people listed are reddit users who also solved this back when I was also solving it.
+The three people listed are reddit users who also solved this back when I was
+also solving it.
 
 The person of interest is _LilBeanBear_.
 
@@ -112,20 +150,33 @@ The person of interest is _LilBeanBear_.
 
 ## Reddit user LilBeanBear
 
-LilBeanBear has been in several threads along with the other people on that list, he didn't seem to contribute much and only mentioned at the end of a thread that some random guy messaged him saying some odd things.
+LilBeanBear has been in several threads along with the other people on that
+list, he didn't seem to contribute much and only mentioned at the end of a
+thread that some random guy messaged him saying some odd things.
 
-A few days later, he posted this thread: <https://www.reddit.com/r/ARG/comments/dea7j7/arg_or_real_world_creepy_stuff_saphire_calypso/>
+A few days later, he posted this thread:
+<https://www.reddit.com/r/ARG/comments/dea7j7/arg_or_real_world_creepy_stuff_saphire_calypso/>
 
-He links the following screenshots which show a person going by the same of SAPHIRE CALYPSO detailing how they created the Twin Peaks ARG.
+He links the following screenshots which show a person going by the same of
+SAPHIRE CALYPSO detailing how they created the Twin Peaks ARG.
 
-![](https://ftp.cass.si/==gN0QzN5k.png)
-![](https://ftp.cass.si/==wNwQDO5k.png)
+![](https://ftp.cass.si/==gN0QzN5k.png) ![](https://ftp.cass.si/==wNwQDO5k.png)
 
-I've seen a few of these things before, but this guy especially reeks of someone trying to feed a narrative, OP is part of the ARG. There's just something about his typing style, trying way too hard to act like he wants no part, yet simulatanously giving us all screenshots and commentary on what's been happening.
+I've seen a few of these things before, but this guy especially reeks of someone
+trying to feed a narrative, OP is part of the ARG. There's just something about
+his typing style, trying way too hard to act like he wants no part, yet
+simulatanously giving us all screenshots and commentary on what's been
+happening.
 
-All of that infomation about him being blackmailed with his name/address/etc isn't verifiable by anyone but OP, so why should we trust that he isn't part of it? Personally I feel like a legitimate group whose gone out of their way to create an elaborate ARG/something more and has your doxx, you wouldn't be making reddit posts telling them to "suck it".
+All of that infomation about him being blackmailed with his name/address/etc
+isn't verifiable by anyone but OP, so why should we trust that he isn't part of
+it? Personally I feel like a legitimate group whose gone out of their way to
+create an elaborate ARG/something more and has your doxx, you wouldn't be making
+reddit posts telling them to "suck it".
 
-SC (Saphire Calypso) reveals that we are welcome to join the final round (implying there were earlier ones) called LORECOCO which starts on the 13OCT19 and ends on 31OCT19.
+SC (Saphire Calypso) reveals that we are welcome to join the final round
+(implying there were earlier ones) called LORECOCO which starts on the 13OCT19
+and ends on 31OCT19.
 
 `joudy-and-bob.network` also notes these as the dates in which:
 
@@ -133,7 +184,8 @@ SC (Saphire Calypso) reveals that we are welcome to join the final round (implyi
 
 and,
 
-> The gate will open for those who have ventured through the black-lodge and eaten the garmonbozia.
+> The gate will open for those who have ventured through the black-lodge and
+> eaten the garmonbozia.
 
 There's also this piece of text which I'm unsure of.
 
@@ -151,7 +203,11 @@ ADMIRABLE
 --KEYMAT ENDS--
 ```
 
-A few days after seeing this reddit, the `joudy-and-bob.network` was updated with a piece of obfuscated javascript, I haven't gotten around to analysing it yet, but it prints `You are searching. You have found. rc4. A natural curve to a longest extent.` 666 times. rc4 a reference to the rc4 cipher maybe?
+A few days after seeing this reddit, the `joudy-and-bob.network` was updated
+with a piece of obfuscated javascript, I haven't gotten around to analysing it
+yet, but it prints
+`You are searching. You have found. rc4. A natural curve to a longest extent.`
+666 times. rc4 a reference to the rc4 cipher maybe?
 
 ## Saphire Calypso
 
@@ -162,38 +218,44 @@ tl;dr
 - Round 3 pass:
 - Round 4 pass:
 
-Researching Saphire Calypso revealed an absolute goldmine of informationa and similar 'rounds' of ARG.
+Researching Saphire Calypso revealed an absolute goldmine of informationa and
+similar 'rounds' of ARG.
 
-Apparently this kind of thing has happened 3 times before, each similar in style, cryptography/programming related.
+Apparently this kind of thing has happened 3 times before, each similar in
+style, cryptography/programming related.
 
 ### Round 1
 
-I'm fairly sure Round 1 begins with the below image, which was posted on the Something Awful forums on July 23rd 2019. (It's also linked on imgur <https://imgur.com/gallery/EEAE7YG> by user saphirecalypso)
+I'm fairly sure Round 1 begins with the below image, which was posted on the
+Something Awful forums on July 23rd 2019. (It's also linked on imgur
+<https://imgur.com/gallery/EEAE7YG> by user saphirecalypso)
 
 ![](https://ftp.cass.si/xYjM4kTO5k.jpeg)
 
-Robin Sage is the name of a fictious entity created by two white-hat hackers, see more <https://en.wikipedia.org/wiki/Robin_Sage>.
+Robin Sage is the name of a fictious entity created by two white-hat hackers,
+see more <https://en.wikipedia.org/wiki/Robin_Sage>.
 
 The Hangul translates to:
 
 > Let's play....reality games
 
-The link directs to a Github repo, I can use the commit history to see the original README when this was posted.
+The link directs to a Github repo, I can use the commit history to see the
+original README when this was posted.
 
 ```markdown
 # F2D64AD97033074E
 
 <img src="https://i.imgur.com/jLNRhZq.png"></img>
 
-<BR><BR><BR>
-A head start for some, if they consider it right. The rest will wait till the first, have a nice night.
-<BR>
+<BR><BR><BR> A head start for some, if they consider it right. The rest will
+wait till the first, have a nice night. <BR>
 V7LlqwnpEHM0ydD0MGfhv1sXc5UgG2p1kcz5iljuU0Q=
 ```
 
 ![](https://ftp.cass.si/5gjM2kTO5k.png)
 
-The image speaks of '7 steps', so I guess this means there are 7 rounds of challenges.
+The image speaks of '7 steps', so I guess this means there are 7 rounds of
+challenges.
 
 - 1st: Ciphers
 - 2nd: Much of the same
@@ -203,12 +265,14 @@ The image speaks of '7 steps', so I guess this means there are 7 rounds of chall
 - 6th: You meet the l33t
 - 7th: Is on us
 
-The string of characters appears to be base64 because of the padding characters at the end, but converting it results in garbage: `W s40g[s juXSD`
+The string of characters appears to be base64 because of the padding characters
+at the end, but converting it results in garbage: `W s40g[s juXSD`
 
 There are 4 other files in this repository, POTATOES, MEAT, CARROTS and VITAMIX.
 
-**POTATOES** is a private key for something called `EC`, ellptical curve cryptography. I'm not sure what these keys are for though.
-Here's a mirror: <https://ftp.cass.si/==QNwADO5k.plain>
+**POTATOES** is a private key for something called `EC`, ellptical curve
+cryptography. I'm not sure what these keys are for though. Here's a mirror:
+<https://ftp.cass.si/==QNwADO5k.plain>
 
 **MEAT** is equally as confusing:
 
@@ -223,23 +287,30 @@ MVDpb5xnigdjz1oCpMSEBSZeZuSYpaAkisr+UtSHwh0lQvNRaHSoU24kd9MBL0Xv
 ddw3wp2MhzrZOSw2PsJULvcI1mxoMJ7Q4vDKMeRgb+/AZcEc5MFa17sN6+iZva6k0efTTtTuWNCDCl4o75tM8GPZd7/BLAPbAeU1bkmLJfz1VMpXOXuVpDH3kPqnhsuC9RgPQS7DuT+Pntuf5TqRkgsB24SZlwxhtTCG6wik5HI=
 ```
 
-**VITAMIX** is instantly recogniseable to me, my ftp service encodes images as a base64 blob, using a converter yields the following image.
+**VITAMIX** is instantly recogniseable to me, my ftp service encodes images as a
+base64 blob, using a converter yields the following image.
 
 ![](https://ftp.cass.si/==wMzADNwA.png)
 
-The word "Figure 20.7" implies some kind of book, and the number looks long enough to be an ISBN. `0201633469` directs me to a book called `TCP/IP Illustrated, Vol. 1: The Protocols` published in 1994, same as in the image.
+The word "Figure 20.7" implies some kind of book, and the number looks long
+enough to be an ISBN. `0201633469` directs me to a book called
+`TCP/IP Illustrated, Vol. 1: The Protocols` published in 1994, same as in the
+image.
 
 ![](https://ftp.cass.si/==wM1IzMwA.png)
 
-The `0.048234 (0.0017) 12` corresponds to a line in the TCP diagram, `FIN,PSH 7169:8193(1024) ack 1, win 4096`.
+The `0.048234 (0.0017) 12` corresponds to a line in the TCP diagram,
+`FIN,PSH 7169:8193(1024) ack 1, win 4096`.
 
 `FIN;PSH = nextpass = 7169:8193(1024)`
 
-I think this is the end of round 1 since the README states that we are given a head start, yet others will have to wait until the 1st of August.
+I think this is the end of round 1 since the README states that we are given a
+head start, yet others will have to wait until the 1st of August.
 
 ## Round 2
 
-A day later the README was updated with a link to <https://www.youtube.com/embed/0tEaiyv5Ow0> and some hidden text.
+A day later the README was updated with a link to
+<https://www.youtube.com/embed/0tEaiyv5Ow0> and some hidden text.
 
 ```html
 <!-- #### -->
@@ -256,11 +327,16 @@ The video has some interesting captions. <https://ftp.cass.si/==QN2czMwA.png>
 
 **STUFFING** was also added: `67 19 04 bc c2 11 6b 48 a9 d8 cc a2 54 b9`
 
-On July 22, <https://youtu.be/fr-SlQr-jv4> was uploaded (linked from <https://imgur.com/gallery/FaHGYGX>), I can tell from the sounds that there's some kind of data hidden in the audio - steganography.
+On July 22, <https://youtu.be/fr-SlQr-jv4> was uploaded (linked from
+<https://imgur.com/gallery/FaHGYGX>), I can tell from the sounds that there's
+some kind of data hidden in the audio - steganography.
 
 ![](https://ftp.cass.si/3QTN0ADMwA.png)
 
-There's a form of audio steganography called SSTV (slow-scan television) which sounds very similar to the audio in this video, using [Robot36](https://play.google.com/store/apps/details?id=xdsopl.robot36&hl=en_GB) I was able to extract this image.
+There's a form of audio steganography called SSTV (slow-scan television) which
+sounds very similar to the audio in this video, using
+[Robot36](https://play.google.com/store/apps/details?id=xdsopl.robot36&hl=en_GB)
+I was able to extract this image.
 
 ![](https://ftp.cass.si/xQDO5kTO5k.png)
 
@@ -292,7 +368,8 @@ Khoda Hafez,
 SAPHIRE CALYPSO
 ```
 
-Key material (keymat) looks like those weird words in all caps, there was a few in that previous youtube video and the imgur:
+Key material (keymat) looks like those weird words in all caps, there was a few
+in that previous youtube video and the imgur:
 
 ```
 GREEN
@@ -324,28 +401,43 @@ N = 13 digit code(b)			<!-- //HeferWEISER1987     -->
 CONCAT(M,N) = next pass
 ```
 
-`a` is a quote from _Do Androids Dream of Electric Sleep_ (good book) by _Philip K. Dick_.
-`b` is a quote from _The Book of Law_, `b` is actually split from two quotes which can be found at <http://www.thelema101.com/liber-al>.
+`a` is a quote from _Do Androids Dream of Electric Sleep_ (good book) by _Philip
+K. Dick_. `b` is a quote from _The Book of Law_, `b` is actually split from two
+quotes which can be found at <http://www.thelema101.com/liber-al>.
 
-Both `M` and `N` are 13 digit codes, considering ISBNs have been used before and are 13 digits it would be wise to say those are the probable values.
+Both `M` and `N` are 13 digit codes, considering ISBNs have been used before and
+are 13 digits it would be wise to say those are the probable values.
 
-This leads me on to the comments next to `M` and `N`, I thought they were just more keymats, but I think they're actually placed there such that we get the correct ISBNs.
+This leads me on to the comments next to `M` and `N`, I thought they were just
+more keymats, but I think they're actually placed there such that we get the
+correct ISBNs.
 
-By pure chance I found this amazon page: <https://www.amazon.com/Book-Law-Aleister-Crowley/dp/0877283346> and to my surprise the publisher is Weiser books! Published in 1987 also.
+By pure chance I found this amazon page:
+<https://www.amazon.com/Book-Law-Aleister-Crowley/dp/0877283346> and to my
+surprise the publisher is Weiser books! Published in 1987 also.
 
 So N = 9780877283348
 
-And for M, <https://www.abebooks.co.uk/servlet/BookDetailsPL?bi=30081796655&searchurl=kn%3Dandroids%2Bnot%2Bblade%26tn%3Ddo%2Bandroids%2Bdream%2Bof%2Belectric%2Bsheep%26sortby%3D20%26an%3Dphilip%2Bk%2Bdick&cm_sp=msrp-_-msrpdesc-_-bdp>, more of the same, publisher Del Rey and publish year of 1984, ISBN 9780345323880.
+And for M,
+<https://www.abebooks.co.uk/servlet/BookDetailsPL?bi=30081796655&searchurl=kn%3Dandroids%2Bnot%2Bblade%26tn%3Ddo%2Bandroids%2Bdream%2Bof%2Belectric%2Bsheep%26sortby%3D20%26an%3Dphilip%2Bk%2Bdick&cm_sp=msrp-_-msrpdesc-_-bdp>,
+more of the same, publisher Del Rey and publish year of 1984,
+ISBN 9780345323880.
 
 Concatenating M and N gives: 97803453238809780877283348 which is our next pass!
 
-Going to <https://purplewaterbottle.com/saphirecalypso> shows another link to a phpBB, <https://purplewaterbottle.com/F2D64AD97033074E/saphirecalypso/>, I tried to sign up but I think I'm too late for it :(
+Going to <https://purplewaterbottle.com/saphirecalypso> shows another link to a
+phpBB, <https://purplewaterbottle.com/F2D64AD97033074E/saphirecalypso/>, I tried
+to sign up but I think I'm too late for it :(
 
-The root of that domain is a site for some water distribution thingy, but all the links go to redcross, I noticed in the bottom left of the page there's an upside down question mark that links to: <http://purplewaterbottle.com/rainbowkitten/lander.php>
+The root of that domain is a site for some water distribution thingy, but all
+the links go to redcross, I noticed in the bottom left of the page there's an
+upside down question mark that links to:
+<http://purplewaterbottle.com/rainbowkitten/lander.php>
 
 Chat contains nothing but a few `<br>`s.
 
-Crypto is quite something, it lists and EC key and RSA private key, linked: <https://ftp.cass.si/==wMyAjMwA.plain>
+Crypto is quite something, it lists and EC key and RSA private key, linked:
+<https://ftp.cass.si/==wMyAjMwA.plain>
 
 Files is interesting, it gives us an AES KEY;
 
@@ -356,7 +448,8 @@ jaqiqkLqlp_2016
 
 and a Virgenereire (sic) key: `Virgenereire`
 
-It also says: `Density has no impact on skillset. Working together is important.`
+It also says:
+`Density has no impact on skillset. Working together is important.`
 
 ---
 
@@ -408,7 +501,8 @@ August 1st
 
 ---
 
-On the 24th of June <https://ftp.cass.si/0gDMyADMwA.png> was posted in imgur by SC. Clearly some ROT text, the transcription:
+On the 24th of June <https://ftp.cass.si/0gDMyADMwA.png> was posted in imgur by
+SC. Clearly some ROT text, the transcription:
 
 ```
 Fune Oruxrve,
@@ -460,11 +554,12 @@ ROCK
 YOU
 ```
 
-The numbers are lat/longs for some location, probably referring to the geocaches mentioned in chocolateWonder.msf.
+The numbers are lat/longs for some location, probably referring to the geocaches
+mentioned in chocolateWonder.msf.
 
-The first location is at 'Schleiders Ditch'.
-The second one is at 'The Ditch at 40'.
-The third one isn't at a ditch related place, but there is a building called 'Ditch Witch', so that fits the pattern.
+The first location is at 'Schleiders Ditch'. The second one is at 'The Ditch at
+40'. The third one isn't at a ditch related place, but there is a building
+called 'Ditch Witch', so that fits the pattern.
 
 ![](https://ftp.cass.si/==gM3MTO5k.png)
 
@@ -502,21 +597,39 @@ Sounds like no-one found their geocache.
 
 ### Messaged
 
-Earlier today (10/10/19) I was messaged on reddit by saphirecalypso, I can't reveal all because that "may result in your preclusion from future activities related to “SAPHIRE CALYPSO”, “LORE COCO”, and Jianting", so I guess I have to be somewhat hush hush.
+Earlier today (10/10/19) I was messaged on reddit by saphirecalypso, I can't
+reveal all because that "may result in your preclusion from future activities
+related to “SAPHIRE CALYPSO”, “LORE COCO”, and Jianting", so I guess I have to
+be somewhat hush hush.
 
-tl;dr: They liked this page, warned me of "enumerating other members" & they said they were interested in my [markov bot](https://gitlab.com/cxss/shortbread/blob/master/commands/markov.moon), that I'll be contact in 24 hours to be involved in LORE COCO and that researching some stuff would be useful to me in the future... they also said I should learn an entire language (lol) either Persian/Mandarin.
+tl;dr: They liked this page, warned me of "enumerating other members" & they
+said they were interested in my
+[markov bot](https://gitlab.com/cxss/shortbread/blob/master/commands/markov.moon),
+that I'll be contact in 24 hours to be involved in LORE COCO and that
+researching some stuff would be useful to me in the future... they also said I
+should learn an entire language (lol) either Persian/Mandarin.
 
 Also, I found out that LMR stands for 'labour-management relations'.
 
-I've been thinking that CARROTS and MEAT are possibly PGP/EC encrypted messages, we're given the EC/RSA private keys on that purplebottle.com but the passphrase is unknown.
+I've been thinking that CARROTS and MEAT are possibly PGP/EC encrypted messages,
+we're given the EC/RSA private keys on that purplebottle.com but the passphrase
+is unknown.
 
 ### ECC & README.md string
 
-I've been doing some research on elliptical curve cryptography and how it's used, ECC doesn't have any specific tools for directly encrypting/decrypting data, instead users use a Diffie-Hellman key change to create a shared secret and then communicate using that, this is known as ECDH.
+I've been doing some research on elliptical curve cryptography and how it's
+used, ECC doesn't have any specific tools for directly encrypting/decrypting
+data, instead users use a Diffie-Hellman key change to create a shared secret
+and then communicate using that, this is known as ECDH.
 
-When <https://github.com/saphirecalypso/F2D64AD97033074E> was created, a string (`V7LlqwnpEHM0ydD0MGfhv1sXc5UgG2p1kcz5iljuU0Q=`) was added to the README, alongside two EC private keys in **POTATOES**, I believe this string to be the shared secret between these and the other files, **MEAT** and **CARROTS** are potentially encrypted messages using these keys.
+When <https://github.com/saphirecalypso/F2D64AD97033074E> was created, a string
+(`V7LlqwnpEHM0ydD0MGfhv1sXc5UgG2p1kcz5iljuU0Q=`) was added to the README,
+alongside two EC private keys in **POTATOES**, I believe this string to be the
+shared secret between these and the other files, **MEAT** and **CARROTS** are
+potentially encrypted messages using these keys.
 
-Apparently openssl is quite particular about how the keys are ordered, a straight copy paste from the file results in:
+Apparently openssl is quite particular about how the keys are ordered, a
+straight copy paste from the file results in:
 
 ```
 read EC key
@@ -524,9 +637,12 @@ unable to load Key
 4482551276:error:09FFF064:PEM routines:CRYPTO_internal:bad base64 decode:/BuildRoot/Library/Caches/com.apple.xbs/Sources/libressl/libressl-47.11.1/libressl-2.8/crypto/pem/pem_lib.c:801:
 ```
 
-Instead I had to format it to strictly 64 characters per line, with the `---- BEGIN EC KEY etc..` on a new line, and the file ending on a new line.
+Instead I had to format it to strictly 64 characters per line, with the
+`---- BEGIN EC KEY etc..` on a new line, and the file ending on a new line.
 
-We can extract the public keys from both private keys with OpenSSL. <http://purplewaterbottle.com/rainbowkitten/Crypto/crypto.php> mentions `EC-Prime256v1` as the curve.
+We can extract the public keys from both private keys with OpenSSL.
+<http://purplewaterbottle.com/rainbowkitten/Crypto/crypto.php> mentions
+`EC-Prime256v1` as the curve.
 
 ```shell
 # extract public key from private key
@@ -577,9 +693,11 @@ k3J6+adIZ/wuPlQosrA0vbdmF8P9XOKNrPMzRLFlnzmmuGYVFU9k8pODx5s8mQlQRLCOhS985drlgvOd
 $ openssl enc -aes256 -base64 -k $(base64 k2_shared_secret.bin) -d -in cipher.txt -out plain_again.txt
 ```
 
-Maybe the shared secret is what's meant as the 'combined key' that unlocks the gate on 13/10/19? Pure speculation at this point.
+Maybe the shared secret is what's meant as the 'combined key' that unlocks the
+gate on 13/10/19? Pure speculation at this point.
 
-While I was at it I thought'd I'd generate the public key for the EC key on purplewaterbottle/crypto
+While I was at it I thought'd I'd generate the public key for the EC key on
+purplewaterbottle/crypto
 
 ```shell
 # ec
@@ -597,4 +715,8 @@ K2hn0w05XL4wfo9Ivd8HPk6wzvCyNChq+fjExyCeP+q+OOx7GOkfvNCf2g==
 -----END PUBLIC KEY-----
 ```
 
-At this point I'm unsure of what to do, there's no real hints, just a collection of random characters that don't really have any meaning or connection that isn't simply created out of my own desperation to potentially fit some pieces together. Suffering from an extreme lack of information, not aided by the fact there there's 22 threads on that phpBB forum that I still don't have access to.
+At this point I'm unsure of what to do, there's no real hints, just a collection
+of random characters that don't really have any meaning or connection that isn't
+simply created out of my own desperation to potentially fit some pieces
+together. Suffering from an extreme lack of information, not aided by the fact
+there there's 22 threads on that phpBB forum that I still don't have access to.

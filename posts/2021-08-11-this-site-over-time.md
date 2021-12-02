@@ -3,11 +3,17 @@ title: "This site over time"
 date: 2021-08-09T12:20:00Z
 ---
 
-this site has been around in one form or another for going on 5 years now & i'm mostly at the point now where i don't care all that much about its design, hence its present spartan look
+this site has been around in one form or another for going on 5 years now & i'm
+mostly at the point now where i don't care all that much about its design, hence
+its present spartan look
 
 ![google analytics traffid](https://ftp.cass.si/czgX9lp50.png)
 
-when i was much younger i used to care a lot more about this kind of thing (mainly because i didn't know how to do much else) - i was big into the ricing/startpages scene which has seemed to all but die out nowadays, i figure now is a good a time as any to take a stroll down memory lane and look at the many designs this site has undergone
+when i was much younger i used to care a lot more about this kind of thing
+(mainly because i didn't know how to do much else) - i was big into the
+ricing/startpages scene which has seemed to all but die out nowadays, i figure
+now is a good a time as any to take a stroll down memory lane and look at the
+many designs this site has undergone
 
 <div class="fotorama" data-nav="thumbs" data-allowfullscreen="true" data-loop="true">
 <!-- 2016 -->
@@ -35,7 +41,11 @@ when i was much younger i used to care a lot more about this kind of thing (main
 <a href="https://ftp.cass.si/jy2660u0a.png" data-caption="2020, expanded upon time collecting & created awgit https://gitlab.com/cxss/awgit"></a>
 </div>
 
-even this doesn't fully cover every change, there are probably 10 other missing from this list, in general i think i've had my fill of static site generators, now i've settled on using [Foam](https://foambubble.github.io/) and [11ty](https://www.11ty.dev/) mainly because it's the one with the least shit getting in my way
+even this doesn't fully cover every change, there are probably 10 other missing
+from this list, in general i think i've had my fill of static site generators,
+now i've settled on using [Foam](https://foambubble.github.io/) and
+[11ty](https://www.11ty.dev/) mainly because it's the one with the least shit
+getting in my way
 
 <!-- jQuery 1.8 or later, 33 KB -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

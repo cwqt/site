@@ -3,7 +3,10 @@ title: "new years stuff"
 date: 2020-12-31T19:39:00Z
 ---
 
-I wrote a "year in review" thing every year since I started having a website up in 2016, but back then being a depressed teenager with not much going on in their life apart from study & cry they were all kind of boring, now they're all gone I'm starting over :)
+I wrote a "year in review" thing every year since I started having a website up
+in 2016, but back then being a depressed teenager with not much going on in
+their life apart from study & cry they were all kind of boring, now they're all
+gone I'm starting over :)
 
 <div class="fotorama" data-width="100%" data-height="600" data-nav="thumbs" data-allowfullscreen="true" data-loop="true" data-shuffle="true">
   <a href="https://ftp.cass.si/02wnwk007.jpeg" data-caption="me and the bf"></a>
@@ -36,11 +39,19 @@ I wrote a "year in review" thing every year since I started having a website up 
   <a href="https://ftp.cass.si/6i5p7qmy3.png" data-caption=""></a>
 </div>
 
-This year I have actual life events though 🎉 in order from start to end of the year:
+This year I have actual life events though 🎉 in order from start to end of the
+year:
 
-- **Moved out from home & in with my boyfriend**: Away from horrible North England and into much nicer Wales
-- **Got my first developer job**: Full-stack at a small business, was there for all of three-ish weeks before lockdown started & perma-work from home thereon after. I learned a lot from this place & it was probably the best 'first dev job' I could've hoped for; no super-intense pace, interesting greenfield project, very kind group of people, awesome manager & a stack I was already confident with
-- **Learned TypeScript + tonnes of other technologies**: Related to the previous, in no particular order I've learned:
+- **Moved out from home & in with my boyfriend**: Away from horrible North
+  England and into much nicer Wales
+- **Got my first developer job**: Full-stack at a small business, was there for
+  all of three-ish weeks before lockdown started & perma-work from home thereon
+  after. I learned a lot from this place & it was probably the best 'first dev
+  job' I could've hoped for; no super-intense pace, interesting greenfield
+  project, very kind group of people, awesome manager & a stack I was already
+  confident with
+- **Learned TypeScript + tonnes of other technologies**: Related to the
+  previous, in no particular order I've learned:
   - TypeScript (+ Express a lot more)
   - Angular, RxJS, Pub-Sub pattern
   - Docker + Kubernetes
@@ -51,15 +62,23 @@ This year I have actual life events though 🎉 in order from start to end of th
   - Neo4j + cypher
   - mocha & chai (lord i loathe testing)
   - RabbitMQ / MQTT
-- **Started growing plants**: Bought a [huge shelf and stacked it with lights](https://cass.si/posts/growing-microgreens-and-mcn) & sensors and all other IoT stuff
+- **Started growing plants**: Bought a
+  [huge shelf and stacked it with lights](https://cass.si/posts/growing-microgreens-and-mcn)
+  & sensors and all other IoT stuff
 - **Got my first raise**
 - **Went to Belgium (again)**: 😉
 - **Left my first developer job**
 - **Joined a startup incubator**
-- **Became a bird whisperer**: Got myself a bird feeder & now I'm this apartment complexes social club for birds
-- **Incorporated a company**: Suppose now I'm a CTO of sorts in a startup with 4 other people, we're building a livestream & VOD service for performance arts, with all the experience of my last job so far a tonne of progress has been made
-- **Went out into town**: On a double date I guess? Normally I never would've done something like this being an anxious person and whatnot
-- **Started learning a second language (Norwegian)**: Got tired of learning programming languages so learning a real one now, det går bra :)
+- **Became a bird whisperer**: Got myself a bird feeder & now I'm this apartment
+  complexes social club for birds
+- **Incorporated a company**: Suppose now I'm a CTO of sorts in a startup with 4
+  other people, we're building a livestream & VOD service for performance arts,
+  with all the experience of my last job so far a tonne of progress has been
+  made
+- **Went out into town**: On a double date I guess? Normally I never would've
+  done something like this being an anxious person and whatnot
+- **Started learning a second language (Norwegian)**: Got tired of learning
+  programming languages so learning a real one now, det går bra :)
 - **First Christmas from home**: Thanks very much Mark Drakeford 😠
 
 # Things I _want_ to do next year:
@@ -69,14 +88,16 @@ This year I have actual life events though 🎉 in order from start to end of th
 - **Improve fitness**: Get back into running again, lose some weight yada yada
 - **Release the MVP**: Q2 2021...? + funding pls
 - **Sell some microgreens at the local farmers market**
-- **Go on holiday to either Norway/Japan**: Test out my language skillz or my boyfriends' japanese - maybe both?
+- **Go on holiday to either Norway/Japan**: Test out my language skillz or my
+  boyfriends' japanese - maybe both?
 - **Stop trying to achieve perfection**
 - **~~<small>voice training</small>~~**
 
 # Things I'd _like_ to do next year:
 
 - **Add i18n to this site**: Norwegian translations, maybe even a dark mode too
-- **Dress more fashionably**: Currently I just wear oversized hoodies and yeah, maybe try some makeup other than concealer too while I'm at it?
+- **Dress more fashionably**: Currently I just wear oversized hoodies and yeah,
+  maybe try some makeup other than concealer too while I'm at it?
 - **Soft skills**: Be a better communicator & time management, agile schtuff
 - **Make mistakes**
 - **Maybe climb [Snowdon](https://en.wikipedia.org/wiki/Snowdon)**:

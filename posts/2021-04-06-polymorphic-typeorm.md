@@ -3,11 +3,19 @@ title: "Polymorphic TypeORM strats"
 date: 2021-04-06T18:40:00Z
 ---
 
-> To preface I no longer recommend using TypeORM, [it's pretty dead](https://github.com/typeorm/typeorm/issues/3267) & there are one [too](https://github.com/typeorm/typeorm/issues/3357) [many](https://github.com/typeorm/typeorm/issues/400) [issues](https://github.com/typeorm/typeorm/issues/4742) to deal with - though I'm using it in production if I could go back in time I'd totally use something else, [Prisma](https://www.prisma.io/) looks pretty sweet though so check that out
+> To preface I no longer recommend using TypeORM,
+> [it's pretty dead](https://github.com/typeorm/typeorm/issues/3267) & there are
+> one [too](https://github.com/typeorm/typeorm/issues/3357) >
+> [many](https://github.com/typeorm/typeorm/issues/400) >
+> [issues](https://github.com/typeorm/typeorm/issues/4742) to deal with - though
+> I'm using it in production if I could go back in time I'd totally use
+> something else, [Prisma](https://www.prisma.io/) looks pretty sweet though so
+> check that out
 
 # polymorphic joins
 
-simplest but not the best in terms of data integrity because no fk constraint, uses 2 columns for an entity type & \_id
+simplest but not the best in terms of data integrity because no fk constraint,
+uses 2 columns for an entity type & \_id
 
 ```ts
 @Entity()
@@ -40,7 +48,8 @@ create table invoice_merch (
 
 # column per type
 
-keeps fk but no guarantee entity doesn't have more than one relation, can do nested queries
+keeps fk but no guarantee entity doesn't have more than one relation, can do
+nested queries
 
 ```ts
 @Entity()

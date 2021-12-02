@@ -3,7 +3,9 @@ title: "managing ng subscriptions"
 date: 2021-05-16T11:48:00Z
 ---
 
-it's commonly taught to newbies that cleaning up your subscriptions is necessary to avoid memory leaks in your angular app, so here's a couple ways to do that without too much hassle:
+it's commonly taught to newbies that cleaning up your subscriptions is necessary
+to avoid memory leaks in your angular app, so here's a couple ways to do that
+without too much hassle:
 
 ## 1, single subscription
 
@@ -41,8 +43,8 @@ bad, not a fan, `.push` -- ew
 
 # 3, the good way
 
-here we invert the control & tell all the subscriptions to stop through emitting an event<br/>
-this is my favorite method :)
+here we invert the control & tell all the subscriptions to stop through emitting
+an event<br/> this is my favorite method :)
 
 ```ts
 private _unsubscribe = new Subject<void>();

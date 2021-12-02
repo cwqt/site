@@ -22,3 +22,17 @@ merge        rebase
 ```
 
 transpose pr head into main head
+
+```shell
+git checkout -b cool-thing
+# do work
+git checkout staging
+git pull
+git checkout cool-thing
+git rebase -i staging
+
+# reword: re-write commit message
+# fixup: merge commit into one above, drop commit
+# squash: merge commit into one above, re-write message
+# drop: delete this commit & all it's code
+```

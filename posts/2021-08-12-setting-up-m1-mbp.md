@@ -3,17 +3,20 @@ title: "Setting up M1 MBP"
 date: 2021-08-09T12:20:00Z
 ---
 
-recently got my hands on the new m1 macbook, this thing is stupid fast and makes like zero heat - anyway here's a guide for setting up the following on this new architecture:
+recently got my hands on the new m1 macbook, this thing is stupid fast and makes
+like zero heat - anyway here's a guide for setting up the following on this new
+architecture:
 
-* package manager, [homebrew, obviously](https://brew.sh/)
-* terminal emulator, [kitty](https://sw.kovidgoyal.net/kitty/)
-* shell, [fish](https://fishshell.com/) & [fisher](https://github.com/jorgebucaran/fisher/issues)
-* pretty good privacy, [gnupg](https://formulae.brew.sh/formula/gnupg)
-* node version manager, [nvm](https://github.com/nvm-sh/nvm)
-* keybindings daemon, [skhd](https://github.com/koekeishiya/skhd)
-* tiling wm, [yabai](https://github.com/koekeishiya/yabai)
-* increase key repeat & animation speed across os
-* setup ssh keys for gitlab & github
+- package manager, [homebrew, obviously](https://brew.sh/)
+- terminal emulator, [kitty](https://sw.kovidgoyal.net/kitty/)
+- shell, [fish](https://fishshell.com/) &
+  [fisher](https://github.com/jorgebucaran/fisher/issues)
+- pretty good privacy, [gnupg](https://formulae.brew.sh/formula/gnupg)
+- node version manager, [nvm](https://github.com/nvm-sh/nvm)
+- keybindings daemon, [skhd](https://github.com/koekeishiya/skhd)
+- tiling wm, [yabai](https://github.com/koekeishiya/yabai)
+- increase key repeat & animation speed across os
+- setup ssh keys for gitlab & github
 
 open up `Terminal.app` and follow along :)
 
@@ -33,10 +36,10 @@ curl https://gitlab.com/cxss/dotfiles/-/raw/master/kitty/kitty.conf >> ~/.config
 # install fish shell via homebrew
 brew install fish
 
-# check it works 
+# check it works
 fish
 
-# get the path of fish installation, varies depending on intel or m1 
+# get the path of fish installation, varies depending on intel or m1
 # for m1s all homebrew packages are at /opt/homebrew
 # for intel its /usr/local/bin
 which fish
@@ -72,7 +75,11 @@ brew install gnupg
 
 ## yabai & skhd
 
-for big sur you have to remove System Integrity Protection to allow for the scription addition of yabai (this is useful for skhd), you enter recovery mode by first turning off your mac, and then holding the power button until you see the apple logo & some text that says "loading options..." or something along those lines, & then clicking the "Options" icon once prompted
+for big sur you have to remove System Integrity Protection to allow for the
+scription addition of yabai (this is useful for skhd), you enter recovery mode
+by first turning off your mac, and then holding the power button until you see
+the apple logo & some text that says "loading options..." or something along
+those lines, & then clicking the "Options" icon once prompted
 
 ```bash
 # once inside recovery mode, open up a terminal from the Utilities section in the top bar
@@ -120,7 +127,8 @@ sudo visudo -f /private/etc/sudoers.d/yabai
 # YOUR_USERNAME ALL = (root) NOPASSWD: /opt/homebrew/bin/yabai --load-sa
 ```
 
-source for some of this part: <https://github.com/koekeishiya/yabai/issues/725#issuecomment-861753811>
+source for some of this part:
+<https://github.com/koekeishiya/yabai/issues/725#issuecomment-861753811>
 
 ## overwriting some defaults
 
@@ -140,11 +148,13 @@ defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
 
 turn off dock showing recent applications
 
-> go to System Preferences > Dock & Menu Bar, then uncheck the box for "Show recent applications in Dock"
+> go to System Preferences > Dock & Menu Bar, then uncheck the box for "Show
+> recent applications in Dock"
 
 turn off virtual desktops being re-arranged
 
-> go to System Preferences > Mission Control, then uncheck box for "Automatically rearrange Spaces based on most recent use"
+> go to System Preferences > Mission Control, then uncheck box for
+> "Automatically rearrange Spaces based on most recent use"
 
 speed up window minimise by changing effect to `suck`
 
@@ -154,11 +164,13 @@ defaults write com.apple.dock mineffect -string suck; killall Dock
 
 allow shift + cmd + l select all keybinding in vscode
 
-> go to System Preferences > Keyboard > Shortcuts > Services & uncheck Searching > Search With Google
+> go to System Preferences > Keyboard > Shortcuts > Services & uncheck
+> Searching > Search With Google
 
 bind caps-lock to ctrl
 
-> go to System Preferences > Keyboard > Modifier Keys & change Caps Lock to Control
+> go to System Preferences > Keyboard > Modifier Keys & change Caps Lock to
+> Control
 
 ## ssh keys for gitlab & github
 
@@ -178,5 +190,5 @@ curl https://gitlab.com/cxss/dotfiles/-/raw/master/.ssh/config >> ~/.ssh/config
 
 # restart ssh agent
 sudo launchctl unload /System/Library/LaunchDaemons/ssh.plist
-sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist 
+sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist
 ```

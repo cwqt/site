@@ -3,7 +3,10 @@ title: "On TypeScript enums"
 date: 2021-08-09T12:20:00Z
 ---
 
-I'm not a huge fan of TypeScripts `enum`s - to me they're a bit of syntax sugar around unions with some added footguns, problems arise when trying to iterate over them which can throw people new to the language off plainly due to how they're transpiled into JavaScript.
+I'm not a huge fan of TypeScripts `enum`s - to me they're a bit of syntax sugar
+around unions with some added footguns, problems arise when trying to iterate
+over them which can throw people new to the language off plainly due to how
+they're transpiled into JavaScript.
 
 ## Enums explained
 
@@ -16,7 +19,9 @@ enum Test {
 }
 ```
 
-So `Test.Hello` = 0 & `Test.World` = 1 - this is the worst kind of enum in my opinion as doing `Object.keys`, `Object.values`, `Object.entries` will return seemingly very strange results.
+So `Test.Hello` = 0 & `Test.World` = 1 - this is the worst kind of enum in my
+opinion as doing `Object.keys`, `Object.values`, `Object.entries` will return
+seemingly very strange results.
 
 ```ts
 Object.keys(Test); // ["0", "1", "Hello", "World"]
@@ -24,7 +29,9 @@ Object.values(Test); // ["Hello", "World", 0, 1]
 Object.entries(Test); // [["0", "Hello"], ["1", "World"], ["Hello", 0], ["World", 1]]
 ```
 
-Which at first glance might make you wonder why it was done this way? - It's to account for [heterogeneous enums](https://2ality.com/2020/01/typescript-enums.html#heterogeneous-enums).
+Which at first glance might make you wonder why it was done this way? - It's to
+account for
+[heterogeneous enums](https://2ality.com/2020/01/typescript-enums.html#heterogeneous-enums).
 
 Taking a look at the JS reveals:
 
@@ -36,14 +43,15 @@ var Test;
 })(Test || (Test = {}));
 ```
 
-Shows an immediately invoked function execution with some stuff going on in while indexing `Test`, lets break that down:
+Shows an immediately invoked function execution with some stuff going on in
+while indexing `Test`, lets break that down:
 
 - `Test` is defined but no value is assigned
 - An Immediately-Invoked Function Expression is called with the following
   - `Test || (Test = {})`
   - `Test` is undefined so the `||` operator evaluates `(Test = {})`
   - `Test` (the var) is assigned a value of `{}`
-    - [The value of the assignment is returned, so our IIFE is supplied with `{}` as its argument](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment)
+    - [The value of the assignment is returned, so our IIFE is supplied with`{}` as its argument](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment)
 
 Ok, so now the state of the application looks like this
 
@@ -56,7 +64,8 @@ Test[(Test["World"] = 1)] = "World";
 Now for the indexing part:
 
 - `Test[Test["Hello"] = 0] = "Hello";`, lets eval the indexing first
-  - `Test["Hello"]` is assigned a value of zero, and the assignment is returned, 0
+  - `Test["Hello"]` is assigned a value of zero, and the assignment is returned,
+    0
     - `Test = { Hello = 0 }`
   - `Test[0] = "Hello"`
     - `Test = { Hello = 0, 0 = "Hello" }`
@@ -78,11 +87,14 @@ var Test = {
 }
 ```
 
-Which fully explains why there are 4 values in our `.entries()` - a bit of an annoying gotcha & I imagine its taken a few people on a ride around in circles figuring it out.
+Which fully explains why there are 4 values in our `.entries()` - a bit of an
+annoying gotcha & I imagine its taken a few people on a ride around in circles
+figuring it out.
 
 ## Better enums
 
-A slightly better way would be to only use string enums as the twice indexing issue is only when using numbers as a value:
+A slightly better way would be to only use string enums as the twice indexing
+issue is only when using numbers as a value:
 
 ```ts
 enum Test {
@@ -104,7 +116,9 @@ var Test;
 
 ## Extending enums
 
-It's also not possible to extends enums in the sense of `interface X implements Y` - there's a couple of work arounds like this one on [StackOverflow](https://stackoverflow.com/a/64549988) which work I guess.
+It's also not possible to extends enums in the sense of
+`interface X implements Y` - there's a couple of work arounds like this one on
+[StackOverflow](https://stackoverflow.com/a/64549988) which work I guess.
 
 ```ts
 enum Color1 {
@@ -123,11 +137,14 @@ const Colors = { ...Color2, ...Color1 };
 this.color = Colors.Red; // Colors.Green or Colors.Yellow or Colors.Blue
 ```
 
-But still you have the same issue with repeated indexes - so not a full solution.
+But still you have the same issue with repeated indexes - so not a full
+solution.
 
 ## An alternative
 
-More recently I've been cozying up to this method of handling enums, though you lose the explicit `SomeEnum.Value`, assuming everything is typed correctly you'll have no issue with iterating & extending with both strings & numbers.
+More recently I've been cozying up to this method of handling enums, though you
+lose the explicit `SomeEnum.Value`, assuming everything is typed correctly
+you'll have no issue with iterating & extending with both strings & numbers.
 
 ```ts
 const Colors1 = ["Red", "Green", 1, 2] as const;

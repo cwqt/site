@@ -3,21 +3,38 @@ title: "Using Markov Chains to make a chatbot"
 date: 2019-08-15T06:21:00Z
 ---
 
-Since all that GDPR stuff came out a few months back I've been requesting my data from all sorts of sources, simply to see _what_ it is they collect. Some companies are okay, yet others (google) to collect pretty much every metric of information they possibly can.
+Since all that GDPR stuff came out a few months back I've been requesting my
+data from all sorts of sources, simply to see _what_ it is they collect. Some
+companies are okay, yet others (google) to collect pretty much every metric of
+information they possibly can.
 
 ![request discord data](https://ftp.cass.si/==ANygjMwA.png)
 
-Discord recently release their "Request all your data" button, intrigued as with other sites I requested it, a few days later a zip file dropped into my inbox.
+Discord recently release their "Request all your data" button, intrigued as with
+other sites I requested it, a few days later a zip file dropped into my inbox.
 
 ![discord sidebar](https://ftp.cass.si/==gNykTMwA.png)
 
-As with other services the data isn't structured very logically, nor are you given much help in understanding just what it is you're looking at, but CSVs are easy enough to understand. Discord obviously keeps every message you've ever posted on every guild (joined or not) and DMs for their indexing and history.
+As with other services the data isn't structured very logically, nor are you
+given much help in understanding just what it is you're looking at, but CSVs are
+easy enough to understand. Discord obviously keeps every message you've ever
+posted on every guild (joined or not) and DMs for their indexing and history.
 
-In my case this resulted in 268,814 messages over a period of about 3 years, about 250 messages a day. A _lot_ of data. Scary to think that with enough sophistication someone could accurately piece together your entire personality - alongside all the other metadata that's spread across different services someone with complete access could effectively track and monitor your entire life, "they" most likely do.
+In my case this resulted in 268,814 messages over a period of about 3 years,
+about 250 messages a day. A _lot_ of data. Scary to think that with enough
+sophistication someone could accurately piece together your entire personality -
+alongside all the other metadata that's spread across different services someone
+with complete access could effectively track and monitor your entire life,
+"they" most likely do.
 
-Someone suggested to me that I use all my messages to make a silly chatbot, Markov chains are often used for this (and other things like state machines/game AI) with surprising intelligence at times.
+Someone suggested to me that I use all my messages to make a silly chatbot,
+Markov chains are often used for this (and other things like state machines/game
+AI) with surprising intelligence at times.
 
-Firstly I needed to extract all the data from the discord dump into something more manageable, removing all the garbage data like timestamps, attachments etc. I wrote this small python script that would collate the information into one big json file.
+Firstly I needed to extract all the data from the discord dump into something
+more manageable, removing all the garbage data like timestamps, attachments etc.
+I wrote this small python script that would collate the information into one big
+json file.
 
 ```python
 import os
@@ -45,9 +62,13 @@ print("created.")
 
 The resulting json file was 7.7mb(!) in size.
 
-Markov chains are quite simple, at least in this case, essentially all that needs to be done is collect each word from each sentence, remove duplicates and order them into a list.
+Markov chains are quite simple, at least in this case, essentially all that
+needs to be done is collect each word from each sentence, remove duplicates and
+order them into a list.
 
-After this we run over every word again, and find the probability that a word succeeds this word and place those words in a dict with a key:value pair of word:number_of_times_occurred.
+After this we run over every word again, and find the probability that a word
+succeeds this word and place those words in a dict with a key:value pair of
+word:number_of_times_occurred.
 
 For example, take these short sentences.
 
@@ -83,15 +104,22 @@ sits: {.:2, cat:1}
 
 ![markov structure](https://ftp.cass.si/=gDMycDMwA.png)
 
-So the probability of the word 'sit' being chosen after the word 'cat' is 2/4, .5. `word_probaility/total_word_count`. I should note that this process would continue indefinitely if not for some ending character, a period is used in this case, but in the example below I simply appended `END_TOKEN` to each sentence as an ending indicator.
+So the probability of the word 'sit' being chosen after the word 'cat' is 2/4,
+.5. `word_probaility/total_word_count`. I should note that this process would
+continue indefinitely if not for some ending character, a period is used in this
+case, but in the example below I simply appended `END_TOKEN` to each sentence as
+an ending indicator.
 
 ![markov working](https://ftp.cass.si/=kTM5cTMwA.png)
 
-From a real world example, you can see the words 'mad' and 'man' grouped together, so I would've said for example "what a mad man". Here's an image that explains the process a little easier.
+From a real world example, you can see the words 'mad' and 'man' grouped
+together, so I would've said for example "what a mad man". Here's an image that
+explains the process a little easier.
 
 ![http://awalsh128.blogspot.com/2013/01/text-generation-using-markov-chains.html](https://ftp.cass.si/0MDMwADMwA.png)
 
-Here's the resulting script I wrote for my MoonScript discord bot, [Shortbread](https://gitlab.com/cxss/shortbread).
+Here's the resulting script I wrote for my MoonScript discord bot,
+[Shortbread](https://gitlab.com/cxss/shortbread).
 
 ```moonscript
 json = require("rxi-json-lua")
@@ -201,6 +229,10 @@ The result:
 
 ![it just works](https://ftp.cass.si/=gTOxADMwA.png)
 
-Often times it just spews out complete gibberish because of the low depth of the markov chain, sometimes it is quite eerie when it says something coherent as it imitates my style of speech and typing.
+Often times it just spews out complete gibberish because of the low depth of the
+markov chain, sometimes it is quite eerie when it says something coherent as it
+imitates my style of speech and typing.
 
-The bot only considers the immediate word in-front, so the 'gibberishness' of sentences can be be reduced by considering not only the word in-front, but the word in-front of that word, and so forth.
+The bot only considers the immediate word in-front, so the 'gibberishness' of
+sentences can be be reduced by considering not only the word in-front, but the
+word in-front of that word, and so forth.

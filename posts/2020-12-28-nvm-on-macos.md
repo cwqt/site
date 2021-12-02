@@ -3,7 +3,8 @@ title: "nvm using fish shell"
 date: 2020-12-28T14:35:00Z
 ---
 
-apparently now we have node version managers - and i almost don't want to bother after bad experiences with pipenv / virtualenv but eh..
+apparently now we have node version managers - and i almost don't want to bother
+after bad experiences with pipenv / virtualenv but eh..
 
 ```bash
 brew upgrade fish

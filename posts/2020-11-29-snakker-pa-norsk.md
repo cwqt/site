@@ -4,7 +4,8 @@ title: "snakker på norsk"
 language: nb
 ---
 
-i've been learning norwegian on duolingo for about 9 days & today i had my first sort of conversation in it - which is cool i guess
+i've been learning norwegian on duolingo for about 9 days & today i had my first
+sort of conversation in it - which is cool i guess
 
 went something like this:
 
@@ -16,5 +17,6 @@ went something like this:
     t: Jeg vet ikke hva vi kaller dem
     m: mfw jeg vet hva du sier
 
-not a lot, but still, way more fun than just reading and doing flash cards on anki.
-end goal being to take a stab at the bergentest around end of next year or so
+not a lot, but still, way more fun than just reading and doing flash cards on
+anki. end goal being to take a stab at the bergentest around end of next year or
+so

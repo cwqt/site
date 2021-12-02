@@ -3,17 +3,27 @@ title: "MoonScript vs Lua: A speed test"
 date: 2017-11-19T20:39:00Z
 ---
 
-I've discovered MoonScript in the last month and so far I'm loving it (apart from a few whitespacing quirks). One of the things I like most about it is the built-in Object Orientation, something that is lacking from Lua (but can be added with libraries/metatables).
+I've discovered MoonScript in the last month and so far I'm loving it (apart
+from a few whitespacing quirks). One of the things I like most about it is the
+built-in Object Orientation, something that is lacking from Lua (but can be
+added with libraries/metatables).
 
-I've been interested in _how fast_ the generated Lua code is from MoonScript for a while now, so today I'm going to do a little speed-test of sorts. This won't be an incredibly indepth comparison - so don't jump down my throat if I've fucked up somewhere. Feel free to correct me though.
+I've been interested in _how fast_ the generated Lua code is from MoonScript for
+a while now, so today I'm going to do a little speed-test of sorts. This won't
+be an incredibly indepth comparison - so don't jump down my throat if I've
+fucked up somewhere. Feel free to correct me though.
 
-I'll be comparing speed differences from MoonScript OO to a minimal and fast Lua OO library, [30log.](https://github.com/Yonaba/30log)
+I'll be comparing speed differences from MoonScript OO to a minimal and fast Lua
+OO library, [30log.](https://github.com/Yonaba/30log)
 
-The main 3 pillars of Object Orientation are: Objects, Methods and Inheritance. I'll be seeing how long it takes each implementation to create these in increasing sizes.
+The main 3 pillars of Object Orientation are: Objects, Methods and Inheritance.
+I'll be seeing how long it takes each implementation to create these in
+increasing sizes.
 
 ## Creating objects
 
-Simply defining a class called `X`, and creating and inserting ever-increasing amounts of `X`, from 10 to 1,000,000 instances.
+Simply defining a class called `X`, and creating and inserting ever-increasing
+amounts of `X`, from 10 to 1,000,000 instances.
 
 ```lua
 --lua
@@ -50,7 +60,9 @@ print(End-Start)
 | 1,000,000              | 0.708374   | 16.057709 |
 ```
 
-As you can see, the time taken for 30log to create objects increases massively to 16 seconds! - Although realistically most people will have less than 1,000 objects, the speed difference is still pretty large.
+As you can see, the time taken for 30log to create objects increases massively
+to 16 seconds! - Although realistically most people will have less than 1,000
+objects, the speed difference is still pretty large.
 
 ## Methods
 
@@ -99,11 +111,13 @@ print(End-Start)
 
 </div>
 
-MoonScript is initially slower when object count is <100, but soon to lag starts to mount with 30log.
+MoonScript is initially slower when object count is <100, but soon to lag starts
+to mount with 30log.
 
 ## Inheritance
 
-Creating another class called `Y` that is inherited from `X`, we should expect similar results to the first test.
+Creating another class called `Y` that is inherited from `X`, we should expect
+similar results to the first test.
 
 ```lua
 local class = require '30log'
@@ -147,6 +161,9 @@ print(End-Start)
 | 1,000,000                | 1.042791   | 17.100362 |
 ```
 
-MoonScript is the clear victor here, 30log takes up to 17 seconds to complete the same task as MoonScript.
+MoonScript is the clear victor here, 30log takes up to 17 seconds to complete
+the same task as MoonScript.
 
-So yeah. I guess we can say MoonScript OO is faster then 30log OO (and also nicer looking). 30log is still a good OO library though, it provides a simple and fairly fast way to do OO programming without the need for pre-compiling.
+So yeah. I guess we can say MoonScript OO is faster then 30log OO (and also
+nicer looking). 30log is still a good OO library though, it provides a simple
+and fairly fast way to do OO programming without the need for pre-compiling.

@@ -24,7 +24,7 @@ then open up `settings.json` & add this:
     "commands": [
       {
         "isAsync": true,
-        "cmd": "golines . -w -m 80" // -m max line length
+        "cmd": "[ -f go.mod ] && golines . -w -m 80" // -m max line length
       }
     ]
   },

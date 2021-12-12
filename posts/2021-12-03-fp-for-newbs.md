@@ -1,6 +1,6 @@
 ---
-title: "Functional programming for fucking idiots"
-date: 2021-12-03T:17:54:00Z
+title: "Functional programming for fnewbs"
+date: 2021-12-03T17:54:00Z
 draft: true
 ---
 

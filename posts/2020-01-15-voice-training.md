@@ -4,7 +4,20 @@ title: "voice training"
 draft: true
 ---
 
-## how not to want to kill yourself when voice training
+## lessons
+
+- vocal weight
+- nurdling: sounding like stitch, avoid that! (fairly common)
+- re-listening to recorded vt lessons is painful
+- doing literally anything imaginable to avoid speaking, a la infinite
+  scrolling, checking e-mails, writing this post...
+- mimicry: very based, I have a bunch of clips I just play back & emulate
+
+<audio src="https://ftp.cass.si/n9s4=gdg9.mp4" controls></audio>
+
+going from low to higher pitch while keeping low weight
+
+## how not to want to die when voice training
 
 - play spotify in background on speaker
 - ease into it by just _making sound_
@@ -19,14 +32,15 @@ voice
 i have virtually zero confidence, even trying to alter my voice causes a lot of
 tension, & often i'll sit in my chair for hours just thinking about starting
 before i actually summon up the will to practice -- some things that've helped
-me
+me:
 
 - alcohol
 - playing music in the background (don't play sad stuff though)
 - being in a room where noone can reasonbly hear you
 - watching vt videos to ease into it
 
-ok onto the training, three main components; vocal weight, resonance & pitch
+ok onto the training, few big components; vocal weight, intonation, resonance &
+pitch.
 
 # Vocal Weight
 
@@ -65,6 +79,8 @@ use neck muscles, more of a tongue muscle action don't strain the vocal chords
 # Open Quotient
 
 # Intonation
+
+without this you sound like yourself, just unaffected by testosterone
 
 # Articulation
 

@@ -3,7 +3,7 @@ title: "nicely formatted go"
 date: 2021-12-12T02:18:00Z
 ---
 
-i'm kind of a lazy programmer, i like to do as few keystrokes as possible - and manually formatting code is suuuch a chore,
+i'm kind of a lazy programmer and manually formatting code is suuuch a chore,
 `prettier` takes care of that for me in TS and makes my code look, well, pretty.
 
 i've been writing `go` for a bit now and while `gofmt` is quite nice they [intentionally don't do line wrapping](https://github.com/golang/go/issues/11915).

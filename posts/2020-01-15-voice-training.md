@@ -17,6 +17,10 @@ draft: true
 
 going from low to higher pitch while keeping low weight
 
+<audio src="https://ftp.cass.si/y4n8.5in4.mp4" controls></audio>
+
+zombie technique, lazy as possible
+
 ## how not to want to die when voice training
 
 - play spotify in background on speaker
@@ -37,6 +41,9 @@ me:
 - alcohol
 - playing music in the background (don't play sad stuff though)
 - being in a room where noone can reasonbly hear you
+  - having a dedicated space, then going to it & immediately starting, don't
+    procrastinate once sitting down otherwise it'll take forever to actually
+    start
 - watching vt videos to ease into it
 
 ok onto the training, few big components; vocal weight, intonation, resonance &

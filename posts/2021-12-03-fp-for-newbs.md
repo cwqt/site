@@ -16,11 +16,11 @@ like `for dummies` except worse, rage against imperative programming!
 
 ### higher order functions
 
-### referential transparency
+### referential transparency
 
 ### partial application
 
-### memoization
+### memoization
 
 ### arity
 

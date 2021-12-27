@@ -62,11 +62,12 @@ stupid noodle arm rounded corner "trust me" no offensive blurple corporate art.
 maybe im just burned out by the internet, maybe i just hate industrial society,
 maybe i fried my brain from years of flat out development chasing some figure
 deposited into my bank at the end of every month. now i see the number increment
-and feel nothing. it just a digit, not even present in any kind of physical
-form, loaned out the microsecond it arrives if even the cabal of financial
-mega-entities even carried out the transaction... just a `total += incoming` or
-`total -= outgoing` on a private ledger synced at some distant point in time.
-any contribution is a pile of sand,.....people fucking spend millions on
-blockhain monkeys ...... im going to blow my fucking head off out at this rate
+and feel nothing, i dont even deserve it. its just a digit, not even present in
+any kind of physical form, loaned out the microsecond it arrives if even the
+cabal of financial mega-entities even carried out the transaction... just a
+`total += incoming` or `total -= outgoing` on a private ledger synced at some
+distant point in time. any contribution is a pile of sand,.....people fucking
+spend millions on blockhain monkeys ...... im going to blow my fucking head off
+out at this rate
 
 ![wow look how infinitesimally insignificant you are](https://ftp.cass.si/49m=wr75..jpeg)

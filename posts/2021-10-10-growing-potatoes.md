@@ -9,7 +9,7 @@ learn how to grow potatoes & a beef stew in this simple guide!
 ## step 1: make a flower bed
 
 not strictly neccessary but head down to your local hardware store and pick up
-some bits of tree carcass for an
+some bits of wood for an
 [extortionate amount](https://tradingeconomics.com/commodity/lumber), then screw
 them together with some L brackets & cover with a bit of old curtain so weeds
 don't spring up through, stick some holes in the bottom so the water doesn't
@@ -34,10 +34,10 @@ should look like this:
 
 ## step 4: water
 
-simulate playing animal crossing in real life by pouring water onto said
-potatoes with a watering can - i have no idea how often you're meant to water
-them but common sense would dictate a couple times a week, or whenever you
-remember to really...
+action all that practice of playing animal crossing into real life by watering
+said potatos - i'm not actually sure how often you're meant to water them but
+common sense would dictate a couple times a week, or whenever you remember to
+really...
 
 ## step 5: watch tateys grow
 
@@ -70,8 +70,8 @@ yeah...
 hell yes! you made it this far, you have some _actual_ potatoes that you
 _actually_ grew which
 [came out the fookin ground!](https://youtu.be/_pDTiFkXgEE?t=19), now you need
-to wash them & store them in a dark place, otherwise they'll start growing roots
-and try to reproduce into even more baby tateys
+to wash them & store them in a dark place, otherwise they'll turn
+[green and toxic](https://www.fsai.ie/faq/green_potatoes.html#:~:text=Potatoes%20will%20often%20go%20green,as%20glycoalkaloids%2C%20may%20be%20increased.)!
 
 ![washing tateys](https://ftp.cass.si/voWn967o0.jpeg)
 

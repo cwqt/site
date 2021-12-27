@@ -1,5 +1,6 @@
 ---
-date: 2020-01-15T11:51:00Z
+date: 2021-01-15T11:51:00Z
+edited: 2021-12-17T00:27:00Z
 title: "voice training"
 draft: true
 ---
@@ -12,6 +13,10 @@ draft: true
 - doing literally anything imaginable to avoid speaking, a la infinite
   scrolling, checking e-mails, writing this post...
 - mimicry: very based, I have a bunch of clips I just play back & emulate
+- have an entry phrase:
+  - _heat from fire, fire from heat_
+  - _the birch canoe slid down the smooth planks_
+  - _hello hello hello hello hello_
 
 <audio src="https://ftp.cass.si/n9s4=gdg9.mp4" controls></audio>
 

@@ -3,6 +3,12 @@ layout: default.njk
 ---
 
 <h1>{{ title }}</h1>
-<span class="post-date">{{ date }}</span>
+<span class="post-date">created: {{ date }}</span>
+
+
+{% if edited %}
+  <span class="post-date">updated: {{ edited }}</span>
+{% endif %}
+
 
 <article>{{ content }}</article>

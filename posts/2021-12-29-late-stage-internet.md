@@ -1,6 +1,7 @@
 ---
 title: late stage internet
 date: 2021-12-27T23:14:00Z
+draft: true
 ---
 
 we're entering the end game, the internet not a tool for connecting, sharing,

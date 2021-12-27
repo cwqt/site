@@ -57,6 +57,16 @@ algorithm. using mental health as a question for this is just so low
 
 stupid noodle arm rounded corner "trust me" no offensive blurple corporate art.
 
+## news
+
+<https://youtu.be/B52G56dHMBc> i hate these grinning shit eating puppets that
+deliver their 10 minute propagandist soliloquies intersepersed by haha funny
+"joe biden senile"/"orange man bad" quips pretending as if there's a side to
+play, all news outlets owned by some parent company that is owned by some other
+parent company and so forth until there's like 4 mega corps at the top whose
+only interest is to just make more money anyway, its kind of a boring plot
+honestly
+
 ---
 
 maybe im just burned out by the internet, maybe i just hate industrial society,

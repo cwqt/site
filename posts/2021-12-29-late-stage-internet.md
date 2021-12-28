@@ -16,6 +16,14 @@ deals, sales, "Buy Now", paypal, apple pay, google pay, pay pay pay pay pay buy
 our product, sign up to our newsletter, accept our cookies, read our gdpr
 notices, e-mail reminders, pop-up chat boxes. _BUY OUR PRODUCT_.
 
+companies like snapchat, fb, yt, tiktok are profoundly evil and has destroyed
+the minds of tens of millions of youths, make more money than doctors or real
+engineers, people that provide real value to society, is a sign of
+civilizational decline. the existence of these and hundreds of other 'tech
+companies' has been nothing but a net negative for human societies. engineers at
+facebook, try to come up with the best algorithm imaginable to make you angry so
+that you continue to click on their website.
+
 i liked computers because i was always lonely and the seemingly infinite
 complexity of these machines served as a good distraction, now i'm at a point
 where i know how all these pieces fit together there's no magic anymore. i wish

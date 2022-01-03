@@ -17,9 +17,9 @@ through various workflows to replicate all the spoils that vscode gives us out
 of the box.
 
 fwiw i use [kitty](https://github.com/dexpota),
-[neovim](https://github.com/neovim/neovim), &
-[fish](https://github.com/fish-shell/fish-shell) with the
-[kanagawa](https://github.com/rebelot/kanagawa.nvim) colour scheme
+[neovim](https://github.com/neovim/neovim) &
+[kanagawa](https://github.com/rebelot/kanagawa.nvim) colour scheme - my nvim
+config is here: <https://gitlab.com/cxss/dotfiles/-/tree/master/nvim>
 
 <img src="https://ftp.cass.si/9fsRpo827.png" style="max-width:100% !important"/>
 

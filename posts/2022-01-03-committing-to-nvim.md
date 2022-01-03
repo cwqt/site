@@ -98,3 +98,18 @@ then in `init.vim`, add
 ```vim
 set shell=/opt/homebrew/bin/fish " use fish
 ```
+
+## update: realising that fish is once again fucking me
+
+as discovered in [[2021-08-23-fixing-skhd-lag]] it turns out setting your
+default shell to `fish` is a terrible idea, I was noticing that switching to
+buffers was being painfully slow, in a way that reminded me of switching
+desktops was in yabai with skhd, so based off that hunch i swapped my default
+shell back to bash, and well the results speak for themselves:
+
+<img src="https://ftp.cass.si/=1U6vkdr=.png" style="max-width: 100% !important" />
+
+top: with fish, bottom: with bash
+
+to getting `fish` back in the terminal using `toggleterm` i just had to set the
+`shell` option to the location of `which fish`

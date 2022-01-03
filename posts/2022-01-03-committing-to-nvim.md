@@ -61,6 +61,10 @@ getting faster, though it does feel somewhat cerebral at times with remembering
 things - i still need to learn some of the workflows for git related stuff,
 merge issues etc. but will get onto that when I'm back to work
 
+<center>
+<blockquote class="twitter-tweet" data-dnt="true" data-theme="dark"><p lang="en" dir="ltr">“If I only had an hour to chop down a tree, I would spend the first 45 minutes sharpening my axe.”<br>- Me, justifying another afternoon spent tweaking my Neovim config</p>&mdash; Adam Whittingham (@AdamWhittingham) <a href="https://twitter.com/AdamWhittingham/status/1476614965570285571?ref_src=twsrc%5Etfw">December 30, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</center>
+
 # some annoying things i had to figure out
 
 inserting hashtags, had to rebind the input code in `kitty.conf` to insert a

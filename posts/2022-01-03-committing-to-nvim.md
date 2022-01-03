@@ -55,9 +55,10 @@ some other super useful plugins:
 
 i highly doubt this is the end of the tweaking, but it's a good enough start to
 keep me on a similar level of productivity as in vscode. as far as how it's
-going now? quite nice, I'm enjoying learning the movements and feeling myself
-getting faster, though I still need to learn some of the workflows for git
-related stuff, merge issues etc. but will get onto that when I'm back to work
+going now? quite nice, I'm enjoying learning the motions and feeling myself
+getting faster, though it does feel somewhat cerebral at times with remembering
+things - i still need to learn some of the workflows for git related stuff,
+merge issues etc. but will get onto that when I'm back to work
 
 # some annoying things i had to figure out
 

@@ -1,6 +1,7 @@
 ---
 title: comitting to nvim
 date: 2022-01-03T13:15:00
+updated_at: 2022-01-03T17:39:00
 ---
 
 i said in a previous post & my 2021 review that i'd be moving from vscode to

@@ -11,9 +11,10 @@ myself comfortable with modal editing; though after a few hours this quickly
 became apparent it wasn't going to work, every so often the extension would just
 lock up and do nothing, forcing a hard restart. just a bit annoying.
 
-so i decided to say fuck it and go cold turkey, spending the last week or so
-customising and going through various workflows to replicate all the spoils that
-vscode gives us out of the box.
+so i decided go cold turkey, spending the last week or so (basically the only
+thing i could really bear to do in my current state) customising and going
+through various workflows to replicate all the spoils that vscode gives us out
+of the box.
 
 fwiw i use [kitty](https://github.com/dexpota),
 [neovim](https://github.com/neovim/neovim), &

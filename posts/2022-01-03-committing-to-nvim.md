@@ -21,7 +21,7 @@ fwiw i use [kitty](https://github.com/dexpota),
 [kanagawa](https://github.com/rebelot/kanagawa.nvim) colour scheme - my nvim
 config is here: <https://gitlab.com/cxss/dotfiles/-/tree/master/nvim>
 
-<img src="https://ftp.cass.si/9fsRpo827.png" style="max-width:100% !important"/>
+<img src="https://ftp.cass.si/z930M969h.png" style="max-width:100% !important"/>
 
 so here's a list things i needed and used a tonne, ~ but in nvim ~
 

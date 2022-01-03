@@ -1,5 +1,5 @@
 ---
-title: comitting to nvim
+title: committing to nvim
 date: 2022-01-03T13:15:00
 updated_at: 2022-01-03T17:39:00
 ---

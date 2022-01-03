@@ -14,9 +14,8 @@ so i decided to say fuck it and go cold turkey, spending the last week or so
 customising and going through various workflows to replicate all the spoils that
 vscode gives us out of the box.
 
-<!-- fwiw i use [kitty](https://github.com/dexpota), -->
-<!-- [neovim](https://github.com/neovim/neovim), & -->
-
+fwiw i use [kitty](https://github.com/dexpota),
+[neovim](https://github.com/neovim/neovim), &
 [fish](https://github.com/fish-shell/fish-shell) with the
 [kanagawa](https://github.com/rebelot/kanagawa.nvim) colour scheme
 
@@ -52,6 +51,9 @@ some other super useful plugins:
 - movements like `sr"(` - change `"foo"` to `(foo)`
   <https://github.com/machakann/vim-sandwich>
 - indentation markers <https://github.com/lukas-reineke/indent-blankline.nvim>
+
+i highly doubt this is the end of the tweaking, but it's a good enough start to
+keep me on a similar level of productivity as in vscode
 
 # some annoying things i had to figure out
 

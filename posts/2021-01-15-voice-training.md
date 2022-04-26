@@ -1,30 +1,16 @@
 ---
 date: 2021-01-15T11:51:00Z
-edited: 2021-12-17T00:27:00Z
+edited: 2021-04-26T00:27:00Z
 title: "voice training"
-draft: true
 ---
 
-## lessons
+I was gonna write this big post about voice training, but seeing as there are
+already way better resources out there that explain specifice in much more
+details
+(<https://docs.google.com/document/d/1j_-8dndFzKTX0xBSF15ZEJWdw958ryh0IPKq1sz8p04/edit>)
+I'll just go over some stuff that was helpful to me personally
 
-- vocal weight
-- nurdling: sounding like stitch, avoid that! (fairly common)
-- re-listening to recorded vt lessons is painful
-- doing literally anything imaginable to avoid speaking, a la infinite
-  scrolling, checking e-mails, writing this post...
-- mimicry: very based, I have a bunch of clips I just play back & emulate
-- have an entry phrase:
-  - _heat from fire, fire from heat_
-  - _the birch canoe slid down the smooth planks_
-  - _hello hello hello hello hello_
-
-<audio src="https://ftp.cass.si/n9s4=gdg9.mp4" controls></audio>
-
-going from low to higher pitch while keeping low weight
-
-<audio src="https://ftp.cass.si/y4n8.5in4.mp4" controls></audio>
-
-zombie technique, lazy as possible
+---
 
 ## how not to want to die when voice training
 
@@ -39,9 +25,8 @@ voice
 # Confidence
 
 i have virtually zero confidence, even trying to alter my voice causes a lot of
-tension, & often i'll sit in my chair for hours just thinking about starting
-before i actually summon up the will to practice -- some things that've helped
-me:
+tension, & often i'd sit in my chair for hours just thinking about starting
+before i actually summon up the will to practice -- some things help:
 
 - alcohol
 - playing music in the background (don't play sad stuff though)
@@ -49,18 +34,30 @@ me:
   - having a dedicated space, then going to it & immediately starting, don't
     procrastinate once sitting down otherwise it'll take forever to actually
     start
+- VOCALISE
+  - don't just sit there...make a sound, any sound, just hum whatever, break the
+    silence
 - watching vt videos to ease into it
 
-ok onto the training, few big components; vocal weight, intonation, resonance &
-pitch.
+## Lessons
 
-# Vocal Weight
+- nurdling: sounding like stitch, avoid that! (fairly common)
+- re-listening to recorded vt lessons is painful
+- doing literally anything imaginable to avoid speaking, a la infinite
+  scrolling, checking e-mails, writing this post...
+- mimicry: very based, I have a bunch of clips I just play back & emulate
+- have an entry phrase:
+  - _heat from fire, fire from heat_
+  - _the birch canoe slid down the smooth planks_
+  - _hello hello hello hello hello_ while increasing resonance
 
-really freaking important, smooth or rough
+<audio src="https://ftp.cass.si/n9s4=gdg9.mp4" controls></audio>
 
-how much air you let through without making sound
+going from low to higher pitch while keeping low weight
 
-abduction: breathy adducted: creaky
+<audio src="https://ftp.cass.si/y4n8.5in4.mp4" controls></audio>
+
+zombie technique, lazy as possible
 
 ## Exercises
 
@@ -84,25 +81,8 @@ tongue shape altering resonance (oral cavity)
 raising the layrnx too high will result in choking, bouncing on the palete don't
 use neck muscles, more of a tongue muscle action don't strain the vocal chords
 
-# Pitch
+# Vocal Weight
 
-140-180hz androgynous 160-250hz feminine
+smooth or rough, how much air you let through without making sound
 
-# Open Quotient
-
-# Intonation
-
-without this you sound like yourself, just unaffected by testosterone
-
-# Articulation
-
-# Twang
-
-# Throat Closure
-
-![](https://ftp.cass.si/015027d~6.jpeg)
-
-Close off the nasal passage by raising the soft palete & reducing nasality /
-increase resonance
-
-# Oropharynx constriction
+abduction: breathy adducted: creaky

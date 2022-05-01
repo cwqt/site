@@ -24,8 +24,8 @@ In my case this resulted in 268,814 messages over a period of about 3 years,
 about 250 messages a day. A _lot_ of data. Scary to think that with enough
 sophistication someone could accurately piece together your entire personality -
 alongside all the other metadata that's spread across different services someone
-with complete access could effectively track and monitor your entire life,
-"they" most likely do.
+with complete access could effectively track and monitor your entire life, they
+most likely do.
 
 Someone suggested to me that I use all my messages to make a silly chatbot,
 Markov chains are often used for this (and other things like state machines/game

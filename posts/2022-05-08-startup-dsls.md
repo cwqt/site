@@ -22,8 +22,9 @@ This pressure & general startup culture has inspired a whole wave of VC money
 targeted at products aimed at developers to aid in building products,
 meta-products if you will. (On of the more absurd examples of this is
 [warp.dev](https://www.warp.dev), who recently received
-[**$23 million** in funding](https://techcrunch.com/2022/04/05/warp-raises-23m-to-build-a-better-terminal/)...for
-a terminal...not like those don't already exist but ok... )
+[**$23 million** in funding](https://techcrunch.com/2022/04/05/warp-raises-23m-to-build-a-better-terminal/)
+...for a terminal... not like those don't already exist & aren't already the
+software embodiment of perfection but ok... )
 
 Anyways, back onto DSLs...
 

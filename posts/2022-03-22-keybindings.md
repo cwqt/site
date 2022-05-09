@@ -1,7 +1,6 @@
 ---
 title: keybindings on a hhkb
 date: 2022-03-22T00:55:00
-draft: false
 ---
 
 there's something about going mouseless that feels super satisfying, you become

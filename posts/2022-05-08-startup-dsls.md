@@ -12,11 +12,10 @@ all the while having neither the time nor resource to create/maintain
 per-language implementations that can cover everything that their product aims
 to provide.
 
-As developers we sort of put up with this kind of thing, mainly because we're
-also under the same spectrum of pressures - having to learn the next new thing &
-accept a bit more vendor lock-in is worth it for the time/money/effort savings
-in the corporate context, after all, do you really think management care about
-the elegance of your ORM?
+The developers in which these products are targeted at are also under the same
+set of pressures, so they simply suck it up and learn the next new thing because
+a bit of learning/lock-in is worth it for the time/money/effort savings in a
+high-growth environment, where time ultimately equals money
 
 This pressure & general startup culture has inspired a whole wave of VC money
 targeted at products aimed at developers to aid in building products,
@@ -96,7 +95,7 @@ strongly typed ORMs have been needed in the Node community for a long time, and
 they've wiped the floor with Sequlize, TypeORM, MikroORM et al. It's a bit of a
 let down, especially with a company whose product seemingly revolves around DX,
 to not have something so fundamental, and then additionally ignore the wishes of
-their community for several years kind of fucks me off
+their community for several years kind of grates on me
 
 Same as Terraform, a couple of meta-products that stitch together Prisma files
 by effectively `cat`ing them together have come up:

@@ -1,5 +1,6 @@
 ---
 title: Partial Application vs DI
+date: 2022-04-10T20:47:00
 draft: true
 ---
 

@@ -3,6 +3,8 @@ title: it doesn't cost anything to be nice
 date: 2022-05-11T17:48:52
 ---
 
+<https://open.spotify.com/track/7HDIZXi2N3BjN0zHWxVWTs?si=ff71a2fce59c4da0>
+
 just because i hate myself doesn't mean i have to project those negative
 emotions onto others by being generally unkind - not in an intentional manner
 but just emanating that kind of aura of coldness you feel towards yourself

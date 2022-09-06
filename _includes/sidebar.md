@@ -1,6 +1,6 @@
 ## [🪴🇳🇴👩‍💻🌊🐄](/)
 
-22 y/o senior full-stack norgeboo, working at a carbon-offsetting startup
+23 y/o senior full-stack norgeboo, working at a carbon-offsetting startup
 `(♥_♥)`  
 you can contact me via:
 
@@ -14,3 +14,5 @@ site written with [11ty](https://www.11ty.dev/) &
 — [source](https://gitlab.com/cxss/site)
 
 `curl https://ftp.cass.si/k.txt | gpg --import`
+
+[help save the manatees!](https://www.savethemanatee.org/how-to-help/support-manatee-protection/)

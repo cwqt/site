@@ -1,5 +1,5 @@
 ---
-title: recovering data from a fucked CF card
+title: recovering data from a borked CF card
 date: 2022-08-01T18:54:00Z
 ---
 
@@ -27,7 +27,7 @@ in the file table somewhere. at this point I can only presume the file table
 took a big shit and died, but the magic byte markers still exist, so perhaps
 `binwalk` will be some use here
 
-```
+```shell
 ~ λ binwalk nikon.img > walk.txt
 ~ λ cat walk.txt | grep "TIFF" | wc -l
 1284
@@ -36,7 +36,7 @@ took a big shit and died, but the magic byte markers still exist, so perhaps
 ahh okay we do actually have something! that's more than the 894 `photorec` got
 us
 
-```
+```txt
 DECIMAL       HEXADECIMAL     DESCRIPTION
 --------------------------------------------------------------------------------
 7143424       0x6D0000        TIFF image data, big-endian, offset of first image directory: 8
@@ -53,7 +53,7 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 `binwalk` has a flag for "carving" the files out, so giving that a spin:
 
 ```shell
-~ λ binwalk -z --dd="tiff" nikon.img`
+~ λ binwalk -z --dd="tiff" nikon.img
 ```
 
 my laptop ran out of space a few mins into this, all the extracted files were

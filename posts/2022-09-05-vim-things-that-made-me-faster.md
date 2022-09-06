@@ -1,6 +1,6 @@
 ---
 title: just vimmy things that make editing go brrrrr
-date: 2022-09-06-18:54:00Z
+date: 2022-09-06T18:54:00Z
 ---
 
 discounting the usual motions schtick of `di{` etc, here's some stuff in vim (or

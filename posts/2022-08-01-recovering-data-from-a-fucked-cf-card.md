@@ -1,6 +1,6 @@
 ---
 title: recovering data from a fucked CF card
-date: 2022-08-01-18:54:00Z
+date: 2022-08-01T18:54:00Z
 ---
 
 picture this, squidding around on my gixxer one night, one hand on the clutch,

@@ -2,6 +2,7 @@
 date: 2021-01-15T11:51:00Z
 edited: 2021-04-26T00:27:00Z
 title: "voice training"
+draft: true
 ---
 
 I was gonna write this big post about voice training, but seeing as there are

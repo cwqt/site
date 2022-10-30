@@ -69,11 +69,9 @@ async countsForAll(): Promise<APIResponse<CountsForAllDto>> {
 }
 ```
 
-In staging / local development we never had this problem because our data set
-for the aggregation was significantly smaller than production, this aggregation
-query would only take 2 seconds vs the 30 seconds in production. The issue is
-reduced further by the short aggregation time which sets up a cache hit earlier
-for subsequent requests. Basically the following was happening:
+The difference in time between all these requests was minuscule, like 0.01s, in
+a cache miss so we'd have hundreds of these super expensive aggregations running all at the same time which'd cause the CPU to get thrashed on all cores;
+Mongo falls over and dies, API can't get anything out, all lambdas timeout, website 503s, kittens are crying :(
 
 ```txt
 requests to /totals
@@ -90,10 +88,11 @@ requests to /totals
 time ------------------ > now
 ```
 
-The difference in time between all these requests was minuscule, like 0.01s,
-so we'd have hundreds of these super expensive aggregations running on
-every rebuild of the website, all at the same time which'd cause the CPU to get thrashed on all cores;
-Mongo falls over and dies, API can't get anything out, all lambdas timeout, website 503s, kittens are crying :(
+In staging / local development we never had this problem because our data set
+for the aggregation was significantly smaller than production, this aggregation
+query would only take 2 seconds vs the 30 seconds in production. The issue is
+reduced further by the short aggregation time which sets up a cache hit earlier
+for subsequent requests. Basically the following was happening:
 
 This is doubley worsened by the fact we're using in-memory caching (yeah I
 know), and our process manager, `pm2`, would restart the process on every

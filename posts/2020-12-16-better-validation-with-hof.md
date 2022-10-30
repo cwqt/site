@@ -19,7 +19,7 @@ as an ardent proponent of the DRY principle i wielded my FP power and spent a
 couple of days creating a new way of concisely expressing validation in a way
 that no longer makes me want to die :)
 
-```ts
+```typescript
 /** let d equal to:
  * {
  *  iso_country: "GBR",
@@ -32,17 +32,15 @@ that no longer makes me want to die :)
  */
 
 return await object(d, {
-  iso_country: (v) => v.isISO31661Alpha3(),
+  iso_country: IsISO31661Alpha3,
   social_info: (v) =>
-    // chaining API
     v
       .optional(true)
       .custom(
-        // nested objects
-        single<typeof d.social_info>({
-          linkedin_url: (v) => v.isURL(),
-          facebook_url: (v) => v.isURL(),
-          instagram_url: (v) => v.isURL(),
+        single({
+          linkedin_url: IsUrl,
+          facebook_url: IsUrl,
+          instagram_url: IsUrl,
         })
       )
       .withMessage("Some part of your social info is wrong!"),
@@ -55,45 +53,45 @@ the object.
 as well as being able to be run imperatively, one can also use it as middleware
 against request body, queries & params;
 
-```ts
-validators: [
-  params({
-    step: (v) => v.exists().toInt().isIn([1,2,3,4,5]),
-  }),
-  body({
-    // self reference if body is an array and has no field accessor
-    __this: v => v.isArray().custom(array({
-      // validating arrays of objects
-      param: v => Validators.Fields.IsString(v),
-      message: v => Validators.Fields.IsString(v),
-    }))
-  })
-],
+```typescript
+{
+  validators: [
+    params({
+      step: (v) => v.exists().toInt().isIn([1,2,3,4,5]),
+    }),
+    body({
+      // self reference if body is an array and has no field accessor
+      __this: v => v.isArray().custom(array({
+        // validating arrays of objects
+        param: IsString,
+        message: IsString,
+      }))
+    })
+  ],
+}
 ```
 
 another feature is composing validators, say for example validating an address,
 one could make something like:
 
-```ts
+```typescript
 type ObjectValidator<T> = { [index in keyof T]: CustomValidator };
 
 const IAddress = (): ObjectValidator<Idless<IAddress>> => {
   return {
-    city: (v) => FieldValidators.isString(v, "Must provide a city"),
-    iso_country_code: (v) => FieldValidators.ISOCountry(v),
-    postcode: (v) => FieldValidators.Postcode(v),
-    street_name: (v) =>
-      FieldValidators.isString(v, "Must provide a street name"),
-    street_number: (v) =>
-      FieldValidators.isInt(v, "Must provide a street number"),
+    city: (v)             => IsString(v, "Must provide a city"),
+    iso_country_code:        ISOCountry,
+    postcode:                Postcode,
+    street_name: (v)      => IsString(v, "Must provide a street name"),
+    street_number: (v)    => IsInt(v, "Must provide a street number"),
   };
 };
 ```
 
 and then use them in other validators;
 
-```ts
+```typescript
 await object(d, {
   address: (v) => v.custom(single(IAddress())),
-})();
+});
 ```

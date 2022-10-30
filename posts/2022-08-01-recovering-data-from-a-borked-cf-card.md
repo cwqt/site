@@ -3,9 +3,13 @@ title: recovering data from a borked CF card
 date: 2022-08-01T18:54:00Z
 ---
 
-picture this, squidding around on my gixxer one night, one hand on the clutch,
-the other on my cameras shutter, ride across comfy bridge & take some piccies
-hoping at least one comes out nice, get home, plug in the 2004
+was being kinda silly & riding about, left hand on my clutch, right hand on my
+nikon d70's shutter, hip shooting pictures hoping a couple came out alright. got
+home, plugged it in, saw a few pictures, then suddenly the card bricked itself -
+fuuuuuuuck. re-plugging it in just showed a bunch of empty folders and corrupted
+folder names. here's how i got the pictures back
+
+---
 
 dump the cards content, make sure the battery is fully charged so it doesn't die
 midway through...
@@ -70,3 +74,5 @@ my raw images tend to be)
 it's not ideal, but hey got my piccies (most of which were trash because it was
 dark as fuck and i was half concentrating on trying to ride a motorbike without
 crashing)
+
+![](https://ftp.cass.si/ech62k3mp.jpeg)

@@ -4,7 +4,7 @@ date: 2022-10-11T18:54:00Z
 ---
 
 I recently had to deal with an absolute pain of an issue that was 503ing
-production on an increasingly frequent basis. in about December of last year I
+production on an increasingly frequent basis. In about December of last year I
 moved our frontend deployment to <https://seed.run> (which under the hood uses
 AWS Cloudformation) on the grounds that <https://vercel.com> were totally screwing
 us on bandwidth overages at $40 per 100GB increment, which racked up into
@@ -34,7 +34,7 @@ absolutely thrashed:
 
 ![mongo dying](https://ftp.cass.si/4~5xs080e.png)
 
-Looing at the the query logs I found that almost all the CPU was taken up
+Looking at the the query logs I found that almost all the CPU was taken up
 by an aggregation pipeline which summed up subdocument values across all users,
 an expensive operation, but done infrequently enough that it's not an issue, besides
 the pipeline is only used in a couple places, and there's caching in place where
@@ -94,7 +94,7 @@ query would only take 2 seconds vs the 30 seconds in production. The issue is
 reduced further by the short aggregation time which sets up a cache hit earlier
 for subsequent requests. Basically the following was happening:
 
-This is doubley worsened by the fact we're using in-memory caching (yeah I
+This is doubly worsened by the fact we're using in-memory caching (yeah I
 know), and our process manager, `pm2`, would restart the process on every
 deployment causing the cached values to be dumped immediately before the
 frontend would then request this data for the build.

@@ -3,7 +3,7 @@
   "version": "3.0.0",
   "description": "foam workspace with 11ty publishing",
   "scripts": {
-    "start": "eleventy --serve --watch",
+    "dev": "eleventy --serve --watch",
     "clean": "rm -rf ./_site",
     "format": "prettier --write .",
     "build": "npm run clean && eleventy",

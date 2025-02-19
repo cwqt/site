@@ -6,10 +6,10 @@
 html,
 body {
   margin: 0;
+  font-size: 15px !important;
 }
 
 body {
-  font-size: 16px;
   background-color: #111;
   color: #fff;
   overflow-x: hidden;
@@ -34,23 +34,17 @@ body {
 .sidebar {
   position: sticky;
   top: 20px;
-  width: 300px;
+  width: 200px;
   margin-right: 20px;
-  height: 100vh;
+  max-height: 100vh;
 
   h2 {
     text-align: center;
-    font-size: 32px;
     letter-spacing: 4px;
     margin-top: -32px;
+    display: none;
     z-index: 999;
     a {
-      &::after {
-        content: "~";
-      }
-      &::before {
-        content: "~";
-      }
     }
   }
 
@@ -60,12 +54,8 @@ body {
 
   img {
     object-fit: cover;
-    width: 50vw;
-    height: 50vw;
-    max-width: 250px;
-    max-height: 250px;
-    border-radius: 50%;
-    border: 3px solid #333;
+    aspect-ratio: 1/1;
+    width: 100%;
     transition: transform 0.2s;
     background-color: #333;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -74,7 +64,7 @@ body {
 
 .content {
   flex: 1;
-  max-width: 800px;
+  max-width: 500px;
 }
 
 article {
@@ -85,16 +75,13 @@ article {
     max-height: 300px;
     // max-width: 400px;
     margin-bottom: 10px;
-    border-radius: 10px;
   }
 
   code {
     padding: 2px 4px;
     color: rgba(255, 255, 255, 0.8);
     background-color: rgba(110, 118, 129, 0.3);
-    font-size: 14px !important;
     line-height: 1;
-    border-radius: 6px;
   }
 }
 
@@ -162,6 +149,11 @@ footer {
   }
 }
 
+pre,
+code {
+  border-radius: 0 !important;
+}
+
 img {
   display: block;
   margin-left: auto;
@@ -215,68 +207,4 @@ hr {
 
 .post-date {
   display: block;
-  margin-top: 10px;
-}
-
-@media only screen and (min-width: 1100px) {
-  .row {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    gap: 10px;
-    img {
-      // object-fit: contain;
-      max-width: 100%;
-    }
-  }
-}
-
-@media only screen and (max-width: 1100px) {
-  body {
-    width: 100vw;
-    margin: 0;
-    margin: 10px 0;
-  }
-  .wrapper {
-    flex-flow: column;
-    .sidebar,
-    .content {
-      width: 100vw;
-      padding: 10px;
-    }
-    .sidebar {
-      display: flex;
-      align-items: center;
-      position: relative;
-      height: auto;
-      width: 100%;
-      .about {
-        margin-left: 20px;
-        margin-top: auto;
-      }
-
-      code {
-        display: none;
-      }
-    }
-    .content {
-      h1:first-child {
-        margin-top: 0;
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 650px) {
-  .wrapper {
-    padding: 0px !important;
-  }
-  .sidebar {
-    margin-right: 0;
-    display: flex;
-    flex-flow: column;
-    .about {
-      margin-left: 0 !important;
-    }
-  }
 }

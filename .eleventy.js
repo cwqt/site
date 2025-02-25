@@ -1,4 +1,5 @@
 const fs = require("fs");
+const { DateTime } = require("luxon");
 
 module.exports = (config) => {
   config.addPassthroughCopy(".htaccess");
@@ -26,6 +27,21 @@ module.exports = (config) => {
     },
   });
 
+  const dateFormatter = (dateObj, format = "d MMM, yyyy - HH:mm") => {
+    if (dateObj instanceof Date) {
+      return DateTime.fromJSDate(dateObj, {
+        zone: "utc",
+        locale: "en",
+      }).toFormat(format);
+    } else {
+      return DateTime.fromISO(dateObj, {
+        zone: "utc",
+        locale: "en",
+      }).toFormat(format);
+    }
+  };
+  config.addFilter("date", dateFormatter);
+
   let markdownIt = require("markdown-it");
   let markdownItReplaceLink = require("markdown-it-replace-link");
   let markdownItOptions = {
@@ -51,7 +67,6 @@ module.exports = (config) => {
 
   const markdownLib = markdownIt(markdownItOptions).use(markdownItReplaceLink);
   config.setLibrary("md", markdownLib);
-
   config.addFilter("markdown", function (value) {
     return markdownLib.render(value);
   });

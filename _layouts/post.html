@@ -2,11 +2,12 @@
 layout: default.njk
 ---
 
-<h1>{{ title }}</h1>
-<span class="post-date">created at: {{ date }}</span>
+<article>
+  <p class="post-title">
+    <strong>{{ title }}</strong>
 
-{% if updated_at %}
-<span class="post-date">updated at: {{ updated_at }}</span>
-{% endif %}
+    <time class="post-date">{{ date | date("LLLL dd, yyyy" }}</time>
+  </p>
 
-<article>{{ content }}</article>
+  {{ content | safe }}
+</article>

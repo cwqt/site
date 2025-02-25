@@ -26,18 +26,19 @@
           {% set snippet %}{% include 'sidebar.md' %}{% endset %}
           {{ snippet | markdown | safe }}
         </div>
+
+
+    <footer>
+      <a class="rotonde no-link-style" href="https://webring.xxiivv.com/#random" target="blank_">
+        <img src="https://ftp.cass.si/www/webring.png"/>
+      </a>
+      <span> 2025 · cass.si</span>
+    </footer>
       </div>
 
       <div class="content">
         {{ content | safe }}
       </div>
     </div>
-
-    <footer>
-      <a class="rotonde no-link-style" href="https://webring.xxiivv.com/#random" target="blank_">
-        <img src="https://ftp.cass.si/www/webring.png"/>
-      </a>
-      <span> 2021 · copyright? no thanks</span>
-    </footer>
   </body>
 </html>

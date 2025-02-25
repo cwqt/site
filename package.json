@@ -35,6 +35,7 @@
     "prettier": "^2.5.0"
   },
   "dependencies": {
+    "luxon": "^3.5.0",
     "sass": "^1.37.5"
   }
 }

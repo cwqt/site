@@ -13,11 +13,12 @@ of the Gilded Age, "the economy" has completely uncoupled itself from any actual
 representation of living standards & a fascist takeover of the most militarily
 powerful nation state is actively in-progress.
 
-At the center of it all, a demagogue - whose given a "roman-salute"-toting
-tech-bro oligarch a free pass to consolidate power & cannibalize the tentacles
-of the empire - for reasons. Of which a non-insignificant part is being driven
-in dorm room of socially inept virgin kids at a quasi-government agency named
-after a painfully stale 2010's meme of a dead dog.
+At the center of it all, a demagogue, yugely powerful and glowing with great
+orange iridescence, has bestowed upon a "roman-salute"-toting tech-bro oligarch
+the mandate to consolidate power & cannibalize the tentacles of the empire - for
+reasons... in-part driven by a dorm room full of socially inept
+probably-virginal 20-somethings at a quasi-government agency named after a
+painfully stale 2010's meme of a dead dog. Yeah.
 
 This whole thing is careening into a fucking ditch in real-time. If you know
 anything about the histories of empires you can make a decent stab at how all of

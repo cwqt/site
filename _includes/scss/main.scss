@@ -32,6 +32,32 @@ body {
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    flex-flow: column;
+  }
+  .sidebar {
+    position: relative !important;
+    text-align: center;
+    padding-bottom: 10px;
+    width: 100% !important;
+    img {
+      max-width: 200px;
+    }
+    li,
+    ul {
+      list-style: none !important;
+      padding-left: 0 !important;
+    }
+  }
+  footer {
+    display: none !important;
+  }
+  .content {
+    margin-top: 0px !important;
+  }
+}
+
 .sidebar {
   position: sticky;
   display: flex;

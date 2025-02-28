@@ -13,19 +13,20 @@ of the Gilded Age, "the economy" has completely uncoupled itself from any actual
 representation of living standards & a fascist takeover of the most militarily
 powerful nation state is actively in-progress.
 
-At the center of it all, a demagogue - who has given a roman-salute-toting
+At the center of it all, a demagogue - whose given a "roman-salute"-toting
 tech-bro oligarch a free pass to consolidate power & cannibalize the tentacles
-of the empire. Of which a non-insignificant part is being driven by a dorm room
-of socially inept virgin kids at a quasi-government agency named after a
-painfully stale 2010's meme of a dead dog.
+of the empire - for reasons. Of which a non-insignificant part is being driven
+in dorm room of socially inept virgin kids at a quasi-government agency named
+after a painfully stale 2010's meme of a dead dog.
 
-If you know anything about the histories of empires you can make a decent stab
-at how all of this is may turn out. Armed with historical materialism you have
-what could be called something akin to a university degree in Truth. Not the
-false conciousness "satanic cabal of baby-raping adrenaline-laden-blood-drinking
-elites are running the world" truth, the one that lets you build a precise model
-of this grotesque, duplicitous system, from its conception, its mode of
-operation and potentially its destination.
+This whole thing is careening into a fucking ditch in real-time. If you know
+anything about the histories of empires you can make a decent stab at how all of
+this'll pan out. Historical materialism arms you with a university degree in
+Truth. Not the false conciousness "satanic cabal of baby-raping
+adrenaline-laden-blood-drinking elites are running the world" truth, but the one
+that lets you build a precise model of this grotesque, duplicitous system, from
+its conception, its mode of operation and potentially its destination. And right
+now? Right now, we're at the point just before the airbag deploys.
 
 Powerful and enduring nationalism (MAGA), identification of enemies (LGBT),
 supremacy of the military (...), controlled mass media (manufactured consent),
@@ -38,32 +39,28 @@ that lead to the death over 75 million 79 years ago - the darkness of the human
 spirit is making its return.
 
 All empires rise & fall, this is an inevitability, to disagree is to be ignorant
-of all of human history.
-
-The real question is how will the fall look? The effect to human life is what I
-worry about most... a managed retreat from global dominance? maybe a small civil
-war or coup leading to balkanization? It wouldn't surprise me if the American
-ego, with all its blood-lust and narcissistic exceptionalism, decided to take
-the rest of the world down with it in one final blaze of atomic glory. The last
-great human empire. That last bit is a bit doomerish, though realistically
-possible.
+of all of human history. The real question what will this fall look like? A
+managed retreat from global dominance? Perhaps a small civil war or coup leading
+to balkanization? It wouldn't surprise me if the American ego, with all its
+blood-lust and narcissistic exceptionalism, decided to take the rest of the
+world down with it in one final blaze of atomic glory. The last great human
+empire. That's maybe a bit doomer.
 
 In spite of it all however, it's important to carry with us revolutionary
-optimism, the hope & belief that a better future is possible, not just as
-individuals, but as a species - that from the ashes of this toxic system
-something beautiful can rise in its place, where all are equal; none go hungry,
-none are homeless, none are ordered to die in wars, none are exploited, none are
-poisoned by the command of capital - where each person is free to live their
-lives unshackled by implanted desires, shame & hatred - to love one and other in
-the purest sense of the word.
+optimism, the hope & belief that a better future is possible, that from the
+ashes of this toxic system something beautiful can rise in its place, where all
+are equal; none go hungry, none are homeless, none are ordered to die in wars,
+none are exploited, none are poisoned by the command of capital - where each
+person is free to live their lives unshackled by implanted desires, shame &
+hatred - to love one and other in the purest sense of the word.
 
-Nowdays I think I understand that the current cruelty of it is the point, there
-is no use in being perpetually outraged or suprised when the
+Nowdays I think I understand that the cruelty of it all is the point. There is
+no point in being perpetually outraged or suprised when the
 people-eating-machine eats more people. So what can we do right now? Log off,
-build community, exercise - get strong, learn deeply, graffiti on things, shake
-off all the false ideas of yourself you thought to be true, develop skills that
-make you useful outside of this bullshit system. Find ways to resist, subvert,
-to endure. Keep moving, stay kind, we will out-live these parasitic bastards.
+build community, exercise - get strong, learn deeply, graffiti on things, help
+others, shake off all the false ideas of yourself you thought to be true,
+develop skills that make you useful outside of this bullshit system. Find ways
+to resist, subvert, to endure. Stay kind - we will out-live these bastards.
 
 > My dear, In the midst of hate, I found there was, within me, an invincible
 > love. In the midst of tears, I found there was, within me, an invincible

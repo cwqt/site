@@ -50,7 +50,3 @@ I've had the money, bought the shit, yet it's never enough, and clearly from how
 our oligarchs operate - it never can be enough. What then makes living
 purposeful? The sisyphean struggle of consumerism & middle class comfortability
 can be undoubtedly crossed off the list.
-
-Ask yourself honestly, what makes life worth living & why? Go from there.  
-I'm trying to do that, I don't entirely know where it's taking me, but I don't
-exactly have any other cards up my sleeve at this point.

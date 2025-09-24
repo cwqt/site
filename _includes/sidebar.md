@@ -1,6 +1,6 @@
 ## [](/)
 
-25, product engineer, ml.
+26 and redundant! wahoooooo
 
 - m (at) cass (dot) si
 - <https://ftp.cass.si/k.txt>

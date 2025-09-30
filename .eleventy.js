@@ -3,6 +3,8 @@ const { DateTime } = require("luxon");
 
 module.exports = (config) => {
   config.addPassthroughCopy(".htaccess");
+  config.addPassthroughCopy("assets/**/*.{jpg,jpeg,png,gif,svg,webp}");
+
   config.addTransform("wiki-links", function (content, outputPath) {
     if (outputPath && outputPath.endsWith(".html")) {
       // We remove outer brackets from links

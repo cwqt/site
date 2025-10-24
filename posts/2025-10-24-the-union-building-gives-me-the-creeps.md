@@ -39,15 +39,15 @@ tenant retention! U+NION needs the people that live there to form connections as
 lonely & isolated tenants are more likely to leave.
 
 Corrosive cynicism aside, there's a structural reality here that this is a
-corporation mediating young peoples social lives, and their friendships serve as
-a value add to shareholders. Their community is an avenue for value extraction
-and profit seeking. What this building represents to me is just another
-furthering in the commodification of community itself. Previous generations
-formed communities through churches, unions and neighbourhood associations. When
-groups of people did live together, they did so in housing co-operatives that
-they themselves owned, they held democratic junctures to decide how things were
-ran, a far cry from a multi-national corporation designing your life through A/B
-testing.
+corporation mediating young peoples social lives, with their friendships serving
+as a value add to shareholders. Their community is an avenue for value
+extraction and profit seeking. What this building represents to me is just
+another furthering in the commodification of community itself. Previous
+generations formed communities through churches, unions and neighbourhood
+associations. When groups of people did live together, they did so in housing
+co-operatives that they themselves owned, they held democratic junctures to
+decide how things were ran, a far cry from a multi-national corporation
+designing your life through A/B testing.
 
 Vita Group has capitalized on a fertile opportunity for rent extraction created
 by two converging conditions: the atomized, isolated nature of contemporary

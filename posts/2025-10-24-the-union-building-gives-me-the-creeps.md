@@ -13,9 +13,9 @@ distance.
 
 U+NION (<https://liveunion.com/>), a skyscaper presenting fully erect and
 piercing into the skyline, is adorned with a great neon sign glowing it's great
-white hue, often handily acts as the lighthouse that guides me home (since I no
-longer carry a smartphone on my outings), secondary to that, it also serves many
-a young professional as their place of residence.
+white hue, often handily acting as the lighthouse that guides me home (since I
+no longer carry a smartphone on my outings), secondary to that, it also serves
+many a young professional as their place of residence.
 
 A co-living space, gym, cafe/bar & club all rolled into one starting at 900 odd
 quid per month. For a young professional on a salary of ~30k that'd represent

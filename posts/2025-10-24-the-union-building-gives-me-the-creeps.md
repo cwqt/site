@@ -30,7 +30,7 @@ So what about it? it's just a business, why do I care?. The issue I take is that
 the U+NION's brands marketed community aspect is fake as fuck - a pre-packaged
 sense of authentic urban community cooked up in a boardroom. Togetherness as a
 service. As a tenant, upon admission you're to take some sort of test and then
-algortithmically matched with the people who you're to live with - ever so
+algorithmically matched with the people who you're to live with - ever so
 helpfully replacing the messiness that comes with organically creating social
 relationships. Imagine meeting your neighbours: "Hello, the algorithm has placed
 us in close proximity due to the overlap of our personality metrics and

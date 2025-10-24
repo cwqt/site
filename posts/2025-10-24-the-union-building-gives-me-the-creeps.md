@@ -32,9 +32,9 @@ sense of authentic urban community cooked up in a boardroom. Togetherness as a
 service. As a tenant, upon admission you're to take some sort of test and then
 algorithmically matched with the people who you're to live with - ever so
 helpfully replacing the messiness that comes with organically creating social
-relationships. Imagine meeting your neighbours: "Hello, the algorithm has placed
-us in close proximity due to the overlap of our personality metrics and
-interests! So lovely to make your acquaintance!" - all in the name of high
+relationships. Imagine meeting your neighbours: _"Hello, the algorithm has
+placed us in close proximity due to the overlap of our personality metrics and
+interests! So lovely to make your acquaintance!"_ - all in the name of high
 tenant retention! U+NION needs the people that live there to form connections as
 lonely & isolated tenants are more likely to leave.
 

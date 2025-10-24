@@ -22,21 +22,21 @@ quid per month. For a young professional on a salary of ~30k that'd represent
 ~30-40% of a monthly income, bills included - not too bad all considered in the
 present day. The building itself is owned by Vita Group, self-proclaimed "urban
 development regeneration specialist" and "fully vertically-integrated developer,
-seller and operator of property investment products" -
+seller and operator of property investment products"
 [whose revenue & EBITDA in 2024](https://find-and-update.company-information.service.gov.uk/company/11963176/filing-history/MzQ4MjM0MjkwOGFkaXF6a2N4/document?format=pdf&download=0)
 stood at £254.2m and £62.5m respectively.
 
-So what about it? it's just a business, why do you care?. The issue I take is
-that the U+NION's brands marketed community aspect is fake as fuck - a
-pre-packaged sense of authentic urban community cooked up in a boardroom.
-Togetherness as a service. As a tenant, upon admission you're to take some sort
-of test and then algortithmically matched with the people who you're to live
-with - ever so helpfully replacing the messiness that comes with organically
-creating social relationships. Imagine meeting your neighbours: "Hello, the
-algorithm has placed us in close proximity due to the overlap of our personality
-metrics and interests! So lovely to make your acquaintance!" - all in the name
-of high tenant retention! U+NION needs the people that live there to form
-connections as lonely & isolated tenants are more likely to leave.
+So what about it? it's just a business, why do I care?. The issue I take is that
+the U+NION's brands marketed community aspect is fake as fuck - a pre-packaged
+sense of authentic urban community cooked up in a boardroom. Togetherness as a
+service. As a tenant, upon admission you're to take some sort of test and then
+algortithmically matched with the people who you're to live with - ever so
+helpfully replacing the messiness that comes with organically creating social
+relationships. Imagine meeting your neighbours: "Hello, the algorithm has placed
+us in close proximity due to the overlap of our personality metrics and
+interests! So lovely to make your acquaintance!" - all in the name of high
+tenant retention! U+NION needs the people that live there to form connections as
+lonely & isolated tenants are more likely to leave.
 
 There's a structural reality here that this is a corporation mediating young
 peoples social lives, and their friendships serve as a value add to

@@ -52,7 +52,7 @@ designing your life through A/B testing.
 Vita Group has capitalized on a fertile opportunity for rent extraction created
 by two converging conditions: the atomized, isolated nature of contemporary
 urban life generates demand for community, while housing scarcity eliminates
-alternatives - monetizing loneliness and necessity simultaneously. The building
-towers over the city center, glowing its promise of belonging. What it actually
+alternatives - thus monetizing loneliness and necessity simultaneously. The
+building looms over the city, glowing its promise of belonging. What it actually
 illuminates is how thoroughly we've allowed capital to mediate the basic human
 need for connection.

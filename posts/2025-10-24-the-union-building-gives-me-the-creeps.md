@@ -41,22 +41,21 @@ live there to form connections as lonely & isolated tenants are more likely to
 leave.
 
 Besides from a roof over your head, for £90/pm you can join _U+_, their
-residents membership, gaining access to staff-hosted community events, free
-laundy, additional spaces etc. Looking into their Instagram it reveals that such
+residents membership - gaining access to staff-hosted community events, free
+laundry, additional spaces etc. Looking into their Instagram reveals that such
 community events are primarily to the benefit of Vita Group: "pub crawls" route
-tenants between other nearby Vita Group owned buildings and bars and pizza
-nights source food in-house from Vita Group owned restaurants. The social life
-is a closed commercial loop with all funds flowing upwards rather than between
-the local economy. They do also seem to intersperse non-profit-seeking
-activities like painting, yoga or knitting every now and then... so that's cool
-I guess.
+tenants between other nearby Vita Group owned buildings and bars, pizza nights
+source food in-house from Vita Group owned restaurants. The social life is a
+closed loop with all funds flowing upwards rather than between the local
+economy. Though they do also seem to intersperse non-profit-seeking activities
+like painting, yoga or knitting every now and then... so that's cool I guess.
 
-What this comes across as to me, is a corporation mediating young people's
-social lives, and the community built within the building serving as a value add
-to shareholders. The friendships tenants form may be real and may outlast their
-tenancy but still, their formation is algorithmically engineered and extractive.
-The commodification of community itself. U+NION offers the aesthetic of
-community while retaining all structural power - a multi-national corporation
+This comes across to me as a corporation mediating young people's social lives
+and perhaps cynically, the community built within serves as a value add to
+shareholders. The friendships tenants form may be real and may outlast their
+tenancy, but still, their formation is algorithmically engineered and
+extractive. The commodification of community itself. U+NION offers the aesthetic
+of community while retaining all structural power - a multi-national corporation
 designs their social life to minimize churn and thus increase profits.
 
 Contrasted against history, previous generations of people formed communities
@@ -66,14 +65,14 @@ example from history I learned recently from
 [Beguines](https://en.wikipedia.org/wiki/Beguines_and_Beghards) of medieval
 Europe, they ran their own semi-monastic communities without corporate or
 ecclesiastical oversight.), unions, neighborhood associations, or housing
-co-operatives with democratic governance. Not that those don't exist anymore,
-but increasingly socialisation is brokered through such corporations, and U+NION
-serves as a shining beacon of an example.
+co-operatives. Not that those don't exist anymore, but increasingly
+socialisation is brokered through corporations, and U+NION serves as a shining
+beacon of an example.
 
 Vita Group has capitalized on a fertile opportunity for rent extraction created
 by two converging conditions: the atomized, isolated nature of contemporary
 urban life generates demand for community, and housing scarcity that eliminates
-alternatives - thus monetizing loneliness and necessity simultaneously. The
+alternatives, thus monetizing loneliness and necessity simultaneously. The
 building looms over the city, glowing its promise of belonging. What it actually
-illuminates is how thoroughly we're allowing capital to mediate the basic human
-need for connection.
+illuminates is how thoroughly we're allowing capital to intermediate the basic
+human need for connection.

@@ -27,9 +27,9 @@ products"
 stood at £254.2m and £62.5m respectively.
 
 So what about it? it's just a business, why do I even care?. The issue I take is
-that I feel the U+NION's community aspect is structurally disingenuous, which
-scratching the surface reveals itself a pre-packaged sense of authentic urban
-community cooked up in a boardroom, with the aim of increasing tenant retention.
+that I feel the U+NION's community aspect is structurally disingenuous, and
+scratching the surface reveals it a pre-packaged sense of authentic urban
+community cooked up in a boardroom with the aim of increasing tenant retention.
 Togetherness As A Service. I did some research and found that as a tenant, upon
 admission you're to take some sort of test and then algorithmically matched with
 the people who you're to live with, very helpfully replacing the messiness that
@@ -37,26 +37,28 @@ comes with organically creating social relationships. I expect meeting your
 neighbours goes something like: _"Hello, The Algorithm™ has placed us in close
 proximity due to the quantatative overlap of our personality metrics and
 interests - lovely to make your acquaintance!"_. U+NION needs the people that
-live there to form connections as lonely & isolated tenants are more likely to
-leave.
+live there to form connections as lonely, isolated or conflicting tenants are
+more likely to leave.
 
 Besides from a roof over your head, for £90/pm you can join _U+_, their
 residents membership - gaining access to staff-hosted community events, free
 laundry, additional spaces etc. Looking into their Instagram reveals that such
-community events are primarily to the benefit of Vita Group: "pub crawls" route
-tenants between other nearby Vita Group owned buildings and bars, pizza nights
-source food in-house from Vita Group owned restaurants. The social life is a
-closed loop with all funds flowing upwards rather than between the local
+community events are also primarily to the benefit of Vita Group: pub crawls
+route tenants between other nearby Vita Group owned buildings and bars, pizza
+nights source food in-house from Vita Group owned restaurants. The social life
+is a closed loop with all funds flowing upwards rather than between the local
 economy. Though they do also seem to intersperse non-profit-seeking activities
 like painting, yoga or knitting every now and then... so that's cool I guess.
 
-This comes across to me as a corporation mediating young people's social lives
-and perhaps cynically, the community built within serves as a value add to
-shareholders. The friendships tenants form may be real and may outlast their
+This comes across to me as a corporation mediating young people's social lives,
+and perhaps cynically - the community built within exists as a value-add to
+shareholders. The friendships tenants form are real, sure, and may outlast their
 tenancy, but still, their formation is algorithmically engineered and
-extractive. The commodification of community itself. U+NION offers the aesthetic
-of community while retaining all structural power - a multi-national corporation
-designs their social life to minimize churn and thus increase profits.
+extractive. Just to be clear, I don't think U+NION is uniquely evil, but the
+trajectory _is_ the furthering of the commodification of community itself. They
+offer the aesthetic of community but retain all structural power - a
+multi-national corporation designs their social life to minimize churn and thus
+increase profits.
 
 Contrasted against history, previous generations of people formed communities
 through institutions they themselves controlled or co-created: churches (A neat
@@ -65,9 +67,9 @@ example from history I learned recently from
 [Beguines](https://en.wikipedia.org/wiki/Beguines_and_Beghards) of medieval
 Europe, they ran their own semi-monastic communities without corporate or
 ecclesiastical oversight.), unions, neighborhood associations, or housing
-co-operatives. Not that those don't exist anymore, but increasingly
-socialisation is brokered through corporations, and U+NION serves as a shining
-beacon of an example.
+co-operatives. Not that those don't exist anymore or were perfect, but
+increasingly socialisation is brokered through corporations, and U+NION serves
+as a shining beacon of an example.
 
 Vita Group has capitalized on a fertile opportunity for rent extraction created
 by two converging conditions: the atomized, isolated nature of contemporary

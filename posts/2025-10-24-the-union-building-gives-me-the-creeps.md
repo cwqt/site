@@ -12,8 +12,8 @@ off in the background.
 
 U+NION (<https://liveunion.com/>) is a skyscaper presenting fully erect and
 piercing into the Mancunian skyline, adorned with a great neon sign glowing it's
-great white hue which often handily acts as the lighthouse that guides me home
-after my outings (since I no longer carry a smartphone). Doubly it serves many a
+great white hue - often handily acting as the lighthouse that guides me home
+since I no longer carry a smartphone on my outings. Doubly it serves many a
 young professional as their place of residence.
 
 A co-living space, gym, cafe/bar & club all rolled into one starting at 900 odd
